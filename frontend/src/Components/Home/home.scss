@@ -1,0 +1,332 @@
+.Home{
+     border-radius: 1rem;
+     background: #EDEAE7;
+     width: 100%;
+     padding: 0.5rem;
+     font-size: 15px;
+     .plan{
+          padding: 1rem;
+          border-radius: 0.5rem;
+          // background: #FCBABD;
+          // border: 2px solid black;
+          height: 300px;
+          .my-plan{
+               margin-left: 2rem;
+               width: 35%;
+               height: 290px;
+              //  background: #AFE0F7;
+               padding: 1rem;
+               border-radius: 0.5rem;
+               .my-plan-01{
+                height: 50%;
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                border-radius: 0.5rem;
+                background: #FBE9BB;
+                display: flex;
+                flex-direction: row;
+                .plan-now{
+                  margin: 0.7rem;
+                  padding: 0.5rem;
+                  border-radius: 0.5rem;
+                  width: 40%;
+                  background: #9FE2BF;
+                  cursor: pointer;
+                  text-decoration: none;
+                  .link{
+                    text-decoration: none;
+                    color: black;
+                  }
+                  .status{
+                    align-items: center;
+                    text-align: center;
+                    border-radius: 0.5rem;
+                    background: #ffff;
+                    margin-top: 0.5rem;
+                  }
+                }
+                .add-plan{
+                  border: 2px dashed black;
+                  margin: 0.7rem;
+                  width: 42%;
+                  border-radius: 0.5rem;
+                  text-align: center;
+                  img{
+                    width: 60px;
+                    margin-top: 1rem;
+                  }
+                }
+               }
+               .my-plan-02{
+                margin-top: 0.5rem;
+                height: 32%;
+                background: #FBE9BB;
+                border-radius: 0.5rem;
+                
+                // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+                .day{
+                  margin: 0.5rem;
+                  width: 100px;
+                  padding: 5px;
+                  // border-radius: 0.5rem;
+                  border-radius: 0.5rem;
+                  background: #ffff;
+                }
+               }
+          }
+          .user{
+               border-radius: 0.5rem;
+               height: 280px;
+               width: 27%;
+               margin-right: 70px;
+              //  border: 2px solid black;
+              background: #D1F2EB;
+               padding-top: 1rem;
+               img{
+                width: 70px;
+               }
+               .continue{
+                width: 40px;
+               }
+               p{
+                cursor: pointer;
+               }
+               .introduction{
+                margin-top: 1rem;
+                margin-left: 1rem;
+                .intro{
+                  border-radius: 0.5rem;
+                  height: 45px;
+                  cursor: pointer;
+                  margin-bottom: 1rem;
+                  &:hover{
+                    background: #f8f8fa;
+                  }
+                  img{
+                    width: 30px;
+                    height: 30px;
+                    margin-top: 0.4rem;
+                  }
+                  .text{
+                    margin-top: 0.7rem;
+                  }
+                  
+                }
+               }
+          }
+     }
+     .news{
+        padding: 1rem;
+        width: 100%;
+        height: 400px;
+        .news-plan{
+          background: #9FE2BF ;
+          width: 25%;
+          border-radius: 0.5rem;
+        }
+        .rank{
+          width: 30%;
+          padding-top: 2rem;
+          .table{
+            margin-top: 0.5rem;
+          }
+        }
+        .news-food-exercise{
+          // border: 2px solid black;
+          width: 70%;
+          padding: 0.5rem;
+          // margin-left: 1rem;
+          .news-food{
+            // border: 2px solid black;
+            height: 50%;
+            padding-left: 2rem;
+            .food-menu{
+              width: 250px;
+              // border: 2px solid black;
+              margin-bottom: 1rem;
+              margin-right: 2rem;
+              .image-food{
+                   margin-left: 1rem;
+                   img{
+                        width: 95px;
+                        border-radius: 100%;
+                        position: absolute;
+                        // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                   }
+              }
+              .detail-food{
+                   background: #FFFF;
+                   border-radius: 1rem;
+                   margin-top: 3rem;
+                   padding-top: 0.5rem;
+                   padding-left: 0.8rem;
+                   padding-right: 0.8rem;
+                   padding-bottom: 0.8rem;
+                   cursor: pointer;
+                   height: 74%;
+                   p{
+                        margin-bottom: 5px;
+                   }
+                   img{
+                        width: 10px;
+                   }
+                   
+              }
+         }
+          }
+        }
+     }
+
+
+     .react-calendar {
+          width: 400px;
+          max-width: 100%;
+          background-color: fffff;
+          color: #222;
+          font-family: Helvetica;
+          border-radius: 1rem;
+          // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+          line-height: 1.125em;
+          // border: 8px solid #F7535C;
+          margin-right: 1.2rem;
+          background: #EBEDEF ;
+        }
+         
+        .react-calendar__navigation button {
+          min-width: 44px;
+          font-size: 16px;
+          font-family: Helvetica;
+          // background: #F7535C;
+        }
+         
+        .react-calendar__navigation button:enabled:hover,
+        .react-calendar__navigation button:enabled:focus {
+          background-color: #DBBEBE;
+          border-radius: 0.5rem;
+        }
+        .react-calendar__navigation button[disabled] {
+          background-color: #f0f0f0;
+        }
+        abbr[title] {
+          text-decoration: none;
+        }
+         
+        .react-calendar__month-view__days__day--weekend {
+          color: #d10000;
+         } 
+         
+        .react-calendar__tile:enabled:hover,
+        .react-calendar__tile:enabled:focus {
+          // background: #f8f8fa;
+          color: #d4a713;
+          border-radius: 6px;
+        }
+         
+        .react-calendar__tile--now {
+          background: #d4a71333;
+          border-radius: 6px;
+          font-weight: bold;
+          color: #d4a713;
+        }
+         
+        .react-calendar__tile--now:enabled:hover,
+        .react-calendar__tile--now:enabled:focus {
+          background: #d4a71333;
+          border-radius: 6px;
+          font-weight: bold;
+          color: #d4a713;
+        }
+         
+        .react-calendar__tile--hasActive:enabled:hover,
+        .react-calendar__tile--hasActive:enabled:focus {
+          background: #f8f8fa;
+        }
+         
+        .react-calendar__tile--active {
+          background: #d4a713;
+          border-radius: 6px;
+          font-weight: bold;
+          color: white;
+          font-family: Helvetica;
+        }
+        .react-calendar__tile{
+          font-family: Helvetica;
+        }
+         
+        .react-calendar__tile--active:enabled:hover,
+        .react-calendar__tile--active:enabled:focus {
+          background: #d4a713;
+          color: white;
+        }
+        .react-calendar__tile--range {
+          background: #f8f8fa;
+          color: #d4a713;
+          border-radius: 0;
+        }
+         
+        .react-calendar__tile--rangeStart {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+          background: #d4a713;
+          color: white;
+        }
+
+        .form-login{
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          .register{
+               margin-bottom: 0.7rem;
+          }
+     }
+     .form-check-input{
+          margin-right: 0.5rem;
+     }
+     .title{
+          margin-top: 0.5rem;
+          p{
+               margin-top: 0.5rem;
+          }
+          span{
+               cursor: pointer;
+               &:hover{
+                    color: blue;
+               }
+          }
+     }
+     .fb-gg{
+          margin-top: 0.5rem;
+          .Facebook{
+               width: 40%;
+               padding: 5px;
+               border-radius: 0.5rem;
+               cursor: pointer;
+               img{
+                    width: 40px;
+                    border-radius: 5px;
+               }
+               .text{
+                    width: 65%;
+                    padding-top: 5px;
+               }
+               &:hover{
+                    background:var(--SecondaryColor);
+               }
+          }
+     }
+     .modal-footer{
+          margin-top: 2rem;
+     }
+     .w-dis-age{
+          width: 100px;
+          text-align: center;
+     }
+     .w-dis-date{
+          width: 170px;
+          text-align: center;
+     }
+     input{
+          margin-top: 0.5rem;
+     }
+}

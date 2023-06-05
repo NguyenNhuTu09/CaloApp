@@ -1,0 +1,161 @@
+.Plan{
+     border-radius: 1rem;
+     background: #EDEAE7;
+     width: 100%;
+     padding: 1rem;
+     font-size: 15px;
+     span{
+          cursor: pointer;
+          &:hover{
+               background: aliceblue;
+          }
+     }
+     .create-food{
+          width: 78%;
+          .food-day-note{
+               height: 160px;
+               // border: 2px solid black;
+               .food-day{
+                    background: #FBE9BB;
+                    padding: 0.5rem;
+                    width: 70%;
+                    border-radius: 0.5rem;
+                    img{
+                         width: 50px;
+                    }
+                    .day{
+                         .day-one{
+                              text-align: center;
+                              width: 140px;
+                              border: 2px dashed black ;
+                              cursor: pointer;
+                              margin-right: 0.5rem;
+                         }
+                    }
+               }
+               .note{
+                    width: 300px;
+               }
+          }
+          .food{
+               height: 200px;
+               // border: 2px solid black;
+               margin-top: 1rem;
+               padding: 0.5rem;
+               border-radius: 0.5rem;
+               .food-1{
+                    border: 2px dashed black;
+                    width: 200px;
+                    text-align: center;
+                    margin-right: 1rem;
+                    cursor: pointer;
+                    img{
+                         width: 80px;
+                         margin-top: 1.7rem;
+                    }
+               }
+          }
+          .exercise{
+               height: 200px;
+               // border: 2px solid black;
+               margin-top: 1rem;
+               padding: 0.5rem;
+               border-radius: 0.5rem;
+               .exercise-1{
+                    border: 2px dashed black;
+                    width: 200px;
+                    text-align: center;
+                    margin-right: 1rem;
+                    cursor: pointer;
+                    img{
+                         margin-top: 1.7rem;
+                    }
+               }
+          }
+          p{
+               margin-top: 1rem;
+          }
+     }
+
+     .day-plan{
+          // border: 0.5px solid black;
+          align-items: center;
+          width: 20%;
+          border-radius: 0.5rem;
+          height: 100%;
+          padding-top: 0.5rem;
+          img{
+               width: 30px;
+               cursor: pointer;
+               // border: 2px solid black;
+          }
+          li{
+               list-style-type: none; 
+               margin-bottom: 1rem;
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+          }
+          p{
+               margin-left: 7px;
+               span{
+                    margin-left: 4.5rem;
+               }
+          }
+          .btn-create{
+               .form-control{
+                    margin-bottom: 1rem;
+               }
+               .btn{
+                    margin-bottom: 1rem;
+               }
+          }
+     }
+     .master{
+          margin-right: 1rem;
+          border: 2px solid black;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          &:hover{
+               background:#8DDFCC;
+          }
+          img{
+               width: 30px;
+          }
+     }
+     .food-menu{
+          width: 20%;
+          // border: 2px solid black;
+          margin-bottom: 1rem;
+          .image-food{
+               margin-left: 1rem;
+               img{
+                    width: 95px;
+                    border-radius: 100%;
+                    position: absolute;
+                    // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+               }
+          }
+          .detail-food{
+               background: #FFFF;
+               border-radius: 1rem;
+               margin-top: 3rem;
+               padding-top: 0.5rem;
+               padding-left: 0.8rem;
+               padding-right: 0.8rem;
+               padding-bottom: 0.8rem;
+               cursor: pointer;
+               height: 70%;
+               p{
+                    margin-bottom: 5px;
+               }
+               img{
+                    width: 10px;
+               }
+               
+          }
+     }
+     .modal-body{
+          background: #EDEAE7;
+     }
+}

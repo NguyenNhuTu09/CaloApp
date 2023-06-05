@@ -1,0 +1,28 @@
+.Navbar{
+     border-radius: 1rem;
+     width: 6%;
+     backdrop-filter: blur(10px);
+     .nav-menu{
+          margin-top: 1rem;
+          li {
+               list-style-type: none;
+               align-items: center;
+               img{
+                    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                    width: 40px;
+                    background-size: cover;
+                    border-radius: 0.5rem;
+                    padding: 3px;
+               }
+          }
+     }
+     img{
+          width: 50px;
+          margin-bottom: 1rem;
+          cursor: pointer;
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+          background-size: cover;
+          border-radius: 0.5rem;
+          padding: 3px;
+     }
+}

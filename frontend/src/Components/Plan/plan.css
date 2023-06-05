@@ -1,0 +1,148 @@
+.Plan {
+  border-radius: 1rem;
+  background: #EDEAE7;
+  width: 100%;
+  padding: 1rem;
+  font-size: 15px;
+}
+.Plan span {
+  cursor: pointer;
+}
+.Plan span:hover {
+  background: aliceblue;
+}
+.Plan .create-food {
+  width: 78%;
+}
+.Plan .create-food .food-day-note {
+  height: 160px;
+}
+.Plan .create-food .food-day-note .food-day {
+  background: #FBE9BB;
+  padding: 0.5rem;
+  width: 70%;
+  border-radius: 0.5rem;
+}
+.Plan .create-food .food-day-note .food-day img {
+  width: 50px;
+}
+.Plan .create-food .food-day-note .food-day .day .day-one {
+  text-align: center;
+  width: 140px;
+  border: 2px dashed black;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.Plan .create-food .food-day-note .note {
+  width: 300px;
+}
+.Plan .create-food .food {
+  height: 200px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.Plan .create-food .food .food-1 {
+  border: 2px dashed black;
+  width: 200px;
+  text-align: center;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.Plan .create-food .food .food-1 img {
+  width: 80px;
+  margin-top: 1.7rem;
+}
+.Plan .create-food .exercise {
+  height: 200px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.Plan .create-food .exercise .exercise-1 {
+  border: 2px dashed black;
+  width: 200px;
+  text-align: center;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.Plan .create-food .exercise .exercise-1 img {
+  margin-top: 1.7rem;
+}
+.Plan .create-food p {
+  margin-top: 1rem;
+}
+.Plan .day-plan {
+  align-items: center;
+  width: 20%;
+  border-radius: 0.5rem;
+  height: 100%;
+  padding-top: 0.5rem;
+}
+.Plan .day-plan img {
+  width: 30px;
+  cursor: pointer;
+}
+.Plan .day-plan li {
+  list-style-type: none;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Plan .day-plan p {
+  margin-left: 7px;
+}
+.Plan .day-plan p span {
+  margin-left: 4.5rem;
+}
+.Plan .day-plan .btn-create .form-control {
+  margin-bottom: 1rem;
+}
+.Plan .day-plan .btn-create .btn {
+  margin-bottom: 1rem;
+}
+.Plan .master {
+  margin-right: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.Plan .master:hover {
+  background: #8DDFCC;
+}
+.Plan .master img {
+  width: 30px;
+}
+.Plan .food-menu {
+  width: 20%;
+  margin-bottom: 1rem;
+}
+.Plan .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Plan .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Plan .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.Plan .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.Plan .food-menu .detail-food img {
+  width: 10px;
+}
+.Plan .modal-body {
+  background: #EDEAE7;
+}/*# sourceMappingURL=plan.css.map */

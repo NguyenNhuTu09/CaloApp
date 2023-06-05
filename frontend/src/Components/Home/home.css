@@ -1,0 +1,301 @@
+.Home {
+  border-radius: 1rem;
+  background: #EDEAE7;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 15px;
+}
+.Home .plan {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  height: 300px;
+}
+.Home .plan .my-plan {
+  margin-left: 2rem;
+  width: 35%;
+  height: 290px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.Home .plan .my-plan .my-plan-01 {
+  height: 50%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  background: #FBE9BB;
+  display: flex;
+  flex-direction: row;
+}
+.Home .plan .my-plan .my-plan-01 .plan-now {
+  margin: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 40%;
+  background: #9FE2BF;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Home .plan .my-plan .my-plan-01 .plan-now .link {
+  text-decoration: none;
+  color: black;
+}
+.Home .plan .my-plan .my-plan-01 .plan-now .status {
+  align-items: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: white;
+  margin-top: 0.5rem;
+}
+.Home .plan .my-plan .my-plan-01 .add-plan {
+  border: 2px dashed black;
+  margin: 0.7rem;
+  width: 42%;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.Home .plan .my-plan .my-plan-01 .add-plan img {
+  width: 60px;
+  margin-top: 1rem;
+}
+.Home .plan .my-plan .my-plan-02 {
+  margin-top: 0.5rem;
+  height: 32%;
+  background: #FBE9BB;
+  border-radius: 0.5rem;
+}
+.Home .plan .my-plan .my-plan-02 .day {
+  margin: 0.5rem;
+  width: 100px;
+  padding: 5px;
+  border-radius: 0.5rem;
+  background: white;
+}
+.Home .plan .user {
+  border-radius: 0.5rem;
+  height: 280px;
+  width: 27%;
+  margin-right: 70px;
+  background: #D1F2EB;
+  padding-top: 1rem;
+}
+.Home .plan .user img {
+  width: 70px;
+}
+.Home .plan .user .continue {
+  width: 40px;
+}
+.Home .plan .user p {
+  cursor: pointer;
+}
+.Home .plan .user .introduction {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.Home .plan .user .introduction .intro {
+  border-radius: 0.5rem;
+  height: 45px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.Home .plan .user .introduction .intro:hover {
+  background: #f8f8fa;
+}
+.Home .plan .user .introduction .intro img {
+  width: 30px;
+  height: 30px;
+  margin-top: 0.4rem;
+}
+.Home .plan .user .introduction .intro .text {
+  margin-top: 0.7rem;
+}
+.Home .news {
+  padding: 1rem;
+  width: 100%;
+  height: 400px;
+}
+.Home .news .news-plan {
+  background: #9FE2BF;
+  width: 25%;
+  border-radius: 0.5rem;
+}
+.Home .news .rank {
+  width: 30%;
+  padding-top: 2rem;
+}
+.Home .news .rank .table {
+  margin-top: 0.5rem;
+}
+.Home .news .news-food-exercise {
+  width: 70%;
+  padding: 0.5rem;
+}
+.Home .news .news-food-exercise .news-food {
+  height: 50%;
+  padding-left: 2rem;
+}
+.Home .news .news-food-exercise .news-food .food-menu {
+  width: 250px;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+}
+.Home .news .news-food-exercise .news-food .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Home .news .news-food-exercise .news-food .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Home .news .news-food-exercise .news-food .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 74%;
+}
+.Home .news .news-food-exercise .news-food .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.Home .news .news-food-exercise .news-food .food-menu .detail-food img {
+  width: 10px;
+}
+.Home .react-calendar {
+  width: 400px;
+  max-width: 100%;
+  background-color: fffff;
+  color: #222;
+  font-family: Helvetica;
+  border-radius: 1rem;
+  line-height: 1.125em;
+  margin-right: 1.2rem;
+  background: #EBEDEF;
+}
+.Home .react-calendar__navigation button {
+  min-width: 44px;
+  font-size: 16px;
+  font-family: Helvetica;
+}
+.Home .react-calendar__navigation button:enabled:hover,
+.Home .react-calendar__navigation button:enabled:focus {
+  background-color: #DBBEBE;
+  border-radius: 0.5rem;
+}
+.Home .react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+}
+.Home abbr[title] {
+  text-decoration: none;
+}
+.Home .react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+}
+.Home .react-calendar__tile:enabled:hover,
+.Home .react-calendar__tile:enabled:focus {
+  color: #d4a713;
+  border-radius: 6px;
+}
+.Home .react-calendar__tile--now {
+  background: rgba(212, 167, 19, 0.2);
+  border-radius: 6px;
+  font-weight: bold;
+  color: #d4a713;
+}
+.Home .react-calendar__tile--now:enabled:hover,
+.Home .react-calendar__tile--now:enabled:focus {
+  background: rgba(212, 167, 19, 0.2);
+  border-radius: 6px;
+  font-weight: bold;
+  color: #d4a713;
+}
+.Home .react-calendar__tile--hasActive:enabled:hover,
+.Home .react-calendar__tile--hasActive:enabled:focus {
+  background: #f8f8fa;
+}
+.Home .react-calendar__tile--active {
+  background: #d4a713;
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+  font-family: Helvetica;
+}
+.Home .react-calendar__tile {
+  font-family: Helvetica;
+}
+.Home .react-calendar__tile--active:enabled:hover,
+.Home .react-calendar__tile--active:enabled:focus {
+  background: #d4a713;
+  color: white;
+}
+.Home .react-calendar__tile--range {
+  background: #f8f8fa;
+  color: #d4a713;
+  border-radius: 0;
+}
+.Home .react-calendar__tile--rangeStart {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background: #d4a713;
+  color: white;
+}
+.Home .form-login {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.Home .form-login .register {
+  margin-bottom: 0.7rem;
+}
+.Home .form-check-input {
+  margin-right: 0.5rem;
+}
+.Home .title {
+  margin-top: 0.5rem;
+}
+.Home .title p {
+  margin-top: 0.5rem;
+}
+.Home .title span {
+  cursor: pointer;
+}
+.Home .title span:hover {
+  color: blue;
+}
+.Home .fb-gg {
+  margin-top: 0.5rem;
+}
+.Home .fb-gg .Facebook {
+  width: 40%;
+  padding: 5px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.Home .fb-gg .Facebook img {
+  width: 40px;
+  border-radius: 5px;
+}
+.Home .fb-gg .Facebook .text {
+  width: 65%;
+  padding-top: 5px;
+}
+.Home .fb-gg .Facebook:hover {
+  background: var(--SecondaryColor);
+}
+.Home .modal-footer {
+  margin-top: 2rem;
+}
+.Home .w-dis-age {
+  width: 100px;
+  text-align: center;
+}
+.Home .w-dis-date {
+  width: 170px;
+  text-align: center;
+}
+.Home input {
+  margin-top: 0.5rem;
+}/*# sourceMappingURL=home.css.map */

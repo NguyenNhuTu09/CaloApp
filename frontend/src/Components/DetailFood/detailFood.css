@@ -1,0 +1,157 @@
+.DetailFood {
+  border-radius: 1rem;
+  background: #EDEAE7;
+  width: 100%;
+  padding: 1rem;
+  font-size: 15px;
+}
+.DetailFood .image-review {
+  width: 32%;
+}
+.DetailFood .image-review .back {
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+.DetailFood .image-review .back .link {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.DetailFood .image-review .back .link:hover {
+  color: white;
+}
+.DetailFood .image-review .back .link img {
+  margin-top: 2px;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+.DetailFood .image-review .image-food {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  align-items: center;
+  width: 325px;
+}
+.DetailFood .image-review .image-food img {
+  width: 320px;
+  border-radius: 100%;
+}
+.DetailFood .image-review .text {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+  width: 90%;
+}
+.DetailFood .image-review .text .star {
+  width: 60%;
+}
+.DetailFood .image-review .text .icons {
+  margin-top: 3px;
+}
+.DetailFood .image-review .review {
+  align-items: center;
+}
+.DetailFood .image-review .review .review-01 {
+  width: 90%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  margin-bottom: 1rem;
+}
+.DetailFood .image-review .review .review-01 p {
+  margin-top: 5px;
+}
+.DetailFood .description {
+  padding: 0.5rem;
+  width: 35%;
+  margin-left: 1rem;
+}
+.DetailFood .description .status {
+  width: 25%;
+  padding: 3px;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.DetailFood .description .status .icons {
+  margin-right: 3px;
+}
+.DetailFood .description .title {
+  margin-bottom: 0.5rem;
+  width: 60%;
+}
+.DetailFood .description .title .text {
+  width: 50%;
+}
+.DetailFood .description .calo {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  margin-top: 1rem;
+}
+.DetailFood .description .text-description {
+  margin-top: 2rem;
+}
+.DetailFood .author {
+  width: 30%;
+  padding: 1rem;
+  margin-left: 1rem;
+}
+.DetailFood .author .image {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+}
+.DetailFood .author .image img {
+  width: 80px;
+}
+.DetailFood .author .image .info {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+.DetailFood .author .image .info .name-author {
+  width: 220px;
+  cursor: pointer;
+}
+.DetailFood .author .image .info .name-author:hover {
+  color: white;
+}
+.DetailFood .author .image .info .status-author {
+  width: 100px;
+  border-radius: 0.5rem;
+}
+.DetailFood .author .title {
+  margin-left: 1.5rem;
+}
+.DetailFood .author .food-author {
+  padding: 1.5rem;
+}
+.DetailFood .author .food-author .food-menu {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+.DetailFood .author .food-author .food-menu .image-food {
+  margin-left: 1rem;
+}
+.DetailFood .author .food-author .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.DetailFood .author .food-author .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.DetailFood .author .food-author .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.DetailFood .author .food-author .food-menu .detail-food img {
+  width: 10px;
+}/*# sourceMappingURL=detailFood.css.map */

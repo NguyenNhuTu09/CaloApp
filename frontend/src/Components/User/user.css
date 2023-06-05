@@ -1,0 +1,133 @@
+.User {
+  border-radius: 1rem;
+  background: #EDEAE7;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 15px;
+  overflow: auto;
+}
+.User .info {
+  padding: 0.5rem;
+}
+.User .info img {
+  width: 100px;
+}
+.User .info .title-info {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+.User .info .title-info .setting-info {
+  margin-top: 0.5rem;
+  border: 2px solid black;
+  width: 70%;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.User .info .title-info .setting-info:hover {
+  background: #f8f8fa;
+}
+.User .info .title-info .setting-info .text {
+  margin-right: 5px;
+}
+.User .info .title-info .setting-info img {
+  width: 30px;
+}
+.User .title {
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+.User .food {
+  border: 1px solid black;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.User .food .food-menu {
+  width: 17%;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.User .food .food-menu .image-food {
+  margin-left: 1rem;
+}
+.User .food .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.User .food .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.User .food .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.User .food .food-menu .detail-food img {
+  width: 10px;
+}
+.User .Create {
+  width: 100px;
+}
+.User .Create .Add {
+  align-items: center;
+  border: 2px dashed black;
+  border-radius: 0.5rem;
+  margin-top: 5rem;
+}
+.User .Create .Add img {
+  width: 40px;
+}
+.User .Create .link {
+  text-decoration: none;
+  color: black;
+}
+.User .plan {
+  border: 1px solid black;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.User .plan .plan-now {
+  margin: 0.7rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 200px;
+  background: #9FE2BF;
+  cursor: pointer;
+  text-decoration: none;
+}
+.User .plan .plan-now .link {
+  text-decoration: none;
+  color: black;
+}
+.User .plan .plan-now .status {
+  align-items: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: white;
+  margin-top: 0.5rem;
+}
+.User .plan .Create-plan {
+  width: 100px;
+}
+.User .plan .Create-plan .Add {
+  align-items: center;
+  border: 2px dashed black;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+}
+.User .plan .Create-plan .Add img {
+  width: 40px;
+}
+.User .plan .Create-plan .link {
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=user.css.map */

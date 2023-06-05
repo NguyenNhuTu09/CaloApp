@@ -1,0 +1,94 @@
+.Menu {
+  border-radius: 1rem;
+  background: #EDEAE7;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 15px;
+  overflow: auto;
+}
+.Menu .master {
+  margin-right: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 120px;
+}
+.Menu .master:hover {
+  background: #8DDFCC;
+}
+.Menu .master img {
+  width: 30px;
+}
+.Menu .menu-list .food {
+  margin-left: 1rem;
+  width: 90%;
+}
+.Menu .menu-list .food .food-menu {
+  width: 25%;
+  margin-bottom: 1rem;
+}
+.Menu .menu-list .food .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Menu .menu-list .food .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Menu .menu-list .food .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.Menu .menu-list .food .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.Menu .menu-list .food .food-menu .detail-food img {
+  width: 10px;
+}
+.Menu .menu-list .nav {
+  width: 18%;
+  padding: 0.5rem;
+}
+.Menu .menu-list .nav .form-check-input {
+  margin-right: 0.5rem;
+}
+.Menu .menu-list .nav .icons {
+  margin-top: 7px;
+}
+.Menu .menu-list .nav .text {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.Menu .menu-list .nav .country {
+  width: 100%;
+  margin: 0.5rem;
+}
+.Menu .menu-list .nav .calo {
+  margin: 0.5rem;
+}
+.Menu .menu-list .nav .calo .form-control {
+  width: 25%;
+  margin-left: 0.5rem;
+}
+.Menu .menu-list .nav .calo .from {
+  margin-top: 5px;
+}
+.Menu .menu-list .nav .calo .to {
+  margin-top: 5px;
+}
+.Menu .menu-list .nav .calo .to {
+  margin-left: 1.5rem;
+}
+.Menu .menu-list .nav .provide {
+  margin: 0.5rem;
+}
+.Menu .menu-list .nav .rank {
+  margin: 0.5rem;
+}/*# sourceMappingURL=menu.css.map */

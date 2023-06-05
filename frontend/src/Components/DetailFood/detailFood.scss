@@ -1,0 +1,172 @@
+.DetailFood{
+     border-radius: 1rem;
+     background: #EDEAE7;
+     width: 100%;
+     padding: 1rem;
+     font-size: 15px;
+     .image-review{
+          // margin-left: 2rem;
+          width: 32%;
+          .back{
+               margin-left: 1.5rem;
+               // border: 2px solid black;
+               margin-top: 1rem;
+               .link{
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: black;
+                    &:hover{
+                         color: #ffff;
+                    }
+                    img{
+                         margin-top: 2px;
+                         margin-right: 5px;
+                         width: 20px;
+                         height: 20px;
+                    }
+               }
+          }
+          .image-food{
+               margin-left: 4rem;
+               margin-top: 2rem;
+               align-items: center;
+               // border: 2px solid black;
+               width: 325px;
+               img{
+                    width: 320px;
+                    border-radius: 100%;
+               }
+          }
+          .text{
+               margin-left: 1.5rem;
+               margin-bottom: 1rem;
+               margin-top: 4rem;
+               // border: 2px solid black;
+               width: 90%;
+               .star{
+                    width: 60%;
+               }
+               .icons{
+                    margin-top: 3px;
+               }
+          }
+          .review{
+               // width: 100%;
+               align-items: center;
+               .review-01{
+                    width: 90%;
+                    border-radius: 0.5rem;
+                    padding: 0.5rem;
+                    background: #FFFF;
+                    margin-bottom: 1rem;
+                    p{
+                         margin-top: 5px;
+                    }
+               }
+          }
+     }
+     .description{
+          // border: 2px solid black;
+          padding: 0.5rem;
+          // padding-top: 1rem;
+          width: 35%;
+          margin-left: 1rem;
+          .status{
+               width: 25%;
+               padding: 3px;
+               border-radius: 0.5rem;
+               margin-top: 0.5rem;
+               margin-bottom: 1.5rem;
+               .icons{
+                    margin-right: 3px;
+               }
+          }
+          .title{
+               margin-bottom: 0.5rem;
+               width: 60%;
+               // margin-top: 0.5rem;
+               .text{
+                    width: 50%;
+               }
+          }
+          .calo{
+               width: 100%;
+               padding: 1rem;
+               border-radius: 0.5rem;
+               background: #FFFF;
+               margin-top: 1rem;
+          }
+          .text-description{
+               // border: 2px solid black;
+               margin-top: 2rem;
+          }
+     }
+     .author{
+          // border: 2px solid black;
+          width: 30%;
+          padding: 1rem;
+          margin-left: 1rem;
+          .image{
+               margin-bottom: 1rem;
+               margin-left: 1.5rem;
+               img{
+                    width: 80px;
+               }
+               .info{
+                    margin-left: 1rem;
+                    margin-top: 0.5rem;
+                    .name-author{
+                         width: 220px;
+                         cursor: pointer;
+                         &:hover{
+                              color: #FFFF;
+                         }
+                    }
+                    .status-author{
+                         width: 100px;
+                         border-radius: 0.5rem;
+                    }
+               }
+               
+          }
+          .title{
+               margin-left: 1.5rem;
+          }
+          .food-author{
+               // align-items: center;
+               padding: 1.5rem;
+               .food-menu{
+                    width: 250px;
+                    // border: 2px solid black;
+                    margin-bottom: 1rem;
+                    .image-food{
+                         margin-left: 1rem;
+                         img{
+                              width: 95px;
+                              border-radius: 100%;
+                              position: absolute;
+                              // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                         }
+                    }
+                    .detail-food{
+                         background: #FFFF;
+                         border-radius: 1rem;
+                         margin-top: 3rem;
+                         padding-top: 0.5rem;
+                         padding-left: 0.8rem;
+                         padding-right: 0.8rem;
+                         padding-bottom: 0.8rem;
+                         cursor: pointer;
+                         height: 70%;
+                         p{
+                              margin-bottom: 5px;
+                         }
+                         img{
+                              width: 10px;
+                         }
+                         
+                    }
+               }
+          }
+     }
+}
