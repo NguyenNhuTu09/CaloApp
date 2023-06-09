@@ -47,6 +47,10 @@
 .DetailPlan .food-day-plan {
   margin-top: 1rem;
   width: 77%;
+  padding-top: 1rem;
+}
+.DetailPlan .food-day-plan .title {
+  margin-left: 0.5rem;
 }
 .DetailPlan .food-day-plan .food-plan {
   width: 100%;

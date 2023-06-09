@@ -30,6 +30,8 @@ import google from '../../assets/Google.png'
 import plan from '../../assets/Plan.png'
 import Addplan from '../../assets/addplan.png'
 import arrow from '../../assets/Arrow.png'
+import Complete from '../../assets/Complete.png'
+import Repair from '../../assets/Repair.png'
 
 import jogging from '../../assets/Exercise/Chay bo.jpg'
 import gapbung from '../../assets/Exercise/Gap bung.jpg'
@@ -120,40 +122,27 @@ const Home = () => {
     <div className='Home d-flex flex-column'>
     {/* <h2>Xin chào, <span>Nguyễn Như Từ</span></h2> */}
       <div className='plan d-flex flex-row'>
-        <div className='user container'>
-            <div className='row'>
-              <div class="col-3 align-self-center">
-                <img src={User}/>
-              </div>
-              <div class="col-6 align-self-center">
-                <p className='fs-6 fw-bold' class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Đăng nhập</p>
-              </div>
+        <div className='detail-day-plan d-flex flex-column'>
+          <p className='title-day fs-2 fw-bold'>Ngày thứ 1</p>
+          <p className='title-day fs-5 fw-bold'>12/05/2023</p>
+          {/* <p className='title-day fs-5 fw-bold'>Bữa ăn: <span>4</span></p>
+          <p className='title-day fs-5 fw-bold'>Bài tập: 3</p> */}
+          <div className='parameter-day-plan d-flex flex-row justify-content-between'>
+            <div className='parameter d-flex flex-column text-center'>
+              <p className='fs-5'>Tổng</p>
+              <p className='fs-5 fw-bold'>3500<span> Kcal</span></p>
             </div>
-
-            <div className='introduction'>
-              <div className='row'>
-                <div className='intro col-11 d-flex flex-row justify-content-between border border-dark'>
-                  <p className='text fw-bold'>Thông tin về ứng dụng</p>
-                  <img src={arrow}/>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='intro col-11 d-flex flex-row justify-content-between border border-dark'>
-                  <p className='text fw-bold'>Kiểm tra chỉ số MBI</p>
-                  <img src={arrow}/>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='intro col-11 d-flex flex-row justify-content-between border border-dark'>
-                  <p className='text fw-bold'>Tư vấn chế độ ăn</p>
-                  <img src={arrow}/>
-                </div>
-              </div>
-             
+            <div className='parameter d-flex flex-column text-center'>
+              <p className='fs-5'>Vận động</p>
+              <p className='fs-5 fw-bold'>78<span> m</span></p>
             </div>
-            
+            <div className='parameter d-flex flex-column text-center'>
+              <p className='fs-5'>Đốt cháy</p>
+              <p className='fs-5 fw-bold'>1300<span> Kcal</span></p>
+            </div>
           </div>
-        <Calendar/>
+        </div>
+         
         <div className='my-plan d-flex flex-column'>
           <p className='fs-6 fw-bold'>Kế hoạch của bạn</p>
             <div className='my-plan-01'>
@@ -191,45 +180,27 @@ const Home = () => {
               </div>
             </div>
         </div>
+
+        <div className='note-day-plan d-flex flex-column'>
+          <p className='fs-6 fw-bold'>Ghi chú: </p>
+          <textarea class="form-control note" aria-label="With textarea"/>
+        </div>
       </div>
 
-      <div className='news d-flex flex-row'>
-        <div className='rank'>
-          <p className='fs-6 fw-bold'>Kế hoạch, món ăn, bài tập nối bật tuần này:</p>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">TOP</th>
-                <th scope="col">Tên kế hoạch</th>
-                <th scope="col">Tác giả</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
-
-
-
-
-        <div className='news-food-exercise d-flex flex-column'>
-          <div className='news-food d-flex flex-row'>
+      <div className='food-exercise-plan d-flex flex-column'>
+          <div className='food d-flex flex-row'>
+            <div className='info-meat d-flex flex-column'>
+              <p className='title-meat fs-4 fw-bold'>Bữa ăn 1</p>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Complete}/>
+                <p className='fs-6 fw-bold'>Hoàn thành</p>
+              </div>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Repair}/>
+                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
+              </div>
+            </div>
           {
           OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
               return(
@@ -248,12 +219,12 @@ const Home = () => {
             })
           }
           </div>
-          <div className='news-food d-flex flex-row'>
+          {/* <div className='news-food d-flex flex-row'>
           {
             OptionsExercise.map(({id, imageExercise, type, star, icon, nameExercise, minutes, calories}) => {
               return(
               <div key={id} className='food-menu'>
-                <div className='image-food position-absolute'>
+                <div className='image-food position-relative'>
                   {imageExercise}
                 </div>
                 <div className='detail-food'>
@@ -266,8 +237,7 @@ const Home = () => {
               )
             })
           }
-          </div>
-        </div>
+          </div> */}
       </div>
 
 

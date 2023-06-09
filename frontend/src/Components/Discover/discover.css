@@ -4,4 +4,98 @@
   width: 100%;
   padding: 0.5rem;
   font-size: 15px;
+}
+.Discover .rank {
+  width: 28%;
+  padding-top: 0.5rem;
+}
+.Discover .rank .table {
+  margin-top: 0.5rem;
+}
+.Discover .react-calendar {
+  width: 460px;
+  height: auto;
+  max-width: 100%;
+  background-color: #fff;
+  color: #222;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+  border: none;
+  padding-bottom: 0.5rem;
+}
+.Discover .react-calendar__navigation button {
+  color: black;
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.Discover .react-calendar__navigation button:enabled:hover,
+.Discover .react-calendar__navigation button:enabled:focus {
+  background-color: white;
+}
+.Discover .react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+}
+.Discover abbr[title] {
+  text-decoration: none;
+}
+.Discover .react-calendar__tile:enabled:hover,
+.Discover .react-calendar__tile:enabled:focus {
+  background: #f8f8fa;
+  color: #6f48eb;
+  border-radius: 6px;
+}
+.Discover .react-calendar__tile--now {
+  background: rgba(111, 72, 235, 0.2);
+  border-radius: 6px;
+  font-weight: bold;
+  color: #6f48eb;
+}
+.Discover .react-calendar__tile--now:enabled:hover,
+.Discover .react-calendar__tile--now:enabled:focus {
+  background: rgba(111, 72, 235, 0.2);
+  border-radius: 6px;
+  font-weight: bold;
+  color: #6f48eb;
+}
+.Discover .react-calendar__tile--hasActive:enabled:hover,
+.Discover .react-calendar__tile--hasActive:enabled:focus {
+  background: #f8f8fa;
+}
+.Discover .react-calendar__tile--active {
+  background: #6f48eb;
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+}
+.Discover .react-calendar__tile--active:enabled:hover,
+.Discover .react-calendar__tile--active:enabled:focus {
+  background: #6f48eb;
+  color: white;
+}
+.Discover .react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #f8f8fa;
+}
+.Discover .react-calendar__tile--range {
+  background: #f8f8fa;
+  color: #6f48eb;
+  border-radius: 0;
+}
+.Discover .react-calendar__tile--rangeStart {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background: #6f48eb;
+  color: white;
+}
+.Discover .react-calendar__tile--rangeEnd {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #6f48eb;
+  color: white;
 }/*# sourceMappingURL=discover.css.map */

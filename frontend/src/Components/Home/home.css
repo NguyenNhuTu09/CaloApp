@@ -4,15 +4,16 @@
   width: 100%;
   padding: 0.5rem;
   font-size: 15px;
+  overflow: auto;
 }
 .Home .plan {
   padding: 1rem;
   border-radius: 0.5rem;
-  height: 300px;
+  padding-right: 0px;
+  height: auto;
 }
 .Home .plan .my-plan {
-  margin-left: 2rem;
-  width: 35%;
+  width: 45%;
   height: 290px;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -22,7 +23,7 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
-  background: #FBE9BB;
+  background: white;
   display: flex;
   flex-direction: row;
 }
@@ -30,7 +31,7 @@
   margin: 0.7rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  width: 40%;
+  width: 30%;
   background: #9FE2BF;
   cursor: pointer;
   text-decoration: none;
@@ -49,7 +50,7 @@
 .Home .plan .my-plan .my-plan-01 .add-plan {
   border: 2px dashed black;
   margin: 0.7rem;
-  width: 42%;
+  width: 30%;
   border-radius: 0.5rem;
   text-align: center;
 }
@@ -60,7 +61,7 @@
 .Home .plan .my-plan .my-plan-02 {
   margin-top: 0.5rem;
   height: 32%;
-  background: #FBE9BB;
+  background: white;
   border-radius: 0.5rem;
 }
 .Home .plan .my-plan .my-plan-02 .day {
@@ -68,85 +69,73 @@
   width: 100px;
   padding: 5px;
   border-radius: 0.5rem;
+  background: #9FE2BF;
+}
+.Home .plan .detail-day-plan {
+  border-radius: 0.5rem;
+  height: 275px;
+  width: 29%;
+  margin-right: 20px;
+  background: #D1F2EB;
+  margin-left: 0px;
+  padding: 1rem;
   background: white;
 }
-.Home .plan .user {
+.Home .plan .detail-day-plan .parameter-day-plan {
+  margin-top: 2rem;
+}
+.Home .note-day-plan {
+  width: 24%;
+  padding: 1rem;
+}
+.Home .note-day-plan .note {
+  margin-top: 0.5rem;
+  height: 230px;
   border-radius: 0.5rem;
-  height: 280px;
-  width: 27%;
-  margin-right: 70px;
-  background: #D1F2EB;
-  padding-top: 1rem;
 }
-.Home .plan .user img {
-  width: 70px;
-}
-.Home .plan .user .continue {
-  width: 40px;
-}
-.Home .plan .user p {
-  cursor: pointer;
-}
-.Home .plan .user .introduction {
-  margin-top: 1rem;
-  margin-left: 1rem;
-}
-.Home .plan .user .introduction .intro {
-  border-radius: 0.5rem;
-  height: 45px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-.Home .plan .user .introduction .intro:hover {
-  background: #f8f8fa;
-}
-.Home .plan .user .introduction .intro img {
-  width: 30px;
-  height: 30px;
-  margin-top: 0.4rem;
-}
-.Home .plan .user .introduction .intro .text {
-  margin-top: 0.7rem;
-}
-.Home .news {
+.Home .food-exercise-plan {
   padding: 1rem;
   width: 100%;
-  height: 400px;
+  height: auto;
 }
-.Home .news .news-plan {
-  background: #9FE2BF;
-  width: 25%;
+.Home .food-exercise-plan .food {
+  height: 100%;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+}
+.Home .food-exercise-plan .food .info-meat {
+  width: 180px;
+  height: auto;
+  padding: 0.5rem;
+  margin-right: 3rem;
+}
+.Home .food-exercise-plan .food .info-meat .title-meat {
+  margin-bottom: 1rem;
+}
+.Home .food-exercise-plan .food .info-meat .update-meat {
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+  background: white;
   border-radius: 0.5rem;
 }
-.Home .news .rank {
-  width: 30%;
-  padding-top: 2rem;
+.Home .food-exercise-plan .food .info-meat .update-meat img {
+  width: 30px;
+  margin-right: 5px;
 }
-.Home .news .rank .table {
-  margin-top: 0.5rem;
-}
-.Home .news .news-food-exercise {
-  width: 70%;
-  padding: 0.5rem;
-}
-.Home .news .news-food-exercise .news-food {
-  height: 50%;
-  padding-left: 2rem;
-}
-.Home .news .news-food-exercise .news-food .food-menu {
+.Home .food-exercise-plan .food .food-menu {
   width: 250px;
   margin-bottom: 1rem;
   margin-right: 2rem;
 }
-.Home .news .news-food-exercise .news-food .food-menu .image-food {
+.Home .food-exercise-plan .food .food-menu .image-food {
   margin-left: 1rem;
 }
-.Home .news .news-food-exercise .news-food .food-menu .image-food img {
+.Home .food-exercise-plan .food .food-menu .image-food img {
   width: 95px;
   border-radius: 100%;
   position: absolute;
 }
-.Home .news .news-food-exercise .news-food .food-menu .detail-food {
+.Home .food-exercise-plan .food .food-menu .detail-food {
   background: white;
   border-radius: 1rem;
   margin-top: 3rem;
@@ -157,91 +146,11 @@
   cursor: pointer;
   height: 74%;
 }
-.Home .news .news-food-exercise .news-food .food-menu .detail-food p {
+.Home .food-exercise-plan .food .food-menu .detail-food p {
   margin-bottom: 5px;
 }
-.Home .news .news-food-exercise .news-food .food-menu .detail-food img {
+.Home .food-exercise-plan .food .food-menu .detail-food img {
   width: 10px;
-}
-.Home .react-calendar {
-  width: 400px;
-  max-width: 100%;
-  background-color: fffff;
-  color: #222;
-  font-family: Helvetica;
-  border-radius: 1rem;
-  line-height: 1.125em;
-  margin-right: 1.2rem;
-  background: #EBEDEF;
-}
-.Home .react-calendar__navigation button {
-  min-width: 44px;
-  font-size: 16px;
-  font-family: Helvetica;
-}
-.Home .react-calendar__navigation button:enabled:hover,
-.Home .react-calendar__navigation button:enabled:focus {
-  background-color: #DBBEBE;
-  border-radius: 0.5rem;
-}
-.Home .react-calendar__navigation button[disabled] {
-  background-color: #f0f0f0;
-}
-.Home abbr[title] {
-  text-decoration: none;
-}
-.Home .react-calendar__month-view__days__day--weekend {
-  color: #d10000;
-}
-.Home .react-calendar__tile:enabled:hover,
-.Home .react-calendar__tile:enabled:focus {
-  color: #d4a713;
-  border-radius: 6px;
-}
-.Home .react-calendar__tile--now {
-  background: rgba(212, 167, 19, 0.2);
-  border-radius: 6px;
-  font-weight: bold;
-  color: #d4a713;
-}
-.Home .react-calendar__tile--now:enabled:hover,
-.Home .react-calendar__tile--now:enabled:focus {
-  background: rgba(212, 167, 19, 0.2);
-  border-radius: 6px;
-  font-weight: bold;
-  color: #d4a713;
-}
-.Home .react-calendar__tile--hasActive:enabled:hover,
-.Home .react-calendar__tile--hasActive:enabled:focus {
-  background: #f8f8fa;
-}
-.Home .react-calendar__tile--active {
-  background: #d4a713;
-  border-radius: 6px;
-  font-weight: bold;
-  color: white;
-  font-family: Helvetica;
-}
-.Home .react-calendar__tile {
-  font-family: Helvetica;
-}
-.Home .react-calendar__tile--active:enabled:hover,
-.Home .react-calendar__tile--active:enabled:focus {
-  background: #d4a713;
-  color: white;
-}
-.Home .react-calendar__tile--range {
-  background: #f8f8fa;
-  color: #d4a713;
-  border-radius: 0;
-}
-.Home .react-calendar__tile--rangeStart {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  background: #d4a713;
-  color: white;
 }
 .Home .form-login {
   margin-top: 2rem;

@@ -36,8 +36,8 @@ const CreateFood = () => {
                          <div className='calo d-flex flex-column'>
                               <p>Đơn vị:</p>
                               <select class="form-select" id="inputGroupSelect01">
-                                   <option value="1">g</option>
-                                   <option value="2">ml</option>
+                                   <option value="1">100g</option>
+                                   <option value="2">100ml</option>
                               </select>
                          </div>
                     </div>

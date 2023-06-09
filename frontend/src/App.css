@@ -10,6 +10,7 @@
 }
 
 
+
 :root{
   --PrimaryColor: hsl(225, 50%, 48%);
   --SecondaryColor: hsl(180, 17%, 95%);
@@ -41,9 +42,11 @@
 body{
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: "Nunito", sans-serif;
+  /* font-family: 'Lexend'; */
+  font-family: 'Gilroy-Medium', sans-serif;
   background: var(--SecondaryColor);
-  background-image: url('src/assets/test.jpg');
-  backdrop-filter: blur(10px);
+  /* background-image: url('src/assets/test.jpg'); */
+  /* backdrop-filter: blur(10px); */
 }
 p{
   margin-bottom: 0px;

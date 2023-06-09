@@ -4,6 +4,7 @@
      width: 100%;
      padding: 1rem;
      font-size: 15px;
+     // overflow: auto;
      .day-note-user{
           height: 150px;
           .day{
@@ -51,6 +52,10 @@
           margin-top: 1rem;
           width: 77%;
           // background: #F4F6F6;
+          padding-top: 1rem;
+          .title{
+               margin-left: 0.5rem;
+          }
           .food-plan{
                width: 100%;
                // border: 2px solid black;

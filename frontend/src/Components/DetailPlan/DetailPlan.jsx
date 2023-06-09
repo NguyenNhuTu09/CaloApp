@@ -217,7 +217,7 @@ const DetailPlan = () => {
         <div className='food-day-plan d-flex flex-column'>
 
         {/* Click từng bữa ăn, chỉ thay đổi thưc đơn */}
-        <p className='fs-6 fw-bold'>Thực đơn của bữa này: </p>
+        <p className='title fs-6 fw-bold'>Thực đơn của bữa này: </p>
           <div className='food-plan d-flex flex-row'>
           {
             OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
@@ -240,7 +240,7 @@ const DetailPlan = () => {
           {/* ==================== */}
 
           {/* Bài tập của cả ngày hôm đó */}
-          <p className='fs-6 fw-bold'>Bài tập của ngày hôm nay</p>
+          <p className='title fs-6 fw-bold'>Bài tập của ngày hôm nay</p>
           
           <div className='exercise-plan d-flex flex-row'>
           {

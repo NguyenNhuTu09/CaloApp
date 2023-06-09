@@ -6,11 +6,9 @@ import express from 'express'
 // user regiatration
 export const register = async(req, res) => {
      try{
-
-          // hashing password
           const salt = bcrypt.genSaltSync(10)
           const hash = bcrypt.hashSync(req.body.password, salt)
-
+     
           const newUser = new User({
                lastFirstName: req.body.lastFirstName,
                email: req.body.email,
@@ -21,12 +19,12 @@ export const register = async(req, res) => {
                location: req.body.location,
                photo: req.body.photo,
           })
-
-          await newUser.save()
+          await newUser.save() // shut down register
 
           res.status(200).json({success: true, message: 'Successfuly created'})
      }catch(err){
           res.status(500).json({success: false, message: 'Failed to create. Try again'})
+          console.log(err)
      }
 }
 
@@ -43,10 +41,15 @@ export const login = async(req, res) => {
           // if user is exisst then check the password or compare the password
           const checkCorrectPassword = await bcrypt.compare(req.body.password, user.password)
 
-          // if password is incorrect
-          if(!checkCorrectPassword){
-               return res.status(401).json({success: false, message: "Incorrect email or password "})
+          if(checkCorrectPassword == req.body.password){
+               return res.status(200).json({susccess: true, message: 'Login successfully'})
           }
+
+          console.log('Login successfully')
+          // if password is incorrect
+          // if(!checkCorrectPassword){
+          //      return res.status(401).json({success: false, message: "Incorrect email or password "})
+          // }
 
           const {password, role, ...rest} = user._doc
 
