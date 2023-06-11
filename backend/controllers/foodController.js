@@ -84,3 +84,13 @@ export const getAllFood = async (req, res) => {
                message: 'not found'})
      } 
 }
+
+// get food count
+export const getFoodCount = async(req, res) => {
+     try{
+          const foodCount = await Food.estimatedDocumentCount()
+          res.status(200).json({success: true, data: foodCount})
+     }catch(err){
+          res.status(500).json({success: false, message: 'failed to fetch'})
+     }
+}

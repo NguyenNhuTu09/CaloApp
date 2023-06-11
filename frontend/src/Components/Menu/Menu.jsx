@@ -36,9 +36,6 @@ import Gatandoori from '../../assets/Food/Ga tandoori.jpg'
 import Boapchao from '../../assets/Food/Bo ap chao.jpg'
 import { Outlet } from 'react-router'
 
-
-
-
 const OptionsDetailFood = [
   {
     id: 1,
@@ -281,6 +278,8 @@ const OptionsDetailFood = [
     teps: 'Bước 1'
   },
 ]
+
+
 const Menu = () => {
   
   // const {data: foods, loading, error} = useFetch(`${BASE_URL}/foods`)

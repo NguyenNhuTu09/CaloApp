@@ -54,7 +54,7 @@ const DetailFood = () => {
     {/* ============= Image food + review food START =========== */}
       <div className='image-review d-flex flex-column'>
         <div className='back d-flex flex-row'>
-          <Link className='link d-flex flex-row' to={'/detailplan'}>
+          <Link className='link d-flex flex-row' to={'/app/detailplan'}>
             <img src={arrowLeft}/>
             <p className='fs-6 fw-bold'>Quay lại</p>
           </Link>

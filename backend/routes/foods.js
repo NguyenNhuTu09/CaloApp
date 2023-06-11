@@ -1,5 +1,5 @@
 import express from 'express'
-import { createFood, updateFood, deleteFood, getSingleFood, getAllFood } from '../controllers/foodController.js'
+import { createFood, updateFood, deleteFood, getSingleFood, getAllFood, getFoodCount } from '../controllers/foodController.js'
 import {verifyAdmin} from '../utils/verifyToken.js'
 
 const router = express.Router()
@@ -21,7 +21,7 @@ router.get('/', getAllFood)
 // // get food by search
 // router.get('/search/getFoodBySearch', getFoodBySearch)
 // router.get('/search/getFeaturedFoods', getFeaturedFood)
-// router.get('/search/getFoodCount', getFoodCount)
+router.get('/search/getFoodCount', getFoodCount)
 
 
 export default router;
