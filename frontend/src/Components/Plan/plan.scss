@@ -22,14 +22,17 @@
                     border-radius: 0.5rem;
                     img{
                          width: 50px;
+                         margin-top: 5px;
                     }
                     .day{
                          .day-one{
                               text-align: center;
-                              width: 140px;
-                              border: 2px dashed black ;
+                              width: 130px;
+                              height: 65px;
                               cursor: pointer;
                               margin-right: 0.5rem;
+                              border: 2px dashed black;
+                              border-radius: 0.5rem;
                          }
                     }
                }
@@ -43,16 +46,22 @@
                margin-top: 1rem;
                padding: 0.5rem;
                border-radius: 0.5rem;
+               align-items: center;
                .food-1{
                     border: 2px dashed black;
-                    width: 200px;
+                    width: 100px;
+                    height: 120px;
                     text-align: center;
                     margin-right: 1rem;
                     cursor: pointer;
+                    border-radius: 0.5rem;
                     img{
                          width: 80px;
-                         margin-top: 1.7rem;
+                         margin-top: 1rem;
                     }
+               }
+               .btn-info{
+                    height: 120px;
                }
           }
           .exercise{
@@ -61,15 +70,22 @@
                margin-top: 1rem;
                padding: 0.5rem;
                border-radius: 0.5rem;
+               align-items: center;
                .exercise-1{
                     border: 2px dashed black;
-                    width: 200px;
+                    width: 100px;
+                    height: 120px;
                     text-align: center;
                     margin-right: 1rem;
                     cursor: pointer;
+                    border-radius: 0.5rem;
                     img{
-                         margin-top: 1.7rem;
+                         width: 80px;
+                         margin-top: 1rem;
                     }
+               }
+               .btn-info{
+                    height: 120px;
                }
           }
           p{
@@ -95,6 +111,9 @@
                display: flex;
                flex-direction: row;
                align-items: center;
+               img{
+                    width: 20px;
+               }
           }
           p{
                margin-left: 7px;

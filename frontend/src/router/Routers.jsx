@@ -14,23 +14,29 @@ import Discover from '../Components/Discover/Discover'
 import DetailFood from '../Components/DetailFood/DetailFood'
 import CreateExercise from '../Components/CreateExercise/CreateExercise'
 import CreateFood from '../Components/CreateFood/CreateFood'
+import Navbar from '../Components/Navbar/Navbar'
 
 const Routers = () => {
   return (
     <Routes>
-          <Route path='/' element={<Navigate to='/home'/>}/>
-          <Route path='/home' element={<Home/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/user' element={<User/>}/>
-          <Route path='/user/createfood' element={<CreateFood/>}/>
-          <Route path='/user/createexercise' element={<CreateExercise/>}/>
-          <Route path='/detailplan' element={<DetailPlan/>}/>
-          <Route path='/detailplan/detailfood' element={<DetailFood/>}/>
-          <Route path='/plan' element={<Plan/>}/>
-          <Route path='/menu' element={<Menu/>}/>
-          <Route path='/discover' element={<Discover/>}/>
+          <Route path='' element={<Navigate to='home'/>}/>
+          <Route path='login' element={<Login/>}/>
+          <Route path='register' element={<Register/>}/>
+
+          <Route path='app' element={<Navbar/>}>
+            
+            <Route path='user' element={<User/>}/>
+            <Route path='home' element={<Home/>}/>
+            <Route path='createfood' element={<CreateFood/>}/>
+            <Route path='createexercise' element={<CreateExercise/>}/>
+            <Route path='detailplan' element={<DetailPlan/>}/>
+            <Route path='detailplan/detailfood' element={<DetailFood/>}/>
+            <Route path='plan' element={<Plan/>}/>
+            <Route path='menu' element={<Menu/>}/>
+            <Route path='discover' element={<Discover/>}/>
+        </Route>
     </Routes>
+
   )
 }
 export default Routers

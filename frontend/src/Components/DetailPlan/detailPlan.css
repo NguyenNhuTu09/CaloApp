@@ -17,6 +17,14 @@
 .DetailPlan .day-note-user .day .day-plan {
   height: 50%;
 }
+.DetailPlan .day-note-user .day .day-plan .add-day-plan {
+  border: 2px dashed black;
+  width: 16%;
+  border-radius: 0.5rem;
+}
+.DetailPlan .day-note-user .day .day-plan .add-day-plan img {
+  width: 60px;
+}
 .DetailPlan .day-note-user .day .day-plan .day-calo {
   width: 17%;
   height: auto;
@@ -56,6 +64,27 @@
   width: 100%;
   padding: 0.5rem;
   height: 42%;
+}
+.DetailPlan .food-day-plan .food-plan .update-food {
+  border: 2px dashed black;
+  height: 120px;
+  border-radius: 0.5rem;
+  margin-top: 3.1rem;
+  margin-left: 1rem;
+}
+.DetailPlan .food-day-plan .food-plan .update-food img {
+  width: 70px;
+  height: 70px;
+}
+.DetailPlan .food-day-plan .food-plan .btn-update-food {
+  height: 120px;
+  width: 40px;
+  margin-left: 1rem;
+  margin-top: 3.1rem;
+  border-radius: 0.5rem;
+  background: white;
+  border: none;
+  color: black;
 }
 .DetailPlan .food-day-plan .food-plan .food-menu {
   width: 23%;
@@ -99,6 +128,27 @@
   padding: 0.5rem;
   height: 45%;
   margin-top: 0.5rem;
+}
+.DetailPlan .food-day-plan .exercise-plan .update-food {
+  border: 2px dashed black;
+  height: 120px;
+  border-radius: 0.5rem;
+  margin-top: 3.1rem;
+  margin-left: 1rem;
+}
+.DetailPlan .food-day-plan .exercise-plan .update-food img {
+  width: 70px;
+  height: 70px;
+}
+.DetailPlan .food-day-plan .exercise-plan .btn-update-food {
+  height: 120px;
+  width: 40px;
+  margin-left: 1rem;
+  margin-top: 3.1rem;
+  border-radius: 0.5rem;
+  background: white;
+  border: none;
+  color: black;
 }
 .DetailPlan .food-day-plan .exercise-plan .exercise {
   width: 23%;
@@ -145,15 +195,27 @@
 }
 .DetailPlan .day-detail-plan .day-plan {
   border-radius: 0.5rem;
-  height: 75%;
+  height: 65%;
   padding-top: 2rem;
   padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
+  overflow: auto;
+  align-items: center;
 }
 .DetailPlan .day-detail-plan .day-plan p {
   margin-left: 7px;
 }
 .DetailPlan .day-detail-plan .day-plan p span {
   margin-left: 4.5rem;
+}
+.DetailPlan .day-detail-plan .day-plan .addday img {
+  width: 30px;
+}
+.DetailPlan .day-detail-plan .day-plan li img {
+  width: 20px;
+}
+.DetailPlan .day-detail-plan .btn-update {
+  margin-top: 1rem;
 }
 .DetailPlan .day-detail-plan .today-plan {
   padding: 0.5rem;

@@ -14,6 +14,15 @@
                padding: 0.5rem;
                .day-plan{
                     height: 50%;
+                    .add-day-plan{
+                         border: 2px dashed black;
+                         width: 16%;
+                         border-radius: 0.5rem;
+                         img{
+                              width: 60px;
+                         }
+                    }
+                    // border: 2px solid black;
                     .day-calo{
                          width: 17%;    
                          height: auto;
@@ -61,6 +70,27 @@
                // border: 2px solid black;
                padding: 0.5rem;
                height: 42%;
+               .update-food{
+                    border: 2px dashed black;
+                    height: 120px;
+                    border-radius: 0.5rem;
+                    margin-top: 3.1rem;
+                    margin-left: 1rem;
+                    img{
+                         width: 70px;
+                         height: 70px;
+                    }
+               }
+               .btn-update-food{
+                    height: 120px;
+                    width: 40px;
+                    margin-left: 1rem;
+                    margin-top: 3.1rem;
+                    border-radius: 0.5rem;
+                    background: #FFFF;
+                    border: none;
+                    color: black;
+               }
                .food-menu{
                     width: 23%;
                     // border: 2px solid black;
@@ -107,6 +137,27 @@
                padding: 0.5rem;
                height: 45%;
                margin-top: 0.5rem;
+               .update-food{
+                    border: 2px dashed black;
+                    height: 120px;
+                    border-radius: 0.5rem;
+                    margin-top: 3.1rem;
+                    margin-left: 1rem;
+                    img{
+                         width: 70px;
+                         height: 70px;
+                    }
+               }
+               .btn-update-food{
+                    height: 120px;
+                    width: 40px;
+                    margin-left: 1rem;
+                    margin-top: 3.1rem;
+                    border-radius: 0.5rem;
+                    background: #FFFF;
+                    border: none;
+                    color: black;
+               }
                .exercise{
                     width: 23%;
                     border-radius: 1rem;
@@ -154,16 +205,32 @@
           }
           .day-plan{
                border-radius: 0.5rem;
-               height: 75%;
+               height: 65%;
                padding-top: 2rem;
                padding-left: 0.5rem;
+               padding-bottom: 0.5rem;
+               overflow: auto;
+               align-items: center;
                p{
                     margin-left: 7px;
                     span{
                          margin-left: 4.5rem;
                     }
                }
+               .addday{
+                    img{
+                         width: 30px;
+                    }
+               }
+               li{
+                    img{
+                         width: 20px;
+                    }
+               }
                
+          }
+          .btn-update{
+               margin-top: 1rem;
           }
           .today-plan{
                padding: 0.5rem;

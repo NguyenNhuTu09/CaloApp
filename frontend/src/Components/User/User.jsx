@@ -147,7 +147,7 @@ const User = () => {
       <p className='title fs-6 fw-bold'>Kế hoạch của bạn:</p>
       <div className='plan d-flex flex-row'>
         <div className='plan-now d-flex flex-column'>
-            <Link className='link' to='/detailplan'>
+            <Link className='link' to='/app/detailplan'>
               <p className='fw-bold'>Giảm 10 cân</p>
               <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>10/06/2023</span></p>
               <div className='status fw-bold'>
@@ -156,7 +156,7 @@ const User = () => {
             </Link>
           </div>
           <div className='Create-plan'>
-            <Link to='/plan' className='link'>
+            <Link to='/app/plan' className='link'>
               <div className='Add d-flex flex-column'>
                 <img src={add}/>
                 <p className='fs-6 fw-bold'>Tải lên</p>
@@ -185,7 +185,7 @@ const User = () => {
         })
       }
         <div className='Create'>
-          <Link to='/user/createfood' className='link'>
+          <Link to='/app/createfood' className='link'>
             <div className='Add d-flex flex-column'>
               <img src={add}/>
               <p className='fs-6 fw-bold'>Tải lên</p>
@@ -214,7 +214,7 @@ const User = () => {
         })
       }
        <div className='Create'>
-       <Link to='/user/createexercise' className='link'>
+       <Link to='/app/createexercise' className='link'>
           <div className='Add d-flex flex-column'>
             <img src={add}/>
             <p className='fs-6 fw-bold'>Tải lên</p>

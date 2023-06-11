@@ -25,13 +25,16 @@
 }
 .Plan .create-food .food-day-note .food-day img {
   width: 50px;
+  margin-top: 5px;
 }
 .Plan .create-food .food-day-note .food-day .day .day-one {
   text-align: center;
-  width: 140px;
-  border: 2px dashed black;
+  width: 130px;
+  height: 65px;
   cursor: pointer;
   margin-right: 0.5rem;
+  border: 2px dashed black;
+  border-radius: 0.5rem;
 }
 .Plan .create-food .food-day-note .note {
   width: 300px;
@@ -41,33 +44,46 @@
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  align-items: center;
 }
 .Plan .create-food .food .food-1 {
   border: 2px dashed black;
-  width: 200px;
+  width: 100px;
+  height: 120px;
   text-align: center;
   margin-right: 1rem;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
 .Plan .create-food .food .food-1 img {
   width: 80px;
-  margin-top: 1.7rem;
+  margin-top: 1rem;
+}
+.Plan .create-food .food .btn-info {
+  height: 120px;
 }
 .Plan .create-food .exercise {
   height: 200px;
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  align-items: center;
 }
 .Plan .create-food .exercise .exercise-1 {
   border: 2px dashed black;
-  width: 200px;
+  width: 100px;
+  height: 120px;
   text-align: center;
   margin-right: 1rem;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
 .Plan .create-food .exercise .exercise-1 img {
-  margin-top: 1.7rem;
+  width: 80px;
+  margin-top: 1rem;
+}
+.Plan .create-food .exercise .btn-info {
+  height: 120px;
 }
 .Plan .create-food p {
   margin-top: 1rem;
@@ -89,6 +105,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.Plan .day-plan li img {
+  width: 20px;
 }
 .Plan .day-plan p {
   margin-left: 7px;

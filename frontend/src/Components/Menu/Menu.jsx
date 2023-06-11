@@ -34,6 +34,7 @@ import Nuoceptao from '../../assets/Food/Nuoc ep tao.jpg'
 import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
 import Gatandoori from '../../assets/Food/Ga tandoori.jpg'
 import Boapchao from '../../assets/Food/Bo ap chao.jpg'
+import { Outlet } from 'react-router'
 
 
 
@@ -411,6 +412,7 @@ const Menu = () => {
           </div>
         </div>
       </div>
+      <Outlet/>
     </div>
   )
 }

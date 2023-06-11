@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Router, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Router, Route, Link, Outlet} from 'react-router-dom'
 import './home.css'
 import {Form, FormGroup} from 'reactstrap'
 
@@ -107,7 +107,7 @@ const OptionsExercise = [
     type: 'Thể hình',
     star: '4.5',
     icon: <AiFillStar/>,
-    nameExercise: "Gập bụng",
+    nameExercise: "Hít xà đơn",
     minutes: '45m',
     calories: '750 Calo',
     description: '....',
@@ -147,7 +147,7 @@ const Home = () => {
           <p className='fs-6 fw-bold'>Kế hoạch của bạn</p>
             <div className='my-plan-01'>
               <div className='plan-now d-flex flex-column'>
-                <Link className='link' to='/detailplan'>
+                <Link className='link' to='/app/detailplan'>
                   <p className='fw-bold'>Giảm 10 cân</p>
                   <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>10/06/2023</span></p>
                   <div className='status fw-bold'>
@@ -158,7 +158,7 @@ const Home = () => {
 
 
               <div className='add-plan'>
-                <Link to='/plan'><img src={Addplan}/></Link>
+                <Link to='/app/plan'><img src={Addplan}/></Link>
               </div>
             </div>
 
@@ -215,6 +215,36 @@ const Home = () => {
                       <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
                     </div>
                   </div>
+              )
+            })
+          }
+          </div>
+          <div className='food d-flex flex-row'>
+            <div className='info-meat d-flex flex-column'>
+              <p className='title-meat fs-4 fw-bold'>Bài tập ngày hôm nay</p>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Complete}/>
+                <p className='fs-6 fw-bold'>Hoàn thành</p>
+              </div>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Repair}/>
+                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
+              </div>
+            </div>
+            {
+            OptionsExercise.map(({id, imageExercise, type, star, icon, nameExercise, minutes, calories}) => {
+              return(
+              <div key={id} className='food-menu'>
+                <div className='image-food position-relative'>
+                  {imageExercise}
+                </div>
+                <div className='detail-food'>
+                  <p className='caterogy d-flex flex-row justify-content-end'><span>{star}{icon}</span></p>
+                  <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
+                  <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameExercise}<span>{minutes}</span></p>
+                  <p className='calo d-flex flex-row justify-content-between'>-{calories}<span>Chi tiết <img src={arrow}/></span></p>
+                </div>
+              </div>
               )
             })
           }
@@ -383,6 +413,7 @@ const Home = () => {
       </div>
       {/* =============================== REGISTER END ===================== */}
 
+      <Outlet/>
     </div>
   )
 }

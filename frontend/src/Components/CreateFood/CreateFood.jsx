@@ -9,7 +9,7 @@ const CreateFood = () => {
     <div className='CreateFood d-flex flex-row justify-content-between'>
           <div className='info-food d-flex flex-column'>
                     <div className='back d-flex flex-row'>
-                         <Link className='link d-flex flex-row' to={'/user'}>
+                         <Link className='link d-flex flex-row' to={'/app/user'}>
                               <img src={arrowLeft}/>
                               <p className='fs-6 fw-bold'>Quay lại</p>
                          </Link>

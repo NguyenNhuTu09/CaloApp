@@ -31,6 +31,7 @@ import {BsSearch} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
 
 import arrow from '../../assets/Arrow.png'
+import Delete from '../../assets/Delete.png'
 
 const OptionsDetailFood = [
   {
@@ -247,7 +248,8 @@ const Plan = () => {
         {/* Chọn số ngày thực hiện kế hoạch */}
         <div className='d-flex flex-column align-items-center'>
           <li>
-            <input class="form-check-input mt-0" type="checkbox" value=""/>
+            {/* <input class="form-check-input mt-0" type="checkbox" value=""/> */}
+            <img src={Delete}/>
             <p className='fw-bold fs-6'>Ngày thứ 1<span className='fw-normal'>.... Calo</span></p>
           </li>
           <img src={AddPlan}/>

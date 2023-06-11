@@ -41,12 +41,13 @@
 
 body{
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Nunito", sans-serif; */
   /* font-family: 'Lexend'; */
   font-family: 'Gilroy-Medium', sans-serif;
   background: var(--SecondaryColor);
   /* background-image: url('src/assets/test.jpg'); */
   /* backdrop-filter: blur(10px); */
+  background: #FFFF;
 }
 p{
   margin-bottom: 0px;

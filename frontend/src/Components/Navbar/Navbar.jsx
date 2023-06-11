@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {NavLink, Link, useNavigate} from 'react-router-dom';
+import {NavLink, Link, useNavigate, Outlet} from 'react-router-dom';
 import {Form, FormGroup} from 'reactstrap'
 import './navbar.css'
 
@@ -18,19 +18,19 @@ import {BiLogOut} from 'react-icons/bi';
 
 const nav_link = [
   {
-    path: '/home',
+    path: '/app/home',
     icon: <img src={ichome}/>
   },
   {
-    path: '/menu',
+    path: '/app/menu',
     icon: <img src={menu2}/>
   },
   {
-    path: '/discover',
+    path: '/app/discover',
     icon: <img src={discover}/>
   },
   {
-    path: '/user',
+    path: '/app/user',
     icon: <img src={icuser}/>
   },
 
@@ -39,6 +39,8 @@ const nav_link = [
 
 const Navbar = () => {
   return (
+    <>
+
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
         <div className='nav-menu'>
         {
@@ -51,6 +53,8 @@ const Navbar = () => {
       </div>
       <p><img src={logout}/></p>
     </div>
+    <Outlet/>
+    </>
   )
 }
 export default Navbar

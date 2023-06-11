@@ -34,6 +34,9 @@ import Bachtuoc from '../../assets/Food/Bach tuoc.jpg'
 
 import User from '../../assets/User.png'
 import arrow from '../../assets/Arrow.png'
+import addday from '../../assets/Add.png'
+import addplan from '../../assets/addplan.png'
+import Delete from '../../assets/Delete.png'
 
 
 import jogging from '../../assets/Exercise/Chay bo.jpg'
@@ -191,11 +194,20 @@ const DetailPlan = () => {
                     <p className='fw-bold fs-6'>{nameFood}</p>
                     <p className='fw-normal fs-6'>{calo}</p>
                   </div>
-                  {image}
+                  <div data-bs-toggle="dropdown" aria-expanded="false">
+                    {image}
+                  </div>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item">Xóa</a></li>
+                    <li><a class="dropdown-item">Chi tiết</a></li>
+                  </ul>
                 </div>
               )
             })
           }
+          <div className='add-day-plan d-flex flex-column align-items-center'>
+            <img src={addplan}/>
+          </div>
           </div>
         </div>
         {/* Ghi chu */}
@@ -227,15 +239,24 @@ const DetailPlan = () => {
                   {imageFoodDetail}
                 </div>
                 <div className='detail-food'>
-                    <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
+                    <p className='caterogy d-flex flex-row justify-content-end'>
+                      <span>{star} {icon}</span>
+                    </p>
                     <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
                     <p className='food-name fs-6 fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                    <p className='calo d-flex flex-row justify-content-between'>{calories}<Link className='link' to='/detailplan/detailfood'><span>Chi tiết <img src={arrow}/></span></Link></p>
+                    <p className='calo d-flex flex-row justify-content-between'>{calories}
+                      <Link className='link' to='/detailplan/detailfood'><span>Chi tiết <img src={arrow}/></span>
+                      </Link>
+                    </p>
                   </div>
             </div>
               )
             })
           }
+          <div className='update-food d-flex flex-row align-items-center'>
+            <img src={addplan}/>
+          </div>
+          <button className='btn-update-food btn-primary'>Lưu</button>
           </div>
           {/* ==================== */}
 
@@ -261,13 +282,17 @@ const DetailPlan = () => {
               )
             })
           }
+          <div className='update-food d-flex flex-row align-items-center'>
+            <img src={addplan}/>
+          </div>
+          <button className='btn-update-food btn-primary'>Lưu</button>
           </div>
 
           {/* ============================= */}
         </div>
 
 
-        <div className='day-detail-plan d-flex flex-column justify-content-between'>
+        <div className='day-detail-plan d-flex flex-column'>
           <div className='today-plan d-flex flex-column'>
             <div className='date d-flex flex-row justify-content-between'>
               <p className='fs-6 fw-bold'>Mon, Aug 31</p>
@@ -298,12 +323,19 @@ const DetailPlan = () => {
               OptionsDay.map(({id, day, calories})=> {
                 return(
                   <li key={id}>
-                    <input class="form-check-input mt-0" type="checkbox" value=""/>
+                    {/* <input class="form-check-input mt-0" type="checkbox" value=""/> */}
+                    <img src={Delete}/>
                     <p className='fw-bold fs-6'>Ngày thứ {day}<span className='fw-normal'>{calories}</span> Calo</p>
                   </li>
                 )
               })
             }
+            <div className='addday'>
+              <img src={addday}/>
+            </div>
+          </div>
+          <div className='btn-update d-flex flex-column align-items-center'>
+            <button className='btn btn-info'>Cập nhật</button>
           </div>
         </div>
       </div>
