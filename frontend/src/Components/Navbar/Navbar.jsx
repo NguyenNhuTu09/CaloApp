@@ -3,15 +3,22 @@ import {NavLink, Link, useNavigate, Outlet} from 'react-router-dom';
 import {Form, FormGroup} from 'reactstrap'
 import './navbar.css'
 
-import ichome from '../../assets/Home.png'
-import icuser from '../../assets/User.png'
-import logo from '../../assets/Logo.png'
+import ichome from '../../assets/newHome.png'
+import icuser from '../../assets/newUser.png'
+import logo from '../../assets/LogoFinal.png'
 import login from '../../assets/Continue.png'
 
-import menu from '../../assets/Menu.png'
-import menu2 from '../../assets/Menu 2.png'
+import menu from '../../assets/newMenu.png'
+import menu2 from '../../assets/newMenu.png'
 import logout from '../../assets/Logout.png'
-import discover from '../../assets/discover.png'
+import discover from '../../assets/newDiscover.jpg'
+
+import newPlan from '../../assets/newPlan.png'
+import newExercise from '../../assets/newExericse.png'
+
+
+
+
 
 import {BiLogOut} from 'react-icons/bi';
 
@@ -33,6 +40,10 @@ const nav_link = [
     path: '/app/user',
     icon: <img src={icuser}/>
   },
+  {
+    path: '/app/plan',
+    icon: <img src={newPlan}/>
+  }
 
 ]
 
@@ -42,16 +53,22 @@ const Navbar = () => {
     <>
 
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
-        <div className='nav-menu'>
-        {
-          nav_link.map((item, index) => (
-            <li key={index} to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""} >
-                  <Link className='icon' to={item.path}><a>{item.icon}</a></Link>
-            </li>
-          ))
-        }
-      </div>
-      <p><img src={logout}/></p>
+        <div className='nav-menu d-flex flex-column align-items-center'>
+          <img className='logo' src={logo}/>
+          {
+            nav_link.map((item, index) => (
+              <li className='nav_item' key={index}>
+                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""}><a>{item.icon}</a></NavLink>
+              </li>
+            ))
+          }
+          {/* <Link to={'/app/plan'}><img className='create' src={newPlan}/></Link> */}
+        </div>
+
+      <p>
+      <hr/>
+       <Link to='/login'><img src={logout}/></Link>
+      </p>
     </div>
     <Outlet/>
     </>

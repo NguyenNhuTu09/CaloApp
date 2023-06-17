@@ -13,16 +13,26 @@
   align-items: center;
 }
 .Navbar .nav-menu li img {
-  width: 40px;
+  width: 35px;
   background-size: cover;
   border-radius: 0.5rem;
   padding: 3px;
 }
+.Navbar .nav-menu .nav_item a.active_link img {
+  border: 2px solid black;
+}
 .Navbar img {
-  width: 50px;
+  width: 45px;
   margin-bottom: 1rem;
   cursor: pointer;
   background-size: cover;
   border-radius: 0.5rem;
   padding: 3px;
+}
+.Navbar .logo {
+  width: 70px;
+  margin-bottom: 1.5rem;
+}
+.Navbar .create {
+  margin-top: 1rem;
 }/*# sourceMappingURL=navbar.css.map */

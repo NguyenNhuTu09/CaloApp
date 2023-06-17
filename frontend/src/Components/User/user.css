@@ -40,7 +40,6 @@
   margin-left: 0.5rem;
 }
 .User .food {
-  border: 1px solid black;
   margin-top: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -92,7 +91,7 @@
   color: black;
 }
 .User .plan {
-  border: 1px solid black;
+  background: white;
   margin-top: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;

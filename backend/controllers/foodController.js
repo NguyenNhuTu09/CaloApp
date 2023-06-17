@@ -71,7 +71,7 @@ export const getAllFood = async (req, res) => {
      const page = parseInt(req.query.page)
 
      try{
-          const foods = await Food.find({}).populate('Type')
+          const foods = await Food.find({})
           
           res.status(200).json({
                success: true, 

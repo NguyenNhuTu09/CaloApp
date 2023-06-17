@@ -6,7 +6,7 @@ const reviewSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: "Food",
     },
-    username: {
+    lastFirstName: {
       type: String,
       required: true,
     },

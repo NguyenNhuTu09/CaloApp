@@ -25,6 +25,10 @@ import {MdArrowForwardIos} from 'react-icons/md'
 import facebook from '../../assets/Facebook.png'
 import google from '../../assets/Google.png'
 
+import Total from '../../assets/Total.png'
+import Exer from '../../assets/Exer.png'
+import Fire from '../../assets/Fire.png'
+
 
 
 import plan from '../../assets/Plan.png'
@@ -128,15 +132,18 @@ const Home = () => {
           {/* <p className='title-day fs-5 fw-bold'>Bữa ăn: <span>4</span></p>
           <p className='title-day fs-5 fw-bold'>Bài tập: 3</p> */}
           <div className='parameter-day-plan d-flex flex-row justify-content-between'>
-            <div className='parameter d-flex flex-column text-center'>
+            <div className='parameter d-flex flex-column text-center align-items-center'>
+              <img src={Total}/>
               <p className='fs-5'>Tổng</p>
               <p className='fs-5 fw-bold'>3500<span> Kcal</span></p>
             </div>
-            <div className='parameter d-flex flex-column text-center'>
+            <div className='parameter d-flex flex-column text-center align-items-center'>
+              <img src={Exer}/>
               <p className='fs-5'>Vận động</p>
               <p className='fs-5 fw-bold'>78<span> m</span></p>
             </div>
-            <div className='parameter d-flex flex-column text-center'>
+            <div className='parameter d-flex flex-column text-center align-items-center'>
+              <img src={Fire}/>
               <p className='fs-5'>Đốt cháy</p>
               <p className='fs-5 fw-bold'>1300<span> Kcal</span></p>
             </div>

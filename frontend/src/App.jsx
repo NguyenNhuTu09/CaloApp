@@ -31,8 +31,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
             
-            <Route path='login' element={<Login/>}/>
+            <Route index element={<Login/>}/>
             <Route path='register' element={<Register/>}/>
+            <Route path='login' element={<Login/>}/>
 
             <Route path='app' element={<Navbar/>}>
               <Route path='home' element={<Home/>}/>
@@ -43,6 +44,7 @@ const App = () => {
               <Route path='detailplan/detailfood' element={<DetailFood/>}/>
               <Route path='plan' element={<Plan/>}/>
               <Route path='menu' element={<Menu/>}/>
+              <Route path='menu/:id' element={<DetailFood/>}/>
               <Route path='discover' element={<Discover/>}/>
           </Route>
         </Routes>

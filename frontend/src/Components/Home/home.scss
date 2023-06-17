@@ -82,6 +82,14 @@
                background: #FFFF;
                .parameter-day-plan{
                     margin-top: 2rem;
+                    img{
+                         width: 35px;
+                         margin-bottom: 7px;
+                         // border: 2px solid black;
+                    }
+               }
+               .title-day{
+                    margin: 0.2rem;
                }
                
           }

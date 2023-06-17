@@ -47,7 +47,8 @@ body{
   background: var(--SecondaryColor);
   /* background-image: url('src/assets/test.jpg'); */
   /* backdrop-filter: blur(10px); */
-  background: #FFFF;
+  /* background: #FFFF; */
+  background: #EDEAE7;
 }
 p{
   margin-bottom: 0px;

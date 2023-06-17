@@ -1,0 +1,75 @@
+.Register{
+     margin: 2rem;
+     padding: 0.5rem;
+     border-radius: 1rem;
+     width: 100%;
+     background: #EDEAE7;
+     .infor-register{
+          width: 65%;
+          // border: 2px solid black;
+          padding: 1rem;
+          .infor{
+               // border: 2px solid black;
+               height: 75%;
+               padding: 0.5rem;
+               img{
+                    width: 100px;
+               }
+               .form-control{
+                    width: 90%;
+                    // margin-top: 1rem;
+               }
+               .infor-01{
+                    width: 50%;
+                    // border: 2px solid black;
+                    align-items: center;
+                    .file{
+                         margin-top: 0.5rem;
+                         width: 60%
+                    }
+                    .name{
+                         margin-top: 2rem;
+                    }
+                    .date-gender{
+                         width: 90%;
+                         margin-top: 2rem;
+                         .date{
+                              width: 40%;
+                         }
+                         .form-select{
+                              width: 30%;
+                         }
+                    }
+               }
+               .infor-02{
+                    width: 50%;
+                    // border: 2px solid black;
+                    text-align: center;
+                    align-items: center;
+                    .form-control{
+                         margin-top: 2rem;
+                    }
+               }
+               
+          }
+          .footer-res{
+               width: 100%;
+               height: 20%;
+               // border: 2px solid black;
+               margin-top: 3rem;
+               .btn{
+                    width: 250px;
+                    margin-bottom: 1rem;
+               }
+          }
+          
+     }
+     .image-register{
+          width: 40%;
+          // border: 2px solid black;
+          img{
+               width: 550px;
+               margin-left: 1rem;
+          }
+     }
+}

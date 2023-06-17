@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './menu.css'
-import useFetch from '../Hooks/useFetch'
-import {BASE_URL} from '../Utils/config.JS'
+import {Link} from 'react-router-dom'
 
 // import Data from '../../Data/Data'
 import arrow from '../../assets/Arrow.png'
+import calculateAvgRating from '../Utils/avgRating.js'
+
 
 import {BsSearch} from 'react-icons/bs'
-import {AiFillStar} from 'react-icons/ai'
+import {AiFillStar, AiTwotoneEuroCircle} from 'react-icons/ai'
 import {IoIosArrowDown} from 'react-icons/io';
 
 import Chicken2 from '../../assets/Food/Chicken2.jpg'
@@ -35,6 +36,7 @@ import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
 import Gatandoori from '../../assets/Food/Ga tandoori.jpg'
 import Boapchao from '../../assets/Food/Bo ap chao.jpg'
 import { Outlet } from 'react-router'
+
 
 const OptionsDetailFood = [
   {
@@ -279,14 +281,31 @@ const OptionsDetailFood = [
   },
 ]
 
+import useFetch from '../Hooks/useFetch.js'
+import {BASE_URL} from '../Utils/config.js'
+import Food from './Food'
+import { Col, Row } from 'reactstrap'
+
 
 const Menu = () => {
-  
-  // const {data: foods, loading, error} = useFetch(`${BASE_URL}/foods`)
-  // .useEffect(() => {
-  //   window.scrollTo(0,0)
-  // }, [foods]);
+  const [Foods, setFoods] = useState([])
+  const [Loading, setLoading] = useState(false)
 
+  const [testReviews, setTestReviews] = useState([])
+
+  // const {_id, imageFood, Type, nameFood, totalCalories, ration} = foods
+
+  // const {totalRating, avgRating} = calculateAvgRating(reviews)
+
+  const fetchData = async() => {
+    const response = await fetch(`${BASE_URL}/foods/`)
+    const data = await response.json();
+    setFoods(data.data)
+  }
+  useEffect(() => {
+    fetchData();
+  }, [])
+  console.log(Foods)
 
   return (
     <div className='Menu'>
@@ -392,22 +411,30 @@ const Menu = () => {
           </div>
           <div className='food row'>
             {
-              OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
+              Foods.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
                 return(
-                  <div key={id} className='food-menu'>
+                  <div key={_id} className='food-menu'>
                     <div className='image-food position-relative'>
-                      {imageFoodDetail}
+                      <img  src={imageFood}/>
                     </div>
                     <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                      <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
+                      <p className='caterogy d-flex flex-row justify-content-end'>
+                      {reviews}
+                        <span><AiFillStar/></span>
+                      </p>
+                      <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                      <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
+                      <p className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo<span>
+                      <Link to={`/foods/${_id}`}>
+                        Chi tiết <img src={arrow}/>
+                      </Link>
+                      </span></p>
                     </div>
                   </div>
                 )
               })
             }
+            
           </div>
         </div>
       </div>

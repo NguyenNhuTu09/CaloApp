@@ -5,6 +5,7 @@ const exerciseSchema = new mongoose.Schema(
           nameFood: {
                type: String,
                required: true,
+               unique: true,
           },
           Type:{
                type: String,

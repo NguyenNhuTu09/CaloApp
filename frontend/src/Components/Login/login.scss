@@ -1,56 +1,76 @@
 .Login{
-     margin-top: 1rem;
-     margin-bottom: 1rem;
-     .hidden{
-          display: none;
-     }
-     .modal {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 70%;
-          background-color:red;
-          padding: 6rem;
-          border-radius: 5px;
-          box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-          z-index: 10;
-        }
-     .overlay {
-     position: absolute;
-     top: 0;
-     left: 0;
+     // border: 2px solid black;
+     margin: 2rem;
+     padding: 0.5rem;
+     border-radius: 1rem;
      width: 100%;
-     height: 100%;
-     background-color: rgba(0, 0, 0, 0.6);
-     backdrop-filter: blur(3px);
-     z-index: 5;
+     background: #EDEAE7;
+     .form-sub{
+          align-items: center;
+     }
+     .information{
+          width: 30%;
+          // border: 2px solid black;
+          padding: 0.5rem;
+          align-items: center;
+          .title-login{
+               margin-top: 4rem;
+               margin-bottom: 1rem;
+          }
+          .email, .pass{
+               width: 90%;
+               margin-top: 1.5rem;
+          }
+          .checkpass-login{
+               margin-top: 1rem;
+               // border: 2px solid black;
+               width: 90%;
+               margin-bottom: 2rem;
+               .checkpass{
+                    width: auto;
+                    // border: 2px solid black;
+                    align-items: center;
+               }
+               .btn-login{
+                    padding: 0px;
+                    .btn{
+                         background: #FFFF;
+                         color: black;
+                         border: none;
+                    }
+                    img{
+                         // border: 2px solid black;
+                         width: 25px;
+                    }
+               }
+          }
+          .face-gg{
+               width: 90%;
+               // border: 2px solid black;
+               margin-top: 1rem;
+               img{
+                    width: 30px;
+                    margin-right: 5px;
+               }
+               .facebook, .google{
+                    width: 35%;
+                    background: #FFFF;
+                    padding: 0.5rem;
+                    align-items: center;
+                    border-radius: 0.5rem;
+               }
+          }
+     }
+     .image-login{
+          width: 70%;
+          height: auto;
+          // border: 2px solid black;
+          padding: 1rem;
+          text-align: center;
+          img{
+               width: 90%;
+               margin-left: 1rem;
+          }
      }
 }
 
-// {/* Form Login */}
-// <div className='modal hidden'>
-// <button onClick={eventClose} className='close-modal'>&times;</button>
-// <img src={icuser}/>
-// <div className='login-form'>
-//      <h2>Đăng nhập</h2>
-//      <p>Bạn chưa có tài khoản, <Link to={'/register'}>Đăng ký</Link></p>
-//      <Form>
-//           <input input='text' placeholder='Email'/>
-//      </Form>
-//      <Form>
-//           <input input='password' placeholder='Password' required='password'/>
-//      </Form>
-// </div>
-// <div className='check-pass'>
-//      <div className='check'>
-//           <input type='checkbox' placeholder=''/>
-//           <p>Nhớ mật khẩu</p>
-//      </div>
-//      <img className='login-logo' src={login}/>
-// </div>
-// <div className='fb-gg-login'>
-//      <img src={fblogin}/>
-//      <img src={gglogin}/>
-// </div>
-// </div>

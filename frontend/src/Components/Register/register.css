@@ -1,1 +1,66 @@
-/*# sourceMappingURL=register.css.map */
+.Register {
+  margin: 2rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  background: #EDEAE7;
+}
+.Register .infor-register {
+  width: 65%;
+  padding: 1rem;
+}
+.Register .infor-register .infor {
+  height: 75%;
+  padding: 0.5rem;
+}
+.Register .infor-register .infor img {
+  width: 100px;
+}
+.Register .infor-register .infor .form-control {
+  width: 90%;
+}
+.Register .infor-register .infor .infor-01 {
+  width: 50%;
+  align-items: center;
+}
+.Register .infor-register .infor .infor-01 .file {
+  margin-top: 0.5rem;
+  width: 60%;
+}
+.Register .infor-register .infor .infor-01 .name {
+  margin-top: 2rem;
+}
+.Register .infor-register .infor .infor-01 .date-gender {
+  width: 90%;
+  margin-top: 2rem;
+}
+.Register .infor-register .infor .infor-01 .date-gender .date {
+  width: 40%;
+}
+.Register .infor-register .infor .infor-01 .date-gender .form-select {
+  width: 30%;
+}
+.Register .infor-register .infor .infor-02 {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+.Register .infor-register .infor .infor-02 .form-control {
+  margin-top: 2rem;
+}
+.Register .infor-register .footer-res {
+  width: 100%;
+  height: 20%;
+  margin-top: 3rem;
+}
+.Register .infor-register .footer-res .btn {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+.Register .image-register {
+  width: 40%;
+}
+.Register .image-register img {
+  width: 550px;
+  margin-left: 1rem;
+}/*# sourceMappingURL=register.css.map */
