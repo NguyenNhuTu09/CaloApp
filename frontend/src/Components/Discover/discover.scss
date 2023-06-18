@@ -1,105 +1,225 @@
 .Discover{
      border-radius: 1rem;
-     background: var(--whiteColor);
+     background: #EDEAE7;
      width: 100%;
      padding: 0.5rem;
      font-size: 15px;
-     .rank{
-          width: 28%;
-          padding-top: 0.5rem;
-          .table{
-            margin-top: 0.5rem;
+     overflow: auto;
+     .plan{
+          padding: 1rem;
+          border-radius: 0.5rem;
+          // background: #FCBABD;
+          // border: 2px solid black;
+          padding-right: 0px;
+          height: auto;
+          .my-plan{
+               width: 45%;
+               height: 290px;
+               padding: 1rem;
+               border-radius: 0.5rem;
+               .my-plan-01{
+               height: 50%;
+               margin-top: 0.5rem;
+               margin-bottom: 0.5rem;
+               border-radius: 0.5rem;
+               background: #FFFF;
+               display: flex;
+               flex-direction: row;
+               .plan-now{
+               margin: 0.7rem;
+               padding: 0.5rem;
+               border-radius: 0.5rem;
+               width: 30%;
+               background: #9FE2BF;
+               cursor: pointer;
+               text-decoration: none;
+                    .link{
+                         text-decoration: none;
+                         color: black;
+                    }
+                    .status{
+                         align-items: center;
+                         text-align: center;
+                         border-radius: 0.5rem;
+                         background: #ffff;
+                         margin-top: 0.5rem;
+                    }
+                }
+               .add-plan{
+               border: 2px dashed black;
+               margin: 0.7rem;
+               width: 30%;
+               border-radius: 0.5rem;
+               text-align: center;
+                    img{
+                    width: 60px;
+                    margin-top: 1rem;
+                    }
+               }
+          }
+               .my-plan-02{
+                    margin-top: 0.5rem;
+                    height: 32%;
+                    background: #FFFF;
+                    border-radius: 0.5rem;
+               .day{
+               margin: 0.5rem;
+               width: 100px;
+               padding: 5px;
+               border-radius: 0.5rem;
+               background: #9FE2BF;
+               }
+               }
+          }
+          .detail-day-plan{
+               border-radius: 0.5rem;
+               height: 275px;
+               width: 29%;
+               margin-right: 20px;
+               background: #D1F2EB;
+               margin-left: 0px;
+               padding: 1rem;
+               background: #FFFF;
+               .parameter-day-plan{
+                    margin-top: 2rem;
+                    img{
+                         width: 35px;
+                         margin-bottom: 7px;
+                         // border: 2px solid black;
+                    }
+               }
+               .title-day{
+                    margin: 0.2rem;
+               }
+               
           }
      }
-     .react-calendar { 
-          width: 460px;
-          // height: 345px;
+
+     .note-day-plan{
+          width: 24%;
+          padding: 1rem;
+          // height: 280px;
+          .note{
+               margin-top: 0.5rem;
+               height: 230px;
+               border-radius: 0.5rem;
+          }
+     }
+     .food-exercise-plan{
+          padding: 1rem;
+          width: 100%;
           height: auto;
-          max-width: 100%;
-          background-color: #fff;
-          color: #222;
-          border-radius: 8px;
-          font-family: Arial, Helvetica, sans-serif;
-          line-height: 1.125em;
-          border: none;
-          padding-bottom: 0.5rem;
-         }
-         .react-calendar__navigation button {
-          color: black;
-          min-width: 44px;
-          background: none;
-          font-size: 16px;
-          margin-top: 8px;
-         }
-         .react-calendar__navigation button:enabled:hover,
-         .react-calendar__navigation button:enabled:focus {
-          background-color: #ffff;
-         }
-         .react-calendar__navigation button[disabled] {
-          background-color: #f0f0f0;
-         }
-         abbr[title] {
-          text-decoration: none;
-         }
-        //  .react-calendar__month-view__days__day--weekend {
-        //   color: #d10000;
-        //  } 
-         .react-calendar__tile:enabled:hover,
-         .react-calendar__tile:enabled:focus {
-          background: #f8f8fa;
-          color: #6f48eb;
-          border-radius: 6px;
-         }
-         .react-calendar__tile--now {
-          background: #6f48eb33;
-          border-radius: 6px;
-          font-weight: bold;
-          color: #6f48eb;
-         }
-         .react-calendar__tile--now:enabled:hover,
-         .react-calendar__tile--now:enabled:focus {
-          background: #6f48eb33;
-          border-radius: 6px;
-          font-weight: bold;
-          color: #6f48eb;
-         }
-         .react-calendar__tile--hasActive:enabled:hover,
-         .react-calendar__tile--hasActive:enabled:focus {
-          background: #f8f8fa;
-         }
-         .react-calendar__tile--active {
-          background: #6f48eb;
-          border-radius: 6px;
-          font-weight: bold;
-          color: white;
-         }
-         .react-calendar__tile--active:enabled:hover,
-         .react-calendar__tile--active:enabled:focus {
-          background: #6f48eb;
-          color: white;
-         }
-         .react-calendar--selectRange .react-calendar__tile--hover {
-          background-color: #f8f8fa;
-         }
-         .react-calendar__tile--range {
-          background: #f8f8fa;
-          color: #6f48eb;
-          border-radius: 0;
-         }
-         .react-calendar__tile--rangeStart {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-top-left-radius: 6px;
-          border-bottom-left-radius: 6px;
-          background: #6f48eb;
-          color: white;
-         }
-         .react-calendar__tile--rangeEnd {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border-top-right-radius: 6px;
-          border-bottom-right-radius: 6px;
-          background: #6f48eb;
-          color: white;
+          .food{
+               height: 100%;
+               margin-bottom: 2rem;
+               margin-left: 2rem;
+               .info-meat{
+                    .title-meat{
+                         margin-bottom: 1rem;
+                    }
+                    width: 180px;
+                    height: auto;
+                    padding: 0.5rem;
+                    margin-right: 3rem;
+                    .update-meat{
+                         margin-top: 0.5rem;
+                         padding: 0.3rem;
+                         background: #FFFF;
+                         border-radius: 0.5rem;
+                         img{
+                              width: 30px;
+                              margin-right: 5px;
+                         }
+                    }
+               }
+               .food-menu{
+               width: 250px;
+               margin-bottom: 1rem;
+               margin-right: 2rem;
+                    .image-food{
+                         margin-left: 1rem;
+                         img{
+                              width: 95px;
+                              border-radius: 100%;
+                              position: absolute;
+                         }
+                    }
+                    .detail-food{
+                         background: #FFFF;
+                         border-radius: 1rem;
+                         margin-top: 3rem;
+                         padding-top: 0.5rem;
+                         padding-left: 0.8rem;
+                         padding-right: 0.8rem;
+                         padding-bottom: 0.8rem;
+                         cursor: pointer;
+                         height: 74%;
+                         p{
+                              margin-bottom: 5px;
+                         }
+                         img{
+                              width: 10px;
+                         }
+                         
+                    }
+          }
+        }
+     }
+
+        .form-login{
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          .register{
+               margin-bottom: 0.7rem;
+          }
+     }
+     .form-check-input{
+          margin-right: 0.5rem;
+     }
+     .title{
+          margin-top: 0.5rem;
+          p{
+               margin-top: 0.5rem;
+          }
+          span{
+               cursor: pointer;
+               &:hover{
+                    color: blue;
+               }
+          }
+     }
+     .fb-gg{
+          margin-top: 0.5rem;
+          .Facebook{
+               width: 40%;
+               padding: 5px;
+               border-radius: 0.5rem;
+               cursor: pointer;
+               img{
+                    width: 40px;
+                    border-radius: 5px;
+               }
+               .text{
+                    width: 65%;
+                    padding-top: 5px;
+               }
+               &:hover{
+                    background:var(--SecondaryColor);
+               }
+          }
+     }
+     .modal-footer{
+          margin-top: 2rem;
+     }
+     .w-dis-age{
+          width: 100px;
+          text-align: center;
+     }
+     .w-dis-date{
+          width: 170px;
+          text-align: center;
+     }
+     input{
+          margin-top: 0.5rem;
      }
 }

@@ -45,6 +45,7 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   align-items: center;
+  background: white;
 }
 .Plan .create-food .food .food-1 {
   border: 2px dashed black;
@@ -67,6 +68,7 @@
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  background: white;
   align-items: center;
 }
 .Plan .create-food .exercise .exercise-1 {

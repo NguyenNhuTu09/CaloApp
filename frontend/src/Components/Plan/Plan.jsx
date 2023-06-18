@@ -219,7 +219,7 @@ const Plan = () => {
 
         {/* Lựa chọn thực đơn và bài tập */}
         <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>1</span>:</p>
-        <div className='food d-flex flex-row border border-dark'>
+        <div className='food d-flex flex-row'>
           <div className='food-1'>
             <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
           </div>
@@ -227,7 +227,7 @@ const Plan = () => {
         </div>
 
         <p className='fs-6 fw-bold'>Bài tập cho ngày hôm nay:</p>
-        <div className='exercise d-flex flex-row border border-dark'>
+        <div className='exercise d-flex flex-row'>
           <div className='exercise-1'>
             <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
           </div>

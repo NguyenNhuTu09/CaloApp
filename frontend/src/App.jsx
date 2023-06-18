@@ -15,6 +15,7 @@ import CreateExercise from './Components/CreateExercise/CreateExercise'
 import CreateFood from './Components/CreateFood/CreateFood'
 import Discover from './Components/Discover/Discover'
 import User from './Components/User/User'
+import Exercise from './Components/Exercise/Exercise'
 
 // const App = () => {
 //   return (
@@ -36,6 +37,7 @@ const App = () => {
             <Route path='login' element={<Login/>}/>
 
             <Route path='app' element={<Navbar/>}>
+              <Route path='discover' element={<Discover/>}/>
               <Route path='home' element={<Home/>}/>
               <Route path="user" element={<User/>}/>
               <Route path='createfood' element={<CreateFood/>}/>
@@ -44,8 +46,8 @@ const App = () => {
               <Route path='detailplan/detailfood' element={<DetailFood/>}/>
               <Route path='plan' element={<Plan/>}/>
               <Route path='menu' element={<Menu/>}/>
+              <Route path='exercise' element={<Exercise/>}/>
               <Route path='menu/:id' element={<DetailFood/>}/>
-              <Route path='discover' element={<Discover/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -314,7 +314,7 @@ const Menu = () => {
           <div className='col-md-1'>
             <div class="dropdown">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Menu
+                Tất cả
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Tất cả</a></li>

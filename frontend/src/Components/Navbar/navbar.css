@@ -1,9 +1,9 @@
 .Navbar {
-  border-radius: 1rem;
+  border-radius: 0px 15px 15px 0px;
   width: 6%;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  background: white;
+  background: #B6DFDE;
 }
 .Navbar .nav-menu {
   margin-top: 1rem;
@@ -20,6 +20,7 @@
 }
 .Navbar .nav-menu .nav_item a.active_link img {
   border: 2px solid black;
+  background: white;
 }
 .Navbar img {
   width: 45px;
@@ -31,7 +32,7 @@
 }
 .Navbar .logo {
   width: 70px;
-  margin-bottom: 1.5rem;
+  padding-top: 0px;
 }
 .Navbar .create {
   margin-top: 1rem;

@@ -5,7 +5,7 @@ import './navbar.css'
 
 import ichome from '../../assets/newHome.png'
 import icuser from '../../assets/newUser.png'
-import logo from '../../assets/LogoFinal.png'
+import logo from '../../assets/THF.png'
 import login from '../../assets/Continue.png'
 
 import menu from '../../assets/newMenu.png'
@@ -16,14 +16,19 @@ import discover from '../../assets/newDiscover.jpg'
 import newPlan from '../../assets/newPlan.png'
 import newExercise from '../../assets/newExericse.png'
 
+import Muctieu from '../../assets/Muctieu.png'
+import Tapluyen from '../../assets/Tapluyen.png'
+
+
 
 
 
 
 import {BiLogOut} from 'react-icons/bi';
+import {AiOutlineHome} from 'react-icons/ai'
 
 
-const nav_link = [
+const nav_link1 = [
   {
     path: '/app/home',
     icon: <img src={ichome}/>
@@ -33,8 +38,15 @@ const nav_link = [
     icon: <img src={menu2}/>
   },
   {
+    path: '/app/exercise',
+    icon: <img src={Tapluyen}/>
+  },
+]
+
+const nav_link2 = [
+  {
     path: '/app/discover',
-    icon: <img src={discover}/>
+    icon: <img src={Muctieu}/>
   },
   {
     path: '/app/user',
@@ -44,24 +56,32 @@ const nav_link = [
     path: '/app/plan',
     icon: <img src={newPlan}/>
   }
-
 ]
 
 
 const Navbar = () => {
   return (
     <>
-
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
         <div className='nav-menu d-flex flex-column align-items-center'>
           <img className='logo' src={logo}/>
           {
-            nav_link.map((item, index) => (
+            nav_link1.map((item, index) => (
               <li className='nav_item' key={index}>
                     <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""}><a>{item.icon}</a></NavLink>
               </li>
             ))
           }
+          
+          {
+            nav_link2.map((item, index) => (
+              <li className='nav_item' key={index}>
+                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""}><a>{item.icon}</a></NavLink>
+              </li>
+            ))
+          }
+
+
           {/* <Link to={'/app/plan'}><img className='create' src={newPlan}/></Link> */}
         </div>
 
