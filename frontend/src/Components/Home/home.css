@@ -1,88 +1,115 @@
 .Home {
   border-radius: 1rem;
   width: 100%;
+  height: auto;
   padding: 0.5rem;
   font-size: 15px;
+  overflow: auto;
 }
-.Home .rank {
-  width: 28%;
+.Home .header {
+  padding: 1rem;
+  height: 620px;
+  margin-left: 0.5rem;
+}
+.Home .header .rank {
+  width: 30%;
   padding-top: 0.5rem;
+  height: auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 1rem;
 }
-.Home .rank .table {
-  margin-top: 0.5rem;
+.Home .header .rank .table {
+  margin-top: 1rem;
 }
-.Home .react-calendar {
+.Home .header .header-2 {
+  margin-left: 3rem;
+  width: 68%;
+}
+.Home .header .header-2 .calendar {
+  margin-bottom: 1rem;
+}
+.Home .header .header-2 .calendar .infor-app {
+  background: white;
+  margin-left: 4rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 300px;
+  width: 360px;
+}
+.Home .header .header-2 .calendar .react-calendar {
   width: 460px;
   height: auto;
   max-width: 100%;
   background-color: #fff;
   color: #222;
-  border-radius: 8px;
+  border-radius: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
   border: none;
   padding-bottom: 0.5rem;
+  background: #EDEAE7;
 }
-.Home .react-calendar__navigation button {
+.Home .header .header-2 .calendar .react-calendar__navigation button {
   color: black;
   min-width: 44px;
   background: none;
   font-size: 16px;
   margin-top: 8px;
 }
-.Home .react-calendar__navigation button:enabled:hover,
-.Home .react-calendar__navigation button:enabled:focus {
+.Home .header .header-2 .calendar .react-calendar__navigation button:enabled:hover,
+.Home .header .header-2 .calendar .react-calendar__navigation button:enabled:focus {
   background-color: white;
 }
-.Home .react-calendar__navigation button[disabled] {
+.Home .header .header-2 .calendar .react-calendar__navigation button[disabled] {
   background-color: #f0f0f0;
 }
-.Home abbr[title] {
+.Home .header .header-2 .calendar abbr[title] {
   text-decoration: none;
 }
-.Home .react-calendar__tile:enabled:hover,
-.Home .react-calendar__tile:enabled:focus {
+.Home .header .header-2 .calendar .react-calendar__tile:enabled:hover,
+.Home .header .header-2 .calendar .react-calendar__tile:enabled:focus {
   background: #f8f8fa;
   color: #6f48eb;
   border-radius: 6px;
 }
-.Home .react-calendar__tile--now {
+.Home .header .header-2 .calendar .react-calendar__tile--now {
   background: rgba(111, 72, 235, 0.2);
   border-radius: 6px;
   font-weight: bold;
   color: #6f48eb;
 }
-.Home .react-calendar__tile--now:enabled:hover,
-.Home .react-calendar__tile--now:enabled:focus {
+.Home .header .header-2 .calendar .react-calendar__tile--now:enabled:hover,
+.Home .header .header-2 .calendar .react-calendar__tile--now:enabled:focus {
   background: rgba(111, 72, 235, 0.2);
   border-radius: 6px;
   font-weight: bold;
   color: #6f48eb;
 }
-.Home .react-calendar__tile--hasActive:enabled:hover,
-.Home .react-calendar__tile--hasActive:enabled:focus {
+.Home .header .header-2 .calendar .react-calendar__tile--hasActive:enabled:hover,
+.Home .header .header-2 .calendar .react-calendar__tile--hasActive:enabled:focus {
   background: #f8f8fa;
 }
-.Home .react-calendar__tile--active {
+.Home .header .header-2 .calendar .react-calendar__tile--active {
   background: #6f48eb;
   border-radius: 6px;
   font-weight: bold;
   color: white;
 }
-.Home .react-calendar__tile--active:enabled:hover,
-.Home .react-calendar__tile--active:enabled:focus {
+.Home .header .header-2 .calendar .react-calendar__tile--active:enabled:hover,
+.Home .header .header-2 .calendar .react-calendar__tile--active:enabled:focus {
   background: #6f48eb;
   color: white;
 }
-.Home .react-calendar--selectRange .react-calendar__tile--hover {
+.Home .header .header-2 .calendar .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #f8f8fa;
 }
-.Home .react-calendar__tile--range {
+.Home .header .header-2 .calendar .react-calendar__tile--range {
   background: #f8f8fa;
   color: #6f48eb;
   border-radius: 0;
 }
-.Home .react-calendar__tile--rangeStart {
+.Home .header .header-2 .calendar .react-calendar__tile--rangeStart {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-top-left-radius: 6px;
@@ -90,11 +117,90 @@
   background: #6f48eb;
   color: white;
 }
-.Home .react-calendar__tile--rangeEnd {
+.Home .header .header-2 .calendar .react-calendar__tile--rangeEnd {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   background: #6f48eb;
   color: white;
+}
+.Home .header .header-2 .news {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.Home .header .header-2 .news .food-menu {
+  width: 240px;
+  margin-right: 2rem;
+}
+.Home .header .header-2 .news .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Home .header .header-2 .news .food-menu .image-food img {
+  width: 90px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Home .header .header-2 .news .food-menu .detail-food {
+  background: #9FE2BF;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.Home .header .header-2 .news .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.Home .header .header-2 .news .food-menu .detail-food img {
+  width: 10px;
+}
+.Home .new-food-exercise {
+  padding: 0.5rem;
+}
+.Home .new-food-exercise .title-fx {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.Home .new-food-exercise .food {
+  background: white;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+.Home .new-food-exercise .food .food-menu {
+  width: 270px;
+  margin-right: 1rem;
+  padding: 1rem;
+}
+.Home .new-food-exercise .food .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Home .new-food-exercise .food .food-menu .image-food img {
+  width: 96px;
+  height: 94px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Home .new-food-exercise .food .food-menu .detail-food {
+  background: #C1ECE4;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.Home .new-food-exercise .food .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.Home .new-food-exercise .food .food-menu .detail-food img {
+  width: 10px;
 }/*# sourceMappingURL=home.css.map */

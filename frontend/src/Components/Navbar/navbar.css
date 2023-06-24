@@ -3,7 +3,7 @@
   width: 6%;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  background: #B6DFDE;
+  background: #8AC6D1;
 }
 .Navbar .nav-menu {
   margin-top: 1rem;
@@ -19,8 +19,8 @@
   padding: 3px;
 }
 .Navbar .nav-menu .nav_item a.active_link img {
-  border: 2px solid black;
   background: white;
+  width: 40px;
 }
 .Navbar img {
   width: 45px;
@@ -31,8 +31,9 @@
   padding: 3px;
 }
 .Navbar .logo {
-  width: 70px;
+  width: 60px;
   padding-top: 0px;
+  background: none;
 }
 .Navbar .create {
   margin-top: 1rem;

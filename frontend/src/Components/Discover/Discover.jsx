@@ -204,7 +204,7 @@ const Discover = () => {
       <div className='food-exercise-plan d-flex flex-column'>
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
-              <p className='title-meat fs-4 fw-bold'>Bữa ăn 1</p>
+              <p className='title-meat fs-5 fw-bold'>Bữa ăn 1</p>
               <div className='update-meat d-flex flex-row'>
                 <img src={Complete}/>
                 <p className='fs-6 fw-bold'>Hoàn thành</p>
@@ -234,7 +234,7 @@ const Discover = () => {
           </div>
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
-              <p className='title-meat fs-4 fw-bold'>Bài tập ngày hôm nay</p>
+              <p className='title-meat fs-5 fw-bold'>Bài tập ngày hôm nay</p>
               <div className='update-meat d-flex flex-row'>
                 <img src={Complete}/>
                 <p className='fs-6 fw-bold'>Hoàn thành</p>

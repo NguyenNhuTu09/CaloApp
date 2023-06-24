@@ -2,11 +2,12 @@
   border-radius: 1rem;
   background: #EDEAE7;
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 15px;
   overflow: auto;
 }
 .User .info {
+  border-bottom: 1px solid black;
   padding: 0.5rem;
 }
 .User .info img {
@@ -40,13 +41,15 @@
   margin-left: 0.5rem;
 }
 .User .food {
+  background: white;
+  width: 97%;
   margin-top: 0.5rem;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
 }
 .User .food .food-menu {
   width: 17%;
-  margin-bottom: 1rem;
   margin-right: 1rem;
 }
 .User .food .food-menu .image-food {
@@ -58,7 +61,7 @@
   position: absolute;
 }
 .User .food .food-menu .detail-food {
-  background: white;
+  background: #AED6F1;
   border-radius: 1rem;
   margin-top: 3rem;
   padding-top: 0.5rem;
@@ -93,8 +96,9 @@
 .User .plan {
   background: white;
   margin-top: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+  margin: 1rem;
 }
 .User .plan .plan-now {
   margin: 0.7rem;

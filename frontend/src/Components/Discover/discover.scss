@@ -111,8 +111,14 @@
           height: auto;
           .food{
                height: 100%;
+               width: 97%;
                margin-bottom: 2rem;
-               margin-left: 2rem;
+               padding-left: 1rem;
+               margin-left: 0.5rem;
+               background: #FFFF;
+               border-radius: 1rem;
+               padding-top: 0.5rem;
+               padding-bottom: 0.5rem;
                .info-meat{
                     .title-meat{
                          margin-bottom: 1rem;
@@ -145,7 +151,7 @@
                          }
                     }
                     .detail-food{
-                         background: #FFFF;
+                         background: #C1ECE4;
                          border-radius: 1rem;
                          margin-top: 3rem;
                          padding-top: 0.5rem;

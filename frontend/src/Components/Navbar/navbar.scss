@@ -2,8 +2,9 @@
      border-radius: 0px 15px 15px 0px;
      width: 6%;
      backdrop-filter: blur(10px);
-     // background: #A2C5C4;
-     background: #B6DFDE;
+     // background: #B6DFDE;
+     // background: #99DBF5;
+     background: #8AC6D1;
      // border: 2px solid black;
      .nav-menu{
           margin-top: 1rem;
@@ -11,19 +12,20 @@
                list-style-type: none;
                align-items: center;
                img{
-                    // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
                     width: 35px;
                     background-size: cover;
                     border-radius: 0.5rem;
                     padding: 3px;
+                    // background: #FFFF;
                     // border: 1px solid black;
                }
           }
           .nav_item a.active_link{
                img{
-                    border: 2px solid black;
+                    // border: 2px solid black;
                     // background: black;
-                    background: #ffff;
+                    background: #FFFF;
+                    width: 40px;
                }
           }
      }
@@ -35,12 +37,14 @@
           background-size: cover;
           border-radius: 0.5rem;
           padding: 3px;
+          // background: #FFFF;
           // border: 2px solid black;
      }
      .logo{
-          width: 70px;
+          width: 60px;
           // margin-bottom: 1.5rem;
           padding-top: 0px;
+          background: none;
      }
      .create{
           margin-top: 1rem;

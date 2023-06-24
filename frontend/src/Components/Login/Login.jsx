@@ -7,7 +7,9 @@ import arrow from '../../assets/Arrow.png'
 
 import faceImg from '../../assets/Facebook.png'
 import ggImg from '../../assets/Google.png'
-import imageLg from '../../assets/Image-login.png'
+import imageLg from '../../assets/LogoTHF.png'
+
+import background from '../../assets/background-login.jpg'
 
 
 import {BASE_URL} from '../Utils/config.js'
@@ -59,7 +61,7 @@ const Login = () => {
 
   
   return (
-    <div className='Login d-flex flex-row justify-content-between'>
+    <div className='Login d-flex flex-row '>
       <div className='information d-flex flex-column'>
         <p className='title-login fs-2 fw-bold'>Đăng nhập</p>
         <p className='fs-6 fw-bold'>Bạn chưa có đăng nhập, <Link to='/register'>Đăng ký</Link></p>
@@ -99,8 +101,9 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className='image-login d-flex'>
+      <div className='image-login d-flex flex-column align-items-center'>
         <img src={imageLg}/>
+        <p className='fs-1 fw-bold'>T.H.F Website</p>
       </div>
     </div>
 

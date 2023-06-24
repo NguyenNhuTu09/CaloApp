@@ -47,7 +47,7 @@ export const register = async(req, res) => {
           
      }catch(error){
           console.log(error)
-          res.status(500).json({message: 'Server Error'})
+          res.status(500).json({message: 'Server gặp vấn đề'})
      }
 }
 

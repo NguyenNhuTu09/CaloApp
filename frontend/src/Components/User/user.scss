@@ -2,12 +2,12 @@
      border-radius: 1rem;
      background: #EDEAE7;
      width: 100%;
-     padding: 0.5rem;
+     padding: 1rem;
      font-size: 15px;
      overflow: auto;
      .info{
           // margin: 1rem;
-          // border-bottom: 1px solid black;
+          border-bottom: 1px solid black;
           padding: 0.5rem;
           img{
                width: 100px;
@@ -41,14 +41,15 @@
           margin-left: 0.5rem;
      }
      .food{
-          // border: 1px solid black;
+          background: #FFFF;
+          width: 97%;
           margin-top: 0.5rem;
           padding: 1rem;
-          border-radius: 0.5rem;
+          border-radius: 1rem;
+          margin-left: 1rem;
           .food-menu{
                width: 17%;
-               // border: 2px solid black;
-               margin-bottom: 1rem;
+               // margin-bottom: 1rem;
                margin-right: 1rem;
                .image-food{
                     margin-left: 1rem;
@@ -60,7 +61,7 @@
                     }
                }
                .detail-food{
-                    background: #FFFF;
+                    background: #AED6F1;
                     border-radius: 1rem;
                     margin-top: 3rem;
                     padding-top: 0.5rem;
@@ -101,8 +102,9 @@
           // border: 1px solid black;
           background: #FFFF;
           margin-top: 0.5rem;
-          padding: 1rem;
+          padding: 0.5rem;
           border-radius: 0.5rem;
+          margin: 1rem;
           .plan-now{
                margin: 0.7rem;
                padding: 0.5rem;

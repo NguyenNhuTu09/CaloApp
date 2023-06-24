@@ -5,7 +5,7 @@ import './navbar.css'
 
 import ichome from '../../assets/newHome.png'
 import icuser from '../../assets/newUser.png'
-import logo from '../../assets/THF.png'
+import logo from '../../assets/LogoTHF.png'
 import login from '../../assets/Continue.png'
 
 import menu from '../../assets/newMenu.png'

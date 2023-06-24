@@ -50,19 +50,45 @@
   margin-right: 5px;
 }
 .Login .information .face-gg .facebook, .Login .information .face-gg .google {
-  width: 35%;
+  width: -moz-fit-content;
+  width: fit-content;
   background: white;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
   align-items: center;
   border-radius: 0.5rem;
 }
 .Login .image-login {
-  width: 70%;
   height: auto;
+  width: 70%;
   padding: 1rem;
   text-align: center;
+  margin-left: 5rem;
+  background-image: url("src/assets/bg-login.jpg");
+  background-size: cover;
+  border-radius: 1rem;
 }
 .Login .image-login img {
-  width: 90%;
-  margin-left: 1rem;
+  width: 50%;
+  height: 75%;
+  margin-top: 1rem;
+  transition: var(--transition);
+  animation: animated 2.5s infinite;
+  transform: rotate(45deg);
+}
+@keyframes animated {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.Login .image-login p {
+  margin-top: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 1rem;
 }/*# sourceMappingURL=login.css.map */
