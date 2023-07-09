@@ -7,14 +7,46 @@ export const createFood = async(req, res) => {
           const savedFood = await newFood.save()
           res.status(200).json({
                success: true, 
-               message: 'Successfully created',
+               message: 'Tạo món ăn thành công',
                data: savedFood})
      }catch(err){
+          console.log(err)
           res.status(500).json({
                success: false, 
-               message: 'Failed to create. Try again'})
+               message: 'Server có lỗi'})
      }
 }
+
+// export const createFood = async(req, res) => {
+//      try{
+//           const {nameFood, 
+//                Type, 
+//                imageFood, 
+//                support, 
+//                ration, 
+//                totalCalories, 
+//                mainMaterial, 
+//                auxiliaryMaterials, Additives, processing, description, reviews} = req.body;
+//                let food = await Food.findOne({nameFood})
+//                if(food){
+//                     return res.status(400).json({message: "Món ăn đã có trên thực đơn, đổi tên khác"})
+//                }
+//                food = new Food({nameFood, 
+//                     Type, 
+//                     imageFood, 
+//                     support, 
+//                     ration, 
+//                     totalCalories, 
+//                     mainMaterial, 
+//                     auxiliaryMaterials, Additives, processing, description, reviews})
+//                     await food.save()
+//                res.status(200).json({message: "Tạo món ăn thành công, xem lại trong thực đơn", data: food})
+//      }catch(error){
+//           console.log(error)
+//           res.status(500).json({message: 'Server gặp vấn đề'})
+//      }
+     
+// }
 
 // update Food
 export const updateFood = async (req, res) => {

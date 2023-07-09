@@ -53,8 +53,15 @@ const foodSchema = new mongoose.Schema(
                  ref: "Review",
                },
           ],
+          author: [
+               {
+                    type: mongoose.Types.ObjectId,
+                    ref: "User",
+               },
+          ],
      },
      {timestamps: true}
 )
 
 export default mongoose.model('Food', foodSchema)
+

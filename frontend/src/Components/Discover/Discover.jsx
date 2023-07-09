@@ -13,6 +13,14 @@ import Cangu from '../../assets/Food/Ca ngu.jpg'
 import Cahoi from '../../assets/Food/Ca hoi.jpg'
 import Gatandori from '../../assets/Food/Ga tandoori.jpg'
 
+import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
+import Comgaolut from '../../assets/Food/Salad-rau-thit-bo.jpg'
+import Comgagaolut from '../../../public/Food/Salad-ca-hoi-rong-nho.jpg'
+
+import food1 from '../../../public/Food/Sua-chua-trai-cay.jpg'
+import food2 from '../../../public/Food/Uc-ga-cai-bap.jpg'
+import food3 from '../../../public/Food/Salad-bo-trung.jpg'
+
 import {AiFillStar} from 'react-icons/ai'
 
 import {HiOutlineChevronRight} from 'react-icons/hi'
@@ -86,6 +94,89 @@ const OptionsDetailFood = [
   },
 ]
 
+
+
+const OptionsDetailFood2 = [
+  {
+    id: 1,
+    imageFoodDetail: <img src={Banhmithitga}/>,
+    type: 'Protein',
+    star: '4.1',
+    icon: <AiFillStar/>,
+    nameFoodDetail: 'Bánh mì thịt gà',
+    gam: '550',
+    calories: '640 Calo',
+    description: '....',
+    teps: 'Bước 1'
+  },
+  {
+    id: 3,
+    imageFoodDetail: <img src={Comgagaolut}/>,
+    type: 'Protein',
+    star: '5.0',
+    icon: <AiFillStar/>,
+    nameFoodDetail: 'Salad cá hồi rong nho',
+    gam: '260g',
+    calories: '560 Calo',
+    description: '....',
+    teps: 'Bước 1'
+  },
+  {
+    id: 4,
+    imageFoodDetail: <img src={Comgaolut}/>,
+    type: 'Protein',
+    star: '5.0',
+    icon: <AiFillStar/>,
+    nameFoodDetail: 'Salad rau mầm thịt bò',
+    gam: '260g',
+    calories: '560 Calo',
+    description: '....',
+    teps: 'Bước 1'
+  },
+]
+
+const OptionsDetailFood3 = [
+  {
+    id: 1,
+    imageFoodDetail: <img src={food1}/>,
+    type: 'Tiêu hóa',
+    star: '4.1',
+    icon: <AiFillStar/>,
+    nameFoodDetail: 'Sữa chua trái cây',
+    gam: '550',
+    calories: '640 Calo',
+    description: '....',
+    teps: 'Bước 1'
+  },
+  {
+    id: 3,
+    imageFoodDetail: <img src={food2}/>,
+    type: 'Protein',
+    star: '5.0',
+    icon: <AiFillStar/>,
+    nameFoodDetail: 'Ức gà cải bắp',
+    gam: '260g',
+    calories: '560 Calo',
+    description: '....',
+    teps: 'Bước 1'
+  },
+  {
+    id: 4,
+    imageFoodDetail: <img src={food3}/>,
+    type: 'Protein',
+    star: '5.0',
+    icon: <AiFillStar/>,
+    nameFoodDetail: 'Salad bơ trứng',
+    gam: '260g',
+    calories: '560 Calo',
+    description: '....',
+    teps: 'Bước 1'
+  },
+]
+
+
+
+
 const OptionsExercise = [
   {
     id: 1,
@@ -134,7 +225,7 @@ const Discover = () => {
       <div className='plan d-flex flex-row'>
         <div className='detail-day-plan d-flex flex-column'>
           <p className='title-day fs-2 fw-bold'>Ngày thứ 1</p>
-          <p className='title-day fs-5 fw-bold'>12/05/2023</p>
+          <p className='title-day fs-5 fw-bold'>01/07/2023</p>
           {/* <p className='title-day fs-5 fw-bold'>Bữa ăn: <span>4</span></p>
           <p className='title-day fs-5 fw-bold'>Bài tập: 3</p> */}
           <div className='parameter-day-plan d-flex flex-row justify-content-between'>
@@ -162,7 +253,7 @@ const Discover = () => {
               <div className='plan-now d-flex flex-column'>
                 <Link className='link' to='/app/detailplan'>
                   <p className='fw-bold'>Giảm 10 cân</p>
-                  <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>10/06/2023</span></p>
+                  <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>01/07/2023</span></p>
                   <div className='status fw-bold'>
                     Đang thực hiện
                   </div>
@@ -181,22 +272,33 @@ const Discover = () => {
             <div className='my-plan-02 d-flex flex-row'>
               <div className='day text-center'>
                 <p className='fw-bold'>Ngày thứ 1</p>
-                <p className='fw-normal'>12/05/2023</p>
+                <p className='fw-normal'>01/07/2023</p>
               </div>
               <div className='day text-center'>
                 <p className='fw-bold'>Ngày thứ 2</p>
-                <p className='fw-normar'>13/05/2023</p>
+                <p className='fw-normar'>02/07/2023</p>
               </div>
               <div className='day text-center'>
                 <p className='fw-bold'>Ngày thứ 3</p>
-                <p className='fw-normal'>14/05/2023</p>
+                <p className='fw-normal'>03/07/2023</p>
+              </div>
+              <div className='day text-center'>
+                <p className='fw-bold'>Ngày thứ 4</p>
+                <p className='fw-normal'>04/07/2023</p>
+              </div>
+              <div className='day text-center'>
+                <p className='fw-bold'>Ngày thứ 5</p>
+                <p className='fw-normal'>05/07/2023</p>
               </div>
             </div>
         </div>
 
         <div className='note-day-plan d-flex flex-column'>
           <p className='fs-6 fw-bold'>Ghi chú: </p>
-          <textarea class="form-control note" aria-label="With textarea"/>
+          <textarea class="form-control note" aria-label="With textarea"
+          placeholder='Không ăn thêm bữa phụ, có thể tập thêm 15 phút mỗi bài tập'>
+            
+          </textarea>
         </div>
       </div>
 
@@ -232,6 +334,70 @@ const Discover = () => {
             })
           }
           </div>
+
+
+          <div className='food d-flex flex-row'>
+            <div className='info-meat d-flex flex-column'>
+              <p className='title-meat fs-5 fw-bold'>Bữa ăn 2</p>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Complete}/>
+                <p className='fs-6 fw-bold'>Hoàn thành</p>
+              </div>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Repair}/>
+                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
+              </div>
+            </div>
+          {
+          OptionsDetailFood2.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
+              return(
+                <div key={id} className='food-menu'>
+                    <div className='image-food position-relative'>
+                      {imageFoodDetail}
+                    </div>
+                    <div className='detail-food'>
+                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
+                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
+                      <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
+                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
+                    </div>
+                  </div>
+              )
+            })
+          }
+          </div>
+
+          <div className='food d-flex flex-row'>
+            <div className='info-meat d-flex flex-column'>
+              <p className='title-meat fs-5 fw-bold'>Bữa ăn 3</p>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Complete}/>
+                <p className='fs-6 fw-bold'>Hoàn thành</p>
+              </div>
+              <div className='update-meat d-flex flex-row'>
+                <img src={Repair}/>
+                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
+              </div>
+            </div>
+          {
+          OptionsDetailFood3.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
+              return(
+                <div key={id} className='food-menu'>
+                    <div className='image-food position-relative'>
+                      {imageFoodDetail}
+                    </div>
+                    <div className='detail-food'>
+                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
+                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
+                      <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
+                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
+                    </div>
+                  </div>
+              )
+            })
+          }
+          </div>
+
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
               <p className='title-meat fs-5 fw-bold'>Bài tập ngày hôm nay</p>

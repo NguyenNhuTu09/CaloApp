@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import './user.css'
 import { Form, FormGroup, Row } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import {HiOutlineChevronRight} from 'react-icons/hi'
 import {RiUserSettingsLine} from 'react-icons/ri'
@@ -47,6 +48,11 @@ import add from '../../assets/addplan.png'
 
 import {BsSearch} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
+
+import { BASE_URL } from '../Utils/config.js'
+import { AuthContext } from '../../Context/AuthContext'
+
+
 
 const OptionsDetailFood = [
   {
@@ -127,16 +133,21 @@ const OptionsExercise = [
 ]
 
 
-
-
-
 const User = () => {
+  const {id} = useParams()
+  const {user, dispatch} = useContext(AuthContext)
+
+  useEffect(() => {
+  },[user])
+
+  console.log(user.foods)
+
   return (
     <div className='User d-flex flex-column'>
       <div className='info d-flex flex-row'>
         <img src={userImg}/>
         <div className='title-info'>
-          <p className='fs-4 fw-bold'>Nguyễn Như Từ</p>
+          <p className='fs-4 fw-bold'>{user.lastFirstName}</p>
           <div className='setting-info d-flex flex-row'>
             <p className='text fs-6 fw-bold'>Sửa hồ sơ</p>
             <img src={settingUser}/>

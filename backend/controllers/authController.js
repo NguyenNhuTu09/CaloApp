@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import express from 'express'
 
-// user regiatration
 // export const register = async(req, res) => {
 //      try{
 //           const salt = bcrypt.genSaltSync(10)

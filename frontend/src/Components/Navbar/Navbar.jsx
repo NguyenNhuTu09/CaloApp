@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {NavLink, Link, useNavigate, Outlet} from 'react-router-dom';
+import React, {useEffect, useState} from 'react'
+import {NavLink, Link, useNavigate, Outlet, useParams} from 'react-router-dom';
 import {Form, FormGroup} from 'reactstrap'
 import './navbar.css'
 
@@ -26,6 +26,10 @@ import Tapluyen from '../../assets/Tapluyen.png'
 
 import {BiLogOut} from 'react-icons/bi';
 import {AiOutlineHome} from 'react-icons/ai'
+
+import { BASE_URL } from '../Utils/config.js';
+import { AuthContext } from '../../Context/AuthContext';
+
 
 
 const nav_link1 = [
@@ -60,6 +64,19 @@ const nav_link2 = [
 
 
 const Navbar = () => {
+  // const {id} = useParams()
+
+  // const [inforUser, setInforUser] = useState([])
+  // const fetchData = async()=>{
+  //   const response = await fetch(`${BASE_URL}/users/${id}`)
+  //   const data = response.json()
+  //   setInforUser(data.data)
+  // }
+
+  // useEffect(() => {
+  //   fetchData()
+  // }, [])
+  // console.log(inforUser)
   return (
     <>
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>

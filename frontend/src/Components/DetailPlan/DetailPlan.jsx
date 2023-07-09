@@ -245,7 +245,10 @@ const DetailPlan = () => {
                     <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
                     <p className='food-name fs-6 fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
                     <p className='calo d-flex flex-row justify-content-between'>{calories}
-                      <Link className='link' to='/app/detailplan/detailfood'><span>Chi tiết <img src={arrow}/></span>
+                      {/* <Link className='link' to='/app/detailplan/detailfood'><span>Chi tiết <img src={arrow}/></span>
+                      </Link> */}
+
+                      <Link className='link'><span>Chi tiết <img src={arrow}/></span>
                       </Link>
                     </p>
                   </div>

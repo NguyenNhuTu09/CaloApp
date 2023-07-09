@@ -6,6 +6,13 @@
   font-size: 15px;
   overflow: auto;
 }
+.Menu .create-food-final {
+  border-radius: 0.5rem;
+  border: 2px dashed black;
+}
+.Menu .create-food-final img {
+  width: 30px;
+}
 .Menu .master {
   margin-right: 1rem;
   border: 2px solid black;
@@ -51,6 +58,10 @@
 }
 .Menu .menu-list .food .food-menu .detail-food img {
   width: 10px;
+}
+.Menu .menu-list .food .food-menu .detail-food .link {
+  text-decoration: none;
+  color: black;
 }
 .Menu .menu-list .nav {
   width: 18%;

@@ -4,9 +4,12 @@
   width: 100%;
   padding: 1rem;
   font-size: 15px;
+  margin-left: 1rem;
+  overflow: auto;
 }
 .DetailFood .image-review {
   width: 32%;
+  height: 100vh;
 }
 .DetailFood .image-review .back {
   margin-left: 1.5rem;
@@ -28,7 +31,7 @@
 }
 .DetailFood .image-review .image-food {
   margin-left: 4rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   align-items: center;
   width: 325px;
 }
@@ -39,7 +42,7 @@
 .DetailFood .image-review .text {
   margin-left: 1.5rem;
   margin-bottom: 1rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
   width: 90%;
 }
 .DetailFood .image-review .text .star {
@@ -62,9 +65,14 @@
   margin-top: 5px;
 }
 .DetailFood .description {
-  padding: 0.5rem;
-  width: 35%;
-  margin-left: 1rem;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 37%;
+  height: 100vh;
+  margin-left: 1.2rem;
+  border-radius: 1rem;
+  background: #E9F8F9;
 }
 .DetailFood .description .status {
   width: 25%;
@@ -87,34 +95,46 @@
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  background: white;
+  background: #C1ECE4;
   margin-top: 1rem;
 }
 .DetailFood .description .text-description {
+  border-radius: 1rem;
+  padding: 1rem;
   margin-top: 2rem;
+  background: #C1ECE4;
 }
 .DetailFood .author {
-  width: 30%;
-  padding: 1rem;
+  width: 26%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-left: 1rem;
 }
 .DetailFood .author .image {
   margin-bottom: 1rem;
-  margin-left: 1.5rem;
+  border-radius: 1rem;
+  background: #E9F8F9;
+  padding: 1.2rem;
+  align-items: center;
 }
 .DetailFood .author .image img {
   width: 80px;
+  height: 80px;
+  margin-right: 0.5rem;
 }
 .DetailFood .author .image .info {
   margin-left: 1rem;
   margin-top: 0.5rem;
 }
 .DetailFood .author .image .info .name-author {
-  width: 220px;
+  width: 200px;
   cursor: pointer;
 }
 .DetailFood .author .image .info .name-author:hover {
   color: white;
+}
+.DetailFood .author .image .info .name-author .icons {
+  margin-left: 0.5rem;
 }
 .DetailFood .author .image .info .status-author {
   width: 100px;
@@ -125,6 +145,7 @@
 }
 .DetailFood .author .food-author {
   padding: 1.5rem;
+  align-items: center;
 }
 .DetailFood .author .food-author .food-menu {
   width: 250px;
@@ -139,7 +160,7 @@
   position: absolute;
 }
 .DetailFood .author .food-author .food-menu .detail-food {
-  background: white;
+  background: #64CCC5;
   border-radius: 1rem;
   margin-top: 3rem;
   padding-top: 0.5rem;

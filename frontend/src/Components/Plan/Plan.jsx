@@ -225,6 +225,34 @@ const Plan = () => {
           </div>
           <button type="button" class="btn btn-info">Lưu</button>
         </div>
+        <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>2</span>:</p>
+        <div className='food d-flex flex-row'>
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
+          <button type="button" class="btn btn-info">Lưu</button>
+        </div>
+        <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>3</span>:</p>
+        <div className='food d-flex flex-row'>
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
+          <button type="button" class="btn btn-info">Lưu</button>
+        </div>
+        <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>4</span>:</p>
+        <div className='food d-flex flex-row'>
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
+          <button type="button" class="btn btn-info">Lưu</button>
+        </div>
+        <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>5</span>:</p>
+        <div className='food d-flex flex-row'>
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
+          <button type="button" class="btn btn-info">Lưu</button>
+        </div>
 
         <p className='fs-6 fw-bold'>Bài tập cho ngày hôm nay:</p>
         <div className='exercise d-flex flex-row'>
@@ -233,7 +261,7 @@ const Plan = () => {
           </div>
           <button type="button" class="btn btn-info">Lưu</button>
         </div>
-
+        
         {/* ======================== */}
 
       </div>

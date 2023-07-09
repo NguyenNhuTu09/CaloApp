@@ -8,7 +8,15 @@ import Ham from '../../assets/Food/Ham.jpg'
 // import Suachua from '../../assets/Food/Sua chua.jpg'
 import {AiFillStar} from 'react-icons/ai'
 
+// lần nào cũng xin cơ hội
+// cơ hội đó..
+// chỉ có 2 cái đồ án về Web, và học tiếng Anh, không đâu vào đâu.....
+// 3 tháng trời không có lấy một chữ về Tiếng Anh, 2 cái đồ án thì chỉ có giao diện, xong rồi tự mãn .....
+// Đồ Án 1, nguy cơ là sắp rớt.....
 
+
+// vậy mà m từng nói rằng kỳ này là cơ hội để m chứng minh bản thân ????
+// chứng minh đi ?????
 import SaladBoTrung from '../../assets/Food/Salad-bo-trung.jpg'
 import SaladRauMam from '../../assets/Food/Salad-rau-thit-bo.jpg'
 import Suachua from '../../assets/Food/Sua-chua-trai-cay.jpg';
@@ -19,6 +27,7 @@ import xadon from '../../assets/Exercise/Xa don.jpg'
 
 
 import userImg from '../../assets/userplan.jpg'
+import tuimg from '../../assets/tuimg.jpg'
 
 import arrow from '../../assets/Arrow.png'
 
@@ -122,48 +131,48 @@ const Home = () => {
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>7 days Healthy</td>
+                  <td>@Tu_admin_01</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
                   <td>Thornton</td>
-                  <td>@fat</td>
+                  <td>@tu_1909</td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
                   <td>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>@TU_1909</td>
                 </tr>
                 <tr>
                   <th scope="row">4</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>10 days Healthy</td>
+                  <td>@tu_admin_01</td>
                 </tr>
                 <tr>
                   <th scope="row">5</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>10 days Healthy</td>
+                  <td>@tu_admin_02</td>
                 </tr>
                 <tr>
                   <th scope="row">6</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>GoHealthy_01</td>
+                  <td>@ThanhSang</td>
                 </tr>
                 <tr>
                   <th scope="row">7</th>
-                  <td>Larry the Bird</td>
+                  <td>GoHealthy_02</td>
                   <td>@twitter</td>
                 </tr>
                 <tr>
                   <th scope="row">8</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>Firee</td>
+                  <td>@tu_1909</td>
                 </tr>
                 <tr>
                   <th scope="row">9</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
+                  <td>Giảm cân chuẩn</td>
+                  <td>@tw</td>
                 </tr>
                 <tr>
                   <th scope="row">10</th>
@@ -178,7 +187,27 @@ const Home = () => {
           <div className='calendar d-flex flex-row'>
               <Calendar/>
 
-              <div className='infor-app'>asdfa</div>
+              <div className='infor-app d-flex flex-column'>
+                <div className='infor-01 d-flex flex-row'>
+                  <img className='tu-img' src={tuimg}/>
+                  <div className='d-flex flex-column'>
+
+                    <p className='fs-5 fw-bold'>Nguyễn Như Từ</p>
+                    <p className='fs-6'>Người dùng</p>
+                  </div>
+                  <img className='arr' src={arrow}/>
+                </div>
+
+                <div className='plan-now d-flex flex-column'>
+                  <Link className='link' to='/app/detailplan'>
+                    <p className='fw-bold'>Giảm 10 cân</p>
+                    <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>10/06/2023</span></p>
+                    <div className='status fw-bold'>
+                      Đang thực hiện
+                    </div>
+                  </Link>
+                </div>
+              </div>
           </div>
           <p className='fs-6 fw-bold'>Kế hoạch mới trong tuần này</p>
           <div className='news d-flex flex-row '>
@@ -204,7 +233,7 @@ const Home = () => {
                   <img src={userImg}/>
                 </div>
                 <div className='detail-food'>
-                    <p className='caterogy d-flex flex-row justify-content-end'><span>4.5 <AiFillStar/></span></p>
+                    <p className='caterogy d-flex flex-row justify-content-end'><span>0 <AiFillStar/></span></p>
                     <p className='caterogy d-flex flex-row justify-content-end fw-bold'>7 days Healthy</p>
                     <p className='food-name d-flex flex-row justify-content-between'>Thời gian<span>4 tuần</span></p>
                     <p className='calo d-flex flex-row justify-content-between'>550<span>Chi tiết <img src={arrow}/></span></p>
@@ -215,8 +244,8 @@ const Home = () => {
                   <img src={userImg}/>
                 </div>
                 <div className='detail-food'>
-                    <p className='caterogy d-flex flex-row justify-content-end'><span>4.5 <AiFillStar/></span></p>
-                    <p className='caterogy d-flex flex-row justify-content-end fw-bold'>7 days Healthy</p>
+                    <p className='caterogy d-flex flex-row justify-content-end'><span>0 <AiFillStar/></span></p>
+                    <p className='caterogy d-flex flex-row justify-content-end fw-bold'>GoHealthy_01</p>
                     <p className='food-name d-flex flex-row justify-content-between'>Thời gian<span>4 tuần</span></p>
                     <p className='calo d-flex flex-row justify-content-between'>550<span>Chi tiết <img src={arrow}/></span></p>
                 </div>

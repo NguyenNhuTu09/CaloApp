@@ -4,9 +4,13 @@
      width: 100%;
      padding: 1rem;
      font-size: 15px;
+     margin-left: 1rem;
+     // height: 900vh;
+     overflow: auto;
      .image-review{
           // margin-left: 2rem;
           width: 32%;
+          height: 100vh;
           .back{
                margin-left: 1.5rem;
                // border: 2px solid black;
@@ -28,7 +32,7 @@
           }
           .image-food{
                margin-left: 4rem;
-               margin-top: 2rem;
+               margin-top: 1.5rem;
                align-items: center;
                // border: 2px solid black;
                width: 325px;
@@ -40,7 +44,7 @@
           .text{
                margin-left: 1.5rem;
                margin-bottom: 1rem;
-               margin-top: 4rem;
+               margin-top: 3rem;
                // border: 2px solid black;
                width: 90%;
                .star{
@@ -67,10 +71,15 @@
      }
      .description{
           // border: 2px solid black;
-          padding: 0.5rem;
           // padding-top: 1rem;
-          width: 35%;
-          margin-left: 1rem;
+          padding-top: 1rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          width: 37%;
+          height: 100vh;
+          margin-left: 1.2rem;
+          border-radius: 1rem;
+          background: #E9F8F9;
           .status{
                width: 25%;
                padding: 3px;
@@ -93,33 +102,49 @@
                width: 100%;
                padding: 1rem;
                border-radius: 0.5rem;
-               background: #FFFF;
+               background: #C1ECE4;
                margin-top: 1rem;
           }
           .text-description{
                // border: 2px solid black;
+               border-radius: 1rem;
+               padding: 1rem;
                margin-top: 2rem;
+               background: #C1ECE4;
           }
      }
      .author{
           // border: 2px solid black;
-          width: 30%;
-          padding: 1rem;
+          width: 26%;
+          // padding: 0.5rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
           margin-left: 1rem;
           .image{
                margin-bottom: 1rem;
-               margin-left: 1.5rem;
+               // margin-left: 1rem;
+               border-radius: 1rem;
+               background: #E9F8F9;
+               padding: 1.2rem;
+               align-items: center;
                img{
                     width: 80px;
+                    height: 80px;
+                    margin-right: 0.5rem;
+                    // border: 2px solid black;
                }
                .info{
                     margin-left: 1rem;
                     margin-top: 0.5rem;
+                    
                     .name-author{
-                         width: 220px;
+                         width: 200px;
                          cursor: pointer;
                          &:hover{
                               color: #FFFF;
+                         }
+                         .icons{
+                              margin-left: 0.5rem;
                          }
                     }
                     .status-author{
@@ -135,6 +160,7 @@
           .food-author{
                // align-items: center;
                padding: 1.5rem;
+               align-items: center;
                .food-menu{
                     width: 250px;
                     // border: 2px solid black;
@@ -149,7 +175,7 @@
                          }
                     }
                     .detail-food{
-                         background: #FFFF;
+                         background: #64CCC5;
                          border-radius: 1rem;
                          margin-top: 3rem;
                          padding-top: 0.5rem;

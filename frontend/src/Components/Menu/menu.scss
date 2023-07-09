@@ -5,6 +5,13 @@
      padding: 0.5rem;
      font-size: 15px;
      overflow: auto;
+     .create-food-final{
+          border-radius: 0.5rem;
+          border: 2px dashed black;
+          img{
+               width: 30px;
+          }
+     }
      .master{
           margin-right: 1rem;
           border: 2px solid black;
@@ -53,6 +60,10 @@
                          }
                          img{
                               width: 10px;
+                         }
+                         .link{
+                              text-decoration: none;
+                              color: black;
                          }
                          
                     }

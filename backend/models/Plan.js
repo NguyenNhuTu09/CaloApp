@@ -2,16 +2,16 @@ import mongoose from "mongoose";
 
 const PlanSchema = new mongoose.Schema(
   {
-    productId: {
+    userId: {
       type: mongoose.Types.ObjectId,
-      ref: "Food",
+      ref: "User",
     },
-    username: {
+    namePlan: {
       type: String,
       required: true,
       unique: true
     },
-    dayPlan: [
+    dayPlan: [ 
       {
         type: mongoose.Types.ObjectId,
         ref: "DayPlan"

@@ -4,6 +4,7 @@
   width: 100%;
   padding: 1rem;
   font-size: 15px;
+  overflow: auto;
 }
 .Plan span {
   cursor: pointer;

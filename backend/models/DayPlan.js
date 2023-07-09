@@ -2,14 +2,9 @@ import mongoose from "mongoose";
 
 const DayPlanSchema = new mongoose.Schema(
   {
-    productId: {
+    dayPlanId: {
       type: mongoose.Types.ObjectId,
       ref: "Food",
-    },
-    username: {
-      type: String,
-      required: true,
-      unique: true
     },
     dayFood: [
       {
@@ -22,7 +17,11 @@ const DayPlanSchema = new mongoose.Schema(
         type: mongoose.Types.ObjectId,
         ref: "DayExercise"
       }
-    ]
+    ],
+    noteDayPlan:{
+      type: String,
+      required: true,
+    }
   },
   { timestamps: true }
 );

@@ -37,9 +37,15 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     photo: {
-      type: Buffer,
+      type: String,
       required: true
     },
+    foods: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Food",
+      },
+ ],
   },
   { timestamps: true }
 );

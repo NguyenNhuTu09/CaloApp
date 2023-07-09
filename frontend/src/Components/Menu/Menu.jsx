@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom'
 import arrow from '../../assets/Arrow.png'
 import calculateAvgRating from '../Utils/avgRating.js'
 
+import addplan from '../../assets/addplan.png'
+
 
 import {BsSearch} from 'react-icons/bs'
 import {AiFillStar, AiTwotoneEuroCircle} from 'react-icons/ai'
@@ -293,14 +295,12 @@ const Menu = () => {
 
   const [testReviews, setTestReviews] = useState([])
 
-  // const {_id, imageFood, Type, nameFood, totalCalories, ration} = foods
-
-  // const {totalRating, avgRating} = calculateAvgRating(reviews)
 
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json();
     setFoods(data.data)
+    console.log(data.data)
   }
   useEffect(() => {
     fetchData();
@@ -322,6 +322,11 @@ const Menu = () => {
                 <li><a class="dropdown-item" href="#">Giảm cân</a></li>
               </ul>
             </div>
+          </div>
+
+          <div className='create-food-final d-flex flex-row col-md-1 align-items-center'>
+            <img src={addplan}/>
+            <p>Tải lên</p>
           </div>
           <div class="col-md-4 ms-auto">
             <div class="input-group">
@@ -425,7 +430,7 @@ const Menu = () => {
                       <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
                       <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
                       <p className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo<span>
-                      <Link to={`/foods/${_id}`}>
+                      <Link className='link' to={`/app/menu/${_id}`}>
                         Chi tiết <img src={arrow}/>
                       </Link>
                       </span></p>
