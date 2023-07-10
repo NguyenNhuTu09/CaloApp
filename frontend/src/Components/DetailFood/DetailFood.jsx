@@ -79,7 +79,7 @@ const DetailFood = () => {
   const [processing, setProcessing] = useState('')
   const [review, setReview] = useState('')
   const [country, setCountry] = useState('')
-  const [User, setUser] = useState([])
+  const [uuser, setUser] = useState([])
 
   const [foodUser, setFoodUser] = useState([])
 
@@ -228,7 +228,7 @@ const DetailFood = () => {
           <img src={user}/>
           <div className='info d-flex flex-column'>
             <div className='name-author d-flex flex-row justify-content-between'>
-              <p className='fs-5 fw-bold'>{User}</p>
+              <p className='fs-5 fw-bold'>{uuser}</p>
               <AiOutlineArrowRight className='icons fs-3'/>
             </div>
             <div className='status-author d-flex flex-row'>

@@ -35,15 +35,18 @@ import { AuthContext } from '../../Context/AuthContext';
 const nav_link1 = [
   {
     path: '/app/home',
-    icon: <img src={ichome}/>
+    icon: <img src={ichome}/>,
+    text: <p>Trang chủ</p>
   },
   {
     path: '/app/menu',
-    icon: <img src={menu2}/>
+    icon: <img src={menu2}/>,
+    text: <p>Thực đơn</p>
   },
   {
     path: '/app/exercise',
-    icon: <img src={Tapluyen}/>
+    icon: <img src={Tapluyen}/>,
+    text: <p>Bài tập</p>
   },
 ]
 
@@ -84,8 +87,9 @@ const Navbar = () => {
           <img className='logo' src={logo}/>
           {
             nav_link1.map((item, index) => (
-              <li className='nav_item' key={index}>
+              <li className='nav_item d-flex flex-row' key={index}>
                     <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""}><a>{item.icon}</a></NavLink>
+                    {/* {item.text} */}
               </li>
             ))
           }

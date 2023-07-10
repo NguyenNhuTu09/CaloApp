@@ -16,15 +16,9 @@ import CreateFood from './Components/CreateFood/CreateFood'
 import Discover from './Components/Discover/Discover'
 import User from './Components/User/User'
 import Exercise from './Components/Exercise/Exercise'
+import Introduction from './Components/Introduction/Introduction'
+import NavHome from './Components/NavHome/NavHome'
 
-// const App = () => {
-//   return (
-//       <div className='App'>
-//         <Navbar/>
-//         <Routers/>
-//     </div>
-//   )
-// }
 
 const App = () => {
   return(
@@ -38,6 +32,10 @@ const App = () => {
 
             <Route path='app' element={<Navbar/>}>
               <Route path='discover' element={<Discover/>}/>
+              {/* <Route path='home' element={<NavHome/>}>
+                <Route path='page_01' element={<Home/>}/>
+                <Route path='page_02' element={<Introduction/>}/>
+              </Route> */}
               <Route path='home' element={<Home/>}/>
               <Route path="user" element={<User/>}/>
               {/* <Route path="user/:id" element={<User/>}/> */}

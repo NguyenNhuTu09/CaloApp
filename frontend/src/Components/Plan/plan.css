@@ -14,6 +14,9 @@
 }
 .Plan .create-food {
   width: 78%;
+  overflow: auto;
+  margin-left: 0.6rem;
+  padding-right: 0.5rem;
 }
 .Plan .create-food .food-day-note {
   height: 160px;
@@ -97,6 +100,7 @@
   border-radius: 0.5rem;
   height: 100%;
   padding-top: 0.5rem;
+  background: #C2DEDC;
 }
 .Plan .day-plan img {
   width: 30px;
@@ -165,6 +169,104 @@
 .Plan .food-menu .detail-food img {
   width: 10px;
 }
-.Plan .modal-body {
+.Plan .modal .modal-body {
   background: #EDEAE7;
+}
+.Plan .modal .modal-body .dropdown {
+  cursor: pointer;
+}
+.Plan .modal .modal-body .dropdown img {
+  width: 35px;
+}
+.Plan .modal .modal-body .menu-list .food {
+  margin-left: 1rem;
+  width: 90%;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu {
+  width: 25%;
+  margin-bottom: 1rem;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 70%;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food p {
+  margin-bottom: 7px;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food img {
+  width: 10px;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food .link {
+  text-decoration: none;
+  color: black;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food .calo {
+  margin-bottom: 5px;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food .calo .options {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  width: 70px;
+}
+.Plan .modal .modal-body .menu-list .food .food-menu .detail-food .calo .options:hover {
+  background: #99DBF5;
+}
+.Plan .modal .modal-body .menu-list .nav {
+  width: 18%;
+  padding: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .form-check-input {
+  margin-right: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .icons {
+  margin-top: 7px;
+}
+.Plan .modal .modal-body .menu-list .nav .text {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .country {
+  width: 100%;
+  margin: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .calo {
+  margin: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .calo .form-control {
+  width: 25%;
+  margin-left: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .calo .from {
+  margin-top: 5px;
+}
+.Plan .modal .modal-body .menu-list .nav .calo .to {
+  margin-top: 5px;
+}
+.Plan .modal .modal-body .menu-list .nav .calo .to {
+  margin-left: 1.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .provide {
+  margin: 0.5rem;
+}
+.Plan .modal .modal-body .menu-list .nav .rank {
+  margin: 0.5rem;
+}
+.Plan .modal .modal-header {
+  padding: 5px;
 }/*# sourceMappingURL=plan.css.map */

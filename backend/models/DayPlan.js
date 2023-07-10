@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const DayPlanSchema = new mongoose.Schema(
   {
-    dayPlanId: {
+    dayPlanID: {
       type: mongoose.Types.ObjectId,
       ref: "Food",
     },

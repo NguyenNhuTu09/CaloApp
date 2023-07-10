@@ -13,6 +13,9 @@
      }
      .create-food{
           width: 78%;
+          overflow: auto;
+          margin-left: 0.6rem;
+          padding-right: 0.5rem;
           .food-day-note{
                height: 160px;
                // border: 2px solid black;
@@ -97,12 +100,12 @@
      }
 
      .day-plan{
-          // border: 0.5px solid black;
           align-items: center;
           width: 20%;
           border-radius: 0.5rem;
           height: 100%;
           padding-top: 0.5rem;
+          background: #C2DEDC;
           img{
                width: 30px;
                cursor: pointer;
@@ -177,7 +180,117 @@
                
           }
      }
-     .modal-body{
-          background: #EDEAE7;
+     
+     .modal{
+          .modal-body{
+               background: #EDEAE7;
+               .dropdown{
+                    img{
+                         width: 35px;
+                    }
+                    cursor: pointer;
+               }
+               .menu-list{
+                    // padding-left: 2.6rem;
+                    // border: 2px solid black;
+                    .food{
+                         margin-left: 1rem;
+                         // border: 2px solid black;
+                         width: 90%;
+                         .food-menu{
+                              width: 25%;
+                              // border: 2px solid black;
+                              margin-bottom: 1rem;
+                              .image-food{
+                                   margin-left: 1rem;
+                                   img{
+                                        width: 95px;
+                                        border-radius: 100%;
+                                        position: absolute;
+                                        // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                                   }
+                              }
+                              .detail-food{
+                                   background: #FFFF;
+                                   border-radius: 1rem;
+                                   margin-top: 3rem;
+                                   padding-top: 0.5rem;
+                                   padding-left: 0.8rem;
+                                   padding-right: 0.8rem;
+                                   padding-bottom: 0.8rem;
+                                   cursor: pointer;
+                                   height: 70%;
+                                   p{
+                                        margin-bottom: 7px;
+                                   }
+                                   img{
+                                        width: 10px;
+                                   }
+                                   .link{
+                                        text-decoration: none;
+                                        color: black;
+                                   }
+                                   .calo{
+                                        margin-bottom: 5px;
+                                        .options{
+                                             padding: 5px;
+                                             border-radius: 10px;
+                                             border: none;
+                                             width: 70px;
+                                             &:hover{
+                                                  background: #99DBF5;
+                                             }
+                                        }
+                                   }
+                              }
+                         }
+                    }
+                    .nav{
+                         width: 18%;
+                         padding: 0.5rem;
+                         .form-check-input{
+                              margin-right: 0.5rem;
+                         }
+                         .icons{
+                              margin-top: 7px;
+                         }
+                         .text{
+                              margin-bottom: 0.5rem;
+                              margin-top: 0.5rem;
+                         }
+                         .country{
+                              width: 100%;
+                              margin: 0.5rem;
+                         }
+                         .calo{
+                              margin: 0.5rem;
+                              .form-control{
+                                   width: 25%;
+                                   margin-left: 0.5rem;
+                              }
+                              .from{
+                                   margin-top: 5px;
+                              }
+                              .to{
+                                   margin-top: 5px;
+                              }
+                              .to{
+                                   margin-left: 1.5rem;
+                              }
+                         }
+                         .provide{
+                              margin: 0.5rem;
+                         }
+                         .rank{
+                              margin: 0.5rem;
+                         }
+                    }
+                    
+               }
+          }
+          .modal-header{
+               padding: 5px;
+          }
+          
      }
 }

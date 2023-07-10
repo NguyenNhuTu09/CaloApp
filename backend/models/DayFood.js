@@ -2,14 +2,13 @@ import mongoose from "mongoose";
 
 const DayFoodSchema = new mongoose.Schema(
   {
-    productId: {
+    dayFoodID: {
       type: mongoose.Types.ObjectId,
       ref: "Food",
     },
-    username: {
+    nameFoods: {
       type: String,
       required: true,
-      unique: true
     },
     foods: [
       {
