@@ -102,6 +102,7 @@ const DetailFood = () => {
     setTotal(data.data.totalCalories)
     
     setFoodUser(data.data.users[0].foods)
+
   }
 
   useEffect(() => {

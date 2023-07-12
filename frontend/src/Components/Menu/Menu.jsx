@@ -443,7 +443,6 @@ const Menu = () => {
           </div>
         </div>
       </div>
-      <Outlet/>
     </div>
   )
 }

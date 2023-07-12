@@ -202,16 +202,69 @@ const OptionsDetailFood = [
 
 const Plan = () => {
 
+  const [confirm, setConfirm] = useState('')
+  const [foodConfirm, setFoodConfirm] = useState([])
+  const [stateConfirm, setStateConfirm] = useState(Boolean)
+
   const [Foods, setFoods] = useState([])
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json()
     setFoods(data.data)
   }
+  let k = []
+
+  function testConfirm(e){
+    setConfirm(e)
+    for(let i = 0; i < Foods.length; i++){
+      if(Foods[i]._id === confirm){
+        setFoodConfirm(Foods[i])
+        setStateConfirm(true)
+      }else{
+        setStateConfirm(false)
+      }
+    }
+  }
+
+  const [selectedFoods, setSelectedFoods] = useState([]);
+
+  // const handleFoodClick = (foodId) => {
+  //   const index = selectedFoods.indexOf(foodId);
+  //   if (index === -1) {
+  //     setSelectedFoods([...selectedFoods, foodId]);
+  //   } else {
+  //     const newSelectedFoods = [...selectedFoods];
+  //     newSelectedFoods.splice(index, 1);
+  //     setSelectedFoods(newSelectedFoods);
+  //   }
+  // };
+
+  const handleFoodClick = (foodId) => {
+    const food = Foods.find((f) => f._id === foodId);
+    setSelectedFoods([...selectedFoods, food]);
+    setStateConfirm(true)
+  };
+
+  const handleDeleteClick = (foodId) => {
+    if(selectedFoods.length == 1){
+      setStateConfirm(false)
+    }
+    const newSelectedFoods = selectedFoods.filter((food) => food._id !== foodId);
+    setSelectedFoods(newSelectedFoods);
+  };
+
+
+
+  
+  
   useEffect(() => {
     fetchData()
   }, [])
   console.log(Foods)
+  // console.log(foodConfirm)
+  console.log(selectedFoods)
+  // console.log(confirm)
+  console.log(stateConfirm)
   return (
     <div className='Plan d-flex flex-row justify-content-between'>
       <div className='create-food d-flex flex-column'>
@@ -271,6 +324,13 @@ const Plan = () => {
           </div>
           <button type="button" class="btn btn-info">Lưu</button>
         </div>
+        <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>6</span>:</p>
+        <div className='food d-flex flex-row'>
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
+          <button type="button" class="btn btn-info">Lưu</button>
+        </div>
 
         <p className='fs-6 fw-bold'>Bài tập cho ngày hôm nay:</p>
         <div className='exercise d-flex flex-row'>
@@ -320,7 +380,7 @@ const Plan = () => {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div> */}
               <div class='modal-body'>
-                <div class="container-fluid">
+                <div class="container-fluid d-flex flex-column">
                   <div class="row">
                     <div className='col-md-1'>
                       <div class="dropdown d-flex flex-row align-items-center" data-bs-dismiss="modal" aria-label="Close">
@@ -431,7 +491,10 @@ const Plan = () => {
                                 <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
                                 <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
 
-                                <button className='options'>Chọn</button>
+                                <button className='options'
+                                  onClick={() => handleFoodClick(_id)}
+                                  >Chọn
+                                </button>
 
                                 <Link className='link' to={`/app/menu/${_id}`}>
                                   Chi tiết <img src={arrow}/>
@@ -445,6 +508,43 @@ const Plan = () => {
                       
                     </div>
                   </div>
+
+                  <div className='food-user-confirm d-flex flex-row align-items-center'>
+
+                    {
+                      stateConfirm ? (
+                        selectedFoods.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
+                          return(
+                            <div key={_id} className='food-menu'>
+                              <div className='image-food position-relative'>
+                                <img  src={imageFood}/>
+                              </div>
+                              <div className='detail-food'>
+                                <p className='caterogy d-flex flex-row justify-content-end'>
+                                {reviews}
+                                  <span><AiFillStar/></span>
+                                </p>
+                                <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                                <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
+                                <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
+
+                                <button onClick={() => handleDeleteClick(_id)}>Xóa</button>
+                                </div>
+                              </div>
+                            </div>
+                          )
+                        })
+                      ) : (
+                        <div className='notes'>Không có dữ liệu</div>
+                      )
+                    }
+
+                    <button className='btn-save'>
+                      Xác nhận
+                    </button>
+
+                  </div>
+
                 </div>
               </div>
         
@@ -452,6 +552,8 @@ const Plan = () => {
           </div>
         </div>
         {/* =============== END MENU EXERCISE MODAL ============= */}
+
+
 
      
     </div>

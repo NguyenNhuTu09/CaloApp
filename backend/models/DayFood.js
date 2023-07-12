@@ -13,11 +13,13 @@ const DayFoodSchema = new mongoose.Schema(
     foods: [
       {
         type: mongoose.Types.ObjectId,
-        ref: "Food"
+        ref: "Food",
+        // type: String,
+        required: true,
       }
     ],
   },
   { timestamps: true }
 );
 
-export default mongoose.model("DayFood", DayPlanSchema);
+export default mongoose.model("DayFood", DayFoodSchema);

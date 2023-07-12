@@ -13,7 +13,7 @@ const DayExerciseSchema = new mongoose.Schema(
     exercises: [
       {
         type: mongoose.Types.ObjectId,
-        ref: "Exercise"
+        ref: "Exercise",
       }
     ]
   },

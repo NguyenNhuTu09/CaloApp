@@ -1,4 +1,106 @@
 .Exercise {
-  padding: 0.5rem;
+  border-radius: 1rem;
+  background: #EDEAE7;
   width: 100%;
+  padding: 0.5rem;
+  font-size: 15px;
+  overflow: auto;
+}
+.Exercise .create-food-final {
+  border-radius: 0.5rem;
+  border: 2px dashed black;
+  margin-left: 1.5rem;
+}
+.Exercise .create-food-final img {
+  width: 30px;
+}
+.Exercise .master {
+  margin-right: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 120px;
+}
+.Exercise .master:hover {
+  background: #8DDFCC;
+}
+.Exercise .master img {
+  width: 30px;
+}
+.Exercise .menu-list .food {
+  margin-left: 1rem;
+  width: 90%;
+}
+.Exercise .menu-list .food .food-menu {
+  width: 25%;
+  margin-bottom: 1rem;
+}
+.Exercise .menu-list .food .food-menu .image-food {
+  margin-left: 1rem;
+}
+.Exercise .menu-list .food .food-menu .image-food img {
+  width: 95px;
+  border-radius: 100%;
+  position: absolute;
+}
+.Exercise .menu-list .food .food-menu .detail-food {
+  background: white;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+  height: 130px;
+}
+.Exercise .menu-list .food .food-menu .detail-food p {
+  margin-bottom: 5px;
+}
+.Exercise .menu-list .food .food-menu .detail-food img {
+  width: 10px;
+}
+.Exercise .menu-list .food .food-menu .detail-food .link {
+  text-decoration: none;
+  color: black;
+}
+.Exercise .menu-list .nav {
+  width: 18%;
+  padding: 0.5rem;
+}
+.Exercise .menu-list .nav .form-check-input {
+  margin-right: 0.5rem;
+}
+.Exercise .menu-list .nav .icons {
+  margin-top: 7px;
+}
+.Exercise .menu-list .nav .text {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.Exercise .menu-list .nav .country {
+  width: 100%;
+  margin: 0.5rem;
+}
+.Exercise .menu-list .nav .calo {
+  margin: 0.5rem;
+}
+.Exercise .menu-list .nav .calo .form-control {
+  width: 25%;
+  margin-left: 0.5rem;
+}
+.Exercise .menu-list .nav .calo .from {
+  margin-top: 5px;
+}
+.Exercise .menu-list .nav .calo .to {
+  margin-top: 5px;
+}
+.Exercise .menu-list .nav .calo .to {
+  margin-left: 1.5rem;
+}
+.Exercise .menu-list .nav .provide {
+  margin: 0.5rem;
+}
+.Exercise .menu-list .nav .rank {
+  margin: 0.5rem;
 }/*# sourceMappingURL=exercise.css.map */

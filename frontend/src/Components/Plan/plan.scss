@@ -149,7 +149,7 @@
           }
      }
      .food-menu{
-          width: 20%;
+          width: 18%;
           // border: 2px solid black;
           margin-bottom: 1rem;
           .image-food{
@@ -193,6 +193,7 @@
                .menu-list{
                     // padding-left: 2.6rem;
                     // border: 2px solid black;
+                    margin-bottom: 220px;
                     .food{
                          margin-left: 1rem;
                          // border: 2px solid black;
@@ -286,6 +287,75 @@
                          }
                     }
                     
+               }
+               .food-user-confirm{
+                    width: 95%;
+                    background: #FFFF;
+                    padding: 0.5rem;
+                    position: fixed;
+                    bottom: 0;
+                    // z-index: 1;
+                    margin-right: 1rem;
+                    height: 190px;
+                    margin-left: 0px;
+                    border-radius: 1rem;
+                    .btn-save{
+                         height: 35%;
+                         padding: 0.5rem;
+                         margin-left: 1rem;
+                         border: none;
+                         border-radius: 0.5rem;
+                         background: #9FE2BF;
+                         &:hover{
+                              background: #FFFF;
+                         }
+                    }
+                    .notes{
+                         border: 2px dashed black;
+                         height: 60%;
+                         padding: 1rem;
+                         border-radius: 1rem;
+                         display: flex;
+                         flex-direction: row;
+                         align-items: center;
+                    }
+                    .food-menu{
+                         width: 15%;
+                         // margin-bottom: 1rem;
+                         // height: 100px;
+                         margin-bottom: 0px;
+                         margin-right: 1rem;
+                         .image-food{
+                              margin-left: 1rem;
+                              img{
+                                   width: 85px;
+                                   border-radius: 100%;
+                                   position: absolute;
+                                   // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                              }
+                         }
+                         .detail-food{
+                              background: #9FE2BF;
+                              border-radius: 1rem;
+                              margin-top: 2rem;
+                              // padding-top: 0.5rem;
+                              padding-left: 0.8rem;
+                              padding-right: 0.8rem;
+                              // padding-bottom: 0.8rem;
+                              cursor: pointer;
+                              height: 65%;
+                              .calo{
+                                   margin-bottom: 5px;
+                                   button{
+                                        width: 50px;
+                                        padding: 3px;
+                                        background: #FFFF;
+                                        border-radius: 0.5rem;
+                                        border: none;
+                                   }
+                              }
+                         }
+                    }
                }
           }
           .modal-header{

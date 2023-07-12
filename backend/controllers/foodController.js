@@ -1,4 +1,5 @@
 import Food from '../models/Food.js'
+import User from '../models/User.js'
 
 // create new food
 export const createFood = async(req, res) => {
@@ -16,6 +17,34 @@ export const createFood = async(req, res) => {
                message: 'Server có lỗi'})
      }
 }
+
+// export const createFood = async (req, res) => {
+//      // Lấy ID của người tạo từ request hoặc session
+//      const authorId = req.user._id;
+   
+//      // Tạo một document mới và thêm ID của người tạo vào document
+//      const newFood = new Food({
+//        ...req.body,
+//        author: authorId,
+//      });
+   
+//      try {
+//        const savedFood = await newFood.save();
+//        res.status(200).json({
+//          success: true,
+//          message: "Tạo món ăn thành công",
+//          data: savedFood,
+//        });
+//      } catch (err) {
+//        console.log(err);
+//        res.status(500).json({
+//          success: false,
+//          message: "Server có lỗi",
+//        });
+//      }
+//    };
+
+
 
 // export const createFood = async(req, res) => {
 //      try{

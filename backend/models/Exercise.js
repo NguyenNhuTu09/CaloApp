@@ -2,48 +2,32 @@ import mongoose from "mongoose";
 
 const exerciseSchema = new mongoose.Schema(
      {
-          nameFood: {
+          nameExercise: { // tên bài tập
                type: String,
                required: true,
                unique: true,
           },
           Type:{
-               type: String,
+               type: String, // loại bài tập
                required: true,
           },
-          imageFood: {
+          imageExercise: { // ảnh đaị diện
                type: String,
                required: true
           },
-          support: {
+          support: { // hỗ trợ cho cái gì
                type: String,
                required: true
           },
-          ration:{
+          ration:{ // mức calo đốt cháy trên một đơn vị thời gian
                type: Number,
                required: true
           },
-          totalCalories:{
+          totalCalories:{ // tổng calo đốt cháy theo hệ thống đề xuất
                type: Number,
                required: true
           },
-          mainMaterial: {
-               type: String,
-               required: true
-          },
-          auxiliaryMaterials: {
-               type: String,
-               required: true
-          },
-          Additives: {
-               type: String,
-               required: true,
-          },
-          processing: {
-               type: String,
-               required: true,
-          },
-          description:{
+          description:{ // mô tả
                type: String,
                required: true
           },
@@ -53,6 +37,12 @@ const exerciseSchema = new mongoose.Schema(
                  ref: "Review",
                },
           ],
+          author: [
+               {
+                    type: mongoose.Types.ObjectId,
+                    ref: "User",
+                  },
+          ]
      },
      {timestamps: true}
 )

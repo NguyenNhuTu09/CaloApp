@@ -45,7 +45,19 @@ const userSchema = new mongoose.Schema(
         type: mongoose.Types.ObjectId,
         ref: "Food",
       },
- ],
+    ],
+    exercises: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Exercise",
+      }
+    ],
+    plans: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Plan"
+      }
+    ]
   },
   { timestamps: true }
 );

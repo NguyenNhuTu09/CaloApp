@@ -2,41 +2,14 @@ import React, {useState, useEffect, useContext} from 'react'
 import './user.css'
 import { Form, FormGroup, Row } from 'reactstrap'
 import { Link} from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-
-import {HiOutlineChevronRight} from 'react-icons/hi'
-import {RiUserSettingsLine} from 'react-icons/ri'
-
-import facebook from '../../assets/Facebook.png'
-import google from '../../assets/Google.png'
 import userImg from '../../assets/User.png'
 import setting from '../../assets/Setting.png'
 import settingUser from '../../assets/Setting-user.png';
 
 
-import protein from '../../assets/Protein.png'
-import Tinhbot from '../../assets/Tinh bot.png'
-import Tinhbot2 from '../../assets/Tinh bot 2.png'
-import Vitamin from '../../assets/Vitamin.png'
-import Canxi from '../../assets/Canxi.png'
-import Omega3 from '../../assets/Omega3.png';
-import Kem from '../../assets/Zn.png';
-import Chatxo from '../../assets/Chat xo.png'
-
 import Chicken2 from '../../assets/Food/Chicken2.jpg'
 import Ham from '../../assets/Food/Ham.jpg'
 import Suachua from '../../assets/Food/Sua chua.jpg'
-import Chuoi from '../../assets/Food/Chuoi.jpg'
-import Catuyet from '../../assets/Food/Ca tuyet.jpg'
-import Cangu from '../../assets/Food/Ca ngu.jpg'
-import Cahoi from '../../assets/Food/Ca hoi.jpg'
-import Thitbo from '../../assets/Food/Thit bo.jpg'
-import Hanhnhan from '../../assets/Food/Hanh nhan.jpg'
-import Khoailang from '../../assets/Food/Khoai lang.jpg'
-import Carophi from '../../assets/Food/Ca ro phi.jpg'
-import Bibau from '../../assets/Food/Bi bau.jpg'
-import Bachtuoc from '../../assets/Food/Bach tuoc.jpg'
-
 
 
 import jogging from '../../assets/Exercise/Chay bo.jpg'
@@ -134,18 +107,40 @@ const OptionsExercise = [
 
 
 const User = () => {
-  const {id} = useParams()
+
   const {user, dispatch} = useContext(AuthContext)
+  const [foodUser, setFoodUser] = useState([])
+  
+
+  
+  const fetchData = async() => {
+    let k = []
+    for(let i = 0; i < user.foods.length; i++){
+      const response = await fetch(`${BASE_URL}/foods/${user.foods[i]}`)
+      const data = await response.json()
+      k.push(data.data)
+      setFoodUser(k)
+    }
+  }
 
   useEffect(() => {
-  },[user])
+    setFoodUser([])
+    const userData = JSON.parse(localStorage.getItem('User'))
+    if(userData){
+      dispatch({type: 'LOGIN_SUCCESS', payload: userData})
+    }
+    fetchData()
+    
+  },[])
 
-  console.log(user.foods)
+  // console.log(user.foods)
+  console.log(foodUser)
+
 
   return (
     <div className='User d-flex flex-column'>
       <div className='info d-flex flex-row'>
-        <img src={userImg}/>
+        <img src={user.photo}/>
         <div className='title-info'>
           <p className='fs-4 fw-bold'>{user.lastFirstName}</p>
           <div className='setting-info d-flex flex-row'>
@@ -177,23 +172,30 @@ const User = () => {
         </div>
         <hr></hr>
       <p className='title fs-6 fw-bold'>Món ăn của bạn:</p>
-      <div className='food d-flex flex-row'>
+      <div className='food d-flex flex-row '>
       {
-        OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
-          return(
-            <div key={id} className='food-menu'>
-              <div className='image-food position-relative'>
-                {imageFoodDetail}
-              </div>
-              <div className='detail-food'>
-                  <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
-                  <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                  <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                  <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                </div>
-            </div>
-          )
-        })
+              foodUser.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
+                return(
+                  <div key={_id} className='food-menu'>
+                    <div className='image-food position-relative'>
+                      <img  src={imageFood}/>
+                    </div>
+                    <div className='detail-food'>
+                      <p className='caterogy d-flex flex-row justify-content-end'>
+                      {reviews}
+                        <span><AiFillStar/></span>
+                      </p>
+                      <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                      <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
+                      <p className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo<span>
+                      <Link className='link' to={`/app/menu/${_id}`}>
+                        Chi tiết <img src={arrow}/>
+                      </Link>
+                      </span></p>
+                    </div>
+                  </div>
+                )
+              })
       }
         <div className='Create'>
           <Link to='/app/createfood' className='link'>

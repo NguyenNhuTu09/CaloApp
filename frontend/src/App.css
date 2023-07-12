@@ -3,6 +3,8 @@
   flex-direction: row;
   height: 713px;
   border-radius: 1rem;
+
+  /* height: 100vh; */
 }
 *{
   padding: 0;

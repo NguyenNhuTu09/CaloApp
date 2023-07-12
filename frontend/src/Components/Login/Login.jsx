@@ -29,6 +29,16 @@ const Login = () => {
     setCredentials(prev => ({...prev, [e.target.id]:e.target.value}))
   }
 
+  const handleLogin = async(e) => {
+    dispatch({type: 'LOGIN_START'})
+    try{
+
+    }catch{
+      
+    }
+  }
+
+
   const handleClick = async(e) => {
     e.preventDefault()
     dispatch({type: 'LOGIN_START'})

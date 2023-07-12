@@ -7,6 +7,11 @@ import cookieParser from 'cookie-parser';
 import authRoute from './routes/auth.js'
 import userRoute from './routes/users.js'
 import foodRoute from './routes/foods.js'
+import exerciseRoute from './routes/exercise.js'
+
+import dayFoodRoute from './routes/dayFood.js'
+import DayExerciseRoute from './routes/dayExercise.js';
+
 
 dotenv.config()
 const app = express()
@@ -38,6 +43,9 @@ app.use(cookieParser())
 app.use('/auth', authRoute )
 app.use('/users', userRoute )
 app.use('/foods', foodRoute)
+app.use('/exercise', exerciseRoute)
+app.use('/dayfood', dayFoodRoute)
+app.use('/dayexercise', DayExerciseRoute)
 
 
 app.listen(port, ()=>{
