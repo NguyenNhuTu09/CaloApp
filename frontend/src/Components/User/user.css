@@ -103,6 +103,7 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   margin: 1rem;
+  margin-bottom: 0px;
 }
 .User .plan .plan-now {
   margin: 0.7rem;

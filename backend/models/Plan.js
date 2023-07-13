@@ -11,12 +11,20 @@ const PlanSchema = new mongoose.Schema(
       required: true,
       unique: true
     },
+    startPlan: {
+      type: String,
+      required: true
+    },
     dayPlan: [ 
       {
         type: mongoose.Types.ObjectId,
         ref: "DayPlan"
       }
     ],
+    author:{
+      type: String,
+      required: true
+    },
     reviews: [
       {
         type: mongoose.Types.ObjectId,

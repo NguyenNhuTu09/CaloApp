@@ -10,7 +10,10 @@ import foodRoute from './routes/foods.js'
 import exerciseRoute from './routes/exercise.js'
 
 import dayFoodRoute from './routes/dayFood.js'
-import DayExerciseRoute from './routes/dayExercise.js';
+import DayExerciseRoute from './routes/dayExercise.js'
+
+import dayPlanRoute from './routes/dayPlan.js'
+import planRoute from './routes/plan.js'
 
 
 dotenv.config()
@@ -46,6 +49,9 @@ app.use('/foods', foodRoute)
 app.use('/exercise', exerciseRoute)
 app.use('/dayfood', dayFoodRoute)
 app.use('/dayexercise', DayExerciseRoute)
+
+app.use('/dayplan', dayPlanRoute)
+app.use('/plan', planRoute)
 
 
 app.listen(port, ()=>{

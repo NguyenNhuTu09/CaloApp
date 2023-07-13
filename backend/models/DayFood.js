@@ -11,7 +11,7 @@ const DayFoodSchema = new mongoose.Schema(
       required: true,
     },
     foods: [
-      {
+      { // Khi Food được tạo bên trong một DayFood thì ID này sẽ tự được MongoDB khởi tạo
         type: mongoose.Types.ObjectId,
         ref: "Food",
         // type: String,

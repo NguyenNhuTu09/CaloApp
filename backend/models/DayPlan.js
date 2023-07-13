@@ -6,13 +6,17 @@ const DayPlanSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: "Food",
     },
-    dayFood: [
+    nameDayPlan:{
+      type: String,
+      required: true
+    },
+    dayFoods: [
       {
         type: mongoose.Types.ObjectId,
         ref: "DayFood"
       }
     ],
-    dayExercise: [
+    dayExercises: [
       {
         type: mongoose.Types.ObjectId,
         ref: "DayExercise"

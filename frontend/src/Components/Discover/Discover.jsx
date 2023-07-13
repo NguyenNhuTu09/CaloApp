@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect, useContext  } from 'react'
 import {BrowserRouter, Router, Route, Link, Outlet} from 'react-router-dom'
 import './discover.css'
 import {Form, FormGroup} from 'reactstrap'
+import { AuthContext } from '../../Context/AuthContext'
+
+import { BASE_URL } from '../Utils/config.js'
 
 // import { daysTag, currentDate, prevNextIcon, date, currMonth, currYear, months} from './Calendar.js'
 
@@ -219,6 +222,63 @@ const OptionsExercise = [
 
 
 const Discover = () => {
+
+  const {user, dispatch} = useContext(AuthContext)
+
+  const [plan, setplan] = useState([]) // lấy Schema Plan
+
+
+  const [IDdayplan, setIDdayplan] = useState([]) // Schema DayPlan
+
+  const [test, setTest] = useState([])
+
+  const [fooddayplan, setfooddayplan] = useState([])
+  const [exdayplan, setexdayplan] = useState([])
+
+  const [foods, setfoods] = useState([])
+  const [exs, setexs] = useState([])
+
+  const fetchPlan = async() => {
+    let k = [];
+    let idDayPlan = []
+    for(let i = 0; i < user.plans.length; i++){
+      const response = await fetch(`${BASE_URL}/plan/${user.plans[i]}`)
+      const data = await response.json();
+      k.push(data.data)
+
+      let u = []
+      for(let j = 0; j < data.data.dayPlan.length; j++){
+
+
+        const response_2 = await fetch(`${BASE_URL}/dayplan/${data.data.dayPlan[j]}`)
+        const data_2 = await response_2.json()
+        u.push(data_2.data)
+      }
+      setTest(u)
+      setplan(k)
+      setIDdayplan(idDayPlan)
+    }
+  }
+ 
+  
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('User'))
+    if(userData){
+      dispatch({type: 'LOGIN_SUCCESS', payload: userData})
+    }
+    fetchPlan();
+  }, [])
+
+
+
+  console.log(plan)
+
+  // console.log(user)
+
+  // console.log(IDdayplan)
+  console.log(test)
+  
+
   return (
     <div className='Discover d-flex flex-column'>
     {/* <h2>Xin chào, <span>Nguyễn Như Từ</span></h2> */}
@@ -250,15 +310,22 @@ const Discover = () => {
         <div className='my-plan d-flex flex-column'>
           <p className='fs-6 fw-bold'>Kế hoạch của bạn</p>
             <div className='my-plan-01'>
-              <div className='plan-now d-flex flex-column'>
-                <Link className='link' to='/app/detailplan'>
-                  <p className='fw-bold'>Giảm 10 cân</p>
-                  <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>01/07/2023</span></p>
-                  <div className='status fw-bold'>
-                    Đang thực hiện
+            {
+              plan.map(({_id, namePlan, startPlan}) => {
+                return(
+
+                  <div key={_id} className='plan-now d-flex flex-column'>
+                    <Link className='link' to='/app/detailplan'>
+                      <p className='fw-bold'>{namePlan}</p>
+                      <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>{startPlan}</span></p>
+                      <div className='status fw-bold'>
+                        Đang thực hiện
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
+                )
+              })
+            }
 
 
               <div className='add-plan'>
@@ -269,6 +336,7 @@ const Discover = () => {
 
 
             <p className='fs-6 fw-bold'>Tiến độ</p>
+           
             <div className='my-plan-02 d-flex flex-row'>
               <div className='day text-center'>
                 <p className='fw-bold'>Ngày thứ 1</p>
@@ -276,19 +344,11 @@ const Discover = () => {
               </div>
               <div className='day text-center'>
                 <p className='fw-bold'>Ngày thứ 2</p>
-                <p className='fw-normar'>02/07/2023</p>
+                <p className='fw-normal'>02/07/2023</p>
               </div>
               <div className='day text-center'>
                 <p className='fw-bold'>Ngày thứ 3</p>
                 <p className='fw-normal'>03/07/2023</p>
-              </div>
-              <div className='day text-center'>
-                <p className='fw-bold'>Ngày thứ 4</p>
-                <p className='fw-normal'>04/07/2023</p>
-              </div>
-              <div className='day text-center'>
-                <p className='fw-bold'>Ngày thứ 5</p>
-                <p className='fw-normal'>05/07/2023</p>
               </div>
             </div>
         </div>
@@ -304,6 +364,7 @@ const Discover = () => {
 
 
       <div className='food-exercise-plan d-flex flex-column'>
+         {/* DayFood thứ nhất */}
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
               <p className='title-meat fs-5 fw-bold'>Bữa ăn 1</p>
@@ -336,6 +397,7 @@ const Discover = () => {
           </div>
 
 
+          {/* DayFood thứ hai */}
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
               <p className='title-meat fs-5 fw-bold'>Bữa ăn 2</p>
@@ -367,6 +429,7 @@ const Discover = () => {
           }
           </div>
 
+          {/* DayFood thứ ba */}
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
               <p className='title-meat fs-5 fw-bold'>Bữa ăn 3</p>
@@ -398,6 +461,7 @@ const Discover = () => {
           }
           </div>
 
+          {/* DayExercise duy nhất trong DayPlan */}
           <div className='food d-flex flex-row'>
             <div className='info-meat d-flex flex-column'>
               <p className='title-meat fs-5 fw-bold'>Bài tập ngày hôm nay</p>
@@ -592,7 +656,6 @@ const Discover = () => {
       </div>
       {/* =============================== REGISTER END ===================== */}
 
-      <Outlet/>
     </div>
   )
 }
