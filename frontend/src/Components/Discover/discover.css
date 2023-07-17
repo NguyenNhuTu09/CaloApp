@@ -71,6 +71,9 @@
   border-radius: 0.5rem;
   background: #9FE2BF;
 }
+.Discover .plan .my-plan .my-plan-02 .daypl {
+  cursor: pointer;
+}
 .Discover .plan .detail-day-plan {
   border-radius: 0.5rem;
   height: 275px;
@@ -99,6 +102,8 @@
   margin-top: 0.5rem;
   height: 230px;
   border-radius: 0.5rem;
+  background: white;
+  color: black;
 }
 .Discover .food-exercise-plan {
   padding: 1rem;
@@ -165,59 +170,7 @@
 .Discover .food-exercise-plan .food .food-menu .detail-food img {
   width: 10px;
 }
-.Discover .form-login {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.Discover .form-login .register {
-  margin-bottom: 0.7rem;
-}
-.Discover .form-check-input {
-  margin-right: 0.5rem;
-}
-.Discover .title {
-  margin-top: 0.5rem;
-}
-.Discover .title p {
-  margin-top: 0.5rem;
-}
-.Discover .title span {
-  cursor: pointer;
-}
-.Discover .title span:hover {
-  color: blue;
-}
-.Discover .fb-gg {
-  margin-top: 0.5rem;
-}
-.Discover .fb-gg .Facebook {
-  width: 40%;
-  padding: 5px;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-.Discover .fb-gg .Facebook img {
-  width: 40px;
-  border-radius: 5px;
-}
-.Discover .fb-gg .Facebook .text {
-  width: 65%;
-  padding-top: 5px;
-}
-.Discover .fb-gg .Facebook:hover {
-  background: var(--SecondaryColor);
-}
-.Discover .modal-footer {
-  margin-top: 2rem;
-}
-.Discover .w-dis-age {
-  width: 100px;
-  text-align: center;
-}
-.Discover .w-dis-date {
-  width: 170px;
-  text-align: center;
-}
-.Discover input {
-  margin-top: 0.5rem;
+.Discover .food-exercise-plan .food .food-menu .detail-food .link {
+  text-decoration: none;
+  color: black;
 }/*# sourceMappingURL=discover.css.map */

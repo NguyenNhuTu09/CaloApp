@@ -74,7 +74,7 @@ const Login = () => {
     <div className='Login d-flex flex-row '>
       <div className='information d-flex flex-column'>
         <p className='title-login fs-2 fw-bold'>Đăng nhập</p>
-        <p className='fs-6 fw-bold'>Bạn chưa có đăng nhập, <Link to='/register'>Đăng ký</Link></p>
+        <p className='fs-6 fw-bold'>Bạn chưa có đăng nhập, <Link className='link' to='/register'>Đăng ký</Link></p>
 
         {/* {error && <div className="error">{error}</div>} */}
 

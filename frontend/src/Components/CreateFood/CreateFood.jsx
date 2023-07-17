@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './createFood.css'
 import { Link, useNavigate } from 'react-router-dom'
 import arrow from '../../assets/Arrow.png'
@@ -9,9 +9,13 @@ import { BASE_URL } from '../Utils/config.js'
 import { AuthContext } from '../../Context/AuthContext'
 
 import { Form } from 'reactstrap'
+import useFetch from '../Hooks/useFetch'
 
 
 const CreateFood = () => {
+     const {user, dispatch} = useContext(AuthContext)
+
+
      const [credentials, setCredentials] = useState({
           nameFood: undefined,
           Type: undefined,
@@ -24,17 +28,21 @@ const CreateFood = () => {
           Additives: undefined,
           processing: undefined,
           description: undefined,
+          author: user._id
      })
 
-     const {dispatch} = useContext(AuthContext)
+     // const {dispatch} = useContext(AuthContext)
      const navigate = useNavigate()
+     function handleClick() {
+          navigate(-1);
+        }
      const handleChange = (e) => {
           setCredentials(prev=>({...prev, [e.target.id]:e.target.value }))
      }
      const handleSubmit = async(e) => {
           e.preventDefault()
           try{
-               const res = await fetch(`${BASE_URL}/foods/`, {
+               const res = await fetch(`${BASE_URL}/foodsuser/user/${user._id}/`, {
                     method: 'post',
                     headers: {
                          'content-type':'application/json',
@@ -42,22 +50,28 @@ const CreateFood = () => {
                     body: JSON.stringify(credentials)
                })
                const result = await res.json()
+
                if(!res.ok){
                     alert(result.message)
-                    navigate('/app/createfood')
+                    navigate(`/app/user/${user._id}/createfood/`)
                }else if(res.ok){
                     alert("Tạo món ăn thành công")
-                    navigate('/app/menu')
+                    navigate('/app/user/${user._id}')
                }
           }catch(error){
                alert(error.message)
           }
      }
+
+     useEffect(() => {
+
+     }, [])
+     // console.log(user)
      return (
     <Form className='CreateFood d-flex flex-row justify-content-between' onSubmit={handleSubmit}>
           <div className='info-food d-flex flex-column'>
                <div className='back d-flex flex-row'>
-                    <Link className='link d-flex flex-row' to={'/app/user'}>
+                    <Link className='link d-flex flex-row' to={`/app/user/${user._id}`}>
                          <img src={arrowLeft}/>
                          <p className='fs-6 fw-bold'>Quay lại</p>
                     </Link>
@@ -134,7 +148,7 @@ const CreateFood = () => {
                <p>Phương thức chế biến: </p>
                <input type="text" className="form-control" onChange={handleChange} required id = 'processing'/>
                <p>Mô tả: </p>
-               <textarea className="description form-control border border-dark" aria-label="With textarea" onChange={handleChange} required id = 'description'/>
+               <textarea className="description form-control" aria-label="With textarea" onChange={handleChange} required id = 'description'/>
           </div>
 
           <div className='perform d-flex flex-column'>

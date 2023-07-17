@@ -17,6 +17,9 @@
   margin-top: 4rem;
   margin-bottom: 1rem;
 }
+.Login .information .link {
+  text-decoration: none;
+}
 .Login .information .email, .Login .information .pass {
   width: 90%;
   margin-top: 1.5rem;
@@ -39,7 +42,11 @@
   border: none;
 }
 .Login .information .checkpass-login .btn-login img {
-  width: 25px;
+  width: 17px;
+}
+.Login .information .checkpass-login p {
+  margin-top: 5px;
+  margin-left: 5px;
 }
 .Login .information .face-gg {
   width: 90%;
@@ -50,12 +57,11 @@
   margin-right: 5px;
 }
 .Login .information .face-gg .facebook, .Login .information .face-gg .google {
-  width: -moz-fit-content;
-  width: fit-content;
   background: white;
   padding: 0.5rem 2rem;
   align-items: center;
   border-radius: 0.5rem;
+  width: 160px;
 }
 .Login .image-login {
   height: auto;

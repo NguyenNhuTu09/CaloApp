@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import authRoute from './routes/auth.js'
 import userRoute from './routes/users.js'
 import foodRoute from './routes/foods.js'
+import foodUserRoute from './routes/foodsUser.js'
 import exerciseRoute from './routes/exercise.js'
 
 import dayFoodRoute from './routes/dayFood.js'
@@ -45,7 +46,10 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use('/auth', authRoute )
 app.use('/users', userRoute )
+
 app.use('/foods', foodRoute)
+app.use('/foodsuser', foodUserRoute)
+
 app.use('/exercise', exerciseRoute)
 app.use('/dayfood', dayFoodRoute)
 app.use('/dayexercise', DayExerciseRoute)

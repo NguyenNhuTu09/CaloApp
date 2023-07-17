@@ -10,26 +10,7 @@ import { BASE_URL } from '../Utils/config.js'
 
 import 'react-calendar/dist/Calendar.css';
 
-
-import Catuyet from '../../assets/Food/Ca tuyet.jpg'
-import Cangu from '../../assets/Food/Ca ngu.jpg'
-import Cahoi from '../../assets/Food/Ca hoi.jpg'
-import Gatandori from '../../assets/Food/Ga tandoori.jpg'
-
-import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
-import Comgaolut from '../../assets/Food/Salad-rau-thit-bo.jpg'
-import Comgagaolut from '../../../public/Food/Salad-ca-hoi-rong-nho.jpg'
-
-import food1 from '../../../public/Food/Sua-chua-trai-cay.jpg'
-import food2 from '../../../public/Food/Uc-ga-cai-bap.jpg'
-import food3 from '../../../public/Food/Salad-bo-trung.jpg'
-
 import {AiFillStar} from 'react-icons/ai'
-
-import {HiOutlineChevronRight} from 'react-icons/hi'
-
-import facebook from '../../assets/Facebook.png'
-import google from '../../assets/Google.png'
 
 import Total from '../../assets/Total.png'
 import Exer from '../../assets/Exer.png'
@@ -42,205 +23,30 @@ import arrow from '../../assets/Arrow.png'
 import Complete from '../../assets/Complete.png'
 import Repair from '../../assets/Repair.png'
 
-import jogging from '../../assets/Exercise/Chay bo.jpg'
-import gapbung from '../../assets/Exercise/Gap bung.jpg'
-import xadon from '../../assets/Exercise/Xa don.jpg'
-
-const OptionsDetailFood = [
-  {
-    id: 1,
-    imageFoodDetail: <img src={Cahoi}/>,
-    type: 'Omega-3',
-    star: '4.1',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá hồi',
-    gam: '550',
-    calories: '640 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 2,
-    imageFoodDetail: <img src={Cangu}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá ngừ',
-    gam: '300g',
-    calories: '450 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageFoodDetail: <img src={Catuyet}/>,
-    type: 'Chất đạm',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá tuyết',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 4,
-    imageFoodDetail: <img src={Gatandori}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Gà Tandoori',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-]
-
-
-
-const OptionsDetailFood2 = [
-  {
-    id: 1,
-    imageFoodDetail: <img src={Banhmithitga}/>,
-    type: 'Protein',
-    star: '4.1',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Bánh mì thịt gà',
-    gam: '550',
-    calories: '640 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageFoodDetail: <img src={Comgagaolut}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Salad cá hồi rong nho',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 4,
-    imageFoodDetail: <img src={Comgaolut}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Salad rau mầm thịt bò',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-]
-
-const OptionsDetailFood3 = [
-  {
-    id: 1,
-    imageFoodDetail: <img src={food1}/>,
-    type: 'Tiêu hóa',
-    star: '4.1',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Sữa chua trái cây',
-    gam: '550',
-    calories: '640 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageFoodDetail: <img src={food2}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Ức gà cải bắp',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 4,
-    imageFoodDetail: <img src={food3}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Salad bơ trứng',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-]
-
-
-
-
-const OptionsExercise = [
-  {
-    id: 1,
-    imageExercise: <img src={jogging}/>,
-    type: 'Thể dục nhẹ',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameExercise: "Chạy bộ",
-    minutes: '45m',
-    calories: '600 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 2,
-    imageExercise: <img src={gapbung}/>,
-    type: 'Thể dục nhẹ',
-    star: '4.7',
-    icon: <AiFillStar/>,
-    nameExercise: "Gập bụng",
-    minutes: '45m',
-    calories: '650 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageExercise: <img src={xadon}/>,
-    type: 'Thể hình',
-    star: '4.5',
-    icon: <AiFillStar/>,
-    nameExercise: "Hít xà đơn",
-    minutes: '45m',
-    calories: '750 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  }
-]
-
-
-
 const Discover = () => {
 
-  const {user, dispatch} = useContext(AuthContext)
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [plan, setplan] = useState([]) // lấy Schema Plan
-
-
-  const [IDdayplan, setIDdayplan] = useState([]) // Schema DayPlan
-
-  const [test, setTest] = useState([])
-
+  
   const [fooddayplan, setfooddayplan] = useState([])
   const [exdayplan, setexdayplan] = useState([])
+  
+  const {user, dispatch} = useContext(AuthContext) // lấy dữ liệu người dùng sau khi đăng nhập
 
-  const [foods, setfoods] = useState([])
-  const [exs, setexs] = useState([])
+  const [notePlan, setNotePlan] = useState('') // lấy ghi chú của từng ngày trong kế hoạch
+  const [titleDayPlan, setTitleDayPlan] = useState('')
+
+  const [plan, setplan] = useState([]) // lấy toàn bộ kế hoạch 
+  const [test, setTest] = useState([]) // lấy từng ngày trong kế hoạch
+
+  const [Foods, setFoods] = useState([])
+  const [Exrs, setExrs] = useState([])
+
+
+  const [test2, setTest2] = useState([])
 
   const fetchPlan = async() => {
     let k = [];
-    let idDayPlan = []
     for(let i = 0; i < user.plans.length; i++){
       const response = await fetch(`${BASE_URL}/plan/${user.plans[i]}`)
       const data = await response.json();
@@ -249,34 +55,116 @@ const Discover = () => {
       let u = []
       for(let j = 0; j < data.data.dayPlan.length; j++){
 
-
         const response_2 = await fetch(`${BASE_URL}/dayplan/${data.data.dayPlan[j]}`)
         const data_2 = await response_2.json()
         u.push(data_2.data)
       }
       setTest(u)
       setplan(k)
-      setIDdayplan(idDayPlan)
     }
+  } 
+
+  // function handleClickk(e){ 
+  //   // 1 phần tử trong test là 1 DayPlan
+  //   // 1 dayPlan sẽ có các dayFoods và dayExercise
+  //   // khi click vào button có id của DayPlan nào thì lấy đúng dayFoods và dayExercises của dayPlan đó
+  //   let k = ''
+  //   let g = ''
+  //   for(let i = 0; i < test.length; i++){
+  //     if(test[i]._id === e){
+  //       console.log(test[i].dayFoods)
+  //       console.log(test[i].dayExercises)
+  //       k = test[i].noteDayPlan
+  //       g = test[i].nameDayPlan
+  //     }
+  //     // setNotePlan(test[i].noteDayPlan)
+  //     setNotePlan(k)
+  //     setTitleDayPlan(g)
+  //   }
+  // }
+
+  const handleClickk = async (e) =>{ 
+    let k = ''
+    let g = ''
+
+    let dayFoods = []
+    let dayExers = []
+
+    for(let i = 0; i < test.length; i++){
+      if(test[i]._id === e){
+        for(let j = 0; j < test[i].dayFoods.length; j++){
+          const response = await fetch(`${BASE_URL}/dayfood/${test[i].dayFoods[j]}`)
+          const data = await response.json();
+          dayFoods.push(data.data)
+          setIsLoading(false);
+
+          let thu = []
+
+          for(let q = 0; q < dayFoods[j].foods.length; q++){
+            const response_2 = await fetch(`${BASE_URL}/foods/${dayFoods[j].foods[q]}`)
+            const data_2 = await response_2.json();
+            thu.push(data_2.data)
+          }
+
+          dayFoods[j].foods = thu
+        }
+
+        for(let y = 0; y < test[i].dayExercises.length; y++){
+          const response = await fetch(`${BASE_URL}/dayexercise/${test[i].dayExercises[y]}`)
+          const data = await response.json();
+          dayExers.push(data.data)
+          setIsLoading(false);
+
+          let thu2 = []
+          for(let t = 0; t < dayExers[y].exercises.length; t++){
+            const response_2 = await fetch(`${BASE_URL}/exercise/${dayExers[y].exercises[t]}`)
+            const data_2 = await response_2.json();
+            thu2.push(data_2.data)
+          }
+
+          dayExers[y].exercises = thu2
+        }
+
+        k = test[i].noteDayPlan
+        g = test[i].nameDayPlan
+      }
+      setNotePlan(k)
+      setTitleDayPlan(g)
+    }
+    setfooddayplan(dayFoods)
+    setexdayplan(dayExers)
+
   }
- 
-  
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('User'))
     if(userData){
       dispatch({type: 'LOGIN_SUCCESS', payload: userData})
     }
     fetchPlan();
+    handleClickk()
   }, [])
 
 
 
-  console.log(plan)
+
+  // console.log(plan) 
+  // console.log(test)
 
   // console.log(user)
 
-  // console.log(IDdayplan)
-  console.log(test)
+  // console.log(test) // lấy DayPlan về (chứa cả _id trong đó)
+  // console.log(fooddayplan) // lấy toàn bộ bữa ăn của 3 ngày: không khả thi
+
+  // console.log(fooddayplan) // lấy toàn bộ dayFoods theo dayPlan
+  // console.log(exdayplan) // lấy toàn bộ dayExercises theo dayPlan
+
+  // console.log(Foods) // lấy toàn bộ Foods theo dayFoods
+
+  // console.log(test2)
+
+
+  // console.log(Exrs)
+
   
 
   return (
@@ -284,7 +172,7 @@ const Discover = () => {
     {/* <h2>Xin chào, <span>Nguyễn Như Từ</span></h2> */}
       <div className='plan d-flex flex-row'>
         <div className='detail-day-plan d-flex flex-column'>
-          <p className='title-day fs-2 fw-bold'>Ngày thứ 1</p>
+          <p className='title-day fs-2 fw-bold'>{titleDayPlan}</p>
           <p className='title-day fs-5 fw-bold'>01/07/2023</p>
           {/* <p className='title-day fs-5 fw-bold'>Bữa ăn: <span>4</span></p>
           <p className='title-day fs-5 fw-bold'>Bài tập: 3</p> */}
@@ -337,324 +225,164 @@ const Discover = () => {
 
             <p className='fs-6 fw-bold'>Tiến độ</p>
            
+            {/* <div className='my-plan-02 d-flex flex-row'>
+            {
+              test.map(({_id, nameDayPlan, createdAt}) => {
+                const date = new Date(createdAt);
+                const day = date.getDate();
+                const month = date.getMonth() + 1;
+                const year = date.getFullYear();
+                
+                return(
+                  <div key={_id} className='d-flex flex daypl'>
+                    <div className='day text-center' onClick={() => handleClickk(_id)}>
+                      <p className='fw-bold'>{nameDayPlan}</p>
+                      <p className='fw-normal'>{`${day}/${month}/${year}`}</p>
+                    </div>
+                  </div>
+                )
+              })
+            } 
+            </div> */}
+
             <div className='my-plan-02 d-flex flex-row'>
-              <div className='day text-center'>
-                <p className='fw-bold'>Ngày thứ 1</p>
-                <p className='fw-normal'>01/07/2023</p>
-              </div>
-              <div className='day text-center'>
-                <p className='fw-bold'>Ngày thứ 2</p>
-                <p className='fw-normal'>02/07/2023</p>
-              </div>
-              <div className='day text-center'>
-                <p className='fw-bold'>Ngày thứ 3</p>
-                <p className='fw-normal'>03/07/2023</p>
-              </div>
+            {
+              test.map(({_id, nameDayPlan, createdAt}, index) => {
+                const daysToAdd = index; // Số ngày cần cộng thêm
+                const oldDate = new Date(createdAt);
+                const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); // Cộng thêm số ngày đã tính toán
+                const day = newDate.getDate();
+                const month = newDate.getMonth() + 1;
+                const year = newDate.getFullYear();
+                const formattedDate = `${day}/${month}/${year}`;
+                
+                return(
+                  <div key={_id} className='d-flex flex daypl'>
+                    <div className='day text-center' onClick={() => handleClickk(_id)}>
+                      <p className='fw-bold'>{nameDayPlan}</p>
+                      <p className='fw-normal'>{formattedDate}</p>
+                    </div>
+                  </div>
+                )
+              })
+            } 
             </div>
+            
         </div>
 
         <div className='note-day-plan d-flex flex-column'>
           <p className='fs-6 fw-bold'>Ghi chú: </p>
-          <textarea class="form-control note" aria-label="With textarea"
-          placeholder='Không ăn thêm bữa phụ, có thể tập thêm 15 phút mỗi bài tập'>
+          <textarea class="form-control note" aria-label="With textarea" disabled
+          // placeholder='Không ăn thêm bữa phụ, có thể tập thêm 15 phút mỗi bài tập'
+          placeholder={notePlan}
+          >
             
           </textarea>
         </div>
       </div>
 
-
+      
+      
       <div className='food-exercise-plan d-flex flex-column'>
-         {/* DayFood thứ nhất */}
-          <div className='food d-flex flex-row'>
-            <div className='info-meat d-flex flex-column'>
-              <p className='title-meat fs-5 fw-bold'>Bữa ăn 1</p>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Complete}/>
-                <p className='fs-6 fw-bold'>Hoàn thành</p>
-              </div>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Repair}/>
-                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
-              </div>
-            </div>
-          {
-          OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
-              return(
-                <div key={id} className='food-menu'>
-                    <div className='image-food position-relative'>
-                      {imageFoodDetail}
-                    </div>
-                    <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                      <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                    </div>
-                  </div>
-              )
-            })
-          }
-          </div>
-
-
-          {/* DayFood thứ hai */}
-          <div className='food d-flex flex-row'>
-            <div className='info-meat d-flex flex-column'>
-              <p className='title-meat fs-5 fw-bold'>Bữa ăn 2</p>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Complete}/>
-                <p className='fs-6 fw-bold'>Hoàn thành</p>
-              </div>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Repair}/>
-                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
-              </div>
-            </div>
-          {
-          OptionsDetailFood2.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
-              return(
-                <div key={id} className='food-menu'>
-                    <div className='image-food position-relative'>
-                      {imageFoodDetail}
-                    </div>
-                    <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                      <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                    </div>
-                  </div>
-              )
-            })
-          }
-          </div>
-
-          {/* DayFood thứ ba */}
-          <div className='food d-flex flex-row'>
-            <div className='info-meat d-flex flex-column'>
-              <p className='title-meat fs-5 fw-bold'>Bữa ăn 3</p>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Complete}/>
-                <p className='fs-6 fw-bold'>Hoàn thành</p>
-              </div>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Repair}/>
-                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
-              </div>
-            </div>
-          {
-          OptionsDetailFood3.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
-              return(
-                <div key={id} className='food-menu'>
-                    <div className='image-food position-relative'>
-                      {imageFoodDetail}
-                    </div>
-                    <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                      <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                    </div>
-                  </div>
-              )
-            })
-          }
-          </div>
-
-          {/* DayExercise duy nhất trong DayPlan */}
-          <div className='food d-flex flex-row'>
-            <div className='info-meat d-flex flex-column'>
-              <p className='title-meat fs-5 fw-bold'>Bài tập ngày hôm nay</p>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Complete}/>
-                <p className='fs-6 fw-bold'>Hoàn thành</p>
-              </div>
-              <div className='update-meat d-flex flex-row'>
-                <img src={Repair}/>
-                <p className='fs-6 fw-bold'>Chỉnh sửa</p>
-              </div>
-            </div>
-            {
-            OptionsExercise.map(({id, imageExercise, type, star, icon, nameExercise, minutes, calories}) => {
-              return(
-              <div key={id} className='food-menu'>
-                <div className='image-food position-relative'>
-                  {imageExercise}
-                </div>
-                <div className='detail-food'>
-                  <p className='caterogy d-flex flex-row justify-content-end'><span>{star}{icon}</span></p>
-                  <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                  <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameExercise}<span>{minutes}</span></p>
-                  <p className='calo d-flex flex-row justify-content-between'>-{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                </div>
-              </div>
-              )
-            })
-          }
-          </div>
-          {/* <div className='news-food d-flex flex-row'>
-          {
-            OptionsExercise.map(({id, imageExercise, type, star, icon, nameExercise, minutes, calories}) => {
-              return(
-              <div key={id} className='food-menu'>
-                <div className='image-food position-relative'>
-                  {imageExercise}
-                </div>
-                <div className='detail-food'>
-                  <p className='caterogy d-flex flex-row justify-content-end'><span>{star}{icon}</span></p>
-                  <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                  <p className='food-name fw-bold d-flex flex-row justify-content-between'>{nameExercise}<span>{minutes}</span></p>
-                  <p className='calo d-flex flex-row justify-content-between'>-{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                </div>
-              </div>
-              )
-            })
-          }
-          </div> */}
-      </div>
-
-
-      {/* ====================== LOGIN START ===================== */}
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="title col-md-10 offset-md-1 text-center">
-                    <p className='fs-3 fw-bold'>Đăng nhập</p>
-                    <p>Bạn chưa có tài khoản, <span className='fs-6 fw-bold' data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Đăng ký</span></p>
-                  </div>
-                </div>
-
-                <div className='row form-login'>
-                  <div className='col-md-10 offset-md-1'>
-                    <Form>
-                      <FormGroup>
-                        <input type="text" class="form-control" placeholder="Tên đăng nhập" />
-                      </FormGroup>
-                      <FormGroup>
-                        <input type="text" class="form-control" placeholder="Mật khẩu" />
-                      </FormGroup>
-                      <div className='register d-flex flex-row justify-content-between'>
-                        <div className='d-flex flex-row'>
-                          <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""/>
-                          <p>Nhớ mật khẩu</p>
-                        </div>
-                        <div className='col-md-4'>
-                          <button className='btn btn-primary'>Đăng nhập<HiOutlineChevronRight/></button>
-                        </div>
-                        
-                      </div>
-
-                    </Form>
-                  </div>
-                </div>
-
-                <div className='row'>
-                  <div className='col-md-10 offset-md-1'>
-                    <p>Đăng nhập với: </p>
-                  </div>
-                  <div className='fb-gg col-md-10 offset-md-1 d-flex flex-row justify-content-around'>
-                    <div className='Facebook d-flex flex-row border border-dark'>
-                      <img src={facebook}/>
-                      <div className='text text-center'>
-                        <p>Facebook</p>
-                      </div>
-                    </div>
-                    <div className='Facebook d-flex flex-row border border-dark'>
-                      <img src={google}/>
-                      <div className='text text-center'>
-                        <p>Google</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class='modal-footer'></div>
-          </div>
-        </div>
-      </div>
-{/* ======================= LOGIN END =================== */}
-
-
-{/* ======================= REGISTER START ======================== */}
-      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button className='btn btn-primary' data-bs-target="#staticBackdrop" data-bs-toggle="modal" data-bs-dismiss="modal">Trở về đăng nhập</button>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <div class="container-fluid">
-                <div class="row">
-                  <div class="title col-md-10 offset-md-1 text-center">
-                    <p className='fs-3 fw-bold'>Đăng ký</p>
-                  </div>
-                </div>
-
-                <div className='row form-login'>
-                  <div className='col-md-10 offset-md-1'>
-                    <Form>
-                      <FormGroup>
-                        <p>Họ và tên: </p>
-                        <input type="text" class="form-control"/>
-                      </FormGroup>
-                      <div className='d-flex flex-row justify-content-between'>
-                        <FormGroup>
-                          <p>Tuổi: </p>
-                          <input type="number" class="form-control w-dis-age"/>
-                        </FormGroup>
-                        <FormGroup>
-                          <p>Ngày sinh: </p>
-                          <input type="date" class="form-control w-dis-date"/>
-                        </FormGroup>
-                      </div>
-                      <FormGroup>
-                        <p>Tên đăng nhập</p>
-                        <input type="text" class="form-control"/>
-                      </FormGroup>
-                      <FormGroup>
-                        <p>Số điện thoại</p>
-                        <input type="text" class="form-control"/>
-                      </FormGroup>
-                      <FormGroup>
-                        <p>Địa chỉ</p>
-                        <input type="text" class="form-control"/>
-                      </FormGroup>
-                      <FormGroup>
-                        <p>Email</p>
-                        <input type="text" class="form-control"/>
-                      </FormGroup>
-                      <FormGroup>
-                        <p>Mật khẩu</p>
-                        <input type="password" class="form-control"/>
-                      </FormGroup>
-                      <div className='register d-flex flex-row justify-content-between'>
             
-                        <div className='col-md-4'>
-                          <button className='btn btn-primary'>Đăng ký<HiOutlineChevronRight/></button>
-                        </div>
-                        
-                      </div>
-
-                    </Form>
+          {
+            fooddayplan.map(({_id, nameFoods, foods}) => {
+              return(
+                <div key={_id} className='food d-flex flex-row'>
+                  <div className='info-meat d-flex flex-column'>
+                    <p className='title-meat fs-5 fw-bold'>{nameFoods}</p>
+                    <div className='update-meat d-flex flex-row'>
+                      <img src={Complete}/>
+                      <p className='fs-6 fw-bold'>Hoàn thành</p>
+                    </div>
+                    <div className='update-meat d-flex flex-row'>
+                      <img src={Repair}/>
+                      <p className='fs-6 fw-bold'>Chỉnh sửa</p>
+                    </div>
                   </div>
-                </div>
 
-              </div>
-            </div>
-            
-          </div>
-        </div>
+                  {
+                    foods.map((item) => {
+                      return(
+                        <div key={item._id} className='food-menu'>
+                          <div className='image-food position-relative'>
+                            <img src={item.imageFood}/>
+                          </div>
+                          <div className='detail-food'>
+                            <p className='caterogy d-flex flex-row justify-content-end'>
+                            {item.reviews}
+                              <span><AiFillStar/></span>
+                            </p>
+                            <p className='caterogy d-flex flex-row justify-content-end'>{item.Type}</p>
+                            <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{item.nameFood} <span>{item.ration} g</span></p>
+                            <p className='calo d-flex flex-row justify-content-between'>{item.totalCalories} Calo<span>
+                            <Link className='link' to={`/app/menu/${item._id}`}>
+                              Chi tiết <img src={arrow}/>
+                            </Link>
+                            </span></p>
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+
+                </div>
+              )
+            })
+          }
+
+          {
+            exdayplan.map(({_id, nameExercises, exercises}) => {
+              return(
+                <div key={_id} className='food d-flex flex-row'>
+                  <div className='info-meat d-flex flex-column'>
+                    <p className='title-meat fs-5 fw-bold'>{nameExercises}</p>
+                    <div className='update-meat d-flex flex-row'>
+                      <img src={Complete}/>
+                      <p className='fs-6 fw-bold'>Hoàn thành</p>
+                    </div>
+                    <div className='update-meat d-flex flex-row'>
+                      <img src={Repair}/>
+                      <p className='fs-6 fw-bold'>Chỉnh sửa</p>
+                    </div>
+                  </div>
+
+                  {
+                    exercises.map((item) => {
+                      return(
+                        <div key={item._id} className='food-menu'>
+                          <div className='image-food position-relative'>
+                            <img src={item.imageExercise}/>
+                          </div>
+                          <div className='detail-food'>
+                            <p className='caterogy d-flex flex-row justify-content-end'>
+                            {item.reviews}
+                              <span><AiFillStar/></span>
+                            </p>
+                            <p className='caterogy d-flex flex-row justify-content-end'>{item.Type}</p>
+                            <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{item.nameExercise} <span>{item.ration} m</span></p>
+                            <p className='calo d-flex flex-row justify-content-between'>-{item.totalCalories} Calo<span>
+                            <Link className='link' to={`/app/menu/${item._id}`}>
+                              Chi tiết <img src={arrow}/>
+                            </Link>
+                            </span></p>
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+
+                </div>
+              )
+            })
+          }
+
+
+
+          
+
       </div>
-      {/* =============================== REGISTER END ===================== */}
+
 
     </div>
   )

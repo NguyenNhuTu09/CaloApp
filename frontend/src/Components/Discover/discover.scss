@@ -62,13 +62,17 @@
                     height: 32%;
                     background: #FFFF;
                     border-radius: 0.5rem;
-               .day{
-               margin: 0.5rem;
-               width: 100px;
-               padding: 5px;
-               border-radius: 0.5rem;
-               background: #9FE2BF;
-               }
+                    .day{
+                    margin: 0.5rem;
+                    width: 100px;
+                    padding: 5px;
+                    border-radius: 0.5rem;
+                    background: #9FE2BF;
+                    }
+                    .daypl{
+                         cursor: pointer;
+                         // border: 2px solid black;
+                    }
                }
           }
           .detail-day-plan{
@@ -103,6 +107,8 @@
                margin-top: 0.5rem;
                height: 230px;
                border-radius: 0.5rem;
+               background: #FFFF;
+               color: black;
           }
      }
      .food-exercise-plan{
@@ -166,66 +172,15 @@
                          img{
                               width: 10px;
                          }
+                         .link{
+                              text-decoration: none;
+                              color: black;
+                         }
                          
                     }
           }
         }
      }
 
-        .form-login{
-          margin-top: 2rem;
-          margin-bottom: 1rem;
-          .register{
-               margin-bottom: 0.7rem;
-          }
-     }
-     .form-check-input{
-          margin-right: 0.5rem;
-     }
-     .title{
-          margin-top: 0.5rem;
-          p{
-               margin-top: 0.5rem;
-          }
-          span{
-               cursor: pointer;
-               &:hover{
-                    color: blue;
-               }
-          }
-     }
-     .fb-gg{
-          margin-top: 0.5rem;
-          .Facebook{
-               width: 40%;
-               padding: 5px;
-               border-radius: 0.5rem;
-               cursor: pointer;
-               img{
-                    width: 40px;
-                    border-radius: 5px;
-               }
-               .text{
-                    width: 65%;
-                    padding-top: 5px;
-               }
-               &:hover{
-                    background:var(--SecondaryColor);
-               }
-          }
-     }
-     .modal-footer{
-          margin-top: 2rem;
-     }
-     .w-dis-age{
-          width: 100px;
-          text-align: center;
-     }
-     .w-dis-date{
-          width: 170px;
-          text-align: center;
-     }
-     input{
-          margin-top: 0.5rem;
-     }
+        
 }

@@ -1,10 +1,10 @@
 import express from 'express'
-import { createFood, updateFood, deleteFood, getSingleFood, getAllFood, getFoodCount } from '../controllers/foodController.js'
+import { createFood, updateFood, deleteFood, getSingleFood, getAllFood, getFoodCount} from '../controllers/foodController.js'
 import {verifyAdmin} from '../utils/verifyToken.js'
 
 const router = express.Router()
 //create new food
-router.post('/',createFood)
+router.post('/user/:id',createFood)
 
 //update food
 router.put('/:id', updateFood)

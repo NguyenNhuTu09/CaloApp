@@ -1,33 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './plan.css'
 import {IoIosArrowDown} from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
-import {MdOutlinePostAdd} from 'react-icons/md'
+import { useNavigate, useLocation } from 'react-router-dom'
+
 import AddPlan from '../../assets/Add.png'
 import add from '../../assets/addplan.png'
-import protein from '../../assets/Protein.png'
-import Tinhbot from '../../assets/Tinh bot.png'
-import Tinhbot2 from '../../assets/Tinh bot 2.png'
-import Vitamin from '../../assets/Vitamin.png'
-import Canxi from '../../assets/Canxi.png'
-import Omega3 from '../../assets/Omega3.png';
-import Kem from '../../assets/Zn.png';
-import Chatxo from '../../assets/Chat xo.png'
-
-import Chicken2 from '../../assets/Food/Chicken2.jpg'
-import Ham from '../../assets/Food/Ham.jpg'
-import Suachua from '../../assets/Food/Sua chua.jpg'
-import Chuoi from '../../assets/Food/Chuoi.jpg'
-import Catuyet from '../../assets/Food/Ca tuyet.jpg'
-import Cangu from '../../assets/Food/Ca ngu.jpg'
-import Cahoi from '../../assets/Food/Ca hoi.jpg'
-import Thitbo from '../../assets/Food/Thit bo.jpg'
-import Hanhnhan from '../../assets/Food/Hanh nhan.jpg'
-import Khoailang from '../../assets/Food/Khoai lang.jpg'
-import Carophi from '../../assets/Food/Ca ro phi.jpg'
-import Bibau from '../../assets/Food/Bi bau.jpg'
-import Bachtuoc from '../../assets/Food/Bach tuoc.jpg'
 
 import {BsSearch} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
@@ -36,171 +15,16 @@ import arrow from '../../assets/Arrow.png'
 import Delete from '../../assets/Delete.png'
 
 import exit from '../../assets/Exit-menu.png'
+import { AuthContext } from '../../Context/AuthContext';
 
 import { BASE_URL } from '../Utils/config.js'
 
 
-const OptionsDetailFood = [
-  {
-    id: 1,
-    imageFoodDetail: <img src={Chicken2}/>,
-    type: 'Protein',
-    star: '4.5',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Ức gà',
-    gam: '400g',
-    calories: '700 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 2,
-    imageFoodDetail: <img src={Ham}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Giăm bông',
-    gam: '300g',
-    calories: '650 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageFoodDetail: <img src={Suachua}/>,
-    type: 'Men',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Sữa chua',
-    gam: '250g',
-    calories: '150 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 4,
-    imageFoodDetail: <img src={Catuyet}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá tuyết',
-    gam: '400g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 5,
-    imageFoodDetail: <img src={Chuoi}/>,
-    type: 'Chất xơ',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Chuối',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 6,
-    imageFoodDetail: <img src={Cahoi}/>,
-    type: 'Omega-3',
-    star: '4.1',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá hồi',
-    gam: '550',
-    calories: '640 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 7,
-    imageFoodDetail: <img src={Cangu}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá ngừ',
-    gam: '300g',
-    calories: '450 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 8,
-    imageFoodDetail: <img src={Thitbo}/>,
-    type: 'Chất đạm',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Thịt bò',
-    gam: '260g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 9,
-    imageFoodDetail: <img src={Hanhnhan}/>,
-    type: 'Chất xơ',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Hạnh nhân',
-    gam: '150',
-    calories: '290 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 10,
-    imageFoodDetail: <img src={Bachtuoc}/>,
-    type: 'Chất đạm',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Bạch tuộc',
-    gam: '300g',
-    calories: '560 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 11,
-    imageFoodDetail: <img src={Bibau}/>,
-    type: 'Chất xơ',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Bí bầu',
-    gam: '300g',
-    calories: '380 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 12,
-    imageFoodDetail: <img src={Khoailang}/>,
-    type: 'Chất xơ',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Khoai lang',
-    gam: '300g',
-    calories: '460 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 13,
-    imageFoodDetail: <img src={Carophi}/>,
-    type: 'Chất đạm',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Cá rô phi',
-    gam: '300g',
-    calories: '380 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-]
-
 
 const Plan = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
 
   const [confirm, setConfirm] = useState('')
   const [foodConfirm, setFoodConfirm] = useState([])
@@ -253,13 +77,38 @@ const Plan = () => {
     setSelectedFoods(newSelectedFoods);
   };
 
-
-
   
   
   useEffect(() => {
     fetchData()
+
+    const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {
+      backdrop: 'static',
+      keyboard: false
+    });
+    modal.show();
+
+    const closeButton = document.querySelector('#staticBackdrop button[data-bs-dismiss="modal"]');
+    closeButton.addEventListener('click', () => {
+    modal.hide();
+  });
+
+  return () => {
+    closeButton.removeEventListener('click', () => {
+      modal.hide();
+    });
+  };
+
+
   }, [])
+
+  const {user, dispatch} = useContext(AuthContext)
+
+  console.log(user)
+
+  
+
+
   console.log(Foods)
   // console.log(foodConfirm)
   console.log(selectedFoods)
@@ -367,6 +216,7 @@ const Plan = () => {
         <div className='btn-create d-flex flex-column'>
             <input type="text" class="form-control" placeholder="Tên kế hoạch" aria-describedby="addon-wrapping"/>
             <input type="date" class="form-control" placeholder="Tên kế hoạch" aria-describedby="addon-wrapping"/>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Chỉnh sửa</button>
             <button type="button" class="btn btn-info">Tạo kế hoạch</button>
         </div>
       </div>
@@ -554,7 +404,39 @@ const Plan = () => {
         {/* =============== END MENU EXERCISE MODAL ============= */}
 
 
+        {/* Modal: BMI, BMR, Plan, DayPlan, DayFoods, DayExercise */}
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-2" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Xác nhận thông tin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="verify modal-body d-flex flex-column">
+                <p>Tên kế hoạch:</p>
+                <input type="text" class="form-control" aria-describedby="addon-wrapping"/>
+                
+                <div className='d-flex flex-row justify-content-between'>
+                  <div className='d-flex flex-column w-60'>
+                    <p>Ngày bắt đầu:</p>
+                    <input type="date" class="form-control" aria-describedby="addon-wrapping"/>
+                  </div>
 
+                  <div className='d-flex flex-column w-30'>
+                    <p>Ngày kết thúc:</p>
+                    <input type="date" class="form-control" aria-describedby="addon-wrapping"/>
+                  </div>
+                </div>
+
+
+                    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Xác nhận</button>
+              </div>
+            </div>
+          </div>
+        </div>
      
     </div>
   )

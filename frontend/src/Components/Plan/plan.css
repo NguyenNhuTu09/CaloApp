@@ -335,4 +335,10 @@
 }
 .Plan .modal .modal-header {
   padding: 5px;
+}
+.Plan .modal .verify .form-control {
+  margin-top: 0.5rem;
+}
+.Plan .modal .verify p {
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=plan.css.map */

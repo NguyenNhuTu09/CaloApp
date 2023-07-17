@@ -1,4 +1,4 @@
-import Food from '../models/Food.js'
+import FoodUser from '../models/FoodUser.js'
 import User from '../models/User.js'
 
 // create new food
@@ -20,10 +20,10 @@ import User from '../models/User.js'
 // }
 
 // new create food user
-export const createFood = async(req, res) => {
+export const createFoodUser = async(req, res) => {
 
      // hiện chỉ có cách này hoạt động, đã thêm được Food mới vào thẳng foods của user
-     const newFood = new Food(req.body)
+     const newFood = new FoodUser(req.body)
      const id = req.params.id
      try{
           const savedFood = await newFood.save()
@@ -112,10 +112,10 @@ export const createFood = async(req, res) => {
 
 
 // update Food
-export const updateFood = async (req, res) => {
+export const updateFoodUser = async (req, res) => {
      const id = req.params.id
      try{
-          const updateFood = await Food.findByIdAndUpdate(id, {
+          const updateFood = await FoodUser.findByIdAndUpdate(id, {
                $set: req.body
           }, {new:true})
 
@@ -130,10 +130,10 @@ export const updateFood = async (req, res) => {
      }
 }
 // delete food
-export const deleteFood = async (req, res) => {
+export const deleteFoodUser = async (req, res) => {
      const id = req.params.id
      try{
-          await Food.findByIdAndDelete(id)
+          await FoodUser.findByIdAndDelete(id)
 
           res.status(200).json({
                success: true, 
@@ -145,10 +145,10 @@ export const deleteFood = async (req, res) => {
      }
 }
 // get single Food
-export const getSingleFood = async (req, res) => {
+export const getSingleFoodUser = async (req, res) => {
      const id = req.params.id
      try{
-          const food = await Food.findById(id).populate('Type')
+          const food = await FoodUser.findById(id).populate('Type')
 
           res.status(200).json({
                success: true, 
@@ -161,12 +161,12 @@ export const getSingleFood = async (req, res) => {
      }
 }
 // get All food
-export const getAllFood = async (req, res) => {
+export const getAllFoodUser = async (req, res) => {
      //for pagination
      const page = parseInt(req.query.page)
 
      try{
-          const foods = await Food.find({})
+          const foods = await FoodUser.find({})
           
           res.status(200).json({
                success: true, 
@@ -181,9 +181,9 @@ export const getAllFood = async (req, res) => {
 }
 
 // get food count
-export const getFoodCount = async(req, res) => {
+export const getFoodCountUser = async(req, res) => {
      try{
-          const foodCount = await Food.estimatedDocumentCount()
+          const foodCount = await FoodUser.estimatedDocumentCount()
           res.status(200).json({success: true, data: foodCount})
      }catch(err){
           res.status(500).json({success: false, message: 'failed to fetch'})

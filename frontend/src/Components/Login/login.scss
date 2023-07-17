@@ -17,6 +17,9 @@
                margin-top: 4rem;
                margin-bottom: 1rem;
           }
+          .link{
+               text-decoration: none;
+          }
           .email, .pass{
                width: 90%;
                margin-top: 1.5rem;
@@ -40,8 +43,12 @@
                     }
                     img{
                          // border: 2px solid black;
-                         width: 25px;
+                         width: 17px;
                     }
+               }
+               p{
+                    margin-top: 5px;
+                    margin-left: 5px;
                }
           }
           .face-gg{
@@ -53,11 +60,12 @@
                     margin-right: 5px;
                }
                .facebook, .google{
-                    width: fit-content;
+                    // width: fit-content;
                     background: #FFFF;
                     padding: 0.5rem 2rem;
                     align-items: center;
                     border-radius: 0.5rem;
+                    width: 160px;
                }
           }
      }

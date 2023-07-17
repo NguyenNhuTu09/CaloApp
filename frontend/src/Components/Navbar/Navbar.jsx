@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import {NavLink, Link, useNavigate, Outlet, useParams} from 'react-router-dom';
 import {Form, FormGroup} from 'reactstrap'
 import './navbar.css'
@@ -32,6 +32,8 @@ import { AuthContext } from '../../Context/AuthContext';
 
 
 
+
+
 const nav_link1 = [
   {
     path: '/app/home',
@@ -53,43 +55,39 @@ const nav_link1 = [
 const nav_link2 = [
   {
     path: '/app/discover',
-    icon: <img src={Muctieu}/>
+    icon: <img src={Muctieu}/>,
+    text: <p>Kế hoạch</p>
   },
-  {
-    path: '/app/user',
-    icon: <img src={icuser}/>
-  },
+  // {
+  //   path: '/app/user',
+  //   icon: <img src={icuser}/>,
+  //   text: <p>Cài đặt</p>
+  // },
   {
     path: '/app/plan',
-    icon: <img src={newPlan}/>
+    icon: <img src={newPlan}/>,
   }
 ]
 
 
 const Navbar = () => {
-  // const {id} = useParams()
 
-  // const [inforUser, setInforUser] = useState([])
-  // const fetchData = async()=>{
-  //   const response = await fetch(`${BASE_URL}/users/${id}`)
-  //   const data = response.json()
-  //   setInforUser(data.data)
-  // }
+  const {user, dispatch} = useContext(AuthContext)
+  console.log(user._id)
+  
 
-  // useEffect(() => {
-  //   fetchData()
-  // }, [])
-  // console.log(inforUser)
+  
   return (
     <>
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
         <div className='nav-menu d-flex flex-column align-items-center'>
           <img className='logo' src={logo}/>
+          <p className=' name-web fs-5 fw-bold'>T.H.F</p>
           {
             nav_link1.map((item, index) => (
               <li className='nav_item d-flex flex-row' key={index}>
-                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""}><a>{item.icon}</a></NavLink>
-                    {/* {item.text} */}
+                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'}><a>{item.icon} </a>  </NavLink>
+                    {/* <a>{item.text}</a> */}
               </li>
             ))
           }
@@ -97,11 +95,14 @@ const Navbar = () => {
           {
             nav_link2.map((item, index) => (
               <li className='nav_item' key={index}>
-                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link' : ""}><a>{item.icon}</a></NavLink>
+                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'}><a>{item.icon} </a> </NavLink>
               </li>
             ))
           }
+          <li className='nav_item'>
 
+          <Link className='active_link' to={`/app/user/${user._id}`}><a><img src={icuser}/></a></Link>
+          </li>
 
           {/* <Link to={'/app/plan'}><img className='create' src={newPlan}/></Link> */}
         </div>

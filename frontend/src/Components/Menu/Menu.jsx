@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import './menu.css'
 import {Link} from 'react-router-dom'
 
@@ -37,6 +37,7 @@ import Nuoceptao from '../../assets/Food/Nuoc ep tao.jpg'
 import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
 import Gatandoori from '../../assets/Food/Ga tandoori.jpg'
 import Boapchao from '../../assets/Food/Bo ap chao.jpg'
+import { AuthContext } from '../../Context/AuthContext'
 import { Outlet } from 'react-router'
 
 
@@ -290,6 +291,7 @@ import { Col, Row } from 'reactstrap'
 
 
 const Menu = () => {
+  const {user, dispatch} = useContext(AuthContext)
   const [Foods, setFoods] = useState([])
   const [Loading, setLoading] = useState(false)
 
@@ -301,11 +303,18 @@ const Menu = () => {
     const data = await response.json();
     setFoods(data.data)
     console.log(data.data)
+
+    // user.foods.pop()
   }
   useEffect(() => {
     fetchData();
   }, [])
+
+
   console.log(Foods)
+
+  console.log(user)
+
 
   return (
     <div className='Menu'>

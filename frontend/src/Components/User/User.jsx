@@ -120,11 +120,21 @@ const User = () => {
   const fetchData = async() => {
     let k = []
     for(let i = 0; i < user.foods.length; i++){
-      const response = await fetch(`${BASE_URL}/foods/${user.foods[i]}`)
+      const response = await fetch(`${BASE_URL}/foodsuser/${user.foods[i]}`)
       const data = await response.json()
       k.push(data.data)
       setFoodUser(k)
     }
+
+    // let k = []
+    // // for(let i = 0; i < user.foods.length; i++){
+    //   const response = await fetch(`${BASE_URL}/users/${user._id}`)
+    //   const data = await response.json()
+    //   k.push(data.data.foods)
+    //   setFoodUser(k)
+    // // }
+
+    
 
     let h = []
     for(let j = 0; j < user.exercises.length; j++){
@@ -151,13 +161,15 @@ const User = () => {
     //   dispatch({type: 'LOGIN_SUCCESS', payload: userData})
     // }
     fetchData()
-    
   },[])
+ 
 
   // console.log(user.foods)
   console.log(foodUser)
   console.log(exUser)
   console.log(planUser)
+  
+  console.log(user)
 
 
   return (
@@ -239,7 +251,7 @@ const User = () => {
               })
       }
         <div className='Create'>
-          <Link to='/app/createfood' className='link'>
+          <Link to={`/app/user/${user._id}/createfood`} className='link'>
             <div className='Add d-flex flex-column'>
               <img src={add}/>
               <p className='fs-6 fw-bold'>Tải lên</p>
@@ -281,3 +293,11 @@ const User = () => {
   )
 }
 export default User
+
+
+
+// trường hợp 1:
+// + Tìm cách sao cho khi createFood hoặc exercise, plan, nó sẽ push lần lượt vào foods, plans, exercise vào data của user đã lưu vào Context
+// chứ không push hẳn lên menu chung
+// trường hợp 2:
+// + Đăng tải lên plan, foods, exercise chung, nhưng khi hiển thị, phải theo _id của user đã tạo ra plan, user, exercise đó

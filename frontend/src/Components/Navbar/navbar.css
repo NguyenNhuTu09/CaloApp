@@ -13,10 +13,14 @@
   align-items: center;
 }
 .Navbar .nav-menu li img {
-  width: 35px;
+  width: 32px;
   background-size: cover;
   border-radius: 0.5rem;
   padding: 3px;
+}
+.Navbar .nav-menu .nav_item a.active_link {
+  text-decoration: none;
+  color: black;
 }
 .Navbar .nav-menu .nav_item a.active_link img {
   background: white;
@@ -31,8 +35,12 @@
 }
 .Navbar .logo {
   width: 60px;
+  margin-bottom: 0rem;
   padding-top: 0px;
   background: none;
+}
+.Navbar .name-web {
+  margin-bottom: 1.5rem;
 }
 .Navbar .create {
   margin-top: 1rem;
