@@ -71,3 +71,21 @@ export const getAllDayFood = async (req, res) => {
                message: 'not found'})
      } 
 }
+
+export const updateDayFood = async (req, res) => {
+     const id = req.params.id
+     try{
+          const updateFood = await DayFood.findByIdAndUpdate(id, {
+               $set: req.body
+          }, {new:true})
+
+          res.status(200).json({
+               success: true, 
+               message: 'Successfully update',
+               data: updateFood})
+     }catch(err){
+          res.status(500).json({
+               success: false, 
+               message: 'Failed to update'})
+     }
+}

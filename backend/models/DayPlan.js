@@ -8,7 +8,7 @@ const DayPlanSchema = new mongoose.Schema(
     },
     nameDayPlan:{
       type: String,
-      required: true
+      // required: true
     },
     dayFoods: [
       {
@@ -24,7 +24,7 @@ const DayPlanSchema = new mongoose.Schema(
     ],
     noteDayPlan:{
       type: String,
-      required: true,
+      // required: true,
     }
   },
   { timestamps: true }

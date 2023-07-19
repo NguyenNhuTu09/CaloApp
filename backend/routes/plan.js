@@ -1,10 +1,10 @@
 import express from "express";
-import { createPlan, getAllPlan, getSinglePlan, deletedPlan } from "../controllers/planController.js";
+import { createPlan, getAllPlan, getSinglePlan, deletedPlan, updatePlan } from "../controllers/planController.js";
 
 const router  = express.Router()
 
 // create dayFood
-router.post('/', createPlan)
+router.post('/user/:id', createPlan)
 
 // get dayFood
 router.get('/:id', getSinglePlan)
@@ -14,5 +14,7 @@ router.get('/', getAllPlan)
 
 // delete dayFood
 router.delete('/:id', deletedPlan)
+
+router.put('/:id', updatePlan)
 
 export default router

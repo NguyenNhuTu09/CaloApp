@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import './home.css'
 
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+
+import { Container, Col, Row } from 'reactstrap'
 
 import Chicken2 from '../../assets/Food/Chicken2.jpg'
 import Ham from '../../assets/Food/Ham.jpg'
@@ -23,10 +25,33 @@ import tuimg from '../../assets/tuimg.jpg'
 
 import arrow from '../../assets/Arrow.png'
 
+import {IoIosCreate} from 'react-icons/io'
+import {GrPlan} from 'react-icons/gr'
+import {MdPendingActions} from 'react-icons/md';
+import {GiSettingsKnobs} from 'react-icons/gi'
+
+
 import Introduction from '../Introduction/Introduction'
 import NavHome from '../NavHome/NavHome'
 import HomePage from '../HomePage/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import logo from '../../assets/LogoTHF.png'
+import video from '../../assets/ronaldo-2.mp4'
+
+import imageronaldo from '../../assets/title-ronaldo.jpg'
+import image1 from '../../assets/title-image-1.jpg'
+import image2 from '../../assets/title-image-2.jpeg'
+
+import logoTHF from '../../assets/LogoTHF.png'
+import logo1 from '../../assets/logo-1.png'
+import logo2 from '../../assets/logo-2.png'
+import logo3 from '../../assets/logo-3.png'
+import logo4 from '../../assets/logo-4.png'
+
+import image3 from '../../assets/IMG_13755-cropped.jpg'
+
+import testfood from '../../assets/test-food.jfif'
 
 
 
@@ -125,20 +150,129 @@ const Home = () => {
     <div className='page-home d-flex flex-column'>
 
       <div className='nav-home d-flex flex-row'>
-        <li className='link_1 nav-link' onClick={clickLink1}>
-          <button className='active_link'>
-            <a>Giới thiệu</a>
+        <li className='nav-link' onClick={clickLink1}>
+          <button className={navClass => navClass.isActive ? 'active_link' : ''}>
+            <a>
+             Giới thiệu
+            </a>
           </button>
         </li>
-        <li className='link_2 nav-link' onClick={clickLink2}>
-          <button className='active_link'>
+        <li className='nav-link' onClick={clickLink2}>
+          <button className={navClass => navClass.isActive ? 'active_link' : ''}>
             <a>Trang chủ</a>
           </button>
         </li>
       </div>
       {link ? (
-        <div className='introduction'>
-        Giới thiệu
+        <div className='introduction d-flex flex-column'>
+
+
+          <div className='title d-flex flex-row justify-content-center'>
+            <div className='title-logo d-flex flex-column'>
+              <div className='tieude d-flex flex-row align-items-center'>
+                <img src={logoTHF}/>
+                <p className='fs-1 fw-bold'>T.H.F</p>
+              </div>
+
+              <p className='title-thf fs-4 fw-bold'>Healthy Habits Today for a Better Tomorrow</p>
+              <p className='title-thf fs-5 fw-normal'>Thay đổi cuộc sống của bạn với lối sống lành mạnh</p>
+              <p className='title-thf fs-5 fw-bold'>Chào mừng bạn đến với T.H.F</p>
+
+              
+            </div>
+
+            <div className='title-video d-flex flex-row justify-content-center'>
+              <div className='title-1'>
+                <img src={imageronaldo}/>
+              </div>
+
+              <div className='title-2'>
+                <img src={image1}/>
+              </div>
+
+              <div className='title-3'>
+                <img src={image2}/>
+              </div>
+            </div> 
+          </div>
+
+          <div className='logo-four d-flex flex-column align-items-center'>
+            <p className='fs-5 fw-bold'>4 mục tiêu chính của T.H.F</p>
+            <div className='d-flex flex-row'>
+
+              <div className='logo-1 d-flex flex-column align-items-center'>
+                  <img src={logo1}/>
+                  <p>Tập luyện</p>
+                </div>
+                <div className='logo-1 d-flex flex-column align-items-center'>
+                  <img src={logo2}/>
+                  <p>Tạo kế hoạch</p>
+                </div>
+                <div className='logo-1 d-flex flex-column align-items-center'>
+                  <img src={logo3}/>
+                  <p>Học tập</p>
+                </div>
+                <div className='logo-1 d-flex flex-column align-items-center'>
+                  <img src={logo4}/>
+                  <p>Dinh dưỡng</p>
+                </div>
+            </div>
+          </div>
+
+
+            <div className='intro-web-1 d-flex flex-row justify-content-between'>
+              <div className='intro-web d-flex flex-column'>
+              <p className='fs-5 fw-bold'>Khám phá thực đơn Healthy của T.H.F</p>
+              <p className='note'>Cung cấp cho bạn kiến thức về cách chế biến các món ăn tốt cho sức khỏe</p>
+                <p className='number-1 fs-6 fw-bold'>1</p>
+                <p className='tit-1 fs-6 fw-bold'>Thực đơn phong phú</p>
+                <p className='note'>Gồm các món ăn healthy đơn giản, phù hợp với người Việt Nam. Tránh xa đồ ăn nhanh, thực phẩm chứa nhiều đường. 
+                Tối ưu lượng Calo của thực đơn.</p>
+                <p className='number-2 fs-6 fw-bold'>2</p>
+                <p className='tit-1 fs-6 fw-bold'>Xác định lượng calo của từng món ăn</p>
+                <p className='note'>Có đơn vị cụ thể của các thành phần tạo ra món ăn trong thực đơn, lượng Calo của thành phần, cách chế biến, tác giả đã
+                tạo ra.</p>
+                <p className='number-3 fs-6 fw-bold'>3</p>
+                <p className='tit-1 fs-6 fw-bold'>Các bài tập thể hình hiệu quả</p>
+                <p className='note'>Phân chia thời gian tập luyện của các bài tập khác khau, có chi tiết lượng Calo đốt cháy trong một khoảng thời gian nhất định.</p>
+              </div>
+              <div className='intro-image'>
+                <img src={image3}/>
+              </div>
+            </div>
+
+          <div className='intro-web-2 d-flex flex-column'>
+            <p className='intro-title fs-5 fw-bold'>Kế hoạch thực hiện</p>
+            <div className='intro-plan d-flex flex-row justify-content-between'>
+              <div className='intro-plan-1 d-flex flex-column'>
+                <p className='fs-4 icons'><IoIosCreate/></p>
+                <p className='text-icons fs-6 fw-bold'>Đo chỉ số</p>
+                <p className='note-icons'>Xác định tình trạng cơ thể trước khi bắt đầu.</p>
+              </div>
+
+              <div className='intro-plan-2 d-flex flex-column'>
+                <p className='fs-4 icons'><GrPlan/></p>
+                <p className='text-icons fs-6 fw-bold'>Tạo kế hoạch</p>
+                <p className='note-icons'>Dựa vào bài tập, thực đơn, tạo ra kế hoạch cho riêng bạn.</p>
+              </div>
+
+              <div className='intro-plan-3 d-flex flex-column'>
+                <p className='fs-4 icons'><MdPendingActions/></p>
+                <p className='text-icons fs-6 fw-bold'>Bắt đầu thực hiện</p>
+                <p className='note-icons'>Ghi rõ các vấn đề, khó khăn đang gặp phải</p>
+              </div>
+
+              <div className='intro-plan-4 d-flex flex-column'>
+                <p className='fs-4 icons'><GiSettingsKnobs/></p>
+                <p className='text-icons fs-6 fw-bold'>Trao đổi</p>
+                <p className='note-icons'>Chỉnh sửa, cập nhật kế hoạch, giải quyết khó khăn</p>
+              </div>
+
+
+            </div>
+          </div>
+
+
       </div>  
       ) : (
         

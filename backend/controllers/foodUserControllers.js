@@ -34,7 +34,7 @@ export const createFoodUser = async(req, res) => {
 
           console.log(updateFoodUser)
           if (!updateFoodUser) {
-               return res.status(404).json({ message: 'Người dùng không tồn tại' });
+               return res.status(404).json({ message: 'Đăng nhập trước khi sử dụng ứng dụng' });
           }
 
           updateFoodUser.foods.push(foodId)

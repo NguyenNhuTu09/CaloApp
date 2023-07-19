@@ -63,17 +63,17 @@ const nav_link2 = [
   //   icon: <img src={icuser}/>,
   //   text: <p>Cài đặt</p>
   // },
-  {
-    path: '/app/plan',
-    icon: <img src={newPlan}/>,
-  }
+  // {
+  //   path: '/app/plan',
+  //   icon: <img src={newPlan}/>,
+  // }
 ]
 
 
 const Navbar = () => {
 
   const {user, dispatch} = useContext(AuthContext)
-  console.log(user._id)
+  // console.log(user._id)
   
 
   
@@ -101,8 +101,13 @@ const Navbar = () => {
           }
           <li className='nav_item'>
 
-          <Link className='active_link' to={`/app/user/${user._id}`}><a><img src={icuser}/></a></Link>
+            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} to={`/app/user/${user._id}`}><a><img src={icuser}/></a></NavLink>
           </li>
+          <li className='nav_item'>
+
+            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} to={`/app/user/${user._id}/plan`}><a><img src={newPlan}/></a></NavLink>
+          </li>
+          
 
           {/* <Link to={'/app/plan'}><img className='create' src={newPlan}/></Link> */}
         </div>

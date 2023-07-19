@@ -149,13 +149,14 @@ const User = () => {
       const response = await fetch(`${BASE_URL}/plan/${user.plans[n]}`)
       const data = await response.json()
       m.push(data.data)
-      setPlanUser(m)
     }
+    setPlanUser(m)
 
   }
 
   useEffect(() => {
     setFoodUser([])
+    setPlanUser([])
     // const userData = JSON.parse(localStorage.getItem('User'))
     // if(userData){
     //   dispatch({type: 'LOGIN_SUCCESS', payload: userData})
@@ -215,7 +216,7 @@ const User = () => {
       }
 
           <div className='Create-plan'>
-            <Link to='/app/plan' className='link'>
+            <Link to={`/app/user/${user._id}/plan`} className='link'>
               <div className='Add d-flex flex-column'>
                 <img src={add}/>
                 <p className='fs-6 fw-bold'>Tải lên</p>

@@ -56,7 +56,12 @@ const CreateFood = () => {
                     navigate(`/app/user/${user._id}/createfood/`)
                }else if(res.ok){
                     alert("Tạo món ăn thành công")
-                    navigate('/app/user/${user._id}')
+                    // localStorage.setItem("user", JSON.stringify(result.user)); // Cập nhật thông tin user trong localStorage
+                    // dispatch({
+                    //      type: "CREATE_FOOD_SUCCESS",
+                    //      // payload: result, // payload chứa thông tin user sau khi tạo foodsuser thành công
+                    // });
+                    navigate(`/app/user/${user._id}`)
                }
           }catch(error){
                alert(error.message)

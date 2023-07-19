@@ -44,7 +44,13 @@ const App = () => {
               <Route path='createexercise' element={<CreateExercise/>}/>
               <Route path='detailplan' element={<DetailPlan/>}/>
               <Route path='detailplan/detailfood' element={<DetailFood/>}/>
-              <Route path='plan' element={<Plan/>}/>
+
+              <Route path='user/:id/plan' element={<Plan/>}/>
+              {/* test create-plan start */}
+              <Route path='user/:id/plan/:id' element={<Plan/>}/>
+              {/* test create-plan end*/}
+
+
               <Route path='menu' element={<Menu/>}/>
               <Route path='exercise' element={<Exercise/>}/>
               <Route path='menu/:id' element={<DetailFood/>}/>

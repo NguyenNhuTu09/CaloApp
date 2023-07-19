@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react'
 import './plan.css'
 import {IoIosArrowDown} from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import { Form } from 'reactstrap';
 
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -23,32 +24,95 @@ import { BASE_URL } from '../Utils/config.js'
 
 const Plan = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const {user, dispatch} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  // Xử lý tạo Plan
+
+  // Nhập tên kế hoạch : ok
+  // Nhập số ngày thực hiện, Xác nhận.: ok
+  // Hiện một modal khác (fetch toàn bộ DayPlan theo _id trong Plan về modal này), hiển thị số ngày thực hiện kế hoạch
+  // chọn từng số bữa ăn cho từng bữa, Xác nhận tiếp. Xong thoát ra màn hình chính (fetch hết toàn bộ Plan, DayPlan, DayFood và DayExercise
+  // về manf hình này)
+
+  
+  const [startDayPlan, setStartDayPlan] = useState('')
+  const [endDayPlan, setEndDayPlan] = useState('')
+
+  const [credentials, setCredentials] = useState({
+        namePlan: undefined,
+        startPlan: undefined,
+        endPlan: undefined,
+        author: user._id
+  })
+
+  // const handleDayPlan = () => {
+  //     for(let date = startDayPlan; date <= endDayPlan; date.setDate(date.getDate()+1)){
+  //       console.log(date)
+  //     }
+  // }
+  const handleChange = (e) => {
+    if(e.target.id == "startPlan"){
+      setStartDayPlan(new Date(e.target.value))
+    } else if(e.target.id == 'endPlan'){
+      setEndDayPlan(new Date(e.target.value))
+    }
+    setCredentials(prev=>({...prev, [e.target.id]:e.target.value }))
+    
+  }
+
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    try{
+         const res = await fetch(`${BASE_URL}/plan/user/${user._id}`, {
+              method: 'post',
+              headers: {
+                   'content-type':'application/json',
+              },
+              body: JSON.stringify(credentials)
+         })
+         const result = await res.json()
+
+         if(!res.ok){
+              alert(result.message)
+              // navigate(`/app/user/${user._id}/plan/`)
+         }else if(res.ok){
+              alert("Tạo kế hoạch hoàn tất")
+              // navigate(`/app/user/${user._id}/plan/`)
+              console.log(result.data._id)
+            }
+            // $('#staticBackdrop').modal('hide'); // đã hoạt động
+
+    }catch(error){
+         alert(error.message)
+    }
+    
+  }
+
+  // Xử lý tạo Plan 
 
 
-  const [confirm, setConfirm] = useState('')
-  const [foodConfirm, setFoodConfirm] = useState([])
+
+
+  // Xử lý menu khi tạo kế hoạch
   const [stateConfirm, setStateConfirm] = useState(Boolean)
 
   const [Foods, setFoods] = useState([])
+
+  const [foodUser, setFoodUser] = useState([])
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json()
     setFoods(data.data)
-  }
-  let k = []
-
-  function testConfirm(e){
-    setConfirm(e)
-    for(let i = 0; i < Foods.length; i++){
-      if(Foods[i]._id === confirm){
-        setFoodConfirm(Foods[i])
-        setStateConfirm(true)
-      }else{
-        setStateConfirm(false)
-      }
+    let k = []
+    for(let i = 0; i < user.foods.length; i++){
+      const response_2 = await fetch(`${BASE_URL}/foodsuser/${user.foods[i]}`)
+      const data_2 = await response_2.json()
+      k.push(data_2.data)
     }
+    setFoodUser(k)
   }
+
 
   const [selectedFoods, setSelectedFoods] = useState([]);
 
@@ -78,7 +142,6 @@ const Plan = () => {
   };
 
   
-  
   useEffect(() => {
     fetchData()
 
@@ -99,21 +162,11 @@ const Plan = () => {
     });
   };
 
-
   }, [])
 
-  const {user, dispatch} = useContext(AuthContext)
-
-  console.log(user)
 
   
-
-
-  console.log(Foods)
-  // console.log(foodConfirm)
-  console.log(selectedFoods)
-  // console.log(confirm)
-  console.log(stateConfirm)
+  // console.log(user)
   return (
     <div className='Plan d-flex flex-row justify-content-between'>
       <div className='create-food d-flex flex-column'>
@@ -192,10 +245,6 @@ const Plan = () => {
         {/* ======================== */}
 
       </div>
-
-
-
-
 
 
 
@@ -324,41 +373,85 @@ const Plan = () => {
                       </div>
 
                     </div>
-                    <div className='food row'>
-                      {
-                        Foods.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
-                          return(
-                            <div key={_id} className='food-menu'>
-                              <div className='image-food position-relative'>
-                                <img  src={imageFood}/>
-                              </div>
-                              <div className='detail-food'>
-                                <p className='caterogy d-flex flex-row justify-content-end'>
-                                {reviews}
-                                  <span><AiFillStar/></span>
-                                </p>
-                                <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
-                                <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
-                                <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
 
-                                <button className='options'
-                                  onClick={() => handleFoodClick(_id)}
-                                  >Chọn
-                                </button>
+                    <div className='food d-flex flex-column'>
+                    <p className='title-menu fs-5 fw-bold'>Thực đơn của hệ thống:</p>
 
-                                <Link className='link' to={`/app/menu/${_id}`}>
-                                  Chi tiết <img src={arrow}/>
-                                </Link>
+                      <div className='row'>
+                        {
+                          Foods.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
+                            return(
+                              <div key={_id} className='food-menu'>
+                                <div className='image-food position-relative'>
+                                  <img  src={imageFood}/>
+                                </div>
+                                <div className='detail-food'>
+                                  <p className='caterogy d-flex flex-row justify-content-end'>
+                                  {reviews}
+                                    <span><AiFillStar/></span>
+                                  </p>
+                                  <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                                  <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
+                                  <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
+
+                                  <button className='options'
+                                    onClick={() => handleFoodClick(_id)}
+                                    >Chọn
+                                  </button>
+
+                                  <Link className='link' to={`/app/menu/${_id}`}>
+                                    Chi tiết <img src={arrow}/>
+                                  </Link>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          )
-                        })
-                      }
-                      
+                            )
+                          })
+                        }
+                        
+                      </div>
+                      <hr/>
+                      <p className='title-menu fs-5 fw-bold'>Thực đơn của bạn:</p>
+
+                      <div className='row'>
+                        {
+                          foodUser.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
+                            return(
+                              <div key={_id} className='food-menu'>
+                                <div className='image-food position-relative'>
+                                  <img  src={imageFood}/>
+                                </div>
+                                <div className='detail-food'>
+                                  <p className='caterogy d-flex flex-row justify-content-end'>
+                                  {reviews}
+                                    <span><AiFillStar/></span>
+                                  </p>
+                                  <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                                  <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
+                                  <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
+
+                                  <button className='options'
+                                    onClick={() => handleFoodClick(_id)}
+                                    >Chọn
+                                  </button>
+
+                                  <Link className='link' to={`/app/menu/${_id}`}>
+                                    Chi tiết <img src={arrow}/>
+                                  </Link>
+                                  </div>
+                                </div>
+                              </div>
+                            )
+                          })
+                        }
+                        
+                      </div>
+
+
                     </div>
                   </div>
 
+                  
                   <div className='food-user-confirm d-flex flex-row align-items-center'>
 
                     {
@@ -405,37 +498,54 @@ const Plan = () => {
 
 
         {/* Modal: BMI, BMR, Plan, DayPlan, DayFoods, DayExercise */}
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-2" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Xác nhận thông tin</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="verify modal-body d-flex flex-column">
-                <p>Tên kế hoạch:</p>
-                <input type="text" class="form-control" aria-describedby="addon-wrapping"/>
-                
-                <div className='d-flex flex-row justify-content-between'>
-                  <div className='d-flex flex-column w-60'>
-                    <p>Ngày bắt đầu:</p>
-                    <input type="date" class="form-control" aria-describedby="addon-wrapping"/>
-                  </div>
-
-                  <div className='d-flex flex-column w-30'>
-                    <p>Ngày kết thúc:</p>
-                    <input type="date" class="form-control" aria-describedby="addon-wrapping"/>
-                  </div>
+        <div class="newPlan modal fade come-from-modal right" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-2" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <Form onSubmit={handleSubmit}>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Xác nhận thông tin</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
 
+                <div class="verify modal-body d-flex flex-column">
+                  
+                    <p>Tên kế hoạch:</p>
+                    <input type="text" class="namePlan form-control" aria-describedby="addon-wrapping"
+                    onChange={handleChange}
+                    required id = 'namePlan'
+                    />
                     
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Xác nhận</button>
+                    <div className='d-flex flex-row justify-content-between'>
+                      <div className='d-flex flex-column w-60'>
+                        <p>Ngày bắt đầu:</p>
+                        <input type="date" class="date-start form-control" aria-describedby="addon-wrapping"
+                          onChange={handleChange}
+                          required id = 'startPlan'
+                        />
+                      </div>
+
+                      <div className='d-flex flex-column w-30'>
+                        <p>Ngày kết thúc:</p>
+                        <input type="date" class="date-end form-control" aria-describedby="addon-wrapping"
+                          onChange={handleChange}
+                          required id = 'endPlan'
+                        />
+                      </div>
+                    </div>
+                  
+                </div>
+
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal newPlan">
+                    Xác nhận
+                  </button>
+                  {/* <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">Test</button> */}
+                </div>
               </div>
             </div>
-          </div>
+          </Form>
         </div>
      
     </div>
@@ -443,3 +553,5 @@ const Plan = () => {
 }
 
 export default Plan
+
+

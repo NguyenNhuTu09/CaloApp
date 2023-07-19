@@ -126,14 +126,14 @@ const Discover = () => {
         }
 
         k = test[i].noteDayPlan
-        g = test[i].nameDayPlan
+        g = test[i].nameDayPlan // đã chỉnh sửa thuộc tính nameDayPlan và noteDayPlan của DayPlan, chú ý phần 
+        // ngày thực hiện và ghi chú
       }
       setNotePlan(k)
       setTitleDayPlan(g)
     }
     setfooddayplan(dayFoods)
     setexdayplan(dayExers)
-
   }
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('User'))
@@ -141,7 +141,7 @@ const Discover = () => {
       dispatch({type: 'LOGIN_SUCCESS', payload: userData})
     }
     fetchPlan();
-    handleClickk()
+    
   }, [])
 
 
@@ -248,6 +248,8 @@ const Discover = () => {
             <div className='my-plan-02 d-flex flex-row'>
             {
               test.map(({_id, nameDayPlan, createdAt}, index) => {
+                // lưu ý: ở kế hoạch săn sói xám có sẵn trong MongoDB hiện tại
+                // cả 3 ngày trong kế hoạch đều được insert trực tiếp lên, nên không có createdAt
                 const daysToAdd = index; // Số ngày cần cộng thêm
                 const oldDate = new Date(createdAt);
                 const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); // Cộng thêm số ngày đã tính toán
@@ -388,3 +390,10 @@ const Discover = () => {
   )
 }
 export default Discover
+
+
+// đã tạo được Plan lên MongoDB, tự set được số ngày thực hiện để tạo số DayPlan
+// Chưa xong phần tạo số bữa ăn và món ăn, buổi tập và bài tập
+
+
+// trong hôm nay chấm dứt việc tạo Plan mới. CHẤM DỨT

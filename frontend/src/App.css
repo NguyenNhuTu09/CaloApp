@@ -46,14 +46,18 @@ body{
   /* font-family: "Nunito", sans-serif; */
   font-family: 'Lexend';
   /* font-family: 'Gilroy-Medium', sans-serif; */
+
   background: var(--SecondaryColor);
+
   /* background-image: url('src/assets/test.jpg'); */
   /* backdrop-filter: blur(10px); */
   /* background: #FFFF; */
-  background: #EDEAE7;
+  /* background: #EDEAE7; */
   /* background: #FAF0E4; */
+
 }
 p{
   margin-bottom: 0px;
+  font-size: 15px;
 }
 

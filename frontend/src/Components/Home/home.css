@@ -1,35 +1,274 @@
 .page-home {
   border-radius: 1rem;
+  width: 98%;
+  margin-left: 0.4rem;
+  overflow: auto;
+}
+.page-home .introduction {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 20px 5px 5px 10px;
+  background: white;
+  border-radius: 1rem;
+  width: 97%;
+}
+.page-home .introduction .title .title-logo {
+  width: 50%;
+  padding: 1rem;
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+}
+.page-home .introduction .title .title-logo .tieude img {
+  width: 100px;
+  margin-right: 1rem;
+}
+.page-home .introduction .title .title-logo .title-thf {
+  margin-top: 1rem;
+}
+.page-home .introduction .title .title-video {
+  width: 45%;
+  margin-top: 1rem;
+}
+.page-home .introduction .title .title-video .title-1 {
+  width: 30%;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+}
+.page-home .introduction .title .title-video .title-1 img {
+  width: 190px;
+  height: 370px;
+  border-radius: 1.5rem;
+}
+.page-home .introduction .title .title-video .title-1 video {
   width: 100%;
+  height: 370px;
+  border-radius: 1.5rem;
+}
+.page-home .introduction .title .title-video .title-2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 30%;
+  margin-right: 2rem;
+}
+.page-home .introduction .title .title-video .title-2 img {
+  width: 190px;
+  height: 370px;
+  border-radius: 1.5rem;
+}
+.page-home .introduction .title .title-video .title-3 {
+  width: 30%;
+  margin-right: 2rem;
+  margin-top: 3rem;
+}
+.page-home .introduction .title .title-video .title-3 img {
+  width: 190px;
+  height: 370px;
+  border-radius: 1.5rem;
+}
+.page-home .introduction .logo-four {
+  margin-top: 6rem;
+  width: 950px;
+  margin-left: 16%;
+  padding: 1.5rem 3rem 2rem 3rem;
+  border-radius: 2rem;
+  border: 2px solid var(--greyBg);
+}
+.page-home .introduction .logo-four .logo-1 {
+  margin-right: 3rem;
+  margin-left: 3rem;
+  margin-top: 1.5rem;
+  width: 130px;
+  padding: 5px;
+  border-radius: 10px;
+  background: var(--SecondaryColor);
+}
+.page-home .introduction .logo-four .logo-1 img {
+  width: 110px;
+}
+.page-home .introduction .logo-four .logo-1 p {
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 5px 10px 5px 10px;
+  background: white;
+}
+.page-home .introduction .logo-four p {
+  background: var(--SecondaryColor);
+  padding: 5px 10px 5px 10px;
+  border-radius: 1rem;
+}
+.page-home .introduction .intro-web-1 {
+  margin-top: 7rem;
+}
+.page-home .introduction .intro-web-1 .intro-web {
+  width: 48%;
+  padding-left: 10rem;
+}
+.page-home .introduction .intro-web-1 .intro-web .number-1 {
+  width: 40px;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #F0B27A;
+  color: white;
+  margin-bottom: 0.3rem;
+  margin-top: 2.5rem;
+}
+.page-home .introduction .intro-web-1 .intro-web .number-2 {
+  width: 40px;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #5499C7;
+  color: white;
+  margin-bottom: 0.3rem;
+  margin-top: 1.5rem;
+}
+.page-home .introduction .intro-web-1 .intro-web .number-3 {
+  width: 40px;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #F9E79F;
+  color: white;
+  margin-bottom: 0.3rem;
+  margin-top: 1.5rem;
+}
+.page-home .introduction .intro-web-1 .intro-web .tit-1 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.7rem;
+}
+.page-home .introduction .intro-web-1 .intro-web .note {
+  color: #707B7C;
+}
+.page-home .introduction .intro-web-1 .intro-image {
+  width: 44%;
+}
+.page-home .introduction .intro-web-1 .intro-image img {
+  border-radius: 15px;
+}
+.page-home .introduction .intro-web-2 {
+  background: var(--SecondaryColor);
+  margin-top: 7.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-title, .page-home .introduction .intro-web-2 .intro-plan {
+  margin-left: 9rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan {
+  width: 78%;
+  margin-top: 1.5rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-1 {
+  align-items: center;
+  width: 18%;
+  height: 250px;
+  background: white;
+  padding: 1rem;
+  border-radius: 100px;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-1 .icons {
+  background: #21618C;
+  color: white;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-1 .text-icons {
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-1 .note-icons {
+  color: #707B7C;
+  text-align: center;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-2 {
+  align-items: center;
+  width: 18%;
+  background: white;
+  padding: 1rem;
+  border-radius: 100px;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-2 .icons {
+  background: #21618C;
+  color: white;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-2 .text-icons {
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-2 .note-icons {
+  color: #707B7C;
+  text-align: center;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-3 {
+  align-items: center;
+  width: 18%;
+  background: white;
+  padding: 1rem;
+  border-radius: 100px;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-3 .icons {
+  background: #21618C;
+  color: white;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-3 .text-icons {
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-3 .note-icons {
+  color: #707B7C;
+  text-align: center;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-4 {
+  align-items: center;
+  width: 18%;
+  background: white;
+  padding: 1rem;
+  border-radius: 100px;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-4 .icons {
+  background: #21618C;
+  color: white;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-4 .text-icons {
+  margin-bottom: 1rem;
+}
+.page-home .introduction .intro-web-2 .intro-plan .intro-plan-4 .note-icons {
+  color: #707B7C;
+  text-align: center;
 }
 .page-home .nav-home {
-  width: 98%;
-  padding: 0.5rem;
+  width: 20%;
   margin-left: 1rem;
   margin-top: 0.3rem;
 }
 .page-home .nav-home li {
   list-style-type: none;
-  padding: 5px 15px 5px 10px;
   cursor: pointer;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 30px;
 }
 .page-home .nav-home li button {
   background: none;
   border: none;
-}
-.page-home .nav-home li:hover {
-  background: white;
-}
-.page-home .nav-home .nav-link a.active button {
-  background: white;
+  padding: 0.2rem;
 }
 .page-home .Home {
   border-radius: 1rem;
   width: 100%;
   height: auto;
   font-size: 15px;
-  overflow: auto;
 }
 .page-home .Home .header {
   padding: 1rem;

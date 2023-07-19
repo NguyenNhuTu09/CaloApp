@@ -1,6 +1,5 @@
 .Plan {
   border-radius: 1rem;
-  background: #EDEAE7;
   width: 100%;
   padding: 1rem;
   font-size: 15px;
@@ -184,9 +183,14 @@
 .Plan .modal .modal-body .menu-list .food {
   margin-left: 1rem;
   width: 90%;
+  padding-left: 2.5rem;
+}
+.Plan .modal .modal-body .menu-list .food .title-menu {
+  margin-bottom: 1.5rem;
+  margin-top: 0.7rem;
 }
 .Plan .modal .modal-body .menu-list .food .food-menu {
-  width: 25%;
+  width: 24%;
   margin-bottom: 1rem;
 }
 .Plan .modal .modal-body .menu-list .food .food-menu .image-food {
@@ -333,12 +337,13 @@
   border-radius: 0.5rem;
   border: none;
 }
-.Plan .modal .modal-header {
-  padding: 5px;
+.Plan .newPlan .modal-header {
+  padding: 12px;
 }
-.Plan .modal .verify .form-control {
-  margin-top: 0.5rem;
+.Plan .newPlan .modal-body, .Plan .newPlan .verify {
+  padding: 1rem;
+  height: 200px;
 }
-.Plan .modal .verify p {
-  margin-top: 0.5rem;
+.Plan .newPlan .modal-body .namePlan, .Plan .newPlan .modal-body .form-control, .Plan .newPlan .verify .namePlan, .Plan .newPlan .verify .form-control {
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=plan.css.map */

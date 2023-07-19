@@ -8,7 +8,7 @@ const DayExerciseSchema = new mongoose.Schema(
     },
     nameExercises: {
       type: String,
-      required: true,
+      // required: true,
     },
     exercises: [
       {
