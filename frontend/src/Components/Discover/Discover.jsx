@@ -26,7 +26,6 @@ import Repair from '../../assets/Repair.png'
 const Discover = () => {
 
   const [isLoading, setIsLoading] = useState(true);
-
   
   const [fooddayplan, setfooddayplan] = useState([])
   const [exdayplan, setexdayplan] = useState([])
@@ -39,11 +38,8 @@ const Discover = () => {
   const [plan, setplan] = useState([]) // lấy toàn bộ kế hoạch 
   const [test, setTest] = useState([]) // lấy từng ngày trong kế hoạch
 
-  const [Foods, setFoods] = useState([])
-  const [Exrs, setExrs] = useState([])
 
 
-  const [test2, setTest2] = useState([])
 
   const fetchPlan = async() => {
     let k = [];
@@ -59,7 +55,7 @@ const Discover = () => {
         const data_2 = await response_2.json()
         u.push(data_2.data)
       }
-      setTest(u)
+      setTest(u) // DayPlan
       setplan(k)
     }
   } 
@@ -134,6 +130,7 @@ const Discover = () => {
     }
     setfooddayplan(dayFoods)
     setexdayplan(dayExers)
+
   }
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('User'))
@@ -141,14 +138,14 @@ const Discover = () => {
       dispatch({type: 'LOGIN_SUCCESS', payload: userData})
     }
     fetchPlan();
-    
-  }, [])
+  },[])
 
 
 
 
   // console.log(plan) 
   // console.log(test)
+  // console.log(test[0]._id)
 
   // console.log(user)
 
@@ -217,7 +214,7 @@ const Discover = () => {
 
 
               <div className='add-plan'>
-                <Link to='/app/plan'><img src={Addplan}/></Link>
+                <Link to={`/app/user/${user._id}/plan`}><img src={Addplan}/></Link>
               </div>
             </div>
 

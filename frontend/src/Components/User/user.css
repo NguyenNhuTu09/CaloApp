@@ -125,6 +125,7 @@
 }
 .User .plan .Create-plan {
   width: 100px;
+  margin-top: 1rem;
 }
 .User .plan .Create-plan .Add {
   align-items: center;

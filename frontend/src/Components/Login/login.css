@@ -37,8 +37,7 @@
   padding: 0px;
 }
 .Login .information .checkpass-login .btn-login .btn {
-  background: white;
-  color: black;
+  color: #FFF;
   border: none;
 }
 .Login .information .checkpass-login .btn-login img {
@@ -97,4 +96,7 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 1rem;
+}
+.Login .image-login .fs-1 {
+  width: 250px;
 }/*# sourceMappingURL=login.css.map */

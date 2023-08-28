@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthContext';
 import './exercise.css'
 import {IoIosArrowDown} from 'react-icons/io';
 import addplan from '../../assets/addplan.png'
@@ -11,6 +13,7 @@ import arrow from '../../assets/Arrow.png'
 import { BASE_URL } from '../Utils/config.js';
 const Exercise = () => {
   const [Exercises, setExercises] = useState([])
+  const {user, dispatch} = useContext(AuthContext)
 
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/exercise/`)
@@ -23,6 +26,7 @@ const Exercise = () => {
     fetchData();
   }, [])
   console.log(Exercises)
+  console.log(user._id)
 
 
   return (

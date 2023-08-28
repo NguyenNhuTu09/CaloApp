@@ -48,16 +48,20 @@ export const createPlan = async(req, res) => {
           const planId = savedPlan._id // lấy id của plan vừa tạo và lưu
 
 
+          // kẻ nhìn ra ngoài, chỉ biết mơ mộng
+          // người soi vào trong, sẽ thức tỉnh
 
           // tạo DayPlan vào Plan theo yêu cầu từ phần front
           const updateDayPlan = await Plan.findById(planId)
           const start = new Date(updateDayPlan.startPlan)
           const end = new Date(updateDayPlan.endPlan)
+          let stt = 1;
           for (let date = start; date <= end; date.setDate(date.getDate()+1)) {
                const dayPlan = await DayPlan.create({
-                    nameDayPlan: date,
+                    nameDayPlan: "Ngày thứ " + stt,
                });
                updateDayPlan.dayPlan.push(dayPlan);
+               stt++;
           }
           await updateDayPlan.save()
 

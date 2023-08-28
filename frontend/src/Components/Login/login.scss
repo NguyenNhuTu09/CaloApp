@@ -37,8 +37,8 @@
                .btn-login{
                     padding: 0px;
                     .btn{
-                         background: #FFFF;
-                         color: black;
+                         // background: #FFFF;
+                         color: #FFF;
                          border: none;
                     }
                     img{
@@ -109,6 +109,10 @@
                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
                padding: 1rem;
                border-radius: 1rem;
+          }
+          .fs-1{
+               width: 250px;
+               
           }
      }
 }

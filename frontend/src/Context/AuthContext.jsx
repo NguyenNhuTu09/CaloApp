@@ -41,12 +41,28 @@ const AuthReducer = (state, action) => {
                error: null,
           }
 
-          case "CREATE_FOOD_SUCCESS":
-               return {
-                    user: action.payload,
-                    loading: false,
-                    error: null,
+          case 'CREATE_FOOD_SUCCESS':return {
+               ...state,
+               user: {
+                    ...state.user,
+                    foods: [...state.user.foods, action.payload.food],
+               },
+               loading: false,
+               error: null,
           };
+
+
+          case 'CREATE_PLAN_SUCCESS':return {
+               ...state,
+               user: {
+                    ...state.user,
+                    plans: [...state.user.plans, action.payload.plan],
+               },
+               loading: false,
+               error: null,
+          };
+
+
 
           default:
           return state

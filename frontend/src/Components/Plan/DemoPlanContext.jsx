@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useTransition } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './plan.css'
 import {IoIosArrowDown} from 'react-icons/io';
 import { Link} from 'react-router-dom';
@@ -34,11 +34,6 @@ const Plan = () => {
   
   const [startDayPlan, setStartDayPlan] = useState('')
   const [endDayPlan, setEndDayPlan] = useState('')
-
-  const [plan, setPlan] = useState([])
-  const [dayPlan, setDayPlan] = useState([])
-  
-  const [numberDB, setNumberDB] = useState(String)
 
   const [credentials, setCredentials] = useState({
         namePlan: undefined,
@@ -87,29 +82,25 @@ const Plan = () => {
                 },
               });
               $('#staticBackdrop').modal('hide'); // đã hoạt động
-              // setNumberDB(result.data._id)
-              navigate(`/app/user/${user._id}/plan/${result.data._id}`)  // chuyển màn hình đến chi tiết kế hoạch đó bằng id vừa tạo
-
-              const testResponse = await fetch(`${BASE_URL}/plan/${result.data._id}`)
-              const testData = await testResponse.json()
-              setPlan(testData.data)
-
-              let test10 = []
-              for(let i = 0; i < plan.dayPlan.length; i++){
-                const response = await fetch(`${BASE_URL}/dayplan/${plan.dayPlan[i]}`)
-                const data = await response.json()
-                test10.push(data)
-              }
-              setDayPlan(test10)
-          }
+              navigate(`/app/user/${user._id}/plan/${result.data._id}`) 
+            }
           
     }catch(error){
          alert(error.message)
     }
+    
   }
+
+  const handleDayPlan = async(id) => {
+    const response_2 = await fetch(`${BASE_URL}/plan/${id}`)
+    const data_2 = await response_2.json()
+  }
+
+  const handleConfirm = () => {
+    
+  }
+
   // Xử lý tạo Plan 
-  console.log(plan)
-  console.log(dayPlan)
 
 
 
@@ -135,30 +126,30 @@ const Plan = () => {
 
 
   const [selectedFoods, setSelectedFoods] = useState([]);
-  const [test, setTest] = useState([])
 
+  // const handleFoodClick = (foodId) => {
+  //   const index = selectedFoods.indexOf(foodId);
+  //   if (index === -1) {
+  //     setSelectedFoods([...selectedFoods, foodId]);
+  //   } else {
+  //     const newSelectedFoods = [...selectedFoods];
+  //     newSelectedFoods.splice(index, 1);
+  //     setSelectedFoods(newSelectedFoods);
+  //   }
+  // };
 
-  const handleFoodClick = (foodId) => { // chọn món ăn trong modal Menu
+  const handleFoodClick = (foodId) => {
     const food = Foods.find((f) => f._id === foodId);
     setSelectedFoods([...selectedFoods, food]);
     setStateConfirm(true)
   };
 
-  const handleDeleteClick = (foodId) => { // xóa món ăn đã chọn ở trong modal Menu
+  const handleDeleteClick = (foodId) => {
     if(selectedFoods.length == 1){
       setStateConfirm(false)
     }
     const newSelectedFoods = selectedFoods.filter((food) => food._id !== foodId);
     setSelectedFoods(newSelectedFoods);
-  };
-
-
-  const handleDeleteClick2 = (foodId) => { // xóa món ăn trong bữa ăn
-    if(test.length == 1){
-      setStateConfirm(false)
-    }
-    const newTest = test.filter((food) => food._id !== foodId);
-    setTest(newTest);
   };
 
   
@@ -167,43 +158,17 @@ const Plan = () => {
     $('#staticBackdrop').modal('show'); 
 
   }, [])
+
+
   
-  console.log(selectedFoods) // danh sach Food duoc chon tu Menu
+  console.log(selectedFoods) // danh sach cac mon an dc tao
+  // mỗi khi click xác nhận, gán mảng selectedFoods cho dic đã click mở modal
 
-
-  const handleConfirm = () => {
-    setTest(selectedFoods) // click vao button xac nhan o trong menu, luu danh sach Food duoc chon vao mang test
-  }
 
   const [div, setDiv] = useState([]);
-  const handleSave = () => { // xử lý khi click vào thêm bữa ăn
-    setSelectedFoods([])
-    setDiv([])
-    let Array = test
+  const handleSave = () => {
     const newDiv = (
       <div className='food d-flex flex-row' key={div.length}>
-        {
-          Array.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
-            return(
-              <div key={_id} className='food-menu'>
-                <div className='image-food position-relative'>
-                  <img  src={imageFood}/>
-                </div>
-                <div className='detail-food'>
-                  <p className='caterogy d-flex flex-row justify-content-end'>
-                  {reviews}
-                    <span><AiFillStar/></span>
-                  </p>
-                  <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
-                  <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
-                  <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
-                    <button onClick={() => handleDeleteClick2(_id)}>Xóa</button> 
-                    </div>
-                </div>
-              </div>
-            )
-          })
-        }
         <div className='food-1'>
           <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
         </div>
@@ -211,27 +176,13 @@ const Plan = () => {
       </div>
     );
     setDiv([...div, newDiv]);
-    console.log(div)
-    setTest([])
   };
 
-  const handleDeleteDiv = (index) => { // xoa bua an 
+  const handleDeleteDiv = (index) => {
     const newDiv = [...div];
     newDiv.splice(index, 1);
     setDiv(newDiv);
   };
-
-
-  // const fetchDayPlan = async() => {
-  //   const testResponse = await fetch(`${BASE_URL}/plan/${numberDB}`)
-  //   const testData = await testResponse.json()
-  //   setDayPlan(testData.data)
-  // }
-
-
-
-
-
 
   return (
     <div className='Plan d-flex flex-row justify-content-between'>
@@ -255,16 +206,27 @@ const Plan = () => {
         </div>
         {/* ==================== */}
 
+
+        {/* Lựa chọn thực đơn và bài tập */}
+        <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>1</span>:</p>
+        <div className='food d-flex flex-row'>
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
+          <button type="button" class="btn btn-info">Lưu</button>
+        </div>
+
         {div.map((div, index) => (
-        <div className='' key={index}>
-          <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>{index+1}</span>:</p>
+        <div key={index}>
+          <p className='fs-6 fw-bold'>Thực đơn cho bữa thứ <span>{index+2}</span>:</p>
           {div}
-          <div className='div-dl d-flex flex-row' onClick={() => handleDeleteDiv(index)}>
+          <div className='div-dl d-flex flex-row' onClick={() => handleDeleteDiv(div.length)}>
             <img className='img-dl' src={delete1} />
             <p>Xóa bữa ăn</p>
           </div>
-        </div>  
+        </div>
         ))}
+        
         <img className='image-dayfood' src={add} onClick={handleSave}/>
 
         <p className='fs-6 fw-bold'>Bài tập cho ngày hôm nay:</p>
@@ -289,7 +251,7 @@ const Plan = () => {
             <img src={Delete}/>
             <p className='fw-bold fs-6'>Ngày thứ 1<span className='fw-normal'>.... Calo</span></p>
           </li>
-          {/* <img src={AddPlan}/> */}
+          <img src={AddPlan}/>
 
             
         </div>
@@ -586,15 +548,5 @@ const Plan = () => {
 }
 
 export default Plan
-
-
-
-
-
-
-
-
-
-
 
 

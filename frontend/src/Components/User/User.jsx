@@ -27,6 +27,8 @@ import {AiFillStar} from 'react-icons/ai'
 import { BASE_URL } from '../Utils/config.js'
 import { AuthContext } from '../../Context/AuthContext'
 
+import axios from 'axios'
+
 
 
 const OptionsDetailFood = [
@@ -116,6 +118,27 @@ const User = () => {
   const [exUser, setExUser] = useState([])  
   const [planUser, setPlanUser] = useState([])
 
+  const deletePlan = async(id) => {
+    try {
+      const response = await axios.delete(`${BASE_URL}/plan/${id}`);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  };
+  
+  const handleDeletePlan = async (planId) => {
+    try {
+      const result = await deletePlan(planId);
+      alert(result.message);
+      // Cập nhật lại danh sách kế hoạch
+      const newPlans = plans.filter((plan) => plan._id !== planId);
+      setPlans(newPlans);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   
   const fetchData = async() => {
     let k = []
@@ -155,7 +178,7 @@ const User = () => {
   }
 
   useEffect(() => {
-    setFoodUser([])
+    // setFoodUser([])
     setPlanUser([])
     // const userData = JSON.parse(localStorage.getItem('User'))
     // if(userData){
@@ -170,7 +193,7 @@ const User = () => {
   console.log(exUser)
   console.log(planUser)
   
-  console.log(user)
+  console.log(typeof(user._id))
 
 
   return (
@@ -190,7 +213,7 @@ const User = () => {
       <div className='plan d-flex flex-row'>
       {
 
-        planUser.map(({_id, namePlan, startPlan}) => {
+        planUser.map(({_id, namePlan, startPlan, endPlan}) => {
           return(
             <div key={_id} className='plan-now d-flex flex-column'>
             <div className='link' to='/app/detailplan'>
@@ -200,12 +223,12 @@ const User = () => {
                     <SlOptionsVertical/>
                   </div>
                   <ul class="dropdown-menu">
-                    <Link class="dropdown-item">Xóa</Link>
-                    <Link class="dropdown-item" to={`/app/menu/${_id}`}>Chi tiết</Link>
-                    <Link class="dropdown-item" to={`/app/menu/${_id}`}>Quá trình thực hiện</Link>
+                    <Link class="dropdown-item" to={`/app/detailplan`}>Chi tiết</Link>
+                    <Link class="dropdown-item" to={`/app/discover`}>Quá trình thực hiện</Link>
                   </ul>
               </div>
               <p className='d-flex flex-row justify-content-between'>Bắt đầu<span>{startPlan}</span></p>
+              <p className='d-flex flex-row justify-content-between'>Kết thúc<span>{endPlan}</span></p>
               <div className='status fw-bold'>
                 Đang thực hiện
               </div>

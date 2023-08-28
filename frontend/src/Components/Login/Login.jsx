@@ -48,7 +48,7 @@ const Login = () => {
         method: 'post',
         headers: {
           'content-type':'application/json'
-        },
+        }, 
         credentials: 'include',
         body: JSON.stringify(credentials)
       })
@@ -74,7 +74,7 @@ const Login = () => {
     <div className='Login d-flex flex-row '>
       <div className='information d-flex flex-column'>
         <p className='title-login fs-2 fw-bold'>Đăng nhập</p>
-        <p className='fs-6 fw-bold'>Bạn chưa có đăng nhập, <Link className='link' to='/register'>Đăng ký</Link></p>
+        <p className='fs-6 fw-bold'>Bạn chưa có tài khoản, <Link className='link' to='/register'> Đăng ký</Link></p>
 
         {/* {error && <div className="error">{error}</div>} */}
 
@@ -93,7 +93,7 @@ const Login = () => {
             </div>
             <div className='btn-login'>
               {/* <button type="submit" className="btn btn-primary"><Link to='/app/home'>Đăng nhập<img src={arrow}/></Link></button> */}
-              <button type="submit" className="btn btn-primary">Đăng nhập<img src={arrow}/></button>
+              <button type="submit" className="btn btn-primary">Đăng nhập</button>
             </div>
           </div>
         </Form>
@@ -113,7 +113,7 @@ const Login = () => {
       </div>
       <div className='image-login d-flex flex-column align-items-center'>
         <img src={imageLg}/>
-        <p className='fs-1 fw-bold'>T.H.F Website</p>
+        <p className='fs-1 fw-bold'>T.H.F</p>
       </div>
     </div>
 

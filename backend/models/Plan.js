@@ -42,20 +42,5 @@ const PlanSchema = new mongoose.Schema(
 
   
 );
-// PlanSchema.pre('save', async function (next) {
-//   // Nếu Plan chưa có DayPlan, tạo một DayPlan mới và đẩy vào mảng dayPlan của Plan
-//   if (this.isNew && !this.dayPlan.length) {
-//     try {
-//       const dayPlan = await DayPlan.create({
-//       });
-//       this.dayPlan.push(dayPlan);
-//       next();
-//     } catch (err) {
-//       next(err);
-//     }
-//   } else {
-//     next();
-//   }
-// });
 
 export default mongoose.model("Plan", PlanSchema);
