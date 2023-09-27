@@ -16,7 +16,7 @@ const Food = ({food}) => {
      const {totalRating, avgRating}  = calculateAvgRating(reviews)
      return(
           <div key={_id} className='food-menu'>
-            <div className='image-food position-relative'>
+            <div className='image-food position-relative'>  
               <img  src={imageFood}/>
             </div>
             <div className='detail-food'>

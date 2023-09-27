@@ -4,39 +4,6 @@ import DayPlan from "../models/DayPlan.js";
 import DayFood from "../models/DayFood.js";
 import DayExercise from "../models/DayExercise.js";
 
-
-// export const createPlan = async(req, res) => {
-//      const newPlan = new Plan(req.body) // tạo một Plan mới: (namePlan, startPlan, endPlan, dayPlan, author)
-//      const id = req.params.id // lấy id của người dùng trên request (URL) của trang tạo Plan ở ReactJS
-//      try{
-//           const savedPlan = await newPlan.save() // lưu vào document plans trên MongoDB
-
-//           const planId = savedPlan._id // lấy id của plan vừa tạo và lưu
-
-//           const updatePlansUser = await User.findById(id)
-
-//           console.log(updatePlansUser)
-
-//           if(!updatePlansUser){
-//                return res.status(404).json({ message: 'Đăng nhập trước khi tạo kế hoạch' });
-//           }
-
-//           updatePlansUser.plans.push(planId)
-//           await updatePlansUser.save()
-
-
-//           res.status(200).json({
-//                success: true, 
-//                message: 'Tạo kế hoạch thành công',
-//                data: savedPlan})
-//      }catch(err){
-//           console.log(err)
-//           res.status(500).json({
-//                success: false, 
-//                message: 'Server có lỗi'})
-//      }
-// }
-
 export const createPlan = async(req, res) => {
      const newPlan = new Plan(req.body) // tạo một Plan mới: (namePlan, startPlan, endPlan, dayPlan, author)     
         
@@ -48,8 +15,6 @@ export const createPlan = async(req, res) => {
           const planId = savedPlan._id // lấy id của plan vừa tạo và lưu
 
 
-          // kẻ nhìn ra ngoài, chỉ biết mơ mộng
-          // người soi vào trong, sẽ thức tỉnh
 
           // tạo DayPlan vào Plan theo yêu cầu từ phần front
           const updateDayPlan = await Plan.findById(planId)

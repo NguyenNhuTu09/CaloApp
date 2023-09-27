@@ -53,7 +53,6 @@ const foodSchema = new mongoose.Schema(
                  ref: "Review",
                },
           ],
-          // lấy chính xác trong database tên là author, còn user là tự tạo và tự insert vào MongoDB
           author: {
                type:String,
                required: true

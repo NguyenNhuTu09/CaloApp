@@ -35,7 +35,6 @@ export const getSingleDayExercise = async (req, res) => {
      }
 }
 
-// delete food
 export const deletedDayExercise = async (req, res) => {
      const id = req.params.id
      try{
@@ -52,7 +51,6 @@ export const deletedDayExercise = async (req, res) => {
 }
 
 
-// get All dayFood
 export const getAllDayExercise = async (req, res) => {
      //for pagination
      const page = parseInt(req.query.page)

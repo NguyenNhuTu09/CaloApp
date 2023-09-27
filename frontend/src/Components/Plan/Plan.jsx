@@ -47,11 +47,7 @@ const Plan = () => {
         author: user._id
   })
 
-  // const handleDayPlan = () => {
-  //     for(let date = startDayPlan; date <= endDayPlan; date.setDate(date.getDate()+1)){
-  //       console.log(date)
-  //     }
-  // }
+ 
   const handleChange = (e) => {
     if(e.target.id == "startPlan"){
       setStartDayPlan(new Date(e.target.value))
@@ -76,19 +72,17 @@ const Plan = () => {
 
          if(!res.ok){
               alert(result.message)
-              // navigate(`/app/user/${user._id}/plan/`)
          }else if(res.ok){
               alert("Tạo kế hoạch hoàn tất")
-              dispatch({ // đã hoạt động
+              dispatch({ 
                 type: 'CREATE_PLAN_SUCCESS',
                 payload: {
-                  user: result.user, // Cập nhật thông tin người dùng với món ăn mới
-                  plan: result.data._id, // Thêm món ăn mới vào mảng foods của người dùng
+                  user: result.user, 
+                  plan: result.data._id, 
                 },
               });
-              $('#staticBackdrop').modal('hide'); // đã hoạt động
-              // setNumberDB(result.data._id)
-              navigate(`/app/user/${user._id}/plan/${result.data._id}`)  // chuyển màn hình đến chi tiết kế hoạch đó bằng id vừa tạo
+              $('#staticBackdrop').modal('hide'); 
+              navigate(`/app/user/${user._id}/plan/${result.data._id}`)  
 
               const testResponse = await fetch(`${BASE_URL}/plan/${result.data._id}`)
               const testData = await testResponse.json()
@@ -101,6 +95,8 @@ const Plan = () => {
                 test10.push(data)
               }
               setDayPlan(test10)
+
+              
           }
           
     }catch(error){
@@ -196,7 +192,7 @@ const Plan = () => {
                   </p>
                   <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
                   <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
-                  <div className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo
+                  <div className='calo d-flex flex-row justify-conte nt-between'>{totalCalories} Calo
                     <button onClick={() => handleDeleteClick2(_id)}>Xóa</button> 
                     </div>
                 </div>
@@ -222,12 +218,12 @@ const Plan = () => {
   };
 
 
+
   // const fetchDayPlan = async() => {
   //   const testResponse = await fetch(`${BASE_URL}/plan/${numberDB}`)
   //   const testData = await testResponse.json()
   //   setDayPlan(testData.data)
   // }
-
 
 
 
