@@ -168,7 +168,7 @@ const Plan = () => {
 
 
   const handleConfirm = () => {
-    setTest(selectedFoods) // click vao button xac nhan o trong menu, luu danh sach Food duoc chon vao mang test
+    setTest(selectedFoods) // click vao button xac nhan o trong menu, lưu danh sách Food vào mảng Test
   }
 
   const [div, setDiv] = useState([]);
