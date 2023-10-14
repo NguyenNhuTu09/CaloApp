@@ -1,17 +1,10 @@
 import React, {useState, useEffect, useContext} from 'react'
 import './user.css'
-import { Form, FormGroup, Row } from 'reactstrap'
 import { Link} from 'react-router-dom'
-import userImg from '../../assets/User.png'
-import setting from '../../assets/Setting.png'
 import settingUser from '../../assets/Setting-user.png';
 
 import {SlOptionsVertical} from 'react-icons/sl'
 
-
-import Chicken2 from '../../assets/Food/Chicken2.jpg'
-import Ham from '../../assets/Food/Ham.jpg'
-import Suachua from '../../assets/Food/Sua chua.jpg'
 
 
 import jogging from '../../assets/Exercise/Chay bo.jpg'
@@ -21,7 +14,6 @@ import arrow from '../../assets/Arrow.png'
 
 import add from '../../assets/addplan.png'
 
-import {BsSearch} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
 
 import { BASE_URL } from '../Utils/config.js'
@@ -29,85 +21,6 @@ import { AuthContext } from '../../Context/AuthContext'
 
 import axios from 'axios'
 
-
-
-const OptionsDetailFood = [
-  {
-    id: 1,
-    imageFoodDetail: <img src={Chicken2}/>,
-    type: 'Protein',
-    star: '4.5',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Ức gà',
-    gam: '400g',
-    calories: '700 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 2,
-    imageFoodDetail: <img src={Ham}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Giăm bông',
-    gam: '300g',
-    calories: '650 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageFoodDetail: <img src={Suachua}/>,
-    type: 'Men',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Sữa chua',
-    gam: '250g',
-    calories: '150 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-]
-
-const OptionsExercise = [
-  {
-    id: 1,
-    imageExercise: <img src={jogging}/>,
-    type: 'Thể dục nhẹ',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameExercise: "Chạy bộ",
-    minutes: '45m',
-    calories: '600 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 2,
-    imageExercise: <img src={gapbung}/>,
-    type: 'Thể dục nhẹ',
-    star: '4.7',
-    icon: <AiFillStar/>,
-    nameExercise: "Gập bụng",
-    minutes: '45m',
-    calories: '650 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 3,
-    imageExercise: <img src={xadon}/>,
-    type: 'Thể hình',
-    star: '4.5',
-    icon: <AiFillStar/>,
-    nameExercise: "Gập bụng",
-    minutes: '45m',
-    calories: '750 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  }
-]
 
 
 const User = () => {

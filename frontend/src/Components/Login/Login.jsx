@@ -113,7 +113,7 @@ const Login = () => {
       </div>
       <div className='image-login d-flex flex-column align-items-center'>
         <img src={imageLg}/>
-        <p className='fs-1 fw-bold'>T.H.F</p>
+        <p className='fs-1 fw-bold'>TITFitness</p>
       </div>
     </div>
 

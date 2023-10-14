@@ -1,11 +1,12 @@
 .Navbar{
-     // border-radius: 0px 15px 15px 0px;
+     // border-radius: 0px -15px -15px 0px;
      width: 6%;
      backdrop-filter: blur(10px);
      // background: #B6DFDE;
      // background: #99DBF5;
      // background: #C4DFDF;
      border-right: 3px solid #CCD6D6;
+     // border: 2px solid black;
      .nav-menu{
           margin-top: 1rem;
           li {

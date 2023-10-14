@@ -5,18 +5,15 @@ import DayFood from "../models/DayFood.js";
 import DayExercise from "../models/DayExercise.js";
 
 export const createPlan = async(req, res) => {
-     const newPlan = new Plan(req.body) // tạo một Plan mới: (namePlan, startPlan, endPlan, dayPlan, author)     
+     const newPlan = new Plan(req.body)      
         
-     const id = req.params.id // lấy id của người dùng trên request (URL) của trang tạo Plan ở ReactJS
+     const id = req.params.id 
 
      try{
-          const savedPlan = await newPlan.save() // lưu vào document plans trên MongoDB
+          const savedPlan = await newPlan.save() 
 
-          const planId = savedPlan._id // lấy id của plan vừa tạo và lưu
+          const planId = savedPlan._id 
 
-
-
-          // tạo DayPlan vào Plan theo yêu cầu từ phần front
           const updateDayPlan = await Plan.findById(planId)
           const start = new Date(updateDayPlan.startPlan)
           const end = new Date(updateDayPlan.endPlan)

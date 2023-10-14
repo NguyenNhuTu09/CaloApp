@@ -1,10 +1,12 @@
 .Menu{
      border-radius: 1rem;
-     // background: #EDEAE7;
+     // background: #F4F2DE;
      width: 100%;
      padding: 0.5rem;
      font-size: 15px;
      overflow: auto;
+     // border: 2px solid black;
+     // border-left: 3px solid #CCD6D6;
      .create-food-final{
           border-radius: 0.5rem;
           border: 2px dashed black;
@@ -55,6 +57,7 @@
                          padding-bottom: 0.8rem;
                          cursor: pointer;
                          height: 70%;
+                         // border: 2px solid black;
                          p{
                               margin-bottom: 5px;
                          }

@@ -38,7 +38,6 @@ const Plan = () => {
   const [plan, setPlan] = useState([])
   const [dayPlan, setDayPlan] = useState([])
   
-  const [numberDB, setNumberDB] = useState(String)
 
   const [credentials, setCredentials] = useState({
         namePlan: undefined,
@@ -84,17 +83,7 @@ const Plan = () => {
               $('#staticBackdrop').modal('hide'); 
               navigate(`/app/user/${user._id}/plan/${result.data._id}`)  
 
-              const testResponse = await fetch(`${BASE_URL}/plan/${result.data._id}`)
-              const testData = await testResponse.json()
-              setPlan(testData.data)
-
-              let test10 = []
-              for(let i = 0; i < plan.dayPlan.length; i++){
-                const response = await fetch(`${BASE_URL}/dayplan/${plan.dayPlan[i]}`)
-                const data = await response.json()
-                test10.push(data)
-              }
-              setDayPlan(test10)
+              fetchCreatePlan(result.data._id)
 
               
           }
@@ -112,10 +101,11 @@ const Plan = () => {
 
   // Xử lý menu khi tạo kế hoạch
   const [stateConfirm, setStateConfirm] = useState(Boolean)
-
   const [Foods, setFoods] = useState([])
-
   const [foodUser, setFoodUser] = useState([])
+
+
+  
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json()
@@ -128,6 +118,30 @@ const Plan = () => {
     }
     setFoodUser(k)
   }
+
+  const [nameDayPlan, setNameDayPlan] = useState([])
+  const [dateDayPlan, setDateDayPlan] = useState([])
+
+  const fetchCreatePlan = async(url) => {
+    const res = await fetch(`${BASE_URL}/plan/${url}/`)
+    const data = await res.json()
+    let nameDay = []
+    let dateDay = []
+    for(let i = 0; i < data.data.dayPlan.length; i++){
+      const res_2 = await fetch(`${BASE_URL}/dayplan/${data.data.dayPlan[i]}/`)
+      const data_2 = await res_2.json()
+      nameDay.push(data_2.data.nameDayPlan)
+      dateDay.push(data_2.data.createdAt)
+    }
+
+    setNameDayPlan(nameDay)
+    setDateDayPlan(dateDay)
+
+    
+  }
+
+  console.log(nameDayPlan)
+  console.log(dateDayPlan)
 
 
   const [selectedFoods, setSelectedFoods] = useState([]);
@@ -219,6 +233,7 @@ const Plan = () => {
 
 
 
+
   // const fetchDayPlan = async() => {
   //   const testResponse = await fetch(`${BASE_URL}/plan/${numberDB}`)
   //   const testData = await testResponse.json()
@@ -233,15 +248,21 @@ const Plan = () => {
     <div className='Plan d-flex flex-row justify-content-between'>
       <div className='create-food d-flex flex-column'>
         {/* Số lượng bữa ăn + bài tập */}
+
+
         <div className='food-day-note d-flex flex-row justify-content-between'>
           <div className='food-day d-flex flex-column justify-content-between'>
             <h2>Ngày thứ 1</h2>
-            <div className='day d-flex flex-row'>
+
+            <div className='day d-flex flex-row border border-dark'>
+
               <div className='day-one'>
                 <img src={add} />
               </div>
+
               <button type="button" class="btn btn-info">Lưu</button>
             </div>
+
           </div>
           <div className='note'>
             <div class="input-group">
