@@ -25,10 +25,18 @@
   padding: 0.5rem;
   width: 70%;
   border-radius: 0.5rem;
+  border: 2px solid black;
 }
 .Plan .create-food .food-day-note .food-day img {
   width: 50px;
   margin-top: 0px;
+}
+.Plan .create-food .food-day-note .food-day .day {
+  background: white;
+  margin-right: 30px;
+  border-radius: 20px;
+  padding: 5px;
+  height: 120px;
 }
 .Plan .create-food .food-day-note .food-day .day .day-one {
   text-align: center;

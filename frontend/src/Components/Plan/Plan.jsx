@@ -119,30 +119,21 @@ const Plan = () => {
     setFoodUser(k)
   }
 
-  const [nameDayPlan, setNameDayPlan] = useState([])
-  const [dateDayPlan, setDateDayPlan] = useState([])
+  const [dPlan, setDPlan] = useState([])
 
   const fetchCreatePlan = async(url) => {
     const res = await fetch(`${BASE_URL}/plan/${url}/`)
     const data = await res.json()
-    let nameDay = []
-    let dateDay = []
+    let dplan = []
     for(let i = 0; i < data.data.dayPlan.length; i++){
       const res_2 = await fetch(`${BASE_URL}/dayplan/${data.data.dayPlan[i]}/`)
       const data_2 = await res_2.json()
-      nameDay.push(data_2.data.nameDayPlan)
-      dateDay.push(data_2.data.createdAt)
+      dplan.push(data_2.data)
     }
-
-    setNameDayPlan(nameDay)
-    setDateDayPlan(dateDay)
-
+    setDPlan(dplan)
     
   }
-
-  console.log(nameDayPlan)
-  console.log(dateDayPlan)
-
+  console.log(dPlan)
 
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [test, setTest] = useState([])
@@ -234,36 +225,45 @@ const Plan = () => {
 
 
 
-  // const fetchDayPlan = async() => {
-  //   const testResponse = await fetch(`${BASE_URL}/plan/${numberDB}`)
-  //   const testData = await testResponse.json()
-  //   setDayPlan(testData.data)
-  // }
-
-
-
-
-
   return (
     <div className='Plan d-flex flex-row justify-content-between'>
       <div className='create-food d-flex flex-column'>
         {/* Số lượng bữa ăn + bài tập */}
 
+        {/* Bây giờ, tất cả đang nằm trong tay con, một lần nữa, thi TOEIC đi, xong kỳ này tổng tín chỉ: 87 + 20 = 107 */}
 
         <div className='food-day-note d-flex flex-row justify-content-between'>
-          <div className='food-day d-flex flex-column justify-content-between'>
-            <h2>Ngày thứ 1</h2>
 
-            <div className='day d-flex flex-row border border-dark'>
 
-              <div className='day-one'>
-                <img src={add} />
-              </div>
+          <div className='food-day d-flex flex-row'>
+          {
+            dPlan.map(({_id, nameDayPlan, createdAt}, index) => {
+              const daysToAdd = index; // Số ngày cần cộng thêm
+              const oldDate = new Date(createdAt);
+              const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); // Cộng thêm số ngày đã tính toán
+              const day = newDate.getDate();
+              const month = newDate.getMonth() + 1;
+              const year = newDate.getFullYear();
+              const formattedDate = `${day}/${month}/${year}`;
 
-              <button type="button" class="btn btn-info">Lưu</button>
-            </div>
+              return (
+                <div key={_id} className='day d-flex flex-column'>
+                  <p className='fw-bold fs-6'>{nameDayPlan}</p>
+                  <p className='fw-bold fs-6 '>{formattedDate}</p>
+                  {/* <div className='day-one'> 
+                    <img src={add} />
+                  </div>
+                  <button type="button" class="btn btn-info">Lưu</button> */}
+                </div>
+              )
+            })
+          }
+            
 
           </div>
+
+
+
           <div className='note'>
             <div class="input-group">
               <textarea class="form-control" id="textAreaExample" rows="6" placeholder='Ghi chú'></textarea>
