@@ -38,15 +38,6 @@
   padding: 5px;
   height: 120px;
 }
-.Plan .create-food .food-day-note .food-day .day .day-one {
-  text-align: center;
-  width: 120px;
-  height: 55px;
-  cursor: pointer;
-  margin-right: 0.5rem;
-  border: 2px dashed black;
-  border-radius: 0.5rem;
-}
 .Plan .create-food .food-day-note .note {
   width: 300px;
 }
