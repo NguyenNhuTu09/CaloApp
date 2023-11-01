@@ -228,9 +228,7 @@ const Plan = () => {
   return (
     <div className='Plan d-flex flex-row justify-content-between'>
       <div className='create-food d-flex flex-column'>
-        {/* Số lượng bữa ăn + bài tập */}
 
-        {/* Bây giờ, tất cả đang nằm trong tay con, một lần nữa, thi TOEIC đi, xong kỳ này tổng tín chỉ: 87 + 20 = 107 */}
 
         <div className='food-day-note d-flex flex-row justify-content-between'>
 
@@ -240,7 +238,7 @@ const Plan = () => {
             dPlan.map(({_id, nameDayPlan, createdAt}, index) => {
               const daysToAdd = index; // Số ngày cần cộng thêm
               const oldDate = new Date(createdAt);
-              const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); // Cộng thêm số ngày đã tính toán
+              const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); 
               const day = newDate.getDate();
               const month = newDate.getMonth() + 1;
               const year = newDate.getFullYear();
@@ -250,10 +248,6 @@ const Plan = () => {
                 <div key={_id} className='day d-flex flex-column'>
                   <p className='fw-bold fs-6'>{nameDayPlan}</p>
                   <p className='fw-bold fs-6 '>{formattedDate}</p>
-                  {/* <div className='day-one'> 
-                    <img src={add} />
-                  </div>
-                  <button type="button" class="btn btn-info">Lưu</button> */}
                 </div>
               )
             })

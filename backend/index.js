@@ -4,6 +4,14 @@ import mongoose from 'mongoose'
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
+import admin from 'firebase-admin'
+
+// import serviceAccount from './titfitness-firebase-adminsdk-r6fgj-98913ea618.json' assert { type: 'json' };
+// admin.initializeApp({
+//      credential: admin.credential.cert(serviceAccount),
+//      databaseURL: 'https://titfitness.firebaseio.com' // Thay thế bằng URL của dự án Firebase của bạn
+// });
+
 import authRoute from './routes/auth.js'
 import userRoute from './routes/users.js'
 import foodRoute from './routes/foods.js'
@@ -24,7 +32,6 @@ const corsOptions = {
      origin: true,
      credentials: true
 }
-
 
 // database connection
 mongoose.set("strictQuery", false)

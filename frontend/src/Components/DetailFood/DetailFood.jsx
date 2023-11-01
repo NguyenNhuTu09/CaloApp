@@ -22,6 +22,10 @@ import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
 import Boapchao from '../../assets/Food/Bo ap chao.jpg'
 import Gatandoori from '../../assets/Food/Ga tandoori.jpg'
 
+import saveIcons from '../../assets/save.png';
+import commentIcons from '../../assets/comment.png'
+import shareIcons from '../../assets/share.png'
+
 
 const OptionsDetailFood = [
   {
@@ -137,29 +141,32 @@ const DetailFood = () => {
         <div className='image-food'>
           <img src={imageFood}/>
         </div>
-        <div className='text d-flex flex-row justify-content-between'>
-          <p className='fs-6 fw-bold'><span><MdModeComment/></span>Nhận xét</p>
+        <div className='text d-flex flex-row justify-content-end'>
           <div className='d-flex flex-row'>
             <p>4.5<AiFillStar/>/5</p>
-            <p>(9 nhận xét)</p>
+            <p>(9 đánh giá)</p>
           </div>
         </div>
-        <div className='review d-flex flex-column '>
-          <div className='review-01'>
-            <p className='fs-6 fw-bold d-flex flex-row justify-content-between'>Nguyễn Như Từ<span><BiCommentDetail/></span></p>
-            <p className='fs-6 fw-normal'>Ok</p>
-            <p className='fs-6 fw-lighter d-flex flex-row justify-content-between'>15/05/2023
-            <span>
-              <AiFillStar className='icons'/>
-              <AiFillStar className='icons'/>
-              <AiFillStar className='icons'/>
-              <AiFillStar className='icons'/>
-              <AiFillStar className='icons'/>
-            </span>
-            </p>
+
+        <div className='support d-flex flex-row justify-content-between'>
+          <div className='save items d-flex flex-row'>
+            <img src={saveIcons}/>
+            <p>Lưu</p>
           </div>
-          
+
+          <div className='comment items d-flex flex-row'>
+          <img src={commentIcons}/>
+            <p>Đánh giá</p>
+          </div>
+
+          <div className='share items d-flex flex-row'>
+          <img src={shareIcons}/>
+            <p>Chia sẻ</p>
+          </div>
+
         </div>
+        
+
       </div>
     {/* ============= Image food + review food END =========== */}
 
@@ -172,7 +179,7 @@ const DetailFood = () => {
 
     {/* ============= Description food START =========== */}
       <div className='description d-flex flex-column'>
-        <p className='fs-2 fw-bold'>{nameFood}</p>
+        <p className='fs-3 fw-bold'>{nameFood}</p>
         <div className='status d-flex flex-row'>
           <AiFillCheckSquare className='icons fs-5'/>
           <p>Đã sử dụng</p>
@@ -208,7 +215,15 @@ const DetailFood = () => {
 
         <div className='text-description'>
           <p className='fs-6 fw-bold'>Mô tả: </p>
-          <p>{description}</p>
+          {/* <p>{description}</p> */}
+          <textarea class="form-control note" aria-label="With textarea" disabled
+          value={description}></textarea>
+
+          {/* <textarea class="form-control" id="textAreaExample" rows="6">{description}</textarea> */}
+        </div>
+
+        <div className='actions d-flex flex-row justify-content-end'>
+          <button>Thực hiện</button>
         </div>
       </div>
       {/* ============= Description food END =========== */}
@@ -229,7 +244,8 @@ const DetailFood = () => {
           <img src={user}/>
           <div className='info d-flex flex-column'>
             <div className='name-author d-flex flex-row justify-content-between'>
-              <p className='fs-5 fw-bold'>{uuser}</p>
+              <p className='fs-6 fw-bold'>Nguyễn Như Từ</p>
+              {/* <p className='fs-5 fw-bold border border-dark'>{uuser}</p> */}
               <AiOutlineArrowRight className='icons fs-3'/>
             </div>
             <div className='status-author d-flex flex-row'>

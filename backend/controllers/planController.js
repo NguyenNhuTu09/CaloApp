@@ -27,18 +27,13 @@ export const createPlan = async(req, res) => {
           }
           await updateDayPlan.save()
 
-
-          // lưu Plan vừa tạo vào plans của User
-          const updatePlansUser = await User.findById(id)
+          const updatePlansUser = await User.findById(id)                  
           console.log(updatePlansUser)
           if(!updatePlansUser){
                return res.status(404).json({ message: 'Đăng nhập trước khi tạo kế hoạch' });
           }
           updatePlansUser.plans.push(planId)
           await updatePlansUser.save()
-
-          
-     
 
           res.status(200).json({
                success: true, 
@@ -70,7 +65,6 @@ export const getSinglePlan = async (req, res) => {
      }
 }
 
-// delete food
 export const deletedPlan = async (req, res) => {
      const id = req.params.id
      try{

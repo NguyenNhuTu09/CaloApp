@@ -1,61 +1,104 @@
 .Navbar{
      // border-radius: 0px -15px -15px 0px;
-     width: 6%;
+     width: 11%;
      backdrop-filter: blur(10px);
      // background: #B6DFDE;
      // background: #99DBF5;
      // background: #C4DFDF;
-     border-right: 3px solid #CCD6D6;
+     // border-right: 3px solid #CCD6D6;
      // border: 2px solid black;
+     margin-right: 1rem;
+     .logo{
+          img{
+               width: 70px;
+          }
+          .logo_name{
+               margin-bottom: 2rem;
+               border-bottom: 2px solid black;
+          }
+     }
      .nav-menu{
           margin-top: 1rem;
-          li {
-               // border: 2px solid black;
+          width: 90%;
+          align-items: center;
+          .nav_item{
                list-style-type: none;
                align-items: center;
+               margin-bottom: 0.5rem;
+               border-radius: 0.5rem;
+               // width: 100%;
+               width: 120px;
+               // background: #FFFF;
+               padding: 3px;
+               p{
+                    margin-top: 1px;
+                    width: 78px;
+                    padding: 3px;
+                    color: #42494D;
+               }
+               span{
+                    padding: 3px;
+                    color: #42494D;
+               }
+               a{
+                    text-decoration: none;
+                    color: #42494D;
+               }
                img{
-                    width: 32px;
+                    width: 30px;
                     background-size: cover;
                     border-radius: 0.5rem;
                     padding: 3px;
                     // background: #FFFF;
                     // border: 1px solid black;
+                    // padding-bottom: 0rem;
+                    margin-bottom: 0rem;
+                    margin-right: 5px;
+
                }
           }
           .nav_item a.active_link{
                text-decoration: none;
                color: black;
+               background: #FFFF;
+               border-radius: 0.5rem;
                img{
                     // border: 2px solid black;
                     // background: black;
                     background: #FFFF;
                }
-          }
-          p{
-
+               span{
+                    color: black;
+               }
+               p{
+                    color: black;
+               }
+               a{
+                    color: black;
+               }
           }
      }
-     img{
-          width: 45px;
-          margin-bottom: 1rem;
-          cursor: pointer;
-          // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-          background-size: cover;
+     .Logout{
+          margin-bottom: 5px;
+          text-decoration: none;
+          color: black;
+          padding: 0.5rem;
+          background: #FFFF;
           border-radius: 0.5rem;
-          padding: 3px;
-          // background: #FFFF;
-          // border: 2px solid black;
-     }
-     .logo{
-          width: 60px;
-          margin-bottom: 0rem;
-          padding-top: 0px;
-          background: none;
-     }
-     .name-web{
-          margin-bottom: 1.5rem;
-     }
-     .create{
-          margin-top: 1rem;
+          padding: 10px;
+          margin-bottom: 1rem;
+          img{
+               width: 35px;
+               cursor: pointer;
+               // margin-bottom: 0.5rem;
+               // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+               background-size: cover;
+               border-radius: 0.5rem;
+               margin-left: 0.5rem;
+               // padding: 3px;
+               // background: #FFFF;
+               // border: 2px solid black;
+          }
+          
      }
 }

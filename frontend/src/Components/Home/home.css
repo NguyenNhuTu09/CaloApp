@@ -1,14 +1,12 @@
 .page-home {
   border-radius: 1rem;
-  width: 98%;
-  margin-left: 0.4rem;
+  width: 100%;
   overflow: auto;
 }
 .page-home .introduction {
   margin-top: 1rem;
   margin-left: 1rem;
   padding: 20px 5px 5px 10px;
-  background: white;
   border-radius: 1rem;
   width: 97%;
 }

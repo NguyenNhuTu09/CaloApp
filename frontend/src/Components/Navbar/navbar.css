@@ -1,46 +1,83 @@
 .Navbar {
-  width: 6%;
+  width: 11%;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  border-right: 3px solid #CCD6D6;
+  margin-right: 1rem;
+}
+.Navbar .logo img {
+  width: 70px;
+}
+.Navbar .logo .logo_name {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid black;
 }
 .Navbar .nav-menu {
   margin-top: 1rem;
-}
-.Navbar .nav-menu li {
-  list-style-type: none;
+  width: 90%;
   align-items: center;
 }
-.Navbar .nav-menu li img {
-  width: 32px;
+.Navbar .nav-menu .nav_item {
+  list-style-type: none;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  width: 120px;
+  padding: 3px;
+}
+.Navbar .nav-menu .nav_item p {
+  margin-top: 1px;
+  width: 78px;
+  padding: 3px;
+  color: #42494D;
+}
+.Navbar .nav-menu .nav_item span {
+  padding: 3px;
+  color: #42494D;
+}
+.Navbar .nav-menu .nav_item a {
+  text-decoration: none;
+  color: #42494D;
+}
+.Navbar .nav-menu .nav_item img {
+  width: 30px;
   background-size: cover;
   border-radius: 0.5rem;
   padding: 3px;
+  margin-bottom: 0rem;
+  margin-right: 5px;
 }
 .Navbar .nav-menu .nav_item a.active_link {
   text-decoration: none;
   color: black;
+  background: white;
+  border-radius: 0.5rem;
 }
 .Navbar .nav-menu .nav_item a.active_link img {
   background: white;
 }
-.Navbar img {
-  width: 45px;
+.Navbar .nav-menu .nav_item a.active_link span {
+  color: black;
+}
+.Navbar .nav-menu .nav_item a.active_link p {
+  color: black;
+}
+.Navbar .nav-menu .nav_item a.active_link a {
+  color: black;
+}
+.Navbar .Logout {
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 10px;
   margin-bottom: 1rem;
+}
+.Navbar .Logout img {
+  width: 35px;
   cursor: pointer;
   background-size: cover;
   border-radius: 0.5rem;
-  padding: 3px;
-}
-.Navbar .logo {
-  width: 60px;
-  margin-bottom: 0rem;
-  padding-top: 0px;
-  background: none;
-}
-.Navbar .name-web {
-  margin-bottom: 1.5rem;
-}
-.Navbar .create {
-  margin-top: 1rem;
+  margin-left: 0.5rem;
 }/*# sourceMappingURL=navbar.css.map */

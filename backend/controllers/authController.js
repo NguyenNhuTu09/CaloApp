@@ -3,6 +3,9 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken';
 import express from 'express'
 
+import nodemailer from 'nodemailer'
+import Mailgen from 'mailgen'
+
 
 export const register = async(req, res) => {
      try{
@@ -17,7 +20,6 @@ export const register = async(req, res) => {
           await user.save()
           const token = jwt.sign({userId: user._id}, process.env.JWT_SECRET_KEY)
           res.json({token})
-
           
      }catch(error){
           console.log(error)
@@ -50,6 +52,7 @@ export const login = async(req, res) => {
                {expiresIn: '15d'}
           )
 
+          // console.log(token)
           res.cookie('accessToken', token, {
                httpOnly: true,
                expires: token.expiresIn
@@ -63,4 +66,65 @@ export const login = async(req, res) => {
      }catch(err){
           res.status(500).json({success: false, message: 'Đăng nhập thất bại.'})  
      }
+}
+
+
+export const sendEmailAuthen = (req, res) => {
+
+     const email = req.body.email
+
+     let config = {
+          service: 'gmail',
+          auth: {
+               user: `${process.env.GMAIL_ACCOUNT_USERNAME}`,
+               pass: `${process.env.GMAIL_ACCOUNT_PASSWORD}`
+          }
+     }
+
+     let transporter = nodemailer.createTransport(config)
+
+     let MailGenerator = new Mailgen({
+          theme: "default",
+          product: {
+               name: "Mailgen",
+               link: 'https://mailgen.js/'
+          }
+     })
+
+     let response = {
+          body: {
+               name,
+               intro: "Your bill has arrived",
+               table: {
+                    data: [
+                         {
+                              item: "Nodemailer Stack Book",
+                              description: "A Backend application",
+                              price:"$10.99"
+                         }
+                    ]
+               },
+               outro: "Looking forward to do more business"
+          }
+     }
+
+     let mail = MailGenerator.generate(response)
+
+     let message = {
+          from : `${process.env.GMAIL_ACCOUNT_USERNAME}`,
+          to: email,
+          subject: "Place Order",
+          html: mail
+     }
+
+     transporter.sendEmailAuthen(message).then(() => {
+          return res.status(201).json({
+               msg: "you should receive an email"
+          })
+     }).catch(error => {
+          return res.status(500).json({error})
+     })
+     
+
+     // res.status(201).json("Send email successfully.....")
 }

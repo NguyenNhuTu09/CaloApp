@@ -1,23 +1,6 @@
 import FoodUser from '../models/FoodUser.js'
 import User from '../models/User.js'
 
-// create new food
-// export const createFood = async(req, res) => {
-//      const newFood = new Food(req.body)
-//      try{
-//           const savedFood = await newFood.save()
-
-//           res.status(200).json({
-//                success: true, 
-//                message: 'Tạo món ăn thành công',
-//                data: savedFood})
-//      }catch(err){
-//           console.log(err)
-//           res.status(500).json({
-//                success: false, 
-//                message: 'Server có lỗi'})
-//      }
-// }
 
 // new create food user
 export const createFoodUser = async(req, res) => {
@@ -51,64 +34,6 @@ export const createFoodUser = async(req, res) => {
                message: 'Server có lỗi'})
      }
 }
-
-// export const createFood = async(req, res) => {
-//      const newFood = new Food(req.body)
-//      const id = req.params.id // id User da tao mon an
-//      try{
-//           const savedFood = await newFood.save()
-//           const foodId = newFood._id
-
-//           const userUpdateFood = findByIdAndUpdate(
-//                {id},
-//                {$push: { foods: foodId } },
-//                {new: true}
-//           )
-//           res.status(200).json({
-//                success: true, 
-//                message: 'Tạo món ăn thành công',
-//                data: savedFood})
-//      }catch(err){
-//           console.log(err)
-//           res.status(500).json({
-//                success: false, 
-//                message: 'Server có lỗi'})
-//      }
-// }
-
-
-// export const createFood = async(req, res) => {
-//      try {
-//           // Tạo mới một document Food
-//           const newFood = new Food(req.body);
-//           const savedFood = await newFood.save();
-      
-//           // Lấy _id của document Food vừa tạo
-//           const foodId = savedFood._id;
-      
-//           // Tìm và cập nhật document User bằng cách thêm foodId vào mảng foods
-//           const userId = req.params.id; // Trường _id của document User
-//           const updatedUser = await User.findOneAndUpdate(
-//             { _id: userId },
-//             { $push: { foods: foodId } },
-//             { new: true }
-//           );
-      
-//           res.status(200).json({
-//             success: true,
-//             message: "Tạo món ăn mới và thêm vào user thành công",
-//             data: savedFood,
-//           });
-//         } catch (err) {
-//           console.log(err);
-//           res.status(500).json({
-//             success: false,
-//             message: "Server có lỗi",
-//           });
-//         }
-// };
-
-
 
 
 // update Food

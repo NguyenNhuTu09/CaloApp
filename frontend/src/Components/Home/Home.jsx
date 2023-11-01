@@ -171,7 +171,7 @@ const Home = () => {
             <div className='title-logo d-flex flex-column'>
               <div className='tieude d-flex flex-row align-items-center'>
                 <img src={logoTHF}/>
-                <p className='fs-1 fw-bold'>T.H.F</p>
+                <p className='fs-1 fw-bold'>TITFitness</p>
               </div>
 
               <p className='title-thf fs-4 fw-bold'>Healthy Habits Today for a Better Tomorrow</p>

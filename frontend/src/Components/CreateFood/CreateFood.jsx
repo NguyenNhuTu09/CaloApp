@@ -174,6 +174,3 @@ const CreateFood = () => {
   )
 }
 export default CreateFood
-
-// các vấn đề cần giải quyết:
-// + mỗi một món ăn phải có một id của reviews, id của user, 

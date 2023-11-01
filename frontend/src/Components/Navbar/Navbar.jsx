@@ -21,73 +21,71 @@ import Tapluyen from '../../assets/Tapluyen.png'
 
 
 
-
-
-
 import {BiLogOut} from 'react-icons/bi';
 import {AiOutlineHome} from 'react-icons/ai'
 
 import { BASE_URL } from '../Utils/config.js';
 import { AuthContext } from '../../Context/AuthContext';
 
-
-
-
-
 const nav_link1 = [
   {
     path: '/app/home',
-    icon: <img src={ichome}/>,
-    text: <p>Trang chủ</p>
+    // icon: <img src={ichome}/>,
+    icon: <span class="material-symbols-outlined">
+    Home
+    </span>,
+    text: <a>Trang chủ</a>
   },
   {
     path: '/app/menu',
-    icon: <img src={menu2}/>,
-    text: <p>Thực đơn</p>
+    // icon: <img src={menu2}/>,
+    icon: <span class="material-symbols-outlined">
+    restaurant_menu
+    </span>,
+    text: <a>Thực đơn</a>
   },
   {
     path: '/app/exercise',
-    icon: <img src={Tapluyen}/>,
-    text: <p>Bài tập</p>
+    // icon: <img src={Tapluyen}/>,
+    icon:<span class="material-symbols-outlined">
+    exercise
+    </span>,
+    text: <a>Bài tập</a>
   },
 ]
 
 const nav_link2 = [
   {
     path: '/app/discover',
-    icon: <img src={Muctieu}/>,
-    text: <p>Kế hoạch</p>
+    // icon: <img src={Muctieu}/>,
+    icon: <span class="material-symbols-outlined">
+    monitoring
+    </span>,
+    text: <a>Theo dõi</a>
   },
-  // {
-  //   path: '/app/user',
-  //   icon: <img src={icuser}/>,
-  //   text: <p>Cài đặt</p>
-  // },
-  // {
-  //   path: '/app/plan',
-  //   icon: <img src={newPlan}/>,
-  // }
 ]
 
 
 const Navbar = () => {
 
   const {user, dispatch} = useContext(AuthContext)
-  // console.log(user._id)
-  
 
   
   return (
     <>
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
         <div className='nav-menu d-flex flex-column align-items-center'>
-          <img className='logo' src={logo}/>
-          <p className=' name-web fs-5 fw-bold'>T.H.F</p>
+
+
+
+          <div className='logo d-flex flex-column align-items-center'>
+            <img src={logo}/>
+            <p className='logo_name fs-5 fw-bold'>TITFitness</p>
+          </div>
           {
             nav_link1.map((item, index) => (
-              <li className='nav_item d-flex flex-row' key={index}>
-                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'}><a>{item.icon} </a>  </NavLink>
-                    {/* <a>{item.text}</a> */}
+              <li className='nav_item d-flex flex-row jusitfy-content-between' key={index}>
+                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row ' : 'd-flex flex-row'}>{item.icon} <p>{item.text}</p></NavLink>
               </li>
             ))
           }
@@ -95,28 +93,36 @@ const Navbar = () => {
           {
             nav_link2.map((item, index) => (
               <li className='nav_item' key={index}>
-                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'}><a>{item.icon} </a> </NavLink>
+                    <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'}>{item.icon} <p>{item.text}</p></NavLink>
               </li>
             ))
           }
+
+          <hr/>
           <li className='nav_item'>
 
-            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} to={`/app/user/${user._id}`}><a><img src={icuser}/></a></NavLink>
+            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row '} to={`/app/user/${user._id}`}><span class="material-symbols-outlined">account_circle
+</span><p>Tài khoản</p></NavLink>
           </li>
           <li className='nav_item'>
-
-            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} to={`/app/user/${user._id}/plan`}><a><img src={newPlan}/></a></NavLink>
+            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} to={`/app/user/${user._id}/plan`}><span class="material-symbols-outlined">
+new_window
+</span><p>Kế hoạch</p></NavLink>
           </li>
           
 
-          {/* <Link to={'/app/plan'}><img className='create' src={newPlan}/></Link> */}
         </div>
 
-      <p>
       <hr/>
-       <Link to='/login'><img src={logout}/></Link>
-      </p>
+       <Link className='Logout d-flex flex-row align-items-center' to='/login'>
+            <p>Đăng xuất</p>
+            <span class="material-symbols-outlined">
+logout
+</span>
+       </Link>
     </div>
+
+    
     <Outlet/>
     </>
   )

@@ -30,13 +30,13 @@ const Discover = () => {
   const [fooddayplan, setfooddayplan] = useState([])
   const [exdayplan, setexdayplan] = useState([])
   
-  const {user, dispatch} = useContext(AuthContext) // lấy dữ liệu người dùng sau khi đăng nhập
+  const {user, dispatch} = useContext(AuthContext) 
 
-  const [notePlan, setNotePlan] = useState('') // lấy ghi chú của từng ngày trong kế hoạch
+  const [notePlan, setNotePlan] = useState('') 
   const [titleDayPlan, setTitleDayPlan] = useState('')
 
-  const [plan, setplan] = useState([]) // lấy toàn bộ kế hoạch 
-  const [test, setTest] = useState([]) // lấy từng ngày trong kế hoạch
+  const [plan, setplan] = useState([]) 
+  const [test, setTest] = useState([])
 
 
 
@@ -55,29 +55,10 @@ const Discover = () => {
         const data_2 = await response_2.json()
         u.push(data_2.data)
       }
-      setTest(u) // DayPlan
+      setTest(u) 
       setplan(k)
     }
   } 
-
-  // function handleClickk(e){ 
-  //   // 1 phần tử trong test là 1 DayPlan
-  //   // 1 dayPlan sẽ có các dayFoods và dayExercise
-  //   // khi click vào button có id của DayPlan nào thì lấy đúng dayFoods và dayExercises của dayPlan đó
-  //   let k = ''
-  //   let g = ''
-  //   for(let i = 0; i < test.length; i++){
-  //     if(test[i]._id === e){
-  //       console.log(test[i].dayFoods)
-  //       console.log(test[i].dayExercises)
-  //       k = test[i].noteDayPlan
-  //       g = test[i].nameDayPlan
-  //     }
-  //     // setNotePlan(test[i].noteDayPlan)
-  //     setNotePlan(k)
-  //     setTitleDayPlan(g)
-  //   }
-  // }
 
   const handleClickk = async (e) =>{ 
     let k = ''
@@ -122,8 +103,7 @@ const Discover = () => {
         }
 
         k = test[i].noteDayPlan
-        g = test[i].nameDayPlan // đã chỉnh sửa thuộc tính nameDayPlan và noteDayPlan của DayPlan, chú ý phần 
-        // ngày thực hiện và ghi chú
+        g = test[i].nameDayPlan 
       }
       setNotePlan(k)
       setTitleDayPlan(g)
@@ -143,7 +123,7 @@ const Discover = () => {
 
 
 
-  // console.log(plan) 
+  console.log(plan) 
   // console.log(test)
   // console.log(test[0]._id)
 
@@ -166,13 +146,10 @@ const Discover = () => {
 
   return (
     <div className='Discover d-flex flex-column'>
-    {/* <h2>Xin chào, <span>Nguyễn Như Từ</span></h2> */}
       <div className='plan d-flex flex-row'>
         <div className='detail-day-plan d-flex flex-column'>
           <p className='title-day fs-2 fw-bold'>{titleDayPlan}</p>
           <p className='title-day fs-5 fw-bold'>01/07/2023</p>
-          {/* <p className='title-day fs-5 fw-bold'>Bữa ăn: <span>4</span></p>
-          <p className='title-day fs-5 fw-bold'>Bài tập: 3</p> */}
           <div className='parameter-day-plan d-flex flex-row justify-content-between'>
             <div className='parameter d-flex flex-column text-center align-items-center'>
               <img src={Total}/>
@@ -221,35 +198,13 @@ const Discover = () => {
 
 
             <p className='fs-6 fw-bold'>Tiến độ</p>
-           
-            {/* <div className='my-plan-02 d-flex flex-row'>
-            {
-              test.map(({_id, nameDayPlan, createdAt}) => {
-                const date = new Date(createdAt);
-                const day = date.getDate();
-                const month = date.getMonth() + 1;
-                const year = date.getFullYear();
-                
-                return(
-                  <div key={_id} className='d-flex flex daypl'>
-                    <div className='day text-center' onClick={() => handleClickk(_id)}>
-                      <p className='fw-bold'>{nameDayPlan}</p>
-                      <p className='fw-normal'>{`${day}/${month}/${year}`}</p>
-                    </div>
-                  </div>
-                )
-              })
-            } 
-            </div> */}
 
             <div className='my-plan-02 d-flex flex-row'>
             {
               test.map(({_id, nameDayPlan, createdAt}, index) => {
-                // lưu ý: ở kế hoạch săn sói xám có sẵn trong MongoDB hiện tại
-                // cả 3 ngày trong kế hoạch đều được insert trực tiếp lên, nên không có createdAt
-                const daysToAdd = index; // Số ngày cần cộng thêm
+                const daysToAdd = index; 
                 const oldDate = new Date(createdAt);
-                const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); // Cộng thêm số ngày đã tính toán
+                const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); 
                 const day = newDate.getDate();
                 const month = newDate.getMonth() + 1;
                 const year = newDate.getFullYear();
@@ -272,7 +227,6 @@ const Discover = () => {
         <div className='note-day-plan d-flex flex-column'>
           <p className='fs-6 fw-bold'>Ghi chú: </p>
           <textarea class="form-control note" aria-label="With textarea" disabled
-          // placeholder='Không ăn thêm bữa phụ, có thể tập thêm 15 phút mỗi bài tập'
           placeholder={notePlan}
           >
             
@@ -387,10 +341,3 @@ const Discover = () => {
   )
 }
 export default Discover
-
-
-// đã tạo được Plan lên MongoDB, tự set được số ngày thực hiện để tạo số DayPlan
-// Chưa xong phần tạo số bữa ăn và món ăn, buổi tập và bài tập
-
-
-// trong hôm nay chấm dứt việc tạo Plan mới. CHẤM DỨT

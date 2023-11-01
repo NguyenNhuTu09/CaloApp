@@ -1,10 +1,12 @@
 import Food from '../models/Food.js'
 import User from '../models/User.js'
-
+import admin from 'firebase-admin'
+import response from 'express'
+import jwt from 'jsonwebtoken'
 
 export const createFood = async(req, res) => {
 
-     // hiện chỉ có cách này hoạt động, đã thêm được Food mới vào thẳng foods của user
+     // hiện chỉ có cách này hoạt động, đã thêm được Food mới vào thẳng foods của User
      const newFood = new Food(req.body)
      const id = req.params.id
      try{
@@ -26,6 +28,7 @@ export const createFood = async(req, res) => {
                success: true, 
                message: 'Tạo món ăn thành công',
                data: savedFood})
+
      }catch(err){
           console.log(err)
           res.status(500).json({

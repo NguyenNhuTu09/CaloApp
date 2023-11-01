@@ -8,19 +8,19 @@
 }
 .DetailFood .image-review {
   width: 32%;
-  height: 100vh;
 }
 .DetailFood .image-review .back {
   margin-left: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 .DetailFood .image-review .back .link {
+  padding: 5px;
   cursor: pointer;
   text-decoration: none;
   color: black;
-}
-.DetailFood .image-review .back .link:hover {
-  color: white;
+  border-radius: 0.5rem;
+  background: white;
 }
 .DetailFood .image-review .back .link img {
   margin-top: 2px;
@@ -30,7 +30,7 @@
 }
 .DetailFood .image-review .image-food {
   margin-left: 4rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   align-items: center;
   width: 325px;
 }
@@ -43,6 +43,9 @@
   margin-bottom: 1rem;
   margin-top: 3rem;
   width: 90%;
+  padding: 5px;
+  background: white;
+  border-radius: 0.5rem;
 }
 .DetailFood .image-review .text .star {
   width: 60%;
@@ -50,31 +53,36 @@
 .DetailFood .image-review .text .icons {
   margin-top: 3px;
 }
-.DetailFood .image-review .review {
-  align-items: center;
-}
-.DetailFood .image-review .review .review-01 {
+.DetailFood .image-review .support {
   width: 90%;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  background: white;
-  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
 }
-.DetailFood .image-review .review .review-01 p {
-  margin-top: 5px;
+.DetailFood .image-review .support .items {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.DetailFood .image-review .support .items img {
+  width: 25px;
+  margin-right: 0.5rem;
+}
+.DetailFood .image-review .support .items:hover {
+  cursor: pointer;
 }
 .DetailFood .description {
+  margin-top: 1rem;
   padding-top: 1rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   width: 37%;
-  height: 100vh;
+  height: 90vh;
   margin-left: 1.2rem;
   border-radius: 1rem;
-  background: #E9F8F9;
+  background: white;
 }
 .DetailFood .description .status {
-  width: 25%;
+  width: 100%;
   padding: 3px;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
@@ -85,7 +93,7 @@
 }
 .DetailFood .description .title {
   margin-bottom: 0.5rem;
-  width: 60%;
+  width: 100%;
 }
 .DetailFood .description .title .text {
   width: 50%;
@@ -99,9 +107,24 @@
 }
 .DetailFood .description .text-description {
   border-radius: 1rem;
-  padding: 1rem;
   margin-top: 2rem;
-  background: #C1ECE4;
+}
+.DetailFood .description .text-description .note {
+  height: 200px;
+  background: white;
+  padding: 0.5rem;
+  color: black;
+  margin-top: 0.5rem;
+  border: none;
+}
+.DetailFood .description .actions {
+  margin-top: 1rem;
+}
+.DetailFood .description .actions button {
+  padding: 0.5rem;
+  background: #EDEAE7;
+  border-radius: 0.5rem;
+  border: none;
 }
 .DetailFood .author {
   width: 26%;
@@ -128,9 +151,6 @@
 .DetailFood .author .image .info .name-author {
   width: 200px;
   cursor: pointer;
-}
-.DetailFood .author .image .info .name-author:hover {
-  color: white;
 }
 .DetailFood .author .image .info .name-author .icons {
   margin-left: 0.5rem;

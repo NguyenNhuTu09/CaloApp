@@ -47,7 +47,7 @@
   margin-left: 1rem;
 }
 .User .food .food-menu {
-  width: 18.5%;
+  width: 18%;
   margin-right: 1rem;
 }
 .User .food .food-menu .image-food {
@@ -67,7 +67,7 @@
   padding-right: 0.8rem;
   padding-bottom: 0.8rem;
   cursor: pointer;
-  height: 70%;
+  height: 67%;
 }
 .User .food .food-menu .detail-food p {
   margin-bottom: 5px;
