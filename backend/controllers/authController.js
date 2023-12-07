@@ -9,12 +9,12 @@ import Mailgen from 'mailgen'
 
 export const register = async(req, res) => {
      try{
-          const {lastFirstName, email, password, userName, date, phonenumber, gender, location, photo} = req.body;
+          const {lastFirstName, email, password, userName, date, phone, gender, address, avatar} = req.body;
           let user = await User.findOne({email})
           if(user){
                return res.status(400).json({message: 'Email đăng nhập đã tồn tại'})
           }
-          user = new User({lastFirstName, email, password, userName, date, phonenumber, gender, location, photo})
+          user = new User({lastFirstName, email, password, userName, date, phone, gender, address, avatar})
           const salt = await bcrypt.genSalt(10)
           user.password = await bcrypt.hash(password, salt)
           await user.save()

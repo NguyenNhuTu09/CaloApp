@@ -2,20 +2,13 @@ import mongoose from "mongoose";
 
 const DayExerciseSchema = new mongoose.Schema(
   {
-    dayExerciseID: {
-      type: mongoose.Types.ObjectId,
-      ref: "Exercise",
-    },
-    nameExercises: {
-      type: String,
-      // required: true,
-    },
-    exercises: [
-      {
+    dayPlanID: {type: mongoose.Types.ObjectId,ref: "DayPlan",},
+    exercises: [{
         type: mongoose.Types.ObjectId,
         ref: "Exercise",
-      }
-    ]
+      }],
+    totalCaloOut: {type: Number},
+    dayExerState: {type: String, required: true}
   },
   { timestamps: true }
 );

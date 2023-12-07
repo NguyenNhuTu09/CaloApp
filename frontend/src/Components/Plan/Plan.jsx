@@ -2,7 +2,9 @@ import React, { useEffect, useState, useContext, useTransition } from 'react'
 import './plan.css'
 import {IoIosArrowDown} from 'react-icons/io';
 import { Link} from 'react-router-dom';
-import { Form } from 'reactstrap';
+import { Form, Nav } from 'reactstrap';
+
+import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx';
 
 import axios from 'axios'
 
@@ -92,14 +94,12 @@ const Plan = () => {
          alert(error.message)
     }
   }
-  // Xử lý tạo Plan 
   console.log(plan)
   console.log(dayPlan)
 
 
 
 
-  // Xử lý menu khi tạo kế hoạch
   const [stateConfirm, setStateConfirm] = useState(Boolean)
   const [Foods, setFoods] = useState([])
   const [foodUser, setFoodUser] = useState([])
@@ -139,13 +139,13 @@ const Plan = () => {
   const [test, setTest] = useState([])
 
 
-  const handleFoodClick = (foodId) => { // chọn món ăn trong modal Menu
+  const handleFoodClick = (foodId) => { 
     const food = Foods.find((f) => f._id === foodId);
     setSelectedFoods([...selectedFoods, food]);
     setStateConfirm(true)
   };
 
-  const handleDeleteClick = (foodId) => { // xóa món ăn đã chọn ở trong modal Menu
+  const handleDeleteClick = (foodId) => { 
     if(selectedFoods.length == 1){
       setStateConfirm(false)
     }
@@ -154,7 +154,7 @@ const Plan = () => {
   };
 
 
-  const handleDeleteClick2 = (foodId) => { // xóa món ăn trong bữa ăn
+  const handleDeleteClick2 = (foodId) => { 
     if(test.length == 1){
       setStateConfirm(false)
     }
@@ -169,46 +169,53 @@ const Plan = () => {
 
   }, [])
   
-  console.log(selectedFoods) // danh sach Food duoc chon tu Menu
+  console.log(selectedFoods) 
 
 
   const handleConfirm = () => {
-    setTest(selectedFoods) // click vao button xac nhan o trong menu, lưu danh sách Food vào mảng Test
+    setTest(selectedFoods) 
   }
 
   const [div, setDiv] = useState([]);
-  const handleSave = () => { // xử lý khi click vào thêm bữa ăn
+  const handleSave = () => { 
     setSelectedFoods([])
     setDiv([])
     let Array = test
     const newDiv = (
-      <div className='food d-flex flex-row' key={div.length}>
-        {
-          Array.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
-            return(
-              <div key={_id} className='food-menu'>
-                <div className='image-food position-relative'>
-                  <img  src={imageFood}/>
+      <div className='food-items d-flex flex-column'>
+
+        <div className='food d-flex flex-row border border-dark' key={div.length}>
+          {
+            Array.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
+              return(
+                <div key={_id} className='food-menu'>
+                  <div className='image-food position-relative'>
+                    <img  src={imageFood}/>
+                  </div>
+                  <div className='detail-food'>
+                    <p className='caterogy d-flex flex-row justify-content-end'>
+                    {reviews}
+                      <span><AiFillStar/></span>
+                    </p>
+                    <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                    <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
+                    <div className='calo d-flex flex-row justify-conte nt-between'>{totalCalories} Calo
+                      <button onClick={() => handleDeleteClick2(_id)}>Xóa</button> 
+                      </div>
+                  </div>
                 </div>
-                <div className='detail-food'>
-                  <p className='caterogy d-flex flex-row justify-content-end'>
-                  {reviews}
-                    <span><AiFillStar/></span>
-                  </p>
-                  <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
-                  <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
-                  <div className='calo d-flex flex-row justify-conte nt-between'>{totalCalories} Calo
-                    <button onClick={() => handleDeleteClick2(_id)}>Xóa</button> 
-                    </div>
-                </div>
-              </div>
-            )
-          })
-        }
-        <div className='food-1'>
-          <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+              )
+            })
+          }
+          <div className='food-1'>
+            <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+          </div>
         </div>
-        <button type="button" class="btn btn-info">Lưu</button>
+
+        {/* <div className='div-dl d-flex flex-row' onClick={() => handleDeleteDiv(index)}>
+            <img className='img-dl' src={delete1} />
+            <p>Xóa bữa ăn</p>
+          </div> */}
       </div>
     );
     setDiv([...div, newDiv]);
@@ -226,14 +233,13 @@ const Plan = () => {
 
 
   return (
-    <div className='Plan d-flex flex-row justify-content-between'>
+    <div className='Plan d-flex flex-column'>
+      <NavbarTwo/>
       <div className='create-food d-flex flex-column'>
-
-
         <div className='food-day-note d-flex flex-row justify-content-between'>
 
 
-          <div className='food-day d-flex flex-row'>
+          <div className='food-day d-flex flex-row border border-dark'>
           {
             dPlan.map(({_id, nameDayPlan, createdAt}, index) => {
               const daysToAdd = index; // Số ngày cần cộng thêm
@@ -283,37 +289,11 @@ const Plan = () => {
           <div className='exercise-1'>
             <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
           </div>
-          <button type="button" class="btn btn-info">Lưu</button>
         </div>
         
         {/* ======================== */}
 
       </div>
-
-
-
-      <div className='day-plan d-flex flex-column justify-content-between'>
-        {/* Chọn số ngày thực hiện kế hoạch */}
-        <div className='d-flex flex-column align-items-center'>
-          <li>
-            {/* <input class="form-check-input mt-0" type="checkbox" value=""/> */}
-            <img src={Delete}/>
-            <p className='fw-bold fs-6'>Ngày thứ 1<span className='fw-normal'>.... Calo</span></p>
-          </li>
-          {/* <img src={AddPlan}/> */}
-
-            
-        </div>
-        {/* ==================== */}
-
-        <div className='btn-create d-flex flex-column'>
-            <input type="text" class="form-control" placeholder="Tên kế hoạch" aria-describedby="addon-wrapping"/>
-            <input type="date" class="form-control" placeholder="Tên kế hoạch" aria-describedby="addon-wrapping"/>
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Chỉnh sửa</button>
-            <button type="button" class="btn btn-info">Tạo kế hoạch</button>
-        </div>
-      </div>
-
 
        {/*============== MENU FOOD EXERCISE MODAL ============ */}
        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -560,7 +540,7 @@ const Plan = () => {
                     required id = 'namePlan'
                     />
                     
-                    <div className='d-flex flex-row justify-content-between'>
+                    <div className='d-flex flex-column justify-content-between'>
                       <div className='d-flex flex-column w-60'>
                         <p>Ngày bắt đầu:</p>
                         <input type="date" class="date-start form-control" aria-describedby="addon-wrapping"

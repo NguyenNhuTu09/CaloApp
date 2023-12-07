@@ -1,0 +1,172 @@
+.create-plan{
+     background: #FFFF;
+     width: 100%;
+     font-size: 15px;
+     .body-create-plan{
+          padding: 1.3rem;
+          color: #624761;
+          width: 97%;
+          .body-index{
+               width: 53%;
+               .nav-1{
+                    width: 70%;
+                    padding: 3px;
+                    margin-left: 0.5rem;
+                    span{
+                         font-size: 23px;
+                         margin-right: 2px;
+                    }
+               }
+               .index{
+                    width: 100%;
+                    padding: 3px;
+                    font-weight: bold;
+                    // border: 2px solid black;
+                    height: 100%;
+                    .height-weight{
+                         width: 31%;
+                         padding: 10px;
+                         border-radius: 10px;
+                         // background: #CDF5FD;
+                         border: 1px solid #CAD3D7;
+                         margin: 4px;
+                         .calo-in{
+                              p{
+                                   margin: 6px;
+                              }
+                         }
+                    }
+
+                    .index-bmi-bmr{
+                         width: 31%;
+                         padding: 10px;
+                         border-radius: 10px;
+                         margin: 4px;
+                         border: 1px solid #CAD3D7;
+                         .calo-out{
+                              p{
+                                   margin: 6px;
+                              }
+                         }
+                    }
+                    .recommend{
+                         width: 31%;
+                         padding: 10px;
+                         border-radius: 10px;
+                         border: 1px solid #CAD3D7;
+                         margin: 4px;
+                         .motion{
+                              p{
+                                   margin: 6px;
+                              }
+                         }
+                    }
+               }
+          }
+          .plan-history{
+               width:35%;
+               // margin-left: 4rem;
+               // margin-top: 1rem;
+               // padding: 1rem;
+               // border: 2px solid black;
+               p{
+                    padding: 1px;
+               }
+               .nav-2{
+                    width: 100%;
+                    padding: 5px;
+                    margin-top: 5px;
+                    span{
+                         font-size: 20px;
+                         margin-right: 5px;
+                    }
+               }
+               .plan-present{
+                    width: 100%;
+                    // padding: 5px;
+                    // background: #CDF5FD;
+                    // border: 2px solid black;
+                    // padding: 1rem;
+                    border-radius: 10px;
+                    .plan-1{
+                         width: 47%;
+                         border: 1px solid #CAD3D7;
+                         // background: #CDFCF6;
+                         border-radius: 10px;
+                         padding: 7px;
+                         // height: 100%;
+                         p{
+                              margin: 2px;
+                         }
+                         .status-plan{
+                              background: #4682A9;
+                              border-radius: 5px;
+                              color:#FFFF;
+                              padding: 3px;
+                              margin: 5px;
+                              text-align: center;
+                              
+                         }
+                    }
+               }
+          }
+     }
+     .recommend-plan-author{
+          // padding: 1rem;
+          color: #624761;
+          height: 60%;
+          margin-top: 1rem;
+          .recommend-plan{
+               margin: 0rem 1rem 1rem 1rem;
+               width: 55%;
+               padding: 5px 5px 5px 12px;
+               overflow: auto;
+               height: 100%;
+               .title-recommend-plan{
+                    margin-bottom: 8px;
+                    span{
+                         margin-right: 3px;
+                    }
+               }
+               .test-01{
+                    padding: 0.7rem;
+                    margin-bottom: 1rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid #CAD3D7;
+                    .icons{
+                         margin-right: 1.5rem;
+                         span{
+                              font-size: 50px;
+                              // margin-top: 5px;
+                         }
+                    }
+                    .desc-plan{
+                         padding: 0.5rem;
+                         width: 30%;
+                         .name-plan{
+                              padding: 5px;
+                              font-weight: bold;
+                              font-size: 15px;
+                         }
+                         .response-user{
+                              padding: 5px;
+                              width: 100%;
+                              span{
+                                   margin-right: 5px;
+                              }
+                         }
+                         
+                    }
+
+               }
+          }
+          .recommend-author{
+               margin: 0rem 1rem 1rem 1rem;
+               width: 37%;
+               padding: 5px 5px 5px 12px;
+               overflow: auto;
+               height: 100%;
+          }
+
+     }
+}

@@ -154,7 +154,7 @@ const Menu = () => {
           </div>
           <div className='food row'>
             {
-              Foods.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
+              Foods.map(({_id, imageFood, typeFood, nameFood, calo, ration}) => {
                 return(
                   <div key={_id} className='food-menu'>
                     <div className='image-food position-relative'>
@@ -162,12 +162,12 @@ const Menu = () => {
                     </div>
                     <div className='detail-food'>
                       <p className='caterogy d-flex flex-row justify-content-end'>
-                      {reviews}
+                      {/* {reviews} */}
                         <span><AiFillStar/></span>
                       </p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
+                      <p className='caterogy d-flex flex-row justify-content-end'>{typeFood}</p>
                       <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo<span>
+                      <p className='calo d-flex flex-row justify-content-between'>{calo} Calo<span>
                       <Link className='link' to={`/app/menu/${_id}`}>
                         Chi tiết <img src={arrow}/>
                       </Link>

@@ -1,48 +1,19 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 const exerciseSchema = new mongoose.Schema(
      {
-          nameExercise: { // tên bài tập
-               type: String,
-               required: true,
-               unique: true,
-          },
-          Type:{
-               type: String, // loại bài tập
-               required: true,
-          },
-          imageExercise: { // ảnh đaị diện
-               type: String,
-               required: true
-          },
-          support: { // hỗ trợ cho cái gì
-               type: String,
-               required: true
-          },
-          ration:{ // mức calo đốt cháy trên một đơn vị thời gian
-               type: Number,
-               required: true
-          },
-          totalCalories:{ // tổng calo đốt cháy theo hệ thống đề xuất
-               type: Number,
-               required: true
-          },
-          description:{ // mô tả
-               type: String,
-               required: true
-          },
-          reviews: [
-               {
-                 type: mongoose.Types.ObjectId,
-                 ref: "Review",
-               },
-          ],
-          author: [
-               {
-                    type: mongoose.Types.ObjectId,
-                    ref: "User",
-                  },
-          ]
+          userID:{type: mongoose.Types.ObjectId, required: true},
+          nameExer: { type: String,required: true,unique: true,},
+          typeExer:{type: String,required: true,},
+          imageExer: {type: String,required: true},
+          support: { type: String,required: true},
+          ration:{ type: Number,required: true},
+          calo:{ type: Number,required: true},
+          descExer:{ type: String,required: true},
+          processing:[{
+               imageProcess:{type: String},
+               descProcess:{type: String}
+          }]
      },
      {timestamps: true}
 )

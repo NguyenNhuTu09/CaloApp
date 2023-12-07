@@ -1,14 +1,9 @@
 import Plan from "../models/Plan.js";
 import User from "../models/User.js";
 import DayPlan from "../models/DayPlan.js";
-import DayFood from "../models/DayFood.js";
-import DayExercise from "../models/DayExercise.js";
 
 export const createPlan = async(req, res) => {
      const newPlan = new Plan(req.body)      
-        
-     const id = req.params.id 
-
      try{
           const savedPlan = await newPlan.save() 
 
@@ -18,7 +13,7 @@ export const createPlan = async(req, res) => {
           const start = new Date(updateDayPlan.startPlan)
           const end = new Date(updateDayPlan.endPlan)
           let stt = 1;
-          for (let date = start; date <= end; date.setDate(date.getDate()+1)) {
+          for (let date = start; date <= end; date.setDate(date.getDate()+1)) { 
                const dayPlan = await DayPlan.create({
                     nameDayPlan: "Ngày thứ " + stt,
                });

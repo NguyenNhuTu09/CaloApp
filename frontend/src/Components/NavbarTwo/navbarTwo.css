@@ -1,0 +1,33 @@
+.test-nav {
+  background: white;
+  padding: 0.6rem;
+  border-bottom: 1px solid #CAD3D7;
+  padding-left: 0.5rem;
+}
+.test-nav .input-search {
+  width: 380px;
+  background: white;
+  border-radius: 0.5rem;
+}
+.test-nav .input-search input {
+  width: 85%;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+.test-nav .input-search span {
+  font-size: 25px;
+  padding-left: 0.5rem;
+  border-left: 1px solid #CAD3D7;
+}
+.test-nav .input-search span:hover {
+  background: none;
+}
+.test-nav .icons span {
+  color: #515252;
+  font-size: 27px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+}/*# sourceMappingURL=navbarTwo.css.map */

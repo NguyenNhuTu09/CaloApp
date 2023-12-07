@@ -108,6 +108,18 @@ const User = () => {
   
   console.log(typeof(user._id))
 
+  const [isMyAccBlack, setIsMyAccBlack] = useState(false);
+  const [isLikeBlack, setIsLikeBlack] = useState(false);
+
+  const handleMyAccClick = () => {
+    setIsMyAccBlack(true);
+    setIsLikeBlack(false);
+  };
+
+  const handleLikeClick = () => {
+    setIsLikeBlack(true);
+    setIsMyAccBlack(false);
+  };
 
   return (
     <div className='User d-flex flex-column'>
@@ -115,11 +127,23 @@ const User = () => {
         <img src={user.photo}/>
         <div className='title-info'>
           <p className='fs-4 fw-bold'>{user.lastFirstName}</p>
+          <p className='fs-6'>{user.userName}</p>
           <div className='setting-info d-flex flex-row'>
             <p className='text fs-6 fw-bold'>Sửa hồ sơ</p>
-            <img src={settingUser}/>
+            <span class="material-symbols-outlined">manage_accounts</span>
           </div>
         </div>
+      </div>
+      <div className='icons d-flex flex-rowk'>
+        <div className='like user d-flex flex-row'>
+            <span class="material-symbols-outlined">favorite</span>
+            <p className='fs-6 fw-bold'>Yêu thích</p>
+        </div>
+
+          <div className='my-acc user d-flex flex-row'>
+            <span class="material-symbols-outlined">bookmark</span>
+            <p className='fs-6 fw-bold'>Đã lưu</p>
+          </div>
       </div>
       <hr></hr>
       <p className='title fs-6 fw-bold'>Kế hoạch của bạn:</p>
@@ -162,7 +186,7 @@ const User = () => {
         </div>
         <hr></hr>
       <p className='title fs-6 fw-bold'>Món ăn của bạn:</p>
-      <div className='food d-flex flex-row '>
+      <div className='food d-flex flex-row'>
       {
               foodUser.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
                 return(

@@ -2,7 +2,6 @@
      border-radius: 1rem;
      // background: #EDEAE7;
      width: 100%;
-     padding: 0.5rem;
      font-size: 15px;
      overflow: auto;
      .plan{
@@ -121,22 +120,27 @@
                margin-bottom: 2rem;
                padding-left: 1rem;
                margin-left: 0.5rem;
-               background: #FFFF;
+               // background: #FFFF;
                border-radius: 1rem;
                padding-top: 0.5rem;
                padding-bottom: 0.5rem;
                .info-meat{
+                    margin-left: 2rem;
+                    background: #FFFF;
                     .title-meat{
                          margin-bottom: 1rem;
+                         margin-top: 1rem;
                     }
                     width: 180px;
-                    height: auto;
+                    height: 90%;
                     padding: 0.5rem;
                     margin-right: 3rem;
+                    border-radius: 0.5rem;
+                    margin-top: 0.7rem;
                     .update-meat{
                          margin-top: 0.5rem;
                          padding: 0.3rem;
-                         background: #FFFF;
+                         background: #EDEAE7;
                          border-radius: 0.5rem;
                          img{
                               width: 30px;
@@ -145,9 +149,9 @@
                     }
                }
                .food-menu{
-               width: 250px;
-               margin-bottom: 1rem;
-               margin-right: 2rem;
+                    width: 245px;
+                    margin-bottom: 1rem;
+                    margin-right: 1.2rem;
                     .image-food{
                          margin-left: 1rem;
                          img{
@@ -157,7 +161,7 @@
                          }
                     }
                     .detail-food{
-                         background: #C1ECE4;
+                         background: #FFFF;
                          border-radius: 1rem;
                          margin-top: 3rem;
                          padding-top: 0.5rem;

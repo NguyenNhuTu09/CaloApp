@@ -176,7 +176,7 @@ const Home = () => {
 
               <p className='title-thf fs-4 fw-bold'>Healthy Habits Today for a Better Tomorrow</p>
               <p className='title-thf fs-5 fw-normal'>Thay đổi cuộc sống của bạn với lối sống lành mạnh</p>
-              <p className='title-thf fs-5 fw-bold'>Chào mừng bạn đến với T.H.F</p>
+              <p className='title-thf fs-5 fw-bold'>Chào mừng bạn đến với chúng tôi</p>
 
               
             </div>

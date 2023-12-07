@@ -2,61 +2,23 @@ import mongoose from "mongoose";
 
 const foodSchema = new mongoose.Schema(
      {
-          nameFood: {
-               type: String,
-               required: true,
-               unique: true,
-          },
-          Type:{
-               type: String,
-               required: true,
-          },
-          imageFood: {
-               type: String,
-               required: true
-          },
-          support: {
-               type: String,
-               required: true
-          },
-          ration:{
-               type: Number,
-               required: true
-          },
-          totalCalories:{
-               type: Number,
-               required: true
-          },
-          mainMaterial: {
-               type: String,
-               required: true
-          },
-          auxiliaryMaterials: {
-               type: String,
-               required: true
-          },
-          Additives: {
-               type: String,
-               required: true,
-          },
-          processing: {
-               type: String,
-               required: true,
-          },
-          description:{
-               type: String,
-               required: true
-          },
-          reviews: [
-               {
-                 type: mongoose.Types.ObjectId,
-                 ref: "Review",
-               },
-          ],
-          author: {
-               type:String,
-               required: true
-          }
+          userID: {type: mongoose.Types.ObjectId, ref: "User"},
+          nameFood:{type: String,required: true,},
+          typeFood:{type: String,required: true,},
+          imageFood: {type: String,required: true},
+          support: {type: String,required: true},
+          ration:{ type: Number,required: true},
+          calo:{type: Number,required: true},
+          mainMaterial: { type: String,required: true},
+          auxiliaryMaterials: {type: String,required: true},
+          additives: {type: String,required: true,},
+          cookingMethod: { type: String,required: true,},
+          descFood:{type: String,required: true},
+          country: {type: String},
+          preparationMethods:[{
+               imageCook:{type: String},
+               descCook:{type: String}
+          }]
      },
      {timestamps: true}
 )

@@ -1,7 +1,6 @@
 .Discover {
   border-radius: 1rem;
   width: 100%;
-  padding: 0.5rem;
   font-size: 15px;
   overflow: auto;
 }
@@ -115,24 +114,28 @@
   margin-bottom: 2rem;
   padding-left: 1rem;
   margin-left: 0.5rem;
-  background: white;
   border-radius: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 .Discover .food-exercise-plan .food .info-meat {
+  margin-left: 2rem;
+  background: white;
   width: 180px;
-  height: auto;
+  height: 90%;
   padding: 0.5rem;
   margin-right: 3rem;
+  border-radius: 0.5rem;
+  margin-top: 0.7rem;
 }
 .Discover .food-exercise-plan .food .info-meat .title-meat {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .Discover .food-exercise-plan .food .info-meat .update-meat {
   margin-top: 0.5rem;
   padding: 0.3rem;
-  background: white;
+  background: #EDEAE7;
   border-radius: 0.5rem;
 }
 .Discover .food-exercise-plan .food .info-meat .update-meat img {
@@ -140,9 +143,9 @@
   margin-right: 5px;
 }
 .Discover .food-exercise-plan .food .food-menu {
-  width: 250px;
+  width: 245px;
   margin-bottom: 1rem;
-  margin-right: 2rem;
+  margin-right: 1.2rem;
 }
 .Discover .food-exercise-plan .food .food-menu .image-food {
   margin-left: 1rem;
@@ -153,7 +156,7 @@
   position: absolute;
 }
 .Discover .food-exercise-plan .food .food-menu .detail-food {
-  background: #C1ECE4;
+  background: white;
   border-radius: 1rem;
   margin-top: 3rem;
   padding-top: 0.5rem;

@@ -1,0 +1,53 @@
+.test-nav{
+     background: #FFFF;
+     // background: #7952b3;
+     padding: 0.6rem;
+     border-bottom: 1px solid #CAD3D7;
+     // position: fixed;
+     padding-left: 0.5rem;
+     .input-search{
+          width: 380px;
+          // border: 2px solid black;
+          background: #FFFF;
+          border-radius: 0.5rem;
+          // margin-left: 4rem;
+          
+          input{
+               width: 85%;
+               // border: 2px solid black;
+               padding: 0.4rem;
+               border: none;
+               // border-right: 1px solid #CAD3D7;
+               border-radius: 0.5rem;
+               input:focus{
+                    // ;
+               }
+          }
+          span{
+               font-size: 25px;
+               // margin: 0.5rem;
+               padding-left: 0.5rem;
+               border-left: 1px solid #CAD3D7;
+               // font-weight:normal;
+               &:hover{
+                    background: none;
+               }
+          }
+          
+     }
+
+     .icons{
+         
+          span{
+               color: #515252;
+               // color: #FFFF;
+               font-size: 27px;
+               // margin-left: 1rem;
+               margin-left: 0.5rem;
+               margin-right: 0.5rem;
+               border-radius: 0.3rem;
+               // background: #FFFF;
+               padding: 0.2rem;
+          }
+     }
+}

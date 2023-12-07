@@ -1,9 +1,7 @@
 .Plan {
-  border-radius: 1rem;
+  background: white;
   width: 100%;
-  padding: 1rem;
   font-size: 15px;
-  overflow: auto;
 }
 .Plan span {
   cursor: pointer;
@@ -12,20 +10,18 @@
   background: aliceblue;
 }
 .Plan .create-food {
-  width: 78%;
-  overflow: auto;
   margin-left: 0.6rem;
-  padding-right: 0.5rem;
+  padding: 2rem;
+  overflow: auto;
 }
 .Plan .create-food .food-day-note {
   height: 160px;
 }
 .Plan .create-food .food-day-note .food-day {
-  background: #FBE9BB;
+  background: white;
   padding: 0.5rem;
   width: 70%;
   border-radius: 0.5rem;
-  border: 2px solid black;
 }
 .Plan .create-food .food-day-note .food-day img {
   width: 50px;
@@ -404,8 +400,9 @@
   padding: 12px;
 }
 .Plan .newPlan .modal-body, .Plan .newPlan .verify {
+  background: #F0F3F4;
   padding: 1rem;
-  height: 200px;
+  height: 300px;
 }
 .Plan .newPlan .modal-body .namePlan, .Plan .newPlan .modal-body .form-control, .Plan .newPlan .verify .namePlan, .Plan .newPlan .verify .form-control {
   margin-bottom: 1rem;

@@ -1,14 +1,13 @@
 .CreateFood {
   border-radius: 1rem;
-  background: #EDEAE7;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   font-size: 15px;
   overflow: auto;
 }
 .CreateFood .info-food {
-  width: 31%;
-  padding: 1rem;
+  width: 30%;
+  margin-left: 2rem;
 }
 .CreateFood .info-food p {
   margin-bottom: 0.1rem;
@@ -58,7 +57,7 @@
 .CreateFood .description-food {
   margin-left: 2rem;
   padding: 1rem;
-  width: 31%;
+  width: 32%;
 }
 .CreateFood .description-food p {
   margin-bottom: 0.5rem;
@@ -72,9 +71,9 @@
   margin-bottom: 0.5rem;
 }
 .CreateFood .perform {
-  margin-left: 2rem;
+  margin-left: 1rem;
   padding: 1rem;
-  width: 31%;
+  width: 29%;
 }
 .CreateFood .perform p {
   margin-bottom: 0.5rem;

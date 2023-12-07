@@ -1,0 +1,147 @@
+.create-plan {
+  background: white;
+  width: 100%;
+  font-size: 15px;
+}
+.create-plan .body-create-plan {
+  padding: 1.3rem;
+  color: #624761;
+  width: 97%;
+}
+.create-plan .body-create-plan .body-index {
+  width: 53%;
+}
+.create-plan .body-create-plan .body-index .nav-1 {
+  width: 70%;
+  padding: 3px;
+  margin-left: 0.5rem;
+}
+.create-plan .body-create-plan .body-index .nav-1 span {
+  font-size: 23px;
+  margin-right: 2px;
+}
+.create-plan .body-create-plan .body-index .index {
+  width: 100%;
+  padding: 3px;
+  font-weight: bold;
+  height: 100%;
+}
+.create-plan .body-create-plan .body-index .index .height-weight {
+  width: 31%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #CAD3D7;
+  margin: 4px;
+}
+.create-plan .body-create-plan .body-index .index .height-weight .calo-in p {
+  margin: 6px;
+}
+.create-plan .body-create-plan .body-index .index .index-bmi-bmr {
+  width: 31%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 4px;
+  border: 1px solid #CAD3D7;
+}
+.create-plan .body-create-plan .body-index .index .index-bmi-bmr .calo-out p {
+  margin: 6px;
+}
+.create-plan .body-create-plan .body-index .index .recommend {
+  width: 31%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #CAD3D7;
+  margin: 4px;
+}
+.create-plan .body-create-plan .body-index .index .recommend .motion p {
+  margin: 6px;
+}
+.create-plan .body-create-plan .plan-history {
+  width: 35%;
+}
+.create-plan .body-create-plan .plan-history p {
+  padding: 1px;
+}
+.create-plan .body-create-plan .plan-history .nav-2 {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+.create-plan .body-create-plan .plan-history .nav-2 span {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.create-plan .body-create-plan .plan-history .plan-present {
+  width: 100%;
+  border-radius: 10px;
+}
+.create-plan .body-create-plan .plan-history .plan-present .plan-1 {
+  width: 47%;
+  border: 1px solid #CAD3D7;
+  border-radius: 10px;
+  padding: 7px;
+}
+.create-plan .body-create-plan .plan-history .plan-present .plan-1 p {
+  margin: 2px;
+}
+.create-plan .body-create-plan .plan-history .plan-present .plan-1 .status-plan {
+  background: #4682A9;
+  border-radius: 5px;
+  color: white;
+  padding: 3px;
+  margin: 5px;
+  text-align: center;
+}
+.create-plan .recommend-plan-author {
+  color: #624761;
+  height: 60%;
+  margin-top: 1rem;
+}
+.create-plan .recommend-plan-author .recommend-plan {
+  margin: 0rem 1rem 1rem 1rem;
+  width: 55%;
+  padding: 5px 5px 5px 12px;
+  overflow: auto;
+  height: 100%;
+}
+.create-plan .recommend-plan-author .recommend-plan .title-recommend-plan {
+  margin-bottom: 8px;
+}
+.create-plan .recommend-plan-author .recommend-plan .title-recommend-plan span {
+  margin-right: 3px;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 {
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #CAD3D7;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 .icons {
+  margin-right: 1.5rem;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 .icons span {
+  font-size: 50px;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 .desc-plan {
+  padding: 0.5rem;
+  width: 30%;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 .desc-plan .name-plan {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 .desc-plan .response-user {
+  padding: 5px;
+  width: 100%;
+}
+.create-plan .recommend-plan-author .recommend-plan .test-01 .desc-plan .response-user span {
+  margin-right: 5px;
+}
+.create-plan .recommend-plan-author .recommend-author {
+  margin: 0rem 1rem 1rem 1rem;
+  width: 37%;
+  padding: 5px 5px 5px 12px;
+  overflow: auto;
+  height: 100%;
+}/*# sourceMappingURL=createPlan.css.map */

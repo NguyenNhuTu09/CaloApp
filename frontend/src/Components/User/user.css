@@ -1,26 +1,27 @@
 .User {
   border-radius: 1rem;
   width: 100%;
-  padding: 1rem;
+  padding-top: 2rem;
   font-size: 15px;
   overflow: auto;
 }
 .User .info {
-  border-bottom: 1px solid black;
   padding: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 .User .info img {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
 }
 .User .info .title-info {
   margin-top: 0.5rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 .User .info .title-info .setting-info {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   border: 2px solid black;
-  width: 140px;
+  width: 70%;
   padding: 0.3rem;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -31,23 +32,41 @@
 .User .info .title-info .setting-info .text {
   margin-right: 5px;
 }
-.User .info .title-info .setting-info img {
-  width: 30px;
-  height: 30px;
+.User .icons {
+  border-bottom: 1px solid #CDD8DE;
+  margin-left: 0.8rem;
+}
+.User .icons span {
+  margin-right: 5px;
+  color: #50585C;
+}
+.User .icons p {
+  color: #50585C;
+}
+.User .icons .user {
+  width: 150px;
+  padding-left: 1.8rem;
+  padding-right: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+}
+.User .icons .user:hover {
+  border-bottom: 1px solid black;
+}
+.User .icons .user:hover span, .User .icons .user:hover p {
+  color: black;
 }
 .User .title {
   margin-left: 1rem;
 }
 .User .food {
-  background: white;
-  width: 97%;
-  margin-top: 0.5rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-left: 1rem;
+  width: auto;
+  margin: 1rem;
+  border-bottom: 1px solid #50585C;
 }
 .User .food .food-menu {
-  width: 18%;
+  width: 17%;
   margin-right: 1rem;
 }
 .User .food .food-menu .image-food {
@@ -59,7 +78,7 @@
   position: absolute;
 }
 .User .food .food-menu .detail-food {
-  background: #AED6F1;
+  background: white;
   border-radius: 1rem;
   margin-top: 3rem;
   padding-top: 0.5rem;
@@ -96,19 +115,16 @@
   color: black;
 }
 .User .plan {
-  background: white;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #50585C;
   margin: 1rem;
-  margin-bottom: 0px;
 }
 .User .plan .plan-now {
-  margin: 0.7rem;
+  margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   width: 200px;
-  background: #9FE2BF;
+  background: white;
   cursor: pointer;
   text-decoration: none;
 }
@@ -120,7 +136,7 @@
   align-items: center;
   text-align: center;
   border-radius: 0.5rem;
-  background: white;
+  background: #CDD8DE;
   margin-top: 0.5rem;
 }
 .User .plan .Create-plan {

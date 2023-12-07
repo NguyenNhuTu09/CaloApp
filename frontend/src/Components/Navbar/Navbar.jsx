@@ -32,7 +32,7 @@ const nav_link1 = [
     path: '/app/home',
     // icon: <img src={ichome}/>,
     icon: <span class="material-symbols-outlined">
-    Home
+    grid_view
     </span>,
     text: <a>Trang chủ</a>
   },
@@ -40,7 +40,7 @@ const nav_link1 = [
     path: '/app/menu',
     // icon: <img src={menu2}/>,
     icon: <span class="material-symbols-outlined">
-    restaurant_menu
+    lunch_dining
     </span>,
     text: <a>Thực đơn</a>
   },
@@ -55,6 +55,17 @@ const nav_link1 = [
 ]
 
 const nav_link2 = [
+  {
+    path: '/app/discover',
+    // icon: <img src={Muctieu}/>,
+    icon: <span class="material-symbols-outlined">
+    insert_chart
+    </span>,
+    text: <a>Theo dõi</a>
+  },
+]
+
+const nav_link3 = [
   {
     path: '/app/discover',
     // icon: <img src={Muctieu}/>,
@@ -78,13 +89,23 @@ const Navbar = () => {
 
 
 
-          <div className='logo d-flex flex-column align-items-center'>
-            <img src={logo}/>
-            <p className='logo_name fs-5 fw-bold'>TITFitness</p>
+          <div className='logo d-flex flex-rows align-items-center'>
+            <img className='' src={logo}/>
+            <p className='logo_name fs-6 fw-bold'>TITFitness</p>
           </div>
+          
+
+          {/* <div className='happy d-flex flex-column align-items-center'>
+            <img className='gif-happy' src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1700318413/gif-happy_jomfbk.gif'/>
+            <img className='gif-run' src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1700318182/gif-run_w3fxro.gif'/>
+
+            <img className='gif-happy' src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1700321790/gif-2_ko12fs.gif'/>
+          </div> */}
+
+          
           {
             nav_link1.map((item, index) => (
-              <li className='nav_item d-flex flex-row jusitfy-content-between' key={index}>
+              <li className='nav_item' key={index}>
                     <NavLink to={item.path} className={navClass => navClass.isActive ? 'active_link d-flex flex-row ' : 'd-flex flex-row'}>{item.icon} <p>{item.text}</p></NavLink>
               </li>
             ))
@@ -100,14 +121,14 @@ const Navbar = () => {
 
           <hr/>
           <li className='nav_item'>
-
-            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row '} to={`/app/user/${user._id}`}><span class="material-symbols-outlined">account_circle
-</span><p>Tài khoản</p></NavLink>
+            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} 
+                to={`/app/user:/${user._id}`}><span class="material-symbols-outlined">account_circle
+                </span><p>Tài khoản</p></NavLink>
           </li>
           <li className='nav_item'>
-            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} to={`/app/user/${user._id}/plan`}><span class="material-symbols-outlined">
-new_window
-</span><p>Kế hoạch</p></NavLink>
+            <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} 
+                to={`/app/user/${user._id}/plan`}><span class="material-symbols-outlined">new_window
+                </span><p>Kế hoạch</p></NavLink>
           </li>
           
 
@@ -116,9 +137,7 @@ new_window
       <hr/>
        <Link className='Logout d-flex flex-row align-items-center' to='/login'>
             <p>Đăng xuất</p>
-            <span class="material-symbols-outlined">
-logout
-</span>
+            <span class="material-symbols-outlined">logout</span>
        </Link>
     </div>
 

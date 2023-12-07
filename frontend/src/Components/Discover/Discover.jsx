@@ -23,6 +23,8 @@ import arrow from '../../assets/Arrow.png'
 import Complete from '../../assets/Complete.png'
 import Repair from '../../assets/Repair.png'
 
+import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
+
 const Discover = () => {
 
   const [isLoading, setIsLoading] = useState(true);
@@ -146,9 +148,10 @@ const Discover = () => {
 
   return (
     <div className='Discover d-flex flex-column'>
+    <NavbarTwo/>
       <div className='plan d-flex flex-row'>
         <div className='detail-day-plan d-flex flex-column'>
-          <p className='title-day fs-2 fw-bold'>{titleDayPlan}</p>
+          <p className='title-day fs-3 fw-bold'>{titleDayPlan}</p>
           <p className='title-day fs-5 fw-bold'>01/07/2023</p>
           <div className='parameter-day-plan d-flex flex-row justify-content-between'>
             <div className='parameter d-flex flex-column text-center align-items-center'>
@@ -243,7 +246,7 @@ const Discover = () => {
               return(
                 <div key={_id} className='food d-flex flex-row'>
                   <div className='info-meat d-flex flex-column'>
-                    <p className='title-meat fs-5 fw-bold'>{nameFoods}</p>
+                    <p className='title-meat fs-6 fw-bold'>{nameFoods}</p>
                     <div className='update-meat d-flex flex-row'>
                       <img src={Complete}/>
                       <p className='fs-6 fw-bold'>Hoàn thành</p>

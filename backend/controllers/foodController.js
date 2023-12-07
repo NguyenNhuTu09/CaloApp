@@ -1,4 +1,5 @@
 import Food from '../models/Food.js'
+import { uploadImage } from '../Upload/uploadImageCloud.js'
 import User from '../models/User.js'
 import admin from 'firebase-admin'
 import response from 'express'
@@ -6,24 +7,12 @@ import jwt from 'jsonwebtoken'
 
 export const createFood = async(req, res) => {
 
-     // hiện chỉ có cách này hoạt động, đã thêm được Food mới vào thẳng foods của User
      const newFood = new Food(req.body)
-     const id = req.params.id
+     // const id = req.params.id
+     // const imageCloud = await uploadImage(newFood.imageFood)
      try{
+          // newFood.imageFood = imageCloud
           const savedFood = await newFood.save()
-
-          const foodId = savedFood._id
-
-          const updateFoodUser = await User.findById(id)
-
-          console.log(updateFoodUser)
-          if (!updateFoodUser) {
-               return res.status(404).json({ message: 'Người dùng không tồn tại' });
-          }
-
-          updateFoodUser.foods.push(foodId)
-          await updateFoodUser.save()
-
           res.status(200).json({
                success: true, 
                message: 'Tạo món ăn thành công',
@@ -77,7 +66,7 @@ export const deleteFood = async (req, res) => {
 export const getSingleFood = async (req, res) => {
      const id = req.params.id
      try{
-          const food = await Food.findById(id).populate('Type')
+          const food = await Food.findById(id)
 
           res.status(200).json({
                success: true, 

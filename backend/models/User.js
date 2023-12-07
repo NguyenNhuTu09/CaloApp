@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    phonenumber:{
+    phone:{
       type: String,
       required: true,
     },
@@ -32,32 +32,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    location: {
+    address: {
       type: String,
       required: true,
     },
-    photo: {
+    avatar: {
       type: String,
       required: true
     },
-    foods: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "Food",
-      },
-    ],
-    exercises: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "Exercise",
-      }
-    ],
-    plans: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "Plan"
-      }
-    ]
+    role:{
+      type: String,
+      default: "User"
+    }
   },
   { timestamps: true }
 );

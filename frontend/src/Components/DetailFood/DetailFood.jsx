@@ -95,17 +95,17 @@ const DetailFood = () => {
 
 
     setNameFood(data.data.nameFood)
-    setType(data.data.Type)
+    setType(data.data.typeFood)
     setImageFood(data.data.imageFood)
     setSupport(data.data.support)
-    setDescription(data.data.description)
-    setProcessing(data.data.processing)
+    setDescription(data.data.descFood)
+    setProcessing(data.data.cookingMethod)
     setCountry(data.data.country)
     setMainMaterial(data.data.mainMaterial)
-    setUser(data.data.users[0].lastFirstName)
-    setTotal(data.data.totalCalories)
+    // setUser(data.data.users[0].lastFirstName)
+    setTotal(data.data.calo)
     
-    setFoodUser(data.data.users[0].foods)
+    // setFoodUser(data.data.users[0].foods)
 
   }
 
@@ -115,7 +115,7 @@ const DetailFood = () => {
   console.log(Food)
   // console.log(nameFood)
   // console.log(User)
-  console.log(foodUser)
+  // console.log(foodUser)
 
   // const {data: food, loading, error} = useFetch(`${BASE_URL}/foods/${id}`)
 
@@ -254,9 +254,9 @@ const DetailFood = () => {
             </div>
           </div>
         </div>
-        <p className='title fs-6 fw-bold'>Tham khảo món ăn của <span>Người dùng</span></p>
+        <p className='title fs-6 fw-bold'>Cùng tác giả</p>
         <div className='food-author d-flex flex-column'>
-        {/* {
+        {
               OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
                 return(
                   <div key={id} className='food-menu'>
@@ -272,7 +272,7 @@ const DetailFood = () => {
                   </div>
                 )
               })
-            } */}
+            }
 
             {
               foodUser.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {

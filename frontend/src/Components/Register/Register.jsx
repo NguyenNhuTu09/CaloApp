@@ -19,10 +19,10 @@ const Register = () => {
     password: undefined,
     userName: undefined,
     date: undefined,
-    phonenumber: undefined,
+    phone: undefined,
     gender: undefined,
-    location: undefined,
-    photo: undefined
+    address: undefined,
+    avatar: undefined
   })
 
   const {dispatch} = useContext(AuthContext)
@@ -67,7 +67,7 @@ const Register = () => {
               <img src={imgUser}/>
               <input className='file form-control-sm' type="file"
                onChange={handleChange}
-               required id='photo'
+               required id='avatar'
               ></input>
               <input className="form-control name" type="text" placeholder="Họ và tên"
                onChange={handleChange}
@@ -89,13 +89,13 @@ const Register = () => {
 
               <input class="form-control name" type="text" placeholder="Số điện thoại"
               onChange={handleChange}
-              required id='phonenumber'
+              required id='phone'
               ></input>
             </div>
             <div className='infor-02 d-flex flex-column'>
               <input className="form-control" type="text" placeholder="Địa chỉ"
               onChange={handleChange}
-              required id='location'
+              required id='address'
               ></input>
               <input className="form-control" type="text" placeholder="Email"
               onChange={handleChange}

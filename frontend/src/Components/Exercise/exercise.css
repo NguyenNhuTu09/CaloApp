@@ -1,7 +1,6 @@
 .Exercise {
   border-radius: 1rem;
   width: 100%;
-  padding: 0.5rem;
   font-size: 15px;
   overflow: auto;
 }

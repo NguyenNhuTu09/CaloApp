@@ -1,25 +1,28 @@
 .User{
      border-radius: 1rem;
      // background: #EDEAE7;
-     width: 100%;
-     padding: 1rem;
+     width: 100%;   
+     padding-top: 2rem;
+     // padding-left: 3rem;
      font-size: 15px;
      overflow: auto;
      .info{
           // margin: 1rem;
-          border-bottom: 1px solid black;
+          // border-bottom: 1px solid black;
           padding: 0.5rem;
+          margin-bottom: 1.5rem;
           img{
-               width: 100px;
-               height: 100px;
+               width: 130px;
+               height: 130px;
+               border-radius: 100%;
           }
           .title-info{
                margin-top: 0.5rem;
-               margin-left: 1rem;
+               margin-left: 2rem;
                .setting-info{
-                    margin-top: 0.5rem;
+                    margin-top: 0.8rem;
                     border: 2px solid black;
-                    width: 140px;
+                    width: 70%;
                     padding: 0.3rem;
                     border-radius: 0.5rem;
                     cursor: pointer;
@@ -29,11 +32,40 @@
                     .text{
                          margin-right: 5px;
                     }
-                    img{
-                         width: 30px;
-                         height: 30px;
-                    }
+                    
                }
+          }
+     }
+     .icons{
+          border-bottom: 1px solid #CDD8DE;
+          margin-left: 0.8rem;
+          span{
+               margin-right: 5px;
+               // color: #FFFF;
+               color: #50585C;
+          }
+          p{
+               color: #50585C;
+          }
+          .user{
+               width: 150px;
+               padding-left: 1.8rem;
+               padding-right: 1rem;
+               padding-top: 0.2rem;
+               padding-bottom: 0.2rem;
+               cursor: pointer;
+               &:hover{
+                    span, p{
+                         color: black;
+                    }
+                    border-bottom: 1px solid black;
+               }
+          }
+          .like{
+
+          }
+          .my-acc{
+
           }
      }
      .title{
@@ -41,14 +73,12 @@
           margin-left: 1rem;
      }
      .food{
-          background: #FFFF;
-          width: 97%;
-          margin-top: 0.5rem;
-          padding: 1rem;
-          border-radius: 1rem;
-          margin-left: 1rem;
+          width: auto;
+          margin: 1rem;
+          border-bottom: 1px solid #50585C;
+          // margin-top: 0.5rem;
           .food-menu{
-               width: 18%;
+               width: 17%;
                // margin-bottom: 1rem;
                margin-right: 1rem;
                .image-food{
@@ -61,7 +91,7 @@
                     }
                }
                .detail-food{
-                    background: #AED6F1;
+                    background: #FFFF;
                     border-radius: 1rem;
                     margin-top: 3rem;
                     padding-top: 0.5rem;
@@ -102,20 +132,16 @@
     }
 
     .plan{
-     // border-bottom: 1px solid black;
-          // border: 1px solid black;
-          background: #FFFF;
-          margin-top: 0.5rem;
-          padding: 0.5rem;
-          border-radius: 0.5rem;
+          margin-bottom: 5px;
+          border-bottom: 1px solid #50585C;
+          // padding: 0.5rem;
           margin: 1rem;
-          margin-bottom: 0px;
           .plan-now{
-               margin: 0.7rem;
+               margin: 0.5rem;
                padding: 0.5rem;
                border-radius: 0.5rem;
                width: 200px;
-               background: #9FE2BF;
+               background: #FFFF;
                cursor: pointer;
                text-decoration: none;
                .link{
@@ -126,7 +152,7 @@
                align-items: center;
                text-align: center;
                border-radius: 0.5rem;
-               background: #ffff;
+               background: #CDD8DE;
                margin-top: 0.5rem;
                }
           }

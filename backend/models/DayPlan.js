@@ -2,30 +2,12 @@ import mongoose from "mongoose";
 
 const DayPlanSchema = new mongoose.Schema(
   {
-    dayPlanID: {
-      type: mongoose.Types.ObjectId,
-      ref: "Food",
-    },
-    nameDayPlan:{
-      type: String,
-      // required: true
-    },
-    dayFoods: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "DayFood"
-      }
-    ],
-    dayExercises: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "DayExercise"
-      }
-    ],
-    noteDayPlan:{
-      type: String,
-      // required: true,
-    }
+    planID: {type: mongoose.Types.ObjectId,ref: "Plan",},
+    dayName:{type: String},
+    note:{type: String,},
+    caloIn:{type: Number, required: true},
+    caloOut:{type: Number, required: true},
+    dayPlanState: {type: String}
   },
   { timestamps: true }
 );

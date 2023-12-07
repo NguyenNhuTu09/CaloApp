@@ -2,22 +2,13 @@ import mongoose from "mongoose";
 
 const DayFoodSchema = new mongoose.Schema(
   {
-    dayFoodID: {
-      type: mongoose.Types.ObjectId,
-      ref: "Food",
-    },
-    nameFoods: {
-      type: String,
-      // required: true,
-    },
-    foods: [
-      { // Khi Food được tạo bên trong một DayFood thì ID này sẽ tự được MongoDB khởi tạo
+    dayPlanID: {type: mongoose.Types.ObjectId,ref: "DayPlan",},
+    foods: [{ 
         type: mongoose.Types.ObjectId,
         ref: "Food",
-        // type: String,
-        required: true,
-      }
-    ],
+      }],
+    totalCalo:{type: Number, required: true},
+    dayFoodState: {type: String, required: true}
   },
   { timestamps: true }
 );
