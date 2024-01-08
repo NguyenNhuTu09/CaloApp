@@ -1,0 +1,92 @@
+.create-plan-two{
+     background: #FFFF;
+     width: 100%;
+     font-size: 15px;
+     .body-create-plan-two{
+          padding: 1.2rem;
+          color: #624761;
+          // font-size: 15px;
+          width: 98%;
+          overflow: auto;
+          margin-left: 1rem;
+          .nav-create-plan{
+               width: 20%;
+               padding: 0.2rem;
+               margin-bottom: 0.2rem;
+               span{
+                    margin-right: 0.3rem;
+               }
+               .link{
+                    text-decoration: none;
+                    color: #624761;
+               }
+          }
+          .dashboard-note-plan{
+               // padding: 0.2rem;
+               width: 100%;
+               margin-bottom: 1.7rem;
+               .dashboard{
+                    width: 62%;
+                    border: 1px solid #CAD3D7;
+                    padding: 0.7rem;
+                    border-radius: 0.5rem;
+                    .control-day{
+                         padding: 0.1rem;
+                         .back, .next{
+                              span{
+                                   font-size: 30px;
+                              }
+                         }
+                         .day-plan{
+                              padding: 0.2rem;
+                              .day-items{
+                                   padding: 0.5rem;
+                                   border: 1px solid #CAD3D7;
+                                   border-radius: 0.5rem;
+                                   margin-right: 1.2rem;
+                                   height: 60px;
+                                   cursor: pointer;
+                                   &.active {
+                                        background-color: #e74c3c;
+                                   }
+                                   &:hover{
+                                        background: #4682A9;
+                                        color: white;
+                                        border: 1px solid #CAD3D7;
+                                   }
+                                   .date{
+                                        font-size: 12px;
+                                   }
+                                   .day-name{
+                                        font-size: 14px;
+                                   }
+                              }
+                              .day-items-final{
+                                   height: 75px;
+                                   padding: 0.7rem;
+                                   border: 1px solid #CAD3D7;
+                                   border-radius: 0.5rem;
+                                   margin-right: 1.2rem;
+                                   .day-name{
+                                        font-size: 15px;
+                                        padding-bottom: 5px;
+                                        font-weight: bold;
+                                   }
+                                   .date{
+                                        border-bottom: 3px solid #624761;
+                                        padding-bottom: 5px;
+                                        margin-bottom: 3px;
+                                   }
+                              }
+                         }
+                    }
+
+                    
+               }
+               
+               
+          }
+          
+     }
+    
+}

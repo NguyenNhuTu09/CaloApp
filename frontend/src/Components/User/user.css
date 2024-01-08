@@ -1,158 +1,200 @@
 .User {
   border-radius: 1rem;
   width: 100%;
-  padding-top: 2rem;
   font-size: 15px;
   overflow: auto;
+  background: #F4F5F9;
 }
-.User .info {
-  padding: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.User .info img {
-  width: 130px;
-  height: 130px;
-  border-radius: 100%;
-}
-.User .info .title-info {
-  margin-top: 0.5rem;
-  margin-left: 2rem;
-}
-.User .info .title-info .setting-info {
-  margin-top: 0.8rem;
-  border: 2px solid black;
-  width: 70%;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-.User .info .title-info .setting-info:hover {
-  background: #f8f8fa;
-}
-.User .info .title-info .setting-info .text {
-  margin-right: 5px;
-}
-.User .icons {
-  border-bottom: 1px solid #CDD8DE;
-  margin-left: 0.8rem;
-}
-.User .icons span {
-  margin-right: 5px;
-  color: #50585C;
-}
-.User .icons p {
-  color: #50585C;
-}
-.User .icons .user {
+.User .title-setting {
+  padding: 0.5rem 0rem 0.5rem 0.5rem;
   width: 150px;
-  padding-left: 1.8rem;
-  padding-right: 1rem;
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-  cursor: pointer;
+  margin: 0.5rem 0.5rem 0rem 1.5rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #624761;
 }
-.User .icons .user:hover {
-  border-bottom: 1px solid black;
+.User .information-user {
+  margin: 0rem 0.5rem 0.5rem 0.5rem;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  height: 82vh;
+  width: 98%;
 }
-.User .icons .user:hover span, .User .icons .user:hover p {
-  color: black;
-}
-.User .title {
-  margin-left: 1rem;
-}
-.User .food {
-  width: auto;
-  margin: 1rem;
-  border-bottom: 1px solid #50585C;
-}
-.User .food .food-menu {
-  width: 17%;
-  margin-right: 1rem;
-}
-.User .food .food-menu .image-food {
-  margin-left: 1rem;
-}
-.User .food .food-menu .image-food img {
-  width: 95px;
-  border-radius: 100%;
-  position: absolute;
-}
-.User .food .food-menu .detail-food {
+.User .information-user .nav-user {
+  padding: 0.5rem;
+  margin: 0.5rem 2rem 0.5rem 0.5rem;
   background: white;
   border-radius: 1rem;
-  margin-top: 3rem;
-  padding-top: 0.5rem;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  padding-bottom: 0.8rem;
-  cursor: pointer;
-  height: 67%;
-}
-.User .food .food-menu .detail-food p {
-  margin-bottom: 5px;
-}
-.User .food .food-menu .detail-food img {
-  width: 10px;
-}
-.User .food .food-menu .detail-food .link {
-  text-decoration: none;
-  color: black;
-}
-.User .Create {
-  width: 100px;
-}
-.User .Create .Add {
-  align-items: center;
-  border: 2px dashed black;
-  border-radius: 0.5rem;
-  margin-top: 5rem;
-}
-.User .Create .Add img {
-  width: 40px;
-}
-.User .Create .link {
-  text-decoration: none;
-  color: black;
-}
-.User .plan {
-  margin-bottom: 5px;
-  border-bottom: 1px solid #50585C;
-  margin: 1rem;
-}
-.User .plan .plan-now {
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
   width: 200px;
-  background: white;
+  height: 250px;
+}
+.User .information-user .nav-user p {
+  border: 2px solid #CAD3D7;
+  padding: 0.5rem;
+  margin: 0.5rem;
   cursor: pointer;
-  text-decoration: none;
-}
-.User .plan .plan-now .link {
-  text-decoration: none;
-  color: black;
-}
-.User .plan .plan-now .status {
-  align-items: center;
-  text-align: center;
+  color: #624761;
   border-radius: 0.5rem;
-  background: #CDD8DE;
+  background: white;
+}
+.User .information-user .nav-user p span {
+  margin-right: 10px;
+}
+.User .information-user .nav-user p:hover {
+  background: #4682A9;
+  color: white;
+}
+.User .information-user .infor-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+  padding: 0.5rem;
+}
+.User .information-user .infor-user .infor {
+  margin: 0rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
+  width: 95%;
+}
+.User .information-user .infor-user .infor img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+.User .information-user .infor-user .infor .title-info {
+  margin-left: 2rem;
+}
+.User .information-user .infor-user .infor .title-info .setting-user {
+  padding: 0.2rem;
+  width: 120px;
+  border: 2px solid #CAD3D7;
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.User .information-user .infor-user .infor .title-info .setting-user span {
+  margin-left: 0.5rem;
+}
+.User .information-user .infor-user .infor .title-info .setting-user:hover {
+  border: 2px solid black;
+}
+.User .information-user .infor-user .nav-profile {
+  margin: 0.5rem;
+  color: #624761;
+  border-bottom: 2px solid #CAD3D7;
+}
+.User .information-user .infor-user .nav-profile p {
+  width: 130px;
+  padding: 5px;
+  cursor: pointer;
+}
+.User .information-user .infor-user .nav-profile p:hover {
+  color: black;
+  font-weight: bold;
+}
+.User .information-user .infor-user .nav-profile p span {
+  margin-right: 8px;
+  font-size: 17px;
+}
+.User .information-user .infor-user .plan-user {
+  margin: 0.8rem;
+}
+.User .information-user .infor-user .plan-user .plan-1 {
+  width: 210px;
+  border: 1px solid #CAD3D7;
+  border-radius: 10px;
+  padding: 7px;
+  margin-right: 1.2rem;
+}
+.User .information-user .infor-user .plan-user .plan-1 span {
+  cursor: pointer;
+}
+.User .information-user .infor-user .plan-user .plan-1 p {
+  margin: 2px;
+}
+.User .information-user .infor-user .plan-user .plan-1 .status-plan {
+  background: #4682A9;
+  border-radius: 5px;
+  color: white;
+  padding: 3px;
+  margin: 5px;
+  text-align: center;
+}
+.User .information-user .infor-user .food-user {
+  width: 100%;
+  flex-wrap: wrap;
+}
+.User .information-user .infor-user .food-user .food-items-final {
+  background: white;
+  padding: 0.8rem;
+  border: 1px solid #CAD3D7;
+  width: 210px;
+  height: 150px;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
-.User .plan .Create-plan {
-  width: 100px;
-  margin-top: 1rem;
+.User .information-user .infor-user .food-user .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
 }
-.User .plan .Create-plan .Add {
-  align-items: center;
-  border: 2px dashed black;
-  border-radius: 0.5rem;
-  margin-top: 1.5rem;
+.User .information-user .infor-user .food-user .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
 }
-.User .plan .Create-plan .Add img {
-  width: 40px;
+.User .information-user .infor-user .food-user .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
 }
-.User .plan .Create-plan .link {
+.User .information-user .infor-user .food-user .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+  border: 1px solid #CAD3D7;
+}
+.User .information-user .infor-user .food-user .food-items-final .control-food {
+  padding: 5px;
+}
+.User .information-user .infor-user .food-user .food-items-final .control-food .link {
+  width: 60%;
+  border: 1px solid #CAD3D7;
+  text-align: center;
+  cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: #624761;
+  border-radius: 0.5rem;
+}
+.User .information-user .infor-user .food-user .food-items-final .control-food .link:hover {
+  color: white;
+  background: #4682A9;
+}
+.User .information-user .infor-user .food-user .food-items-final .control-food p span {
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #624761;
+  border: 1px solid #CAD3D7;
+  cursor: pointer;
+}
+.User .information-user .infor-user .food-user .food-items-final .control-food p span:hover {
+  background: #4682A9;
+  color: white;
+}
+.User .information-user .history-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+}
+.User .information-user .like-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+}
+.User .information-user .save-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
 }/*# sourceMappingURL=user.css.map */

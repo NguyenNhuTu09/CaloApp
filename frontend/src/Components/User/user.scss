@@ -1,177 +1,224 @@
 .User{
      border-radius: 1rem;
      // background: #EDEAE7;
-     width: 100%;   
-     padding-top: 2rem;
+     width: 100%;
+     // padding-top: 2rem;
      // padding-left: 3rem;
      font-size: 15px;
      overflow: auto;
-     .info{
-          // margin: 1rem;
-          // border-bottom: 1px solid black;
-          padding: 0.5rem;
-          margin-bottom: 1.5rem;
-          img{
-               width: 130px;
-               height: 130px;
-               border-radius: 100%;
-          }
-          .title-info{
-               margin-top: 0.5rem;
-               margin-left: 2rem;
-               .setting-info{
-                    margin-top: 0.8rem;
-                    border: 2px solid black;
-                    width: 70%;
-                    padding: 0.3rem;
-                    border-radius: 0.5rem;
-                    cursor: pointer;
-                    &:hover{
-                         background: #f8f8fa;
-                       }
-                    .text{
-                         margin-right: 5px;
-                    }
-                    
-               }
-          }
+     background: #F4F5F9;
+     .title-setting{
+          padding: 0.5rem 0rem 0.5rem 0.5rem;
+          width: 150px;
+          margin: 0.5rem 0.5rem 0rem 1.5rem;
+          font-size: 20px;
+          font-weight: bold;
+          color: #624761;
      }
-     .icons{
-          border-bottom: 1px solid #CDD8DE;
-          margin-left: 0.8rem;
-          span{
-               margin-right: 5px;
-               // color: #FFFF;
-               color: #50585C;
-          }
-          p{
-               color: #50585C;
-          }
-          .user{
-               width: 150px;
-               padding-left: 1.8rem;
-               padding-right: 1rem;
-               padding-top: 0.2rem;
-               padding-bottom: 0.2rem;
-               cursor: pointer;
-               &:hover{
-                    span, p{
-                         color: black;
-                    }
-                    border-bottom: 1px solid black;
-               }
-          }
-          .like{
-
-          }
-          .my-acc{
-
-          }
-     }
-     .title{
-          // margin-bottom: 0.5rem;
-          margin-left: 1rem;
-     }
-     .food{
-          width: auto;
-          margin: 1rem;
-          border-bottom: 1px solid #50585C;
-          // margin-top: 0.5rem;
-          .food-menu{
-               width: 17%;
-               // margin-bottom: 1rem;
-               margin-right: 1rem;
-               .image-food{
-                    margin-left: 1rem;
-                    img{
-                         width: 95px;
-                         border-radius: 100%;
-                         position: absolute;
-                         // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-                    }
-               }
-               .detail-food{
-                    background: #FFFF;
-                    border-radius: 1rem;
-                    margin-top: 3rem;
-                    padding-top: 0.5rem;
-                    padding-left: 0.8rem;
-                    padding-right: 0.8rem;
-                    padding-bottom: 0.8rem;
-                    cursor: pointer;
-                    height: 67%;
-                    p{
-                         margin-bottom: 5px;
-                    }
-                    img{
-                         width: 10px;
-                    }
-                    .link{
-                         text-decoration: none;
-                         color: black;
-                    }
-                    
-               }
-          }
-     }
-    .Create{
-          width: 100px;
-          .Add{
-               align-items: center;
-               border: 2px dashed black;
-               border-radius: 0.5rem;
-               margin-top: 5rem;
-               img{
-                    width: 40px;
-               }
-          }
-          .link{
-               text-decoration: none;
-               color: black;
-          }
-    }
-
-    .plan{
-          margin-bottom: 5px;
-          border-bottom: 1px solid #50585C;
-          // padding: 0.5rem;
-          margin: 1rem;
-          .plan-now{
-               margin: 0.5rem;
+     .information-user{
+          margin: 0rem 0.5rem 0.5rem 0.5rem;
+          padding: 0rem 0.5rem 0.5rem 0.5rem;
+          height: 82vh;
+          width: 98%;
+          .nav-user{
                padding: 0.5rem;
-               border-radius: 0.5rem;
-               width: 200px;
+               margin: 0.5rem 2rem 0.5rem 0.5rem;
                background: #FFFF;
-               cursor: pointer;
-               text-decoration: none;
-               .link{
-               text-decoration: none;
-               color: black;
-               }
-               .status{
-               align-items: center;
-               text-align: center;
-               border-radius: 0.5rem;
-               background: #CDD8DE;
-               margin-top: 0.5rem;
-               }
-          }
-          .Create-plan{
-               width: 100px;
-               margin-top: 1rem;
-               .Add{
-                    align-items: center;
-                    border: 2px dashed black;
+               border-radius: 1rem; 
+               width: 200px;
+               height: 250px;
+               p{
+                    border: 2px solid #CAD3D7;
+                    padding: 0.5rem;
+                    margin: 0.5rem;
+                    cursor: pointer;
+                    color: #624761;
                     border-radius: 0.5rem;
-                    margin-top: 1.5rem;
-                    img{
-                         width: 40px;
+                    background: #FFFF;
+                    span{
+                         margin-right: 10px;
+                    }
+                    &:hover{
+                         background: #4682A9;
+                         color: white;
                     }
                }
-               .link{
-                    text-decoration: none;
-                    color: black;
+          }
+          .infor-user{
+               width: 80%;
+               background: #FFFF;
+               border-radius: 1rem;
+               overflow: auto;
+               padding: 0.5rem;
+               .infor{
+                    margin: 0rem 0.5rem 0.5rem 0.5rem;
+                    padding: 0.5rem;
+                    // margin-bottom: 1.5rem;
+                    width: 95%;
+                    img{
+                         width: 100px;
+                         height: 100px;
+                         border-radius: 100%;
+                    }
+                    .title-info{
+                         // margin-top: 0.5rem;
+                         margin-left: 2rem;
+                         .setting-user{
+                              padding: 0.2rem;
+                              width: 120px;
+                              // margin: 0.2rem
+                              border: 2px solid #CAD3D7;
+                              margin-top: 0.3rem;
+                              border-radius: 0.5rem;
+                              cursor: pointer;
+                              span{
+                                   margin-left: 0.5rem;
+                              }
+                              &:hover{
+                                   border: 2px solid black;
+                              }
+                         }
+                    }
                }
-         }
-    }
+               .nav-profile{
+                    margin: 0.5rem;
+                    color: #624761;
+                    border-bottom: 2px solid #CAD3D7;
+                    p{
+                         width: 130px;
+                         padding: 5px;
+                         cursor: pointer;
+                         &:hover{
+                              color: black;
+                              font-weight: bold;
+                         }
+                         span{
+                              margin-right: 8px;
+                              font-size: 17px;
+                         }
+                    }
+               }
+               .plan-user{
+                    margin: 0.8rem;
+                    .plan-1{
+                         width: 210px;
+                         border: 1px solid #CAD3D7;
+                         // background: #CDFCF6;
+                         border-radius: 10px;
+                         padding: 7px;
+                         margin-right: 1.2rem;
+                         span{
+                              cursor: pointer;
+                         }
+                         // height: 100%;
+                         p{
+                              margin: 2px;
+                         }
+                         .status-plan{
+                              background: #4682A9;
+                              border-radius: 5px;
+                              color:#FFFF;
+                              padding: 3px;
+                              margin: 5px;
+                              text-align: center;
+                              
+                         }
+                    }
+               }
+               .food-user{
+                    // margin: 0.8rem;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    .food-items-final{
+                         background: #FFFF;
+                         padding: 0.8rem;
+                         border: 1px solid #CAD3D7;
+                         width: 210px;
+                         height: 150px;
+                         border-radius: 1rem;
+                         // align-items: center;
+                         margin-right: 1rem;
+                         margin-left: 1rem;
+                         margin-bottom: 0.5rem;
+                         margin-top: 0.5rem;
+                         .infor-food{
+                              p{
+                                   font-size: 14px;
+                                   margin-bottom: 3px;
+                                   span{
+                                        margin-right: 5px;
+                                        margin-left: 3px;
+                                   }
+                                   .like{
+                                        font-weight: bold;
+                                        font-size: 16px;
+                                   }
+                              }
+                              img{
+                                   width: 80px;
+                                   border-radius: 100%;
+                                   border: 1px solid #CAD3D7;
+                              }
+                              .name-food{
+               
+                              }
+                         }
+                         .control-food{
+                              padding: 5px;
+                              .link{
+                                   width: 60%;
+                                   border: 1px solid #CAD3D7;
+                                   text-align: center;
+                                   cursor: pointer;
+                                   text-decoration: none;
+                                   color: #624761;
+                                   border-radius: 0.5rem;
+                                   &:hover{
+                                        // border: 1px solid black;
+                                        color: white;
+                                        background: #4682A9;
+                                   }
+                              }
+                              p{
+                                   span{
+                                        padding: 2px;
+                                        border-radius: 5px;
+                                        font-size: 18px;
+                                        color: #624761;
+                                        border: 1px solid #CAD3D7;
+                                        cursor: pointer;
+                                        &:hover{
+                                             background: #4682A9;
+                                             color: white;
+                                        }
+                                   }
+                              }
+                              
+                         }
+                    }
+               }
+               
+          }
+
+          .history-user{
+               width: 80%;
+               background: #FFFF;
+               border-radius: 1rem;
+               overflow: auto;
+          }
+
+          .like-user{
+               width: 80%;
+               background: #FFFF;
+               border-radius: 1rem;
+               overflow: auto;
+          }
+
+          .save-user{
+               width: 80%;
+               background: #FFFF;
+               border-radius: 1rem;
+               overflow: auto;
+          }
+     }
 }

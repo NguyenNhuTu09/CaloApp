@@ -119,7 +119,7 @@ const Plan = () => {
     setFoodUser(k)
   }
 
-  const [dPlan, setDPlan] = useState([])
+  const [dPlan, setDPlan] = useState([]) 
 
   const fetchCreatePlan = async(url) => {
     const res = await fetch(`${BASE_URL}/plan/${url}/`)

@@ -31,7 +31,7 @@ const OptionsDetailFood = [
   {
     id: 20,
     imageFoodDetail: <img src={Gatandoori}/>,
-    type: 'Protein',
+    // type: 'Protein',
     star: '5.0',
     icon: <AiFillStar/>,
     nameFoodDetail: 'Gà Tandoori',
@@ -113,18 +113,7 @@ const DetailFood = () => {
     fetchData()
   }, [])
   console.log(Food)
-  // console.log(nameFood)
-  // console.log(User)
-  // console.log(foodUser)
-
-  // const {data: food, loading, error} = useFetch(`${BASE_URL}/foods/${id}`)
-
-  // const {nameFood, Type, imageFood, support, ration, totalCalories, mainMaterial, auxiliaryMaterials, Additives, processing, description, reviews} = food
-
-  // useEffect(() => {
-  // }, [food])
-
-
+  
 
   
 
@@ -141,28 +130,18 @@ const DetailFood = () => {
         <div className='image-food'>
           <img src={imageFood}/>
         </div>
-        <div className='text d-flex flex-row justify-content-end'>
+        <div className='text d-flex flex-row justify-content-start'>
           <div className='d-flex flex-row'>
-            <p>4.5<AiFillStar/>/5</p>
-            <p>(9 đánh giá)</p>
+            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span>129</p>
+            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>12</p>
+            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>98</p>
           </div>
         </div>
 
         <div className='support d-flex flex-row justify-content-between'>
-          <div className='save items d-flex flex-row'>
-            <img src={saveIcons}/>
-            <p>Lưu</p>
-          </div>
-
-          <div className='comment items d-flex flex-row'>
-          <img src={commentIcons}/>
-            <p>Đánh giá</p>
-          </div>
-
-          <div className='share items d-flex flex-row'>
-          <img src={shareIcons}/>
-            <p>Chia sẻ</p>
-          </div>
+          <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span>Yêu thích</p>
+          <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>Đánh giá</p>
+          <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>Lưu</p>
 
         </div>
         
@@ -178,12 +157,8 @@ const DetailFood = () => {
 
 
     {/* ============= Description food START =========== */}
-      <div className='description d-flex flex-column'>
-        <p className='fs-3 fw-bold'>{nameFood}</p>
-        <div className='status d-flex flex-row'>
-          <AiFillCheckSquare className='icons fs-5'/>
-          <p>Đã sử dụng</p>
-        </div>
+      <div className='description d-flex flex-column justify-content-between'>
+        <p className='nameFood fs-4 fw-bold'>{nameFood}</p>
         <div className='title d-flex flex-row'>
           <p className='text'>Quốc gia: </p>
           <span className=' fw-bold'>
@@ -223,85 +198,32 @@ const DetailFood = () => {
         </div>
 
         <div className='actions d-flex flex-row justify-content-end'>
-          <button>Thực hiện</button>
+          <button>Cách thực hiện</button>
         </div>
       </div>
       {/* ============= Description food END =========== */}
 
-
-      
-
-
-
-
-
-
-
-
-      {/* ============= Author food START =========== */}
-      <div className='author d-flex flex-column'>
-        <div className='image d-flex flex-row'>
-          <img src={user}/>
-          <div className='info d-flex flex-column'>
-            <div className='name-author d-flex flex-row justify-content-between'>
-              <p className='fs-6 fw-bold'>Nguyễn Như Từ</p>
-              {/* <p className='fs-5 fw-bold border border-dark'>{uuser}</p> */}
-              <AiOutlineArrowRight className='icons fs-3'/>
-            </div>
-            <div className='status-author d-flex flex-row'>
-              <RiFileUserFill className='fs-4'/>
-              <p className='fs-6'>Tác giả</p>
-            </div>
+      <div className='author d-flex flex-column'>  
+        <div className='infor d-flex flex-row align-items-center'>
+          <img src={user.avatar}/>
+          <div className='infor-author d-flex flex-column'>
+              <p className='name-user'>{user.lastFirstName}</p>
+              <p className='id-user'>{user.userName}</p>
           </div>
         </div>
-        <p className='title fs-6 fw-bold'>Cùng tác giả</p>
-        <div className='food-author d-flex flex-column'>
-        {
-              OptionsDetailFood.map(({id, imageFoodDetail, type, star, icon, nameFoodDetail, gam, calories}) => {
-                return(
-                  <div key={id} className='food-menu'>
-                    <div className='image-food position-relative'>
-                      {imageFoodDetail}
-                    </div>
-                    <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'><span>{star} {icon}</span></p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{type}</p>
-                      <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFoodDetail}<span>{gam}</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{calories}<span>Chi tiết <img src={arrow}/></span></p>
-                    </div>
-                  </div>
-                )
-              })
-            }
 
-            {
-              foodUser.map(({_id, imageFood, Type, nameFood, totalCalories, ration, reviews}) => {
-                return(
-                  <div key={_id} className='food-menu'>
-                    <div className='image-food position-relative'>
-                      <img  src={imageFood}/>
-                    </div>
-                    <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'>
-                      {reviews}
-                        <span><AiFillStar/></span>
-                      </p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
-                      <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameFood} <span>{ration} g</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo<span>
-                      <Link className='link' to={`/app/menu/${_id}`}>
-                        Chi tiết <img src={arrow}/>
-                      </Link>
-                      </span></p>
-                    </div>
-                  </div>
-                )
-              })
-            }
+        <div className='control-user d-flex flex-row justify-content-between'>
+          <p className='follow d-flex flex-row align-items-center'><span class="material-symbols-outlined">notification_add</span>Theo dõi</p>
+          <p className='detail-user d-flex flex-row align-items-center'><span class="material-symbols-outlined">account_circle</span>Hồ sơ</p>
         </div>
-        
       </div>
-      {/* ============= Author food END =========== */}
+
+
+
+
+
+
+      
     </div>
   )
 }

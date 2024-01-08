@@ -16,8 +16,8 @@ import Discover from './Components/Discover/Discover'
 import User from './Components/User/User'
 import Exercise from './Components/Exercise/Exercise'
 
-import DeveloperPlan from './Components/DeveloperPlan/DeveloperPlan'
 import CreatePlan from './Components/CreatePlan/CreatePlan'
+import CreatePlanTwo from './Components/CreatePlanTwo/CreatePlanTwo'
 
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
             <Route path='app' element={<Navbar/>}>
               <Route path='discover' element={<Discover/>}/>
               <Route path='home' element={<Home/>}/>
-              <Route path="user:/:id" element={<User/>}/>
+              <Route path="user/:id" element={<User/>}/>
               <Route path='createfood' element={<CreateFood/>}/>
               <Route path='user/:id/createfood' element={<CreateFood/>}/>
               <Route path='createexercise' element={<CreateExercise/>}/>
@@ -43,7 +43,8 @@ const App = () => {
               {/* <Route path='user/:id/plan' element={<Plan/>}/> */}
               {/* <Route path='user/:id/plan/:id' element={<Plan/>}/> */}
 
-              <Route path='user/:id/plan' element={<CreatePlan/>}/>
+              <Route path='user/plan' element={<CreatePlan/>}/>
+              <Route path='user/plan/create/:id' element={<CreatePlanTwo/>}/>
 
 
               <Route path='menu' element={<Menu/>}/>

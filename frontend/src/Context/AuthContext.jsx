@@ -45,7 +45,7 @@ const AuthReducer = (state, action) => {
                ...state,
                user: {
                     ...state.user,
-                    foods: [...state.user.foods, action.payload.food],
+                    // foods: [...state.user.foods, action.payload.food],
                },
                loading: false,
                error: null,
@@ -56,7 +56,7 @@ const AuthReducer = (state, action) => {
                ...state,
                user: {
                     ...state.user,
-                    plans: [...state.user.plans, action.payload.plan],
+                    // plans: [...state.user.plans, action.payload.plan],
                },
                loading: false,
                error: null,

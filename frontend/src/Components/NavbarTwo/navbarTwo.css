@@ -1,12 +1,12 @@
 .test-nav {
   background: white;
   padding: 0.6rem;
-  border-bottom: 1px solid #CAD3D7;
   padding-left: 0.5rem;
 }
 .test-nav .input-search {
   width: 380px;
   background: white;
+  border: 1px solid #CAD3D7;
   border-radius: 0.5rem;
 }
 .test-nav .input-search input {
@@ -14,6 +14,9 @@
   padding: 0.4rem;
   border: none;
   border-radius: 0.5rem;
+}
+.test-nav .input-search input:focus {
+  outline: none;
 }
 .test-nav .input-search span {
   font-size: 25px;
@@ -23,11 +26,83 @@
 .test-nav .input-search span:hover {
   background: none;
 }
-.test-nav .icons span {
+.test-nav .icons .list-setting .link-logout {
+  text-decoration: none;
+  color: #515252;
+}
+.test-nav .icons .list-setting img {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin-left: 1rem;
+  margin-right: 0.7rem;
+  cursor: pointer;
+}
+.test-nav .icons .list-setting img:hover {
+  border: 3px solid #CAD3D7;
+}
+.test-nav .icons .list-setting p {
+  cursor: pointer;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  border-radius: 0.5rem;
+}
+.test-nav .icons .list-setting p:hover {
+  background: #4682A9;
+  color: white;
+}
+.test-nav .icons .list-setting p span {
+  margin-right: 0.5rem;
+  margin-left: 0.2rem;
+}
+.test-nav .icons .list-icons span {
   color: #515252;
   font-size: 27px;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 0.3rem;
   padding: 0.2rem;
+  cursor: pointer;
+}
+.test-nav .icons .list-icons span:hover {
+  background: #4682A9;
+  color: white;
+}
+.test-nav .modal .modal-dialog .modal-content {
+  height: 600px;
+  color: #515252;
+}
+.test-nav .modal .modal-dialog .modal-content .nav-chat {
+  padding: 0.7rem;
+  border-bottom: 1px solid #CAD3D7;
+}
+.test-nav .modal .modal-dialog .modal-content .nav-chat .title-chat {
+  font-size: 18px;
+}
+.test-nav .modal .modal-dialog .modal-content .nav-chat span {
+  cursor: pointer;
+}
+.test-nav .modal .modal-dialog .modal-content .body-chat {
+  height: 100%;
+}
+.test-nav .modal .modal-dialog .modal-content .body-chat .user-chat {
+  width: 23%;
+  border-right: 1px solid #CAD3D7;
+}
+.test-nav .modal .modal-dialog .modal-content .body-chat .user-chat .user-chat-items {
+  width: 100%;
+  background: #EEF0F5;
+  padding: 0.5rem;
+  height: 60px;
+}
+.test-nav .modal .modal-dialog .modal-content .body-chat .user-chat .user-chat-items img {
+  width: 40px;
+  height: 40px;
+}
+.test-nav .modal .modal-dialog .modal-content .body-chat .user-chat .user-chat-items .infor-user .name-user {
+  font-size: 15px;
+  font-weight: bold;
+}
+.test-nav .modal .modal-dialog .modal-content .body-chat .infor-chat {
+  width: 76%;
 }/*# sourceMappingURL=navbarTwo.css.map */

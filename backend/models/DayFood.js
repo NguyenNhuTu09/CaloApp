@@ -8,6 +8,7 @@ const DayFoodSchema = new mongoose.Schema(
         ref: "Food",
       }],
     totalCalo:{type: Number, required: true},
+    nameDayFood: {type: String, required: true},
     dayFoodState: {type: String, required: true}
   },
   { timestamps: true }

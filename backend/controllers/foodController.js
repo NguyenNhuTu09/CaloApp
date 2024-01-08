@@ -1,4 +1,5 @@
 import Food from '../models/Food.js'
+import FoodUser from '../models/FoodUser.js'
 import { uploadImage } from '../Upload/uploadImageCloud.js'
 import User from '../models/User.js'
 import admin from 'firebase-admin'
@@ -6,17 +7,31 @@ import response from 'express'
 import jwt from 'jsonwebtoken'
 
 export const createFood = async(req, res) => {
-
-     const newFood = new Food(req.body)
-     // const id = req.params.id
-     // const imageCloud = await uploadImage(newFood.imageFood)
+     // const newFood = new Food(req.body)
      try{
-          // newFood.imageFood = imageCloud
-          const savedFood = await newFood.save()
+          const {userID, nameFood, typeFood, support, ration, calo, imageFood,
+               mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country} = req.body
+          let searchUser = await User.findById({_id: userID})
+
+          if(searchUser.role == 'User'){
+               const foodUser = FoodUser({userID, nameFood, typeFood, support, ration, calo, imageFood,
+                    mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country})
+               const savedFood = await foodUser.save()
+               return res.status(200).json({
+                    success: true, 
+                    message: 'Tạo món ăn thành công',
+                    data: savedFood})
+          }
+          const food = Food({userID, nameFood, typeFood, support, ration, calo, imageFood,
+               mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country})
+          const savedFood = await food.save()
           res.status(200).json({
                success: true, 
                message: 'Tạo món ăn thành công',
                data: savedFood})
+
+          
+          
 
      }catch(err){
           console.log(err)

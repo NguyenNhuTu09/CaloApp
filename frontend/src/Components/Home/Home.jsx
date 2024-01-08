@@ -31,9 +31,6 @@ import {MdPendingActions} from 'react-icons/md';
 import {GiSettingsKnobs} from 'react-icons/gi'
 
 
-import Introduction from '../Introduction/Introduction'
-import NavHome from '../NavHome/NavHome'
-import HomePage from '../HomePage/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import logo from '../../assets/LogoTHF.png'

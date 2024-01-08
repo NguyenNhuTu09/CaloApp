@@ -3,116 +3,141 @@
      // background: #495E57;
      width: 100%;
      // padding: 0.5rem;
-     font-size: 15px;
-     overflow: auto;
+     font-size: 14px;
      // border: 2px solid black;
      // border-left: 3px solid #CCD6D6;
-     .create-food-final{
-          border-radius: 0.5rem;
-          border: 2px dashed black;
-          img{
-               width: 30px;
-          }
-     }
-     .master{
-          margin-right: 1rem;
-          border: 2px solid black;
-          border-radius: 0.5rem;
-          cursor: pointer;
-          width: 120px;
-          &:hover{
-               background:#8DDFCC;
-          }
-          img{
-               width: 30px;
-          }
-     }
+     overflow: auto;
      .menu-list{
           // padding-left: 2.6rem;
-          // border: 2px solid black;
-          .food{
+          border-top: 1px solid #CAD3D7;
+          padding-top: 1rem;
+          .foods-array{
                margin-left: 1rem;
-               // border: 2px solid black;
-               width: 90%;
-               .food-menu{
-                    width: 25%;
-                    // border: 2px solid black;
-                    margin-bottom: 1rem;
-                    height: 190px;
-                    .image-food{
-                         margin-left: 1rem;
+               width: 97%;
+               flex-wrap: wrap;
+               .food-items-final{
+                    background: #FFFF;
+                    padding: 0.8rem;
+                    width: 225px;
+                    height: 150px;
+                    border-radius: 1rem;
+                    // align-items: center;
+                    margin-right: 1rem;
+                    margin-left: 1rem;
+                    border: 1px solid #CAD3D7;
+                    margin-top: 1rem;
+                    .infor-food{
+                         p{
+                              font-size: 14px;
+                              margin-bottom: 3px;
+                              span{
+                                   margin-right: 5px;
+                                   margin-left: 3px;
+                                   color: #624761;
+                              }
+                              .like{
+                                   font-weight: bold;
+                                   font-size: 16px;
+                              }
+                         }
                          img{
-                              width: 95px;
+                              width: 80px;
                               border-radius: 100%;
-                              position: absolute;
-                              // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+                              border: 1px solid #CAD3D7;
                          }
                     }
-                    .detail-food{
-                         background: #FFFF;
-                         border-radius: 1rem;
-                         margin-top: 3rem;
-                         padding-top: 0.5rem;
-                         padding-left: 0.8rem;
-                         padding-right: 0.8rem;
-                         padding-bottom: 0.8rem;
-                         cursor: pointer;
-                         height: 70%;
-                         // border: 2px solid black;
-                         p{
-                              margin-bottom: 5px;
-                         }
-                         img{
-                              width: 10px;
-                         }
+                    .control-food{
+                         padding: 5px;
                          .link{
+                              width: 60%;
+                              border: 1px solid #CAD3D7;
+                              text-align: center;
+                              cursor: pointer;
                               text-decoration: none;
-                              color: black;
+                              color: #624761;
+                              border-radius: 0.5rem;
+                              &:hover{
+                                   // border: 1px solid black;
+                                   color: white;
+                                   background: #4682A9;
+                              }
+                         }
+                         p{
+                              span{
+                                   padding: 2px;
+                                   border-radius: 5px;
+                                   font-size: 18px;
+                                   color: #624761;
+                                   border: 1px solid #CAD3D7;
+                                   cursor: pointer;
+                                   &:hover{
+                                        background: #4682A9;
+                                        color: white;
+                                   }
+                              }
                          }
                          
                     }
                }
           }
-          .nav{
-               width: 18%;
-               padding: 0.5rem;
-               .form-check-input{
-                    margin-right: 0.5rem;
-               }
-               .icons{
-                    margin-top: 7px;
-               }
-               .text{
-                    margin-bottom: 0.5rem;
-                    margin-top: 0.5rem;
-               }
-               .country{
-                    width: 100%;
-                    margin: 0.5rem;
-               }
-               .calo{
-                    margin: 0.5rem;
-                    .form-control{
-                         width: 25%;
-                         margin-left: 0.5rem;
-                    }
-                    .from{
-                         margin-top: 5px;
-                    }
-                    .to{
-                         margin-top: 5px;
-                    }
-                    .to{
-                         margin-left: 1.5rem;
-                    }
-               }
-               .provide{
-                    margin: 0.5rem;
-               }
-               .rank{
-                    margin: 0.5rem;
-               }
-          }
+          
           
      }
+     .nav-search-menu{
+          width: 97%;
+          margin-left: 1.5rem;
+          padding: 0.5rem;
+          .input-search{
+               border: 1px solid #CAD3D7;
+               border-radius: 0.5rem;
+               width: 240px;
+               .icons-search{
+                    cursor: pointer;
+                    padding: 0.3rem;
+                    color: #624761;
+                    border-radius: 0.5rem;
+                    &:hover{
+                         color: white;
+                         background: #4682A9;
+                    }
+               }
+               .name-search{
+                    border-radius: 0.5rem;
+                    border: none;
+                    padding: 0.3rem;
+                    &:focus{
+                         outline: none;
+                    }
+               }
+          }
+          .search-other{
+               margin-top: 1rem;
+               .search{
+                    width: 200px;
+                    padding: 0.2rem;
+                    margin-right: 2rem;
+                    .select-items{
+                         padding: 0.3rem;
+                         border: none;
+                         border: 1px solid #CAD3D7;
+                         border-radius: 0.5rem;
+                         &:focus{
+                              // border: 1px solid #CAD3D7;
+                              outline: none;
+                         }
+                    }
+               }
+               .title-search{
+                    padding: 0.4rem;
+                    border: none;
+                    background: #4682A9;
+                    color: white;
+                    border-radius: 0.3rem;
+                    margin-left: 1rem;
+               }
+          }
+
+
+     }
+     
 }

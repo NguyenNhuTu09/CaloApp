@@ -1,0 +1,82 @@
+.create-plan-two {
+  background: white;
+  width: 100%;
+  font-size: 15px;
+}
+.create-plan-two .body-create-plan-two {
+  padding: 1.2rem;
+  color: #624761;
+  width: 98%;
+  overflow: auto;
+  margin-left: 1rem;
+}
+.create-plan-two .body-create-plan-two .nav-create-plan {
+  width: 20%;
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.create-plan-two .body-create-plan-two .nav-create-plan span {
+  margin-right: 0.3rem;
+}
+.create-plan-two .body-create-plan-two .nav-create-plan .link {
+  text-decoration: none;
+  color: #624761;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan {
+  width: 100%;
+  margin-bottom: 1.7rem;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard {
+  width: 62%;
+  border: 1px solid #CAD3D7;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day {
+  padding: 0.1rem;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .back span, .create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .next span {
+  font-size: 30px;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan {
+  padding: 0.2rem;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items {
+  padding: 0.5rem;
+  border: 1px solid #CAD3D7;
+  border-radius: 0.5rem;
+  margin-right: 1.2rem;
+  height: 60px;
+  cursor: pointer;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items.active {
+  background-color: #e74c3c;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items:hover {
+  background: #4682A9;
+  color: white;
+  border: 1px solid #CAD3D7;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items .date {
+  font-size: 12px;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items .day-name {
+  font-size: 14px;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items-final {
+  height: 75px;
+  padding: 0.7rem;
+  border: 1px solid #CAD3D7;
+  border-radius: 0.5rem;
+  margin-right: 1.2rem;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items-final .day-name {
+  font-size: 15px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.create-plan-two .body-create-plan-two .dashboard-note-plan .dashboard .control-day .day-plan .day-items-final .date {
+  border-bottom: 3px solid #624761;
+  padding-bottom: 5px;
+  margin-bottom: 3px;
+}/*# sourceMappingURL=createPlanTwo.css.map */

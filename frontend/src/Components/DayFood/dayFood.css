@@ -1,0 +1,339 @@
+.day-food {
+  background: white;
+  width: 100%;
+  font-size: 15px;
+}
+.day-food .food-day-plan {
+  padding: 0.5rem;
+  border: 1px solid #CAD3D7;
+  border-radius: 0.5rem;
+  width: 97%;
+  margin-top: 1rem;
+  margin-bottom: 1.3rem;
+}
+.day-food .food-day-plan .nav-food-day {
+  width: 23%;
+}
+.day-food .food-day-plan .nav-food-day span {
+  margin-right: 0.3rem;
+}
+.day-food .food-day-plan .food-day {
+  margin: 0.7rem;
+}
+.day-food .food-day-plan .food-day .food-items {
+  border: 1px dashed #CAD3D7;
+  padding: 0.2rem;
+  width: 220px;
+  height: 150px;
+  border-radius: 0.5rem;
+  margin-right: 1.5rem;
+}
+.day-food .food-day-plan .food-day .food-items p {
+  margin-top: 3rem;
+}
+.day-food .food-day-plan .food-day .food-items-final {
+  border: 1px solid #CAD3D7;
+  padding: 0.8rem;
+  width: 220px;
+  height: 150px;
+  border-radius: 0.5rem;
+  margin-right: 1.5rem;
+}
+.day-food .food-day-plan .food-day .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.day-food .food-day-plan .food-day .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+}
+.day-food .food-day-plan .food-day .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.day-food .food-day-plan .food-day .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+  border: 1px solid #CAD3D7;
+}
+.day-food .food-day-plan .food-day .food-items-final .control-food {
+  padding: 5px;
+}
+.day-food .food-day-plan .food-day .food-items-final .control-food button {
+  border: 1px solid #CAD3D7;
+  border-radius: 5px;
+  background: white;
+}
+.day-food .food-day-plan .food-day .food-items-final .control-food .btn-detail {
+  width: 60%;
+}
+.day-food .food-day-plan .food-day .food-items-final .control-food .btn-delete {
+  width: 30%;
+}
+.day-food .food-day-plan .control-food-day span {
+  margin-right: 0.3rem;
+}
+.day-food .test {
+  width: 27%;
+}
+.day-food .test .delete {
+  cursor: pointer;
+}
+.day-food .test .select-menu {
+  cursor: pointer;
+}
+.day-food .add-food-day {
+  width: 100%;
+}
+.day-food .add-food-day .add {
+  width: 150px;
+  background: white;
+  padding: 0.5rem;
+  border: 3px dashed #CAD3D7;
+  border-radius: 1rem;
+}
+.day-food .add-food-day .add span {
+  font-size: 30px;
+}
+.day-food .nav-control {
+  padding: 0.5rem;
+  border: 1px solid #CAD3D7;
+  width: 80%;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.day-food .nav-control .nav-1 {
+  width: 35%;
+}
+.day-food .nav-control .nav-1 .title-dayPlan {
+  padding: 0.3rem;
+  margin: 0.5rem;
+  background: #4682A9;
+  color: white;
+  width: 140px;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-size: 17px;
+  font-weight: bold;
+}
+.day-food .nav-control .nav-1 .control {
+  padding: 0.5rem;
+  width: 100%;
+}
+.day-food .nav-control .nav-1 .control p {
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.day-food .nav-control .nav-1 .control p:hover {
+  background: #4682A9;
+  color: white;
+}
+.day-food .nav-control .nav-1 .control .title-day {
+  margin-right: 0.5rem;
+}
+.day-food .nav-control .nav-1 .control .title-day:hover {
+  background: none;
+  color: #624761;
+}
+.day-food .nav-control .nav-1 .control .input-day {
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  border: 1px solid #CAD3D7;
+  width: 140px;
+  text-align: center;
+  font-size: 16px;
+}
+.day-food .nav-control .nav-1 .control .input-day:focus {
+  outline: none;
+}
+.day-food .nav-control .nav-1 .control .input-day:hover {
+  background: none;
+  color: #624761;
+}
+.day-food .nav-control .note {
+  width: 35%;
+  height: 100px;
+}
+.day-food .nav-control .note .note-plan {
+  height: 100%;
+}
+.day-food .modal {
+  font-size: 14px;
+}
+.day-food .modal .modal-body {
+  background: #EDEAE7;
+}
+.day-food .modal .modal-body .dropdown {
+  cursor: pointer;
+}
+.day-food .modal .modal-body .dropdown img {
+  width: 35px;
+}
+.day-food .modal .modal-body .menu-list {
+  margin-bottom: 220px;
+}
+.day-food .modal .modal-body .menu-list .food {
+  margin-left: 1rem;
+  width: 90%;
+  padding-left: 2rem;
+}
+.day-food .modal .modal-body .menu-list .food .title-menu {
+  margin-bottom: 1.5rem;
+  margin-top: 0.4rem;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final {
+  background: white;
+  padding: 0.8rem;
+  width: 220px;
+  height: 150px;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+  border: 1px solid #CAD3D7;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .control-food {
+  padding: 5px;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .control-food button {
+  border: 1px solid #CAD3D7;
+  border-radius: 5px;
+  background: white;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .control-food .btn-detail {
+  width: 60%;
+}
+.day-food .modal .modal-body .menu-list .food .food-items-final .control-food .btn-delete {
+  width: 30%;
+}
+.day-food .modal .modal-body .menu-list .nav {
+  width: 17%;
+  padding: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .form-check-input {
+  margin-right: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .icons {
+  margin-top: 7px;
+}
+.day-food .modal .modal-body .menu-list .nav .text {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .country {
+  width: 100%;
+  margin: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .calo {
+  margin: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .calo .form-control {
+  width: 25%;
+  margin-left: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .calo .from {
+  margin-top: 5px;
+}
+.day-food .modal .modal-body .menu-list .nav .calo .to {
+  margin-top: 5px;
+}
+.day-food .modal .modal-body .menu-list .nav .calo .to {
+  margin-left: 1.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .provide {
+  margin: 0.5rem;
+}
+.day-food .modal .modal-body .menu-list .nav .rank {
+  margin: 0.5rem;
+}
+.day-food .modal .modal-body .food-user-confirm {
+  width: 95%;
+  background: white;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  margin-right: 1rem;
+  height: 190px;
+  margin-left: 0px;
+  border-radius: 1rem;
+}
+.day-food .modal .modal-body .food-user-confirm .btn-save {
+  height: 35%;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: white;
+  border: 2px solid #CAD3D7;
+}
+.day-food .modal .modal-body .food-user-confirm .notes {
+  border: 2px dashed #CAD3D7;
+  width: 200px;
+  height: 130px;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.day-food .modal .modal-body .food-user-confirm .notes p {
+  width: 100%;
+  text-align: center;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final {
+  background: white;
+  padding: 0.8rem;
+  border: 1px solid #CAD3D7;
+  width: 220px;
+  height: 150px;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+  border: 1px solid #CAD3D7;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .control-food {
+  padding: 5px;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .control-food button {
+  border: 1px solid #CAD3D7;
+  border-radius: 5px;
+  background: white;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .control-food .btn-detail {
+  width: 60%;
+}
+.day-food .modal .modal-body .food-user-confirm .food-items-final .control-food .btn-delete {
+  width: 30%;
+}/*# sourceMappingURL=dayFood.css.map */

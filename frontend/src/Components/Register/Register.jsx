@@ -8,11 +8,12 @@ import imgUser from '../../assets/Create.png'
 // import { AuthContext } from '../../context/AuthContext'
 import { AuthContext } from '../../Context/AuthContext'
 import { BASE_URL } from '../Utils/config.js'
-
+import axios from 'axios'
 import {Form} from 'reactstrap'
 
 const Register = () => {
 
+  const [selectedFile, setSelectedFile] = useState(null);
   const [credentials, setCredentials] = useState({
     lastFirstName: undefined,
     email: undefined,
@@ -31,6 +32,24 @@ const Register = () => {
   const handleChange = (e) => {
     setCredentials(prev=>({...prev, [e.target.id]:e.target.value }))
   }
+
+  const handleFileChange = async(e) => {
+    try{
+         const file = e.target.files[0];
+         const formData = new FormData();
+         formData.append('file', file);
+         const response = await axios.post(`${BASE_URL}/file/upload-image`, formData);
+         const imageUrl = response.data.url;
+         console.log(imageUrl)
+         setSelectedFile(imageUrl);
+         setCredentials(prevCredentials => ({
+              ...prevCredentials,
+              avatar: imageUrl,
+            }));
+    }catch(err){
+         console.error('Error uploading image:', err.message);
+    }
+};
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -64,9 +83,9 @@ const Register = () => {
           <div className='infor d-flex flex-row'>
 
             <div className='infor-01 d-flex flex-column'>
-              <img src={imgUser}/>
+              <img src={selectedFile}/>
               <input className='file form-control-sm' type="file"
-               onChange={handleChange}
+               onChange={handleFileChange}
                required id='avatar'
               ></input>
               <input className="form-control name" type="text" placeholder="Họ và tên"

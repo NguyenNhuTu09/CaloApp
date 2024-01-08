@@ -5,30 +5,30 @@ import DayPlan from "../models/DayPlan.js";
 export const createPlan = async(req, res) => {
      const newPlan = new Plan(req.body)      
      try{
+          newPlan.planState = "Dang xu ly"
           const savedPlan = await newPlan.save() 
 
           const planId = savedPlan._id 
 
           const updateDayPlan = await Plan.findById(planId)
-          const start = new Date(updateDayPlan.startPlan)
-          const end = new Date(updateDayPlan.endPlan)
+          const start = new Date(updateDayPlan.dayStart)
+          const end = new Date(updateDayPlan.dayEnd)
           let stt = 1;
           for (let date = start; date <= end; date.setDate(date.getDate()+1)) { 
                const dayPlan = await DayPlan.create({
-                    nameDayPlan: "Ngày thứ " + stt,
+                    planID: planId,
+                    dayName: "Ngày thứ " + stt,
+                    note: "",
+                    caloIn: 0,
+                    caloOut: 0,
+                    dayPlanState: ""
                });
-               updateDayPlan.dayPlan.push(dayPlan);
+               dayPlan.save()
                stt++;
           }
+          
           await updateDayPlan.save()
 
-          const updatePlansUser = await User.findById(id)                  
-          console.log(updatePlansUser)
-          if(!updatePlansUser){
-               return res.status(404).json({ message: 'Đăng nhập trước khi tạo kế hoạch' });
-          }
-          updatePlansUser.plans.push(planId)
-          await updatePlansUser.save()
 
           res.status(200).json({
                success: true, 

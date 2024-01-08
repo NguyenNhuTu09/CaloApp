@@ -10,25 +10,25 @@ import { AuthContext } from '../../Context/AuthContext'
 
 import { Form } from 'reactstrap'
 import useFetch from '../Hooks/useFetch'
-
+import axios from 'axios'
 
 const CreateFood = () => {
      const {user, dispatch} = useContext(AuthContext)
-
-
+     const [selectedFile, setSelectedFile] = useState(null);
      const [credentials, setCredentials] = useState({
+          userID: user._id,
           nameFood: undefined,
-          Type: undefined,
-          imageFood: undefined,
+          typeFood: undefined,
+          imageFood: selectedFile,
           support: undefined,
           ration: undefined,
-          totalCalories: undefined,
+          calo: undefined,
           mainMaterial: undefined,
           auxiliaryMaterials: undefined,
-          Additives: undefined,
-          processing: undefined,
-          description: undefined,
-          author: user._id
+          additives: undefined,
+          cookingMethod: undefined,
+          descFood: undefined,
+          country: undefined
      })
 
      // const {dispatch} = useContext(AuthContext)
@@ -39,10 +39,29 @@ const CreateFood = () => {
      const handleChange = (e) => {
           setCredentials(prev=>({...prev, [e.target.id]:e.target.value }))
      }
+
+     const handleFileChange = async(e) => {
+          try{
+               const file = e.target.files[0];
+               const formData = new FormData();
+               formData.append('file', file);
+               const response = await axios.post(`${BASE_URL}/file/upload-image`, formData);
+               const imageUrl = response.data.url;
+               console.log(imageUrl)
+               setSelectedFile(imageUrl);
+               setCredentials(prevCredentials => ({
+                    ...prevCredentials,
+                    imageFood: imageUrl,
+                  }));
+          }catch(err){
+               console.error('Error uploading image:', err.message);
+          }
+     };
+      
      const handleSubmit = async(e) => {
           e.preventDefault()
           try{
-               const res = await fetch(`${BASE_URL}/foodsuser/user/${user._id}/`, {
+               const res = await fetch(`${BASE_URL}/foods/`, {
                     method: 'post',
                     headers: {
                          'content-type':'application/json',
@@ -56,7 +75,7 @@ const CreateFood = () => {
                     navigate(`/app/user/${user._id}/createfood/`)
                }else if(res.ok){
                     alert("Tạo món ăn thành công")
-                    dispatch({ // đã hoạt động
+                    dispatch({ 
                          type: 'CREATE_FOOD_SUCCESS',
                          payload: {
                            user: result.user, // Cập nhật thông tin người dùng với món ăn mới
@@ -72,24 +91,23 @@ const CreateFood = () => {
 
      useEffect(() => {
 
-     }, [])
+     }, [selectedFile])
      // console.log(user)
      return (
     <Form className='CreateFood d-flex flex-row justify-content-between' onSubmit={handleSubmit}>
           <div className='info-food d-flex flex-column'>
                <div className='back d-flex flex-row'>
                     <Link className='link d-flex flex-row' to={`/app/user/${user._id}`}>
-                         <img src={arrowLeft}/>
-                         <p className='fs-6 fw-bold'>Quay lại</p>
+                         <p className='fw-bold d-flex flex-row align-items-center'><span class="material-symbols-outlined">arrow_back</span>Quay lại</p>
                     </Link>
                </div>
                <div className='image-food d-flex flex-column'>
-                    <img className='border border-dark' src={Create}/>
+                    <img className='border border-dark' src = {selectedFile}/>
                     <input className='file border border-dark' type="file"
-                    onChange={handleChange}
+                    onChange={handleFileChange} 
                     required id='imageFood'></input>
                </div>
-               <p className='text fs-5 fw-bold'>Thông tin cơ bản:</p>
+               <p className='text fw-bold'>Thông tin cơ bản:</p>
                <p>Tên món ăn:</p>
                <input type="text" className="form-control"
                     onChange={handleChange}
@@ -113,7 +131,7 @@ const CreateFood = () => {
                          <p>Loại:</p>
                          <select className="form-select"
                          onChange={handleChange}
-                         required id = 'Type'>
+                         required id = 'typeFood'>
                               <option value="1">Đồ uống</option>
                               <option value="2">Thức ăn liền</option>
                               <option value="3">Salad</option>
@@ -141,21 +159,23 @@ const CreateFood = () => {
                <p>Tổng calo của khẩu phần:</p>
                <input type="text" className="form-control" 
                     onChange={handleChange}
-                    required id = 'totalCalories'
+                    required id = 'calo'
                />
           </div>
           <div className='description-food'>
-               <p className='fs-5 fw-bold'>Mô tả và cách thực hiện:</p>
+               <p className='fw-bold'>Mô tả và cách thực hiện:</p>
                <p>Nguyên liệu chính: </p>
                <input type="text" className="form-control" onChange={handleChange} required id = 'mainMaterial'/>
                <p>Nguyên liệu phụ: </p>
                <input type="text" className="form-control" onChange={handleChange} required id = 'auxiliaryMaterials'/>
                <p>Phụ gia: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'Additives'/>
+               <input type="text" className="form-control" onChange={handleChange} required id = 'additives'/>
                <p>Phương thức chế biến: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'processing'/>
+               <input type="text" className="form-control" onChange={handleChange} required id = 'cookingMethod'/>
+               <p>Quốc gia: </p>
+               <input type="text" className="form-control" onChange={handleChange} required id = 'country'/>
                <p>Mô tả: </p>
-               <textarea className="description form-control" aria-label="With textarea" onChange={handleChange} required id = 'description'/>
+               <textarea className="description form-control" aria-label="With textarea" onChange={handleChange} required id = 'descFood'/>
           </div>
 
           <div className='perform d-flex flex-column'>

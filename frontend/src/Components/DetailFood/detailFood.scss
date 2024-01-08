@@ -3,7 +3,6 @@
      width: 100%;
      padding: 1rem;
      font-size: 15px;
-     
      overflow: auto;
      .image-review{
           // margin-left: 2rem;
@@ -20,7 +19,7 @@
                     text-decoration: none;
                     color: black;
                     border-radius: 0.5rem;
-                    background: #FFFF;
+                    border: 1px solid #CAD3D7;
                     &:hover{
                          // color: #ffff;
                     }
@@ -40,7 +39,7 @@
                width: 325px;
                img{
                     width: 320px;
-                    border-radius: 100%;
+                    border-radius: 2rem;
                }
           }
           .text{
@@ -50,39 +49,29 @@
                // border: 2px solid black;
                width: 90%;
                padding: 5px;
-               background: #FFFF;
+               border: 1px solid #CAD3D7;
                border-radius: 0.5rem;
-               .star{
-                    width: 60%;
-               }
-               .icons{
-                    margin-top: 3px;
+               p{
+                    margin-right: 1rem;
                }
           }
           .support{
                width: 90%;
                margin-left: 1.5rem;
                margin-top: 0.5rem;
-               .items{
-                    background: #FFFF;
-                    padding: 0.5rem;
+               p{
+                    border: 1px solid #CAD3D7;
+                    padding: 0.3rem;
                     border-radius: 0.5rem;
-                    img{
-                         width: 25px;
+                    cursor: pointer;
+                    &:hover{
+                         background: #4682A9;
+                         color: white;
+                    }
+                    span{
+                         font-size: 20px;
                          margin-right: 0.5rem;
                     }
-                    &:hover{
-                         cursor: pointer;
-                    }
-               }
-               .save{
-                    
-               }
-               .comment{
-                    
-               }
-               .share{
-                    
                }
           }
           
@@ -94,20 +83,14 @@
           padding-top: 1rem;
           padding-left: 1.5rem;
           padding-right: 1.5rem;
-          width: 37%;
+          padding-bottom: 1.5rem;
+          width: 35%;
           height: 90vh;
           margin-left: 1.2rem;
           border-radius: 1rem;
-          background: #FFFF;
-          .status{
-               width: 100%;
-               padding: 3px;
-               border-radius: 0.5rem;
-               margin-top: 0.5rem;
-               margin-bottom: 1.5rem;
-               .icons{
-                    margin-right: 3px;
-               }
+          border: 1px solid #CAD3D7;
+          .nameFood{
+               margin-bottom: 1rem;
           }
           .title{
                margin-bottom: 0.5rem;
@@ -121,112 +104,75 @@
                width: 100%;
                padding: 1rem;
                border-radius: 0.5rem;
-               background: #C1ECE4;
+               background: #EDEFF3;
                margin-top: 1rem;
           }
           .text-description{
                // border: 2px solid black;
                border-radius: 1rem;
                // padding: 1rem;
-               margin-top: 2rem;
+               margin-top: 2.5rem;
                // background: #C1ECE4;
                .note{
                     height: 200px;
-                    background: #FFFF;
                     padding: 0.5rem;
+                    background: #FFFF;
                     color: black;
                     margin-top: 0.5rem;
                     border: none;
+                    font-size: 14px;
                }
           }
           .actions{
                margin-top: 1rem;
                button{
                     padding: 0.5rem;
-                    background: #EDEAE7;
+                    background: #4682A9;
                     border-radius: 0.5rem;
                     border: none;
+                    color: white;
                }
           }
      }
      .author{
-          // border: 2px solid black;
-          width: 26%;
-          // padding: 0.5rem;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          margin-left: 1rem;
-          .image{
-               margin-bottom: 1rem;
-               // margin-left: 1rem;
-               border-radius: 1rem;
-               background: #E9F8F9;
-               padding: 1.2rem;
-               align-items: center;
+          width: 25%;
+          padding: 0.5rem;
+          margin: 1rem;
+          color: #624761;
+          border: 1px solid #CAD3D7;
+          border-radius: 1rem;
+          height: 200px;
+          .infor{
+               padding: 1rem;
                img{
-                    width: 80px;
-                    height: 80px;
-                    margin-right: 0.5rem;
-                    // border: 2px solid black;
+                    width: 75px;
+                    height: 75px;
+                    margin-right: 1.5rem;
+                    border: 1px solid #CAD3D7;
+                    border-radius: 100%;
                }
-               .info{
+               .name-user{
+                    font-size: 17px;
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+               }
+          }
+          .control-user{
+               margin-top: 1rem;
+               p{
+                    border: 1px solid #CAD3D7;
+                    width: 130px;
+                    padding: 0.3rem;
+                    border-radius: 0.5rem;
                     margin-left: 1rem;
-                    margin-top: 0.5rem;
-                    
-                    .name-author{
-                         width: 200px;
-                         cursor: pointer;
-                         // &:hover{
-                         //      color: #FFFF;
-                         // }
-                         .icons{
-                              margin-left: 0.5rem;
-                         }
+                    margin-right: 1rem;
+                    cursor: pointer;
+                    &:hover{
+                         background: #4682A9;
+                         color: white;
                     }
-                    .status-author{
-                         width: 100px;
-                         border-radius: 0.5rem;
-                    }
-               }
-               
-          }
-          .title{
-               margin-left: 1.5rem;
-          }
-          .food-author{
-               // align-items: center;
-               padding: 1.5rem;
-               align-items: center;
-               .food-menu{
-                    width: 250px;
-                    // border: 2px solid black;
-                    margin-bottom: 1rem;
-                    .image-food{
-                         margin-left: 1rem;
-                         img{
-                              width: 95px;
-                              border-radius: 100%;
-                              position: absolute;
-                              // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-                         }
-                    }
-                    .detail-food{
-                         background: #FFFF;
-                         border-radius: 1rem;
-                         margin-top: 3rem;
-                         padding-top: 0.5rem;
-                         padding-left: 0.8rem;
-                         padding-right: 0.8rem;
-                         padding-bottom: 0.8rem;
-                         cursor: pointer;
-                         height: 70%;
-                         p{
-                              margin-bottom: 5px;
-                         }
-                         img{
-                              width: 10px;
-                         }
-                         
+                    span{
+                         margin-right: 0.5rem;
                     }
                }
           }

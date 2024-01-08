@@ -4,7 +4,7 @@ import {verifyAdmin} from '../utils/verifyToken.js'
 
 const router = express.Router()
 //create new food
-router.post('/',createFood)
+router.post('/', createFood)
 
 //update food
 router.put('/:id', updateFood)

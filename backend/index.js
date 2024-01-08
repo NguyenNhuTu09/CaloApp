@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import fileUpload from 'express-fileupload';
 
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express'
@@ -23,6 +22,7 @@ import dayFoodRoute from './routes/dayFood.js'
 import DayExerciseRoute from './routes/dayExercise.js'
 import dayPlanRoute from './routes/dayPlan.js'
 import planRoute from './routes/plan.js'
+import fileRoute from './routes/file.js'
 import YAML from 'yamljs';
 
 
@@ -50,10 +50,10 @@ const connect = async() => {
 }
 
 // middleware
-app.use(express.json())
+app.use(express.static('./public'));
+app.use(express.json({ limit: '50mb' }));
 app.use(cors(corsOptions))
-app.use(cookieParser())
-app.use(fileUpload());
+// app.use(cookieParser())
 
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerJSDocs));
@@ -65,6 +65,7 @@ app.use('/dayfood', dayFoodRoute)
 app.use('/dayexercise', DayExerciseRoute)
 app.use('/dayplan', dayPlanRoute)
 app.use('/plan', planRoute)
+app.use('/file', fileRoute)
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);

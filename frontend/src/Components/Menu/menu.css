@@ -1,104 +1,125 @@
 .Menu {
   border-radius: 1rem;
   width: 100%;
-  font-size: 15px;
+  font-size: 14px;
   overflow: auto;
 }
-.Menu .create-food-final {
-  border-radius: 0.5rem;
-  border: 2px dashed black;
+.Menu .menu-list {
+  border-top: 1px solid #CAD3D7;
+  padding-top: 1rem;
 }
-.Menu .create-food-final img {
-  width: 30px;
-}
-.Menu .master {
-  margin-right: 1rem;
-  border: 2px solid black;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  width: 120px;
-}
-.Menu .master:hover {
-  background: #8DDFCC;
-}
-.Menu .master img {
-  width: 30px;
-}
-.Menu .menu-list .food {
+.Menu .menu-list .foods-array {
   margin-left: 1rem;
-  width: 90%;
+  width: 97%;
+  flex-wrap: wrap;
 }
-.Menu .menu-list .food .food-menu {
-  width: 25%;
-  margin-bottom: 1rem;
-  height: 190px;
-}
-.Menu .menu-list .food .food-menu .image-food {
-  margin-left: 1rem;
-}
-.Menu .menu-list .food .food-menu .image-food img {
-  width: 95px;
-  border-radius: 100%;
-  position: absolute;
-}
-.Menu .menu-list .food .food-menu .detail-food {
+.Menu .menu-list .foods-array .food-items-final {
   background: white;
+  padding: 0.8rem;
+  width: 225px;
+  height: 150px;
   border-radius: 1rem;
-  margin-top: 3rem;
-  padding-top: 0.5rem;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  padding-bottom: 0.8rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border: 1px solid #CAD3D7;
+  margin-top: 1rem;
+}
+.Menu .menu-list .foods-array .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.Menu .menu-list .foods-array .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+  color: #624761;
+}
+.Menu .menu-list .foods-array .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.Menu .menu-list .foods-array .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+  border: 1px solid #CAD3D7;
+}
+.Menu .menu-list .foods-array .food-items-final .control-food {
+  padding: 5px;
+}
+.Menu .menu-list .foods-array .food-items-final .control-food .link {
+  width: 60%;
+  border: 1px solid #CAD3D7;
+  text-align: center;
   cursor: pointer;
-  height: 70%;
-}
-.Menu .menu-list .food .food-menu .detail-food p {
-  margin-bottom: 5px;
-}
-.Menu .menu-list .food .food-menu .detail-food img {
-  width: 10px;
-}
-.Menu .menu-list .food .food-menu .detail-food .link {
   text-decoration: none;
-  color: black;
+  color: #624761;
+  border-radius: 0.5rem;
 }
-.Menu .menu-list .nav {
-  width: 18%;
+.Menu .menu-list .foods-array .food-items-final .control-food .link:hover {
+  color: white;
+  background: #4682A9;
+}
+.Menu .menu-list .foods-array .food-items-final .control-food p span {
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #624761;
+  border: 1px solid #CAD3D7;
+  cursor: pointer;
+}
+.Menu .menu-list .foods-array .food-items-final .control-food p span:hover {
+  background: #4682A9;
+  color: white;
+}
+.Menu .nav-search-menu {
+  width: 97%;
+  margin-left: 1.5rem;
   padding: 0.5rem;
 }
-.Menu .menu-list .nav .form-check-input {
-  margin-right: 0.5rem;
+.Menu .nav-search-menu .input-search {
+  border: 1px solid #CAD3D7;
+  border-radius: 0.5rem;
+  width: 240px;
 }
-.Menu .menu-list .nav .icons {
-  margin-top: 7px;
+.Menu .nav-search-menu .input-search .icons-search {
+  cursor: pointer;
+  padding: 0.3rem;
+  color: #624761;
+  border-radius: 0.5rem;
 }
-.Menu .menu-list .nav .text {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+.Menu .nav-search-menu .input-search .icons-search:hover {
+  color: white;
+  background: #4682A9;
 }
-.Menu .menu-list .nav .country {
-  width: 100%;
-  margin: 0.5rem;
+.Menu .nav-search-menu .input-search .name-search {
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.3rem;
 }
-.Menu .menu-list .nav .calo {
-  margin: 0.5rem;
+.Menu .nav-search-menu .input-search .name-search:focus {
+  outline: none;
 }
-.Menu .menu-list .nav .calo .form-control {
-  width: 25%;
-  margin-left: 0.5rem;
+.Menu .nav-search-menu .search-other {
+  margin-top: 1rem;
 }
-.Menu .menu-list .nav .calo .from {
-  margin-top: 5px;
+.Menu .nav-search-menu .search-other .search {
+  width: 200px;
+  padding: 0.2rem;
+  margin-right: 2rem;
 }
-.Menu .menu-list .nav .calo .to {
-  margin-top: 5px;
+.Menu .nav-search-menu .search-other .search .select-items {
+  padding: 0.3rem;
+  border: none;
+  border: 1px solid #CAD3D7;
+  border-radius: 0.5rem;
 }
-.Menu .menu-list .nav .calo .to {
-  margin-left: 1.5rem;
+.Menu .nav-search-menu .search-other .search .select-items:focus {
+  outline: none;
 }
-.Menu .menu-list .nav .provide {
-  margin: 0.5rem;
-}
-.Menu .menu-list .nav .rank {
-  margin: 0.5rem;
+.Menu .nav-search-menu .search-other .title-search {
+  padding: 0.4rem;
+  border: none;
+  background: #4682A9;
+  color: white;
+  border-radius: 0.3rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=menu.css.map */
