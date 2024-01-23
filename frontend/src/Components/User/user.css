@@ -5,6 +5,23 @@
   overflow: auto;
   background: #F4F5F9;
 }
+.User .ssss .search-user {
+  background: white;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  margin-right: 3rem;
+}
+.User .ssss .search-user span {
+  cursor: pointer;
+}
+.User .ssss .search-user input {
+  border: none;
+  padding: 0.2rem;
+  margin-right: 1rem;
+}
+.User .ssss .search-user input:focus {
+  outline: none;
+}
 .User .title-setting {
   padding: 0.5rem 0rem 0.5rem 0.5rem;
   width: 150px;

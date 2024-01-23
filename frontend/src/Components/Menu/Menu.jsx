@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import './menu.css'
 import {Link} from 'react-router-dom'
 import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
-
+import Search from './Search.jsx'
 import addplan from '../../assets/addplan.png'
 
 
@@ -32,6 +32,7 @@ const Menu = () => {
   }, [])
 
 
+
   console.log(Foods)
 
   console.log(user)
@@ -43,11 +44,11 @@ const Menu = () => {
         <div className='menu-list d-flex flex-column'>
           
           <div className='nav-search-menu d-flex flex-column'>
-            <div className='input-search d-flex flex-row justify-content-between'>
+            {/* <div className='input-search d-flex flex-row justify-content-between'>
               <input className='name-search' type='text' placeholder='Nhập tên món ăn'/>
               <p className='icons-search d-flex flex-row align-items-center'><span class="material-symbols-outlined">search</span></p>
-            </div>
-
+            </div> */}
+            <Search/>
             <div className='search-other d-flex flex-row'>
               <div className='search d-flex flex-row align-items-center justify-content-between'>
                 <label className='title' for="01">Lượng Calo (dưới):</label>
@@ -123,8 +124,6 @@ const Menu = () => {
                         </div>
                   </div>
                 )
-
-                
               })
             }
             

@@ -6,6 +6,8 @@ import admin from 'firebase-admin'
 import response from 'express'
 import jwt from 'jsonwebtoken'
 
+
+
 export const createFood = async(req, res) => {
      // const newFood = new Food(req.body)
      try{
@@ -120,5 +122,23 @@ export const getFoodCount = async(req, res) => {
           res.status(200).json({success: true, data: foodCount})
      }catch(err){
           res.status(500).json({success: false, message: 'failed to fetch'})
+     }
+}
+
+
+export const getFoodBySearch = async(req, res) => {
+     const nameFood = new RegExp(req.query.nameFood, 'i')
+     const calo = parseInt(req.query.calo)
+     try {
+          const foods = await Food.find({nameFood})
+          res.status(200).json({
+               success: true, 
+               message: 'Successfully ',
+               data: foods})
+     } catch (error) {
+          console.log(error)
+          res.status(404).json({
+               success: false, 
+               message: 'not found'})
      }
 }

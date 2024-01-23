@@ -162,4 +162,53 @@
 }
 .DetailFood .author .control-user p span {
   margin-right: 0.5rem;
+}
+.DetailFood .modal .modal-dialog .modal-content {
+  height: 600px;
+  color: #515252;
+}
+.DetailFood .modal .modal-dialog .modal-content .nav-chat {
+  padding: 0.5rem;
+  border-bottom: 1px solid #CAD3D7;
+  height: 7%;
+}
+.DetailFood .modal .modal-dialog .modal-content .nav-chat p {
+  font-size: 17px;
+}
+.DetailFood .modal .modal-dialog .modal-content .body {
+  height: 92%;
+}
+.DetailFood .modal .modal-dialog .modal-content .body img {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+.DetailFood .modal .modal-dialog .modal-content .body .body-1 {
+  padding: 0.3rem;
+  border-bottom: 1px solid #CAD3D7;
+  margin-bottom: 0.5rem;
+}
+.DetailFood .modal .modal-dialog .modal-content .body .body-1 .user .name-user {
+  font-size: 16px;
+  color: black;
+}
+.DetailFood .modal .modal-dialog .modal-content .user-comment {
+  padding: 0.5rem;
+  border-top: 1px solid #CAD3D7;
+  height: 10%;
+}
+.DetailFood .modal .modal-dialog .modal-content .user-comment p {
+  margin-left: 1rem;
+  color: white;
+  background: #4682A9;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+}
+.DetailFood .modal .modal-dialog .modal-content .user-comment .comment {
+  padding: 0.3rem;
+  border: 1px solid #CAD3D7;
+  width: 70%;
+}
+.DetailFood .modal .modal-dialog .modal-content .user-comment .comment:focus {
+  outline: none;
 }/*# sourceMappingURL=detailFood.css.map */

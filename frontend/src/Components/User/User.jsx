@@ -26,6 +26,7 @@ const User = () => {
   const [planUser, setPlanUser] = useState([])
 
   const [Foods, setFoods] = useState([])
+  const [exerUser, setExerUser] = useState([])
 
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
@@ -47,6 +48,16 @@ const User = () => {
       }
     }
     setPlanUser(p)
+
+    const resExer = await fetch(`${BASE_URL}/exercise/`)
+    const dataExer = await resExer.json()
+    let e = []
+    for(let i = 0; i < dataExer.data.length; i++){
+      if(dataExer.data[i].userID == user._id){
+        e.push(dataExer.data[i])
+      }
+    }
+    setExerUser(e)
   }
   console.log(Foods)
   console.log(planUser)
@@ -111,7 +122,13 @@ const User = () => {
   return (
     <div className='User d-flex flex-column'>
       <NavbarTwo/>
-      <p className='title-setting'>Tài khoản</p>
+      <div className='ssss d-flex flex-row justify-content-between align-items-center'>
+        <p className='title-setting'>Tài khoản</p>
+        <div className='search-user d-flex flex-row align-items-center'>
+          <input type='text' placeholder='Tìm người dùng'/>
+          <span class="material-symbols-outlined">search</span>
+        </div>
+      </div>
       <div className='information-user d-flex flex-row'>
         <div className='nav-user d-flex flex-column'>
           <p className='home-icon d-flex flex-row align-items-center'
@@ -216,8 +233,34 @@ const User = () => {
                   }
                   </div>
                 ) : (
-                  <div>
-                    <p>Exer User</p>
+                  <div className='food-user d-flex flex-row'>
+                  {
+                    exerUser.map(({_id, imageExer, typeExer, nameExer, calo}) => {
+                      return(
+                        <div className='food-items-final d-flex flex-column' key={_id} >
+                              <div className='infor-food d-flex flex-row justify-content-between'>
+                                  <div className='image-food'>
+                                        <img src={imageExer}/>
+                                  </div>
+
+                                  <div className='infor-desc d-flex flex-column'>
+                                        <div className='d-flex flex-row justify-content-end'><p className='name-food fw-bold'>{nameExer}</p></div>
+                                        <div className='d-flex flex-row justify-content-end'><p className='calo-food'><span>{calo}</span>Calo</p></div>
+                                        <div className='d-flex flex-row justify-content-end'><p className='type-food'>{typeExer}</p></div>
+                                        <div className='d-flex flex-row justify-content-end'>
+                                          <p className='like-food d-flex flex-row align-items-center'>98<span class="material-symbols-outlined like">favorite</span></p>
+                                        </div>
+                                  </div>
+                              </div> 
+                              <div className='control-food d-flex flex-row justify-content-between'>
+                                  <Link className='link' to={`/app/menu/${_id}`}>Chi tiết</Link>
+                                  <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>
+                                  <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
+                              </div>
+                        </div>
+                      )
+                    })
+                  }
                   </div>
                 )
               }

@@ -154,9 +154,38 @@ const CreatePlan = () => {
               <div className="desc-plan d-flex flex-column">
                 <p className='name-plan'>7 Days Healthy</p>
                 <div className='response-user d-flex flex-row justify-content-between'>
-                  <p className='like d-flex flex-row align-items-center'><span class="material-symbols-outlined">thumb_up</span>1199</p>
+                  <p className='like d-flex flex-row align-items-center'><span class="material-symbols-outlined">thumb_up</span>122</p>
                   <p className='comment d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>20</p>
                   <p className='save d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>8</p>
+                </div>
+              </div>
+            </div>
+
+            <div className='test-01 d-flex flex-row align-items-center'>
+              <div className='icons d-flex flex-row align-items-center'>
+                <span class="material-symbols-outlined">description</span>
+              </div>
+              <div className="desc-plan d-flex flex-column">
+                <p className='name-plan'>10 Days Healthy</p>
+                <div className='response-user d-flex flex-row justify-content-between'>
+                  <p className='like d-flex flex-row align-items-center'><span class="material-symbols-outlined">thumb_up</span>300</p>
+                  <p className='comment d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>21</p>
+                  <p className='save d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>11</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div className='test-01 d-flex flex-row align-items-center'>
+              <div className='icons d-flex flex-row align-items-center'>
+                <span class="material-symbols-outlined">description</span>
+              </div>
+              <div className="desc-plan d-flex flex-column">
+                <p className='name-plan'>Month Healthy</p>
+                <div className='response-user d-flex flex-row justify-content-between'>
+                  <p className='like d-flex flex-row align-items-center'><span class="material-symbols-outlined">thumb_up</span>120</p>
+                  <p className='comment d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>89</p>
+                  <p className='save d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>10</p>
                 </div>
               </div>
             </div>

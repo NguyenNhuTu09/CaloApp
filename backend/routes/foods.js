@@ -1,5 +1,5 @@
 import express from 'express'
-import { createFood, updateFood, deleteFood, getSingleFood, getAllFood, getFoodCount} from '../controllers/foodController.js'
+import { createFood, updateFood, deleteFood, getSingleFood, getAllFood, getFoodCount, getFoodBySearch} from '../controllers/foodController.js'
 import {verifyAdmin} from '../utils/verifyToken.js'
 
 const router = express.Router()
@@ -14,6 +14,11 @@ router.delete('/:id',deleteFood)
 
 //get single food
 router.get('/:id', getSingleFood)
+
+// search name Food
+router.get('/search/getFoodBySearch', getFoodBySearch)
+
+
 
 //get alls food
 router.get('/', getAllFood)

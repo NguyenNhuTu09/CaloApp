@@ -18,6 +18,7 @@ import Exercise from './Components/Exercise/Exercise'
 
 import CreatePlan from './Components/CreatePlan/CreatePlan'
 import CreatePlanTwo from './Components/CreatePlanTwo/CreatePlanTwo'
+import DetailExercise from './Components/DetailExercise/DetailExercise'
 
 
 const App = () => {
@@ -36,7 +37,7 @@ const App = () => {
               <Route path="user/:id" element={<User/>}/>
               <Route path='createfood' element={<CreateFood/>}/>
               <Route path='user/:id/createfood' element={<CreateFood/>}/>
-              <Route path='createexercise' element={<CreateExercise/>}/>
+              <Route path='user/:id/createExer' element={<CreateExercise/>}/>
               <Route path='detailplan' element={<DetailPlan/>}/>
               <Route path='detailplan/detailfood' element={<DetailFood/>}/>
 
@@ -50,6 +51,7 @@ const App = () => {
               <Route path='menu' element={<Menu/>}/>
               <Route path='exercise' element={<Exercise/>}/>
               <Route path='menu/:id' element={<DetailFood/>}/>
+              <Route path='exercise/:id' element={<DetailExercise/>}/>
 
               <Route path='detailplan/:id' element={<DetailPlan/>}/>
           </Route>

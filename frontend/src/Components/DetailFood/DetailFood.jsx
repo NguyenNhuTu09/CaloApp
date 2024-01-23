@@ -4,55 +4,9 @@ import { Link } from 'react-router-dom'
 import { useParams, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../Context/AuthContext'
 import { BASE_URL } from '../Utils/config.js'
-import useFetch from '../Hooks/useFetch.js'
 
-import {AiFillStar} from 'react-icons/ai'
-import {BiCommentDetail} from 'react-icons/bi'
-import {MdModeComment} from 'react-icons/md'
-import {AiFillCheckSquare} from 'react-icons/ai'
-import {MdVerifiedUser} from 'react-icons/md'
-import {AiOutlineArrowRight} from 'react-icons/ai'
-import {RiFileUserFill} from 'react-icons/ri'
-import arrow from '../../assets/Arrow.png'
+import userIcons from '../../assets/User.png'
 
-import nguoidung from '../../assets/User.png'
-import Chicken from '../../assets/Food/Chicken2.jpg'
-
-import Banhmithitga from '../../assets/Food/Banh mi thit ga.jpg'
-import Boapchao from '../../assets/Food/Bo ap chao.jpg'
-import Gatandoori from '../../assets/Food/Ga tandoori.jpg'
-
-import saveIcons from '../../assets/save.png';
-import commentIcons from '../../assets/comment.png'
-import shareIcons from '../../assets/share.png'
-
-
-const OptionsDetailFood = [
-  {
-    id: 20,
-    imageFoodDetail: <img src={Gatandoori}/>,
-    // type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Gà Tandoori',
-    gam: '̀500g',
-    calories: '650 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-  {
-    id: 21,
-    imageFoodDetail: <img src={Boapchao}/>,
-    type: 'Protein',
-    star: '5.0',
-    icon: <AiFillStar/>,
-    nameFoodDetail: 'Bò áp chảo',
-    gam: '̀400g',
-    calories: '550 Calo',
-    description: '....',
-    teps: 'Bước 1'
-  },
-]
 
   
 
@@ -140,7 +94,7 @@ const DetailFood = () => {
 
         <div className='support d-flex flex-row justify-content-between'>
           <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span>Yêu thích</p>
-          <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>Đánh giá</p>
+          <p className='d-flex flex-row align-items-center' data-bs-toggle="modal" data-bs-target="#chat"><span class="material-symbols-outlined">chat</span>Đánh giá</p>
           <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>Lưu</p>
 
         </div>
@@ -219,8 +173,36 @@ const DetailFood = () => {
       </div>
 
 
-
-
+      <div class="modal fade"  id="chat" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+               <div class="modal-dialog modal-lg">
+                    <div class="modal-content d-flex justify-content-between">
+                          <div className='nav-chat d-flex flex-row justify-content-between'>
+                            <p>Bình luận</p>
+                            <span class="material-symbols-outlined" data-bs-dismiss="modal">close</span>
+                          </div>
+                          <div className='body d-flex flex-column'>
+                            <div className='body-1 d-flex flex-row'>
+                              <img src={userIcons}/>
+                              <div className='user d-flex flex-column'>
+                                <p className='name-user'>Nguyễn Như Từ</p>
+                                <p className='desc'>Món ăn ngon, bổ dưỡng, dễ chế biến</p>
+                              </div>
+                            </div>
+                            <div className='body-1 d-flex flex-row'>
+                              <img src={userIcons}/>
+                              <div className='user d-flex flex-column'>
+                                <p className='name-user'>Trùng Dương</p>
+                                <p className='desc'>Đánh giá món ăn cao</p>
+                              </div>
+                            </div>
+                          </div>
+                         <div className='user-comment d-flex flex-row align-items-center'>
+                            <input className='comment' placeholder='Nhập đánh giá của bạn' type='text'/>
+                            <p className='d-flex flex-row justify-content-between'><span class="material-symbols-outlined">send</span>Gửi</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
 
 
       

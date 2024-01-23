@@ -1,180 +1,132 @@
-import React, { useState, useEffect } from 'react'
-import { useContext } from 'react';
-import { AuthContext } from '../../Context/AuthContext';
+import React, {useState, useEffect, useContext} from 'react'
 import './exercise.css'
-import {IoIosArrowDown} from 'react-icons/io';
+import {Link} from 'react-router-dom'
+import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
 import addplan from '../../assets/addplan.png'
-import {BsSearch} from 'react-icons/bs'
-import {AiFillStar, AiTwotoneEuroCircle} from 'react-icons/ai'
+import Search from '../Menu/Search.jsx'
 
-import { Link } from 'react-router-dom';
-import arrow from '../../assets/Arrow.png'
 
-import { BASE_URL } from '../Utils/config.js';
+import { AuthContext } from '../../Context/AuthContext'
+
+import {BASE_URL} from '../Utils/config.js'
+
+
 const Exercise = () => {
-  const [Exercises, setExercises] = useState([])
   const {user, dispatch} = useContext(AuthContext)
+  const [Foods, setFoods] = useState([])
 
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/exercise/`)
-    const data = await response.json()
-    setExercises(data.data)
+    const data = await response.json();
+    setFoods(data.data)
     console.log(data.data)
-  }
 
+    // user.foods.pop()
+  }
   useEffect(() => {
     fetchData();
   }, [])
-  console.log(Exercises)
-  console.log(user._id)
+
+
+
+  console.log(Foods)
+
+  console.log(user)
 
 
   return (
-    <div className='Exercise'>
-      <div class="container-fluid">
-        <div class="row">
-          {/* <div className='col-md-1'>
-            <div class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Tất cả
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Tất cả</a></li>
-                <li><a class="dropdown-item" href="#">Tập thể hình</a></li>
-                <li><a class="dropdown-item" href="#">Giảm cân</a></li>
-              </ul>
-            </div>
-          </div> */}
-
-          <div className='create-food-final d-flex flex-row col-md-1 align-items-center'>
-            <img src={addplan}/>
-            <p>Tải lên</p>
-          </div>
-          <div class="col-md-4 ms-auto">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-              <span class="input-group-text"><BsSearch/></span>
-            </div>
-          </div>
-        </div>
-        <hr></hr>
-        
-        <div className='menu-list d-flex flex-row'>
+    <div className='Menu d-flex flex-column '>
+      <NavbarTwo/>
+        <div className='menu-list d-flex flex-column'>
           
-          <div className='nav d-flex flex-column'>
-              <p className='fs-4 fw-bold'>Phân loại theo:</p>
-              <div className='calo d-flex flex-column'>
-                <p className='text fs-6 fw-bold'>Lượng calo:</p>
-                <input type="range" class="form-range" id="customRange1"/>
-                <div className='d-flex flex-row'>
-                  <p className='from'>Từ:</p>
-                  <input type="text" class="form-control"/>
-                  <p className='to'>Đến:</p>
-                  <input type="text" class="form-control"/>
-                </div>
+          <div className='nav-search-menu d-flex flex-column'>
+            {/* <div className='input-search d-flex flex-row justify-content-between'>
+              <input className='name-search' type='text' placeholder='Nhập tên món ăn'/>
+              <p className='icons-search d-flex flex-row align-items-center'><span class="material-symbols-outlined">search</span></p>
+            </div> */}
+            <Search/>
+            <div className='search-other d-flex flex-row'>
+              <div className='search d-flex flex-row align-items-center justify-content-between'>
+                <label className='title' for="01">Lượng Calo (dưới):</label>
+                <select className='select-items' id="01">
+                  <option value="volvo">200</option>
+                  <option value="saab">300</option>
+                  <option value="opel">400</option>
+                  <option value="audi">600</option>
+                </select>
               </div>
-              <hr/>
-            <div className='country d-flex flex-column'>
-              
-              <p className='text fs-6 fw-bold d-flex flex-row justify-content-between'>Thể loại: <IoIosArrowDown className='icons'/></p>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Thể dục nặng</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Thể dục nhẹ</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Tổng hợp</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Aerobic</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Cardio</p>
-              </div>
-            </div>
-            <hr/>
-            <div className='provide d-flex flex-column'>
-              <p className='text fs-6 fw-bold d-flex flex-row justify-content-between'>Hỗ trợ: <IoIosArrowDown className='icons'/></p>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Tổng thể</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Tim mạch</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Cơ bụng</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Cơ tay</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Cơ vai</p>
-              </div>
-            </div>
-            <hr/>
-            <div className='rank d-flex flex-column'>
-              <p className='text fs-6 fw-bold d-flex flex-row justify-content-between'>Loại: <IoIosArrowDown className='icons'/></p>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Đồ uống</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Nguyên liệu</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Thực phẩm chức năng</p>
-              </div>
-              <div className='d-flex flex-row'>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <p>Đồ ăn nhanh</p>
-              </div>
-            </div>
 
+              <div className='search d-flex flex-row align-items-center justify-content-between'>
+                <label className='title' for="02">Hỗ trợ:</label>
+                <select className='select-items' id="02">
+                  <option value="volvo">Cơ vai</option>
+                  <option value="saab">Cơ chân</option>
+                  <option value="opel">Cơ đùi</option>
+                  <option value="audi">Toàn thân</option>
+                  <option value="audi">Bắp chân</option>
+                </select>
+              </div>
+
+              <div className='search d-flex flex-row align-items-center justify-content-between'>
+                <label className='title' for="03">Loại:</label>
+                <select className='select-items' id="03">
+                  <option value="volvo">Erobic</option>
+                  <option value="saab">Thể dục nhịp điệu</option>
+                  <option value="opel">Vận động mạnh</option>
+                  <option value="audi">Nhẹ nhàng</option>
+                </select>
+              </div>
+
+
+              <div className='search d-flex flex-row align-items-center justify-content-between'>
+                <label className='title' for="04">Đối tượng:</label>
+                <select className='select-items' id="04">
+                  <option value="volvo">Giảm cân</option>
+                  <option value="saab">Tăng cân</option>
+                  <option value="opel">Tập thể hình</option>
+                </select>
+              </div>
+
+
+              <p className='title-search d-flex flex-row justify-content-between align-items-center'><span class="material-symbols-outlined">search</span>Tìm kiếm</p>
+
+            </div>
           </div>
-          <div className='food row'>
+          <div className='foods-array d-flex flex-row'>
+
             {
-              Exercises.map(({_id, imageExercise, Type, nameExercise, totalCalories, ration, reviews}) => {
+              Foods.map(({_id, imageExer, typeExer, nameExer, calo}) => {
                 return(
-                  <div key={_id} className='food-menu'>
-                    <div className='image-food position-relative'>
-                      <img  src={imageExercise}/>
-                    </div>
-                    <div className='detail-food'>
-                      <p className='caterogy d-flex flex-row justify-content-end'>
-                      {reviews}
-                        <span><AiFillStar/></span>
-                      </p>
-                      <p className='caterogy d-flex flex-row justify-content-end'>{Type}</p>
-                      <p className='food-name fw-bold fs-6 d-flex flex-row justify-content-between'>{nameExercise} <span>{ration} g</span></p>
-                      <p className='calo d-flex flex-row justify-content-between'>{totalCalories} Calo<span>
-                      <Link className='link' to={`/app/menu/${_id}`}>
-                        Chi tiết <img src={arrow}/>
-                      </Link>
-                      </span></p>
-                    </div>
+                  <div className='food-items-final d-flex flex-column' key={_id} >
+                        <div className='infor-food d-flex flex-row justify-content-between'>
+                            <div className='image-food'>
+                                  <img src={imageExer}/>
+                            </div>
+
+                            <div className='infor d-flex flex-column'>
+                                  <div className='d-flex flex-row justify-content-end'><p className='name-food fw-bold'>{nameExer}</p></div>
+                                  <div className='d-flex flex-row justify-content-end'><p className='calo-food'><span>{calo}</span>Calo</p></div>
+                                  <div className='d-flex flex-row justify-content-end'><p className='type-food'>{typeExer}</p></div>
+                                  <div className='d-flex flex-row justify-content-end'>
+                                    <p className='like-food d-flex flex-row align-items-center'>98<span class="material-symbols-outlined like">favorite</span></p>
+                                  </div>
+                            </div>
+                        </div> 
+                        <div className='control-food d-flex flex-row justify-content-between'>
+                            <Link className='link' to={`/app/menu/${_id}`}>Chi tiết</Link>
+                            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>
+                            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
+                        </div>
                   </div>
                 )
+
+                
               })
             }
             
           </div>
         </div>
-      </div>
     </div>
   )
 }
-
 export default Exercise

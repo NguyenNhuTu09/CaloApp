@@ -177,4 +177,61 @@
                }
           }
      }
+     .modal{
+          .modal-dialog{
+               .modal-content{
+                    height: 600px;
+                    color: #515252;
+                    .nav-chat{
+                         padding: 0.5rem;
+                         border-bottom: 1px solid #CAD3D7;
+                         height: 7%;
+                         p{
+                              font-size: 17px;
+                         }
+                    }
+                    .body{
+                         height: 92%;
+                         img{
+                              width: 50px;
+                              height: 50px;
+                              margin-right: 1rem;
+                         }
+                         .body-1{
+                              padding: 0.3rem;
+                              border-bottom: 1px solid #CAD3D7;
+                              margin-bottom: 0.5rem;
+                              .user{
+                                   .name-user{
+                                        font-size: 16px;
+                                        color: black;
+                                   }
+                              }
+                         }
+                    }
+                    .user-comment{
+                         padding: 0.5rem;
+                         border-top: 1px solid #CAD3D7;
+                         height: 10%;
+                         p{
+                              margin-left: 1rem;
+                              color: white;
+                              background: #4682A9;
+                              padding: 0.4rem;
+                              border-radius: 0.5rem;
+                         }
+                         .comment{
+                              padding: 0.3rem;
+                              border: 1px solid #CAD3D7;
+                              width: 70%;
+                              &:focus{
+                                   outline: none;
+                                   
+                              }
+                         }
+                    }
+               }
+          }
+          
+     }
 }

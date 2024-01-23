@@ -1,9 +1,10 @@
 .Discover{
      border-radius: 1rem;
-     background: #EDEAE7;
+     background: white;
      width: 100%;
      font-size: 15px;
      overflow: auto;
+     color: #624761;
      .plan{
           padding: 1rem;
           border-radius: 0.5rem;
@@ -17,49 +18,50 @@
                padding: 1rem;
                border-radius: 0.5rem;
                .my-plan-01{
-               height: 50%;
-               margin-top: 0.5rem;
-               margin-bottom: 0.5rem;
-               border-radius: 0.5rem;
-               background: #FFFF;
-               display: flex;
-               flex-direction: row;
-               .plan-now{
-               margin: 0.7rem;
-               padding: 0.5rem;
-               border-radius: 0.5rem;
-               width: 30%;
-               background: #9FE2BF;
-               cursor: pointer;
-               text-decoration: none;
-                    .link{
+                    height: 50%;
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.5rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid #CAD3D7;
+                    display: flex;
+                    flex-direction: row;
+                    .add-plan{
+                         border: 2px dashed #CAD3D7;
+                         border-radius: 1rem;
                          text-decoration: none;
-                         color: black;
+                         color: #624761;
+                         width: 100px;
+                         height: 70px;
                     }
-                    .status{
-                         align-items: center;
-                         text-align: center;
-                         border-radius: 0.5rem;
-                         background: #ffff;
-                         margin-top: 0.5rem;
-                    }
-                }
-               .add-plan{
-               border: 2px dashed black;
-               margin: 0.7rem;
-               width: 30%;
-               border-radius: 0.5rem;
-               text-align: center;
-                    img{
-                    width: 60px;
-                    margin-top: 1rem;
+                    .plan-1{
+                         width: 210px;
+                         border: 1px solid #CAD3D7;
+                         // background: #CDFCF6;
+                         border-radius: 10px;
+                         padding: 7px;
+                         margin-right: 1.2rem;
+                         span{
+                              cursor: pointer;
+                         }
+                         // height: 100%;
+                         p{
+                              margin: 2px;
+                         }
+                         .status-plan{
+                              background: #4682A9;
+                              border-radius: 5px;
+                              color:#FFFF;
+                              padding: 3px;
+                              margin: 5px;
+                              text-align: center;
+                              
+                         }
                     }
                }
-          }
                .my-plan-02{
                     margin-top: 0.5rem;
                     height: 32%;
-                    background: #FFFF;
+                    border: 1px solid #CAD3D7;
                     border-radius: 0.5rem;
                     .day{
                     margin: 0.5rem;
@@ -79,10 +81,9 @@
                height: 275px;
                width: 29%;
                margin-right: 20px;
-               background: #D1F2EB;
                margin-left: 0px;
                padding: 1rem;
-               background: #FFFF;
+               border: 1px solid #CAD3D7;
                .parameter-day-plan{
                     margin-top: 2rem;
                     img{
@@ -126,7 +127,7 @@
                padding-bottom: 0.5rem;
                .info-meat{
                     margin-left: 2rem;
-                    background: #FFFF;
+                    border: 1px solid #CAD3D7;
                     .title-meat{
                          margin-bottom: 1rem;
                          margin-top: 1rem;

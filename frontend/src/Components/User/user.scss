@@ -7,6 +7,27 @@
      font-size: 15px;
      overflow: auto;
      background: #F4F5F9;
+     .ssss{
+
+          .search-user{
+               // height: 30px;
+               background: white;
+               padding: 0.2rem;
+               border-radius: 0.5rem;
+               margin-right: 3rem;
+               span{
+                    cursor: pointer;
+               }
+               input{
+                    border: none;
+                    padding: 0.2rem;
+                    margin-right: 1rem;
+                    &:focus{
+                         outline: none;
+                    }
+               }
+          }
+     }
      .title-setting{
           padding: 0.5rem 0rem 0.5rem 0.5rem;
           width: 150px;

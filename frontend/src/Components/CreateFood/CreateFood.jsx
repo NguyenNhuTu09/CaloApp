@@ -121,9 +121,9 @@ const CreateFood = () => {
                          onChange={handleChange}
                          required id = 'support'>
                               <option value="Tiêu hóa">Tiêu hóa</option>
-                              <option value="2">Protein</option>
-                              <option value="3">Chất xơ</option>
-                              <option value="4">Chất đạm</option>
+                              <option value="Protein">Protein</option>
+                              <option value="Chất xơ">Chất xơ</option>
+                              <option value="Chất đạm">Chất đạm</option>
                          </select>
                     </div>
 
@@ -132,9 +132,9 @@ const CreateFood = () => {
                          <select className="form-select"
                          onChange={handleChange}
                          required id = 'typeFood'>
-                              <option value="1">Đồ uống</option>
-                              <option value="2">Thức ăn liền</option>
-                              <option value="3">Salad</option>
+                              <option value="Đồ uống">Đồ uống</option>
+                              <option value="Thức ăn liền">Thức ăn liền</option>
+                              <option value="Salad">Salad</option>
                          </select>
                     </div>
                </div>
@@ -151,8 +151,8 @@ const CreateFood = () => {
                     <div className='calo d-flex flex-column'>
                          <p>Đơn vị:</p>
                          <select className="form-select">
-                              <option value="1">100g</option>
-                              <option value="2">100ml</option>
+                              <option value="100g">100g</option>
+                              <option value="100ml">100ml</option>
                          </select>
                     </div>
                </div>

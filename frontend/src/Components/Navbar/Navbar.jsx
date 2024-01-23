@@ -109,7 +109,7 @@ const Navbar = () => {
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <Link className='link'><a class="dropdown-item" href="#">Kế hoạch</a></Link>
             <Link className='link' to={`user/${user._id}/createfood`}><a class="dropdown-item" href="#">Món ăn</a></Link>
-            <Link className='link' to={`createexercise`}><a class="dropdown-item" href="#">Bài tập</a></Link>
+            <Link className='link' to={`user/${user._id}/createExer`}><a class="dropdown-item" href="#">Bài tập</a></Link>
           </ul>
 
         </div>
