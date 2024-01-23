@@ -1,6 +1,4 @@
 # TITFitness (version 1.0)
-# Đồ Án 2 (UIT-VNUHCM)
-# Ứng dụng hỗ trợ giảm cân 
 
 ## 1/ Khởi động client
 
