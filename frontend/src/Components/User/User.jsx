@@ -1,15 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import './user.css'
 import { Link} from 'react-router-dom'
-import settingUser from '../../assets/Setting-user.png';
-
-import {SlOptionsVertical} from 'react-icons/sl'
-
-import arrow from '../../assets/Arrow.png'
-
-import add from '../../assets/addplan.png'
-
-import {AiFillStar} from 'react-icons/ai'
 
 import { BASE_URL } from '../Utils/config.js'
 import { AuthContext } from '../../Context/AuthContext'
@@ -24,13 +15,28 @@ const User = () => {
   
   const {user, dispatch} = useContext(AuthContext)
   const [planUser, setPlanUser] = useState([])
-
+  const [authen, setAuthen] = useState(true)
   const [Foods, setFoods] = useState([])
   const [exerUser, setExerUser] = useState([])
+
+  const [foodsLike, setFoodsLike] = useState([])
+  const [exersLike, setExersLike] = useState([])
+  // const [fsLike, setFoodsLike] = useState([])
+  const[userId, setUserId] = useState('')
+  const checkAuthen = async() => {
+    const resUser = await fetch(`${BASE_URL}/users/${user._id}`)
+    const dataUser = await resUser.json();
+    if(dataUser.data.role == "Admin"){
+      setAuthen(true)
+    }else{
+      setAuthen(false)
+    }
+  }
 
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json();
+
     let k = []
     for(let i = 0; i < data.data.length; i++){
       if(data.data[i].userID == user._id){
@@ -59,11 +65,54 @@ const User = () => {
     }
     setExerUser(e)
   }
-  console.log(Foods)
-  console.log(planUser)
+  // console.log(Foods)
+  // console.log(planUser)
+
+  const fetchLink = async() => {
+    const response = await fetch(`${BASE_URL}/foods/`)
+    const data = await response.json();
+    let k = []
+    for(let i = 0; i < data.data.length; i++){
+      for(let j = 0; j < data.data[i].likes.length; j++){
+        if(user._id == data.data[i].likes[j]){
+          k.push(data.data[i])
+        }
+      }
+    }
+    setFoodsLike(k)
+    console.log(foodsLike)
+  }
+
+  const handleDeleteLike = async(id) => {
+    try {
+      const response = await fetch(`${BASE_URL}/post/dlike/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to like post');
+      }
+
+      const data = await response.json();
+      let test = foodsLike
+      const newFoodLike = test.filter(_id => _id.toString() !== id)
+      setFoodsLike(newFoodLike)
+
+      // console.log(data)
+    } catch (error) {
+      console.error('Error liking post:', error.message);
+    }
+  };
 
   useEffect(() => {
     fetchData()
+    checkAuthen()
+    setUserId(user._id)
+    fetchLink()
   },[])
  
 
@@ -122,12 +171,12 @@ const User = () => {
   return (
     <div className='User d-flex flex-column'>
       <NavbarTwo/>
-      <div className='ssss d-flex flex-row justify-content-between align-items-center'>
+      <div className='ssss d-flex flex-row justify-content-start align-items-center'>
         <p className='title-setting'>Tài khoản</p>
-        <div className='search-user d-flex flex-row align-items-center'>
+        {/* <div className='search-user d-flex flex-row align-items-center'>
           <input type='text' placeholder='Tìm người dùng'/>
           <span class="material-symbols-outlined">search</span>
-        </div>
+        </div> */}
       </div>
       <div className='information-user d-flex flex-row'>
         <div className='nav-user d-flex flex-column'>
@@ -159,10 +208,15 @@ const User = () => {
               <div className='infor d-flex flex-row align-items-center'>
                 <img src={user.avatar}/>
                 <div className='title-info'>
-                  <p className='fs-5 fw-bold'>{user.lastFirstName}</p>
+                  <p className='fs-5 fw-bold d-flex flex-row align-items-center'>{user.lastFirstName}
+
+                  {authen ? <span class="authen material-symbols-outlined">verified</span> : null}
+                  
+                  </p>
                   <p className='fs-6'>{user.userName}</p>
                   <p className='setting-user d-flex flex-row align-items-center'>
                   <span class="material-symbols-outlined">manage_accounts</span>Sửa hồ sơ</p>
+                  {/* <p className='title-follow fs-6'>Theo dõi</p> */}
                 </div>
               </div>
               <div className='nav-profile d-flex flex-row'>   
@@ -253,7 +307,7 @@ const User = () => {
                                   </div>
                               </div> 
                               <div className='control-food d-flex flex-row justify-content-between'>
-                                  <Link className='link' to={`/app/menu/${_id}`}>Chi tiết</Link>
+                                  <Link className='link' to={`/app/exercise/${_id}`}>Chi tiết</Link>
                                   <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>
                                   <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
                               </div>
@@ -266,12 +320,48 @@ const User = () => {
               }
             </div>
           ) : clickHistory ? (
-            <div className='history-user'>
-              history
+            <div className='history-user d-flex flex-row justify-content-between'>
+              {/* <div className=''> */}
             </div>
           ) : clickLike ?(
-            <div className='like-user'>
-              like
+            <div className='like-user d-flex flex-row justify-content-between'>
+              <div className='food-like d-flex flex-row'>
+              
+                {
+                  foodsLike.map(({_id, imageFood, typeFood, nameFood, calo}) => {
+                    return(
+                      <div className='food-items-final d-flex flex-column' key={_id} >
+                            <div className='infor-food d-flex flex-row justify-content-between'>
+                                <div className='image-food'>
+                                      <img src={imageFood}/>
+                                </div>
+
+                                <div className='infor-desc d-flex flex-column'>
+                                      <div className='d-flex flex-row justify-content-end'><p className='name-food fw-bold'>{nameFood}</p></div>
+                                      <div className='d-flex flex-row justify-content-end'><p className='calo-food'><span>{calo}</span>Calo</p></div>
+                                      <div className='d-flex flex-row justify-content-end'><p className='type-food'>{typeFood}</p></div>
+                                      <div className='d-flex flex-row justify-content-end'>
+                                        <p className='like-food d-flex flex-row align-items-center'>98<span class="material-symbols-outlined like">favorite</span></p>
+                                      </div>
+                                </div>
+                            </div> 
+                            <div className='control-food d-flex flex-row align-items-center justify-content-between'>
+                              <Link className='link d-flex flex-row align-items-center' to={`/app/menu/${_id}`}>Chi tiết
+                                <span class="material-symbols-outlined">navigate_next</span>
+                              </Link>
+                                <p className='d-flex flex-row align-items-center'>
+                                  <span class="material-symbols-outlined" onClick={() => handleDeleteLike(_id.toString())}>favorite</span>
+                                </p>
+                                <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
+                            </div>
+                      </div>
+                    )
+                  })
+                }
+              
+              </div>
+
+              <div className='search d-flex flex-column'></div>
             </div>
           ) : (
             <div className='save-user'>

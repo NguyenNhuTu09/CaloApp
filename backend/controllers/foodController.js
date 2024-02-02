@@ -1,5 +1,4 @@
 import Food from '../models/Food.js'
-import FoodUser from '../models/FoodUser.js'
 import { uploadImage } from '../Upload/uploadImageCloud.js'
 import User from '../models/User.js'
 import admin from 'firebase-admin'
@@ -15,15 +14,16 @@ export const createFood = async(req, res) => {
                mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country} = req.body
           let searchUser = await User.findById({_id: userID})
 
-          if(searchUser.role == 'User'){
-               const foodUser = FoodUser({userID, nameFood, typeFood, support, ration, calo, imageFood,
-                    mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country})
-               const savedFood = await foodUser.save()
-               return res.status(200).json({
-                    success: true, 
-                    message: 'Tạo món ăn thành công',
-                    data: savedFood})
-          }
+          // if(searchUser.role == 'User'){
+          //      const foodUser = FoodUser({userID, nameFood, typeFood, support, ration, calo, imageFood,
+          //           mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country})
+          //      const savedFood = await foodUser.save()
+          //      return res.status(200).json({
+          //           success: true, 
+          //           message: 'Tạo món ăn thành công',
+          //           data: savedFood})
+          // }
+
           const food = Food({userID, nameFood, typeFood, support, ration, calo, imageFood,
                mainMaterial, auxiliaryMaterials, additives, cookingMethod, descFood, country})
           const savedFood = await food.save()
@@ -128,7 +128,6 @@ export const getFoodCount = async(req, res) => {
 
 export const getFoodBySearch = async(req, res) => {
      const nameFood = new RegExp(req.query.nameFood, 'i')
-     const calo = parseInt(req.query.calo)
      try {
           const foods = await Food.find({nameFood})
           res.status(200).json({
@@ -142,3 +141,6 @@ export const getFoodBySearch = async(req, res) => {
                message: 'not found'})
      }
 }
+
+
+

@@ -23,6 +23,8 @@ import DayExerciseRoute from './routes/dayExercise.js'
 import dayPlanRoute from './routes/dayPlan.js'
 import planRoute from './routes/plan.js'
 import fileRoute from './routes/file.js'
+import searchRoute from './routes/search.js'
+import postRoute from './routes/posts.js'
 import YAML from 'yamljs';
 
 
@@ -59,13 +61,19 @@ app.use(cors(corsOptions))
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerJSDocs));
 app.use('/auth', authRoute )
 app.use('/users', userRoute )
+
 app.use('/foods', foodRoute)
+
 app.use('/exercise', exerciseRoute)
 app.use('/dayfood', dayFoodRoute)
 app.use('/dayexercise', DayExerciseRoute)
 app.use('/dayplan', dayPlanRoute)
 app.use('/plan', planRoute)
 app.use('/file', fileRoute)
+
+app.use('/search', searchRoute)
+
+app.use('/post', postRoute)
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);

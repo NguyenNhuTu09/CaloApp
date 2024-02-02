@@ -1,34 +1,30 @@
 .test-nav{
      background: #FFFF;
      // background: #7952b3;
-     padding: 0.6rem;
+     padding: 1rem 0.5rem 0.5rem 0.5rem;
      // border-bottom: 1px solid #CAD3D7;
      // position: fixed;
-     padding-left: 0.5rem;
+     // padding-left: 0.5rem;
+     
      .input-search{
-          width: 380px;
+          width: 80%;
+          height: 40px;
           background: #FFFF;
           border: 1px solid #CAD3D7;
-          border-radius: 0.5rem;
-          // margin-left: 4rem;
-          
-          input{
-               width: 85%;
-               // border: 2px solid black;
-               padding: 0.4rem;
-               border: none;
-               // border-right: 1px solid #CAD3D7;
-               border-radius: 0.5rem;
-               &:focus{
-                    outline: none;
-               }
+          border-radius: 1.5rem;
+          margin-left: 1.5rem;
+          .title-search{
+               width: 92%;
+               padding: 0.4rem 0.4rem 0.4rem 1rem;
+               cursor: text;
+               color: #515252;
           }
+          
           span{
                font-size: 25px;
                // margin: 0.5rem;
-               padding-left: 0.5rem;
-               border-left: 1px solid #CAD3D7;
-               // font-weight:normal;
+               padding-left: 0.9rem;
+               cursor: pointer;
                &:hover{
                     background: none;
                }
@@ -70,25 +66,25 @@
           }
           .list-icons{
                span{
-                    color: #515252;
+                    color: #686b6b;
                     // color: #FFFF;
                     font-size: 27px;
                     // margin-left: 1rem;
                     margin-left: 0.5rem;
-                    margin-right: 0.5rem;
+                    margin-right: 0.9rem;
                     border-radius: 0.3rem;
                     // background: #FFFF;
-                    padding: 0.2rem;
                     cursor: pointer;
                     &:hover{
-                         background: #4682A9;
-                         color: white;
+                         // background: #4682A9;
+                         color: black;
+                         // padding: 0.5rem;
                     }
                }
           }
          
      }
-     .modal{
+     .chat-box{
           .modal-dialog{
                .modal-content{
                     height: 600px;
@@ -133,5 +129,109 @@
                }
           }
           
+     }
+     .search-box{
+          .modal-dialog{
+               .modal-content{
+                    .modal-body{
+                         // border: 2px solid black;
+                         height: 100vh;
+                         padding-top: 0rem;
+                         .index{
+                              width: 100%;
+                              .index-result{
+                                   width: 57%;
+                                   height: 55px;
+                                   // border: 2px solid black;
+                                   margin-top: 0.5rem;
+                                   .select-items{
+                                        padding: 0.4rem;
+                                        cursor: pointer;
+                                        font-weight: bold;
+                                        border: none;
+                                        
+                                        &:focus{
+                                             outline: none;
+                                        }
+                                        
+                                   }
+                                   .title-search{
+                                        margin: 1.5rem;
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                   }
+                              }
+                         }
+                         .search-box{
+                              width: 100%;
+                              border-bottom: 1px solid #CAD3D7;
+                              .nav-search{
+                                   width: 60%;
+                                   padding: 0.5rem;
+                                   
+                                   span{
+                                        font-size: 25px;
+                                        cursor: pointer;
+                                        margin-right: 1rem;
+                                        margin-left: 1.5rem;
+                                        &:hover{
+                                             border-radius: 100%;
+                                             background: #d5d7d8;
+                                        }
+                                   }
+                                   input{
+                                        padding: 0.5rem;
+                                        border: none;
+                                        font-size: 18px;
+                                        width: 85%;
+                                        border-bottom: 1px solid white;
+                                        font-weight: bold;
+                                        &:focus{
+                                             outline: none;
+                                             border-bottom: 1px solid #272829;
+                                        }
+                                   }
+                              }
+                         }
+                         .result-search{
+                              width: 100%;
+                              padding: 0.5rem;
+                              .result{
+                                   // border: 2px solid black;
+                                   width: 50%;
+                                   .items{
+                                        padding: 0.8rem;
+                                        border-bottom: 1px solid #CAD3D7;
+                                        margin: 0.4rem;
+                                        cursor: pointer;
+                                        &:hover{
+                                             background: #edf1f2;     
+                                             border-radius: 0.5rem;
+                                        }
+                                        img{
+                                             width: 77px;
+                                             height: 77px;
+                                             border-radius: 0.5rem;   
+                                        }
+                                        .infor{
+                                             margin-left: 1.5rem;
+                                             width: 80%;
+                                             .name{
+                                                  font-size: 16px;
+                                                  font-weight: bold;
+                                             }     
+                                             span{
+                                                  margin-left: 0.3rem;
+                                             }
+                                             .main{
+                                                  
+                                             }
+                                        }
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
      }
 }

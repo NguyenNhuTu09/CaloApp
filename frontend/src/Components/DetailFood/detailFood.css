@@ -1,214 +1,190 @@
 .DetailFood {
-  border-radius: 1rem;
   width: 100%;
-  padding: 1rem;
   font-size: 15px;
+}
+.DetailFood .title-back {
+  width: 100px;
+  padding: 0.2rem;
+  color: #656667;
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+.DetailFood .title-back span {
+  margin-right: 0.5rem;
+}
+.DetailFood .title-back:hover {
+  color: black;
+  cursor: pointer;
+}
+.DetailFood .body-detail {
+  margin: 0.5rem 2rem 2rem 4rem;
   overflow: auto;
 }
-.DetailFood .image-review {
-  width: 32%;
+.DetailFood .body-detail .body-detail-food {
+  width: 900px;
 }
-.DetailFood .image-review .back {
-  margin-left: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+.DetailFood .body-detail .body-detail-food .body-food {
+  border: 100%;
 }
-.DetailFood .image-review .back .link {
-  padding: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
+.DetailFood .body-detail .body-detail-food .body-food img {
+  width: 350px;
   border-radius: 0.5rem;
-  border: 1px solid #CAD3D7;
 }
-.DetailFood .image-review .back .link img {
-  margin-top: 2px;
-  margin-right: 5px;
-  width: 20px;
-  height: 20px;
-}
-.DetailFood .image-review .image-food {
+.DetailFood .body-detail .body-detail-food .body-food .detail-food {
   margin-left: 4rem;
-  margin-top: 2rem;
-  align-items: center;
-  width: 325px;
-}
-.DetailFood .image-review .image-food img {
-  width: 320px;
-  border-radius: 2rem;
-}
-.DetailFood .image-review .text {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-  margin-top: 3rem;
   width: 90%;
-  padding: 5px;
-  border: 1px solid #CAD3D7;
+  background: white;
   border-radius: 0.5rem;
+  padding: 1rem;
 }
-.DetailFood .image-review .text p {
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .reviews {
+  margin-bottom: 1rem;
+}
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .reviews .name-food {
+  font-size: 27px;
+  font-weight: bold;
+  color: #333333;
+}
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .reviews .review-food p {
   margin-right: 1rem;
 }
-.DetailFood .image-review .support {
-  width: 90%;
-  margin-left: 1.5rem;
-  margin-top: 0.5rem;
-}
-.DetailFood .image-review .support p {
-  border: 1px solid #CAD3D7;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .reviews .review-food span {
   cursor: pointer;
+  font-size: 22px;
+  padding: 0.4rem;
+  margin-right: 0.3rem;
+  border-radius: 100%;
+  background: #D6E0E2;
 }
-.DetailFood .image-review .support p:hover {
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .reviews .review-food span:hover {
   background: #4682A9;
   color: white;
 }
-.DetailFood .image-review .support p span {
-  font-size: 20px;
-  margin-right: 0.5rem;
+.DetailFood .body-detail .body-detail-food .body-food .detail-food span {
+  margin-left: 0.5rem;
 }
-.DetailFood .description {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-bottom: 1.5rem;
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .ration {
+  background: #4682A9;
+  border-radius: 0.5rem;
   width: 35%;
-  height: 90vh;
-  margin-left: 1.2rem;
-  border-radius: 1rem;
-  border: 1px solid #CAD3D7;
+  color: white;
+  padding: 0.7rem;
+  margin-bottom: 1.5rem;
 }
-.DetailFood .description .nameFood {
-  margin-bottom: 1rem;
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .ration .ration-calo, .DetailFood .body-detail .body-detail-food .body-food .detail-food .ration .total-calo {
+  font-size: 15px;
+  font-weight: bold;
 }
-.DetailFood .description .title {
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .main-food, .DetailFood .body-detail .body-detail-food .body-food .detail-food .auxiliary-food, .DetailFood .body-detail .body-detail-food .body-food .detail-food .additives, .DetailFood .body-detail .body-detail-food .body-food .detail-food .support, .DetailFood .body-detail .body-detail-food .body-food .detail-food .type {
+  color: #333333;
   margin-bottom: 0.5rem;
-  width: 100%;
+  font-weight: bold;
 }
-.DetailFood .description .title .text {
-  width: 50%;
+.DetailFood .body-detail .body-detail-food .body-food .detail-food .main-food span, .DetailFood .body-detail .body-detail-food .body-food .detail-food .auxiliary-food span, .DetailFood .body-detail .body-detail-food .body-food .detail-food .additives span, .DetailFood .body-detail .body-detail-food .body-food .detail-food .support span, .DetailFood .body-detail .body-detail-food .body-food .detail-food .type span {
+  font-weight: normal;
 }
-.DetailFood .description .calo {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background: #EDEFF3;
-  margin-top: 1rem;
+.DetailFood .body-detail .body-detail-food .desc-food {
+  margin-top: 3rem;
 }
-.DetailFood .description .text-description {
-  border-radius: 1rem;
-  margin-top: 2.5rem;
+.DetailFood .body-detail .body-detail-food .desc-food .title-desc {
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+  font-weight: bold;
 }
-.DetailFood .description .text-description .note {
-  height: 200px;
-  padding: 0.5rem;
+.DetailFood .body-detail .body-detail-food .desc-food .note {
+  height: 140px;
   background: white;
-  color: black;
-  margin-top: 0.5rem;
-  border: none;
   font-size: 14px;
+  border: none;
 }
-.DetailFood .description .actions {
-  margin-top: 1rem;
-}
-.DetailFood .description .actions button {
-  padding: 0.5rem;
+.DetailFood .body-detail .body-detail-food .desc-food button {
+  width: 200px;
+  padding: 0.3rem;
+  margin: 1rem 0.5rem 0.5rem 0rem;
   background: #4682A9;
-  border-radius: 0.5rem;
   border: none;
   color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
 }
-.DetailFood .author {
-  width: 25%;
-  padding: 0.5rem;
-  margin: 1rem;
-  color: #624761;
-  border: 1px solid #CAD3D7;
-  border-radius: 1rem;
-  height: 200px;
-}
-.DetailFood .author .infor {
+.DetailFood .body-detail .author-food {
+  width: 20%;
+  background: white;
+  height: 90%;
+  border-radius: 0.5rem;
   padding: 1rem;
-}
-.DetailFood .author .infor img {
-  width: 75px;
-  height: 75px;
-  margin-right: 1.5rem;
   border: 1px solid #CAD3D7;
+}
+.DetailFood .body-detail .author-food .infor-author img {
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
 }
-.DetailFood .author .infor .name-user {
-  font-size: 17px;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-.DetailFood .author .control-user {
-  margin-top: 1rem;
-}
-.DetailFood .author .control-user p {
-  border: 1px solid #CAD3D7;
-  width: 130px;
-  padding: 0.3rem;
-  border-radius: 0.5rem;
+.DetailFood .body-detail .author-food .infor-author .name-author {
   margin-left: 1rem;
-  margin-right: 1rem;
-  cursor: pointer;
 }
-.DetailFood .author .control-user p:hover {
-  background: #4682A9;
-  color: white;
+.DetailFood .body-detail .author-food .infor-author .name-author .name {
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
 }
-.DetailFood .author .control-user p span {
-  margin-right: 0.5rem;
+.DetailFood .body-detail .author-food .infor-author .name-author .id {
+  font-style: initial;
 }
-.DetailFood .modal .modal-dialog .modal-content {
+.DetailFood .body-detail .author-food .infor-author .name-author button {
+  width: 80px;
+  border: none;
+  border-radius: 0.3rem;
+  margin: 0.4rem 0.4rem 0.4rem 0rem;
+  padding: 0.2rem;
+  font-size: 15px;
+}
+.DetailFood .modal-comment .modal-dialog .modal-content {
   height: 600px;
   color: #515252;
 }
-.DetailFood .modal .modal-dialog .modal-content .nav-chat {
+.DetailFood .modal-comment .modal-dialog .modal-content .nav-chat {
   padding: 0.5rem;
   border-bottom: 1px solid #CAD3D7;
   height: 7%;
 }
-.DetailFood .modal .modal-dialog .modal-content .nav-chat p {
+.DetailFood .modal-comment .modal-dialog .modal-content .nav-chat p {
   font-size: 17px;
 }
-.DetailFood .modal .modal-dialog .modal-content .body {
+.DetailFood .modal-comment .modal-dialog .modal-content .body {
   height: 92%;
 }
-.DetailFood .modal .modal-dialog .modal-content .body img {
+.DetailFood .modal-comment .modal-dialog .modal-content .body img {
   width: 50px;
   height: 50px;
   margin-right: 1rem;
 }
-.DetailFood .modal .modal-dialog .modal-content .body .body-1 {
+.DetailFood .modal-comment .modal-dialog .modal-content .body .body-1 {
   padding: 0.3rem;
   border-bottom: 1px solid #CAD3D7;
   margin-bottom: 0.5rem;
 }
-.DetailFood .modal .modal-dialog .modal-content .body .body-1 .user .name-user {
+.DetailFood .modal-comment .modal-dialog .modal-content .body .body-1 .user .name-user {
   font-size: 16px;
   color: black;
 }
-.DetailFood .modal .modal-dialog .modal-content .user-comment {
+.DetailFood .modal-comment .modal-dialog .modal-content .user-comment {
   padding: 0.5rem;
   border-top: 1px solid #CAD3D7;
   height: 10%;
 }
-.DetailFood .modal .modal-dialog .modal-content .user-comment p {
+.DetailFood .modal-comment .modal-dialog .modal-content .user-comment p {
   margin-left: 1rem;
   color: white;
   background: #4682A9;
   padding: 0.4rem;
   border-radius: 0.5rem;
 }
-.DetailFood .modal .modal-dialog .modal-content .user-comment .comment {
+.DetailFood .modal-comment .modal-dialog .modal-content .user-comment .comment {
   padding: 0.3rem;
   border: 1px solid #CAD3D7;
   width: 70%;
 }
-.DetailFood .modal .modal-dialog .modal-content .user-comment .comment:focus {
+.DetailFood .modal-comment .modal-dialog .modal-content .user-comment .comment:focus {
   outline: none;
 }/*# sourceMappingURL=detailFood.css.map */

@@ -1,102 +1,103 @@
 .Navbar {
-  width: 220px;
+  width: 240px;
   background: white;
   border-right: 1px solid #CAD3D7;
-  padding-right: 0.3em;
-  padding-left: 0.3rem;
 }
-.Navbar .happy {
-  width: 90%;
-  align-self: center;
-  margin-bottom: 0.2rem;
-  border-bottom: 1px solid #CAD3D7;
+.Navbar .nav-1 {
+  width: 100%;
 }
-.Navbar .happy .gif-run {
-  width: 60px;
+.Navbar .nav-1 .logo {
+  margin-top: 0.8rem;
+  width: 100%;
+  color: #4492C6;
+  margin-bottom: 0.4rem;
 }
-.Navbar .happy .gif-happy {
-  width: 60px;
-}
-.Navbar .nav-menu {
-  margin-top: 0.5rem;
-  width: 90%;
-  border-bottom: 1px solid #CAD3D7;
-}
-.Navbar .nav-menu .link {
-  text-decoration: none;
-}
-.Navbar .nav-menu .logo {
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 15px;
-  width: 150px;
-}
-.Navbar .nav-menu .logo img {
+.Navbar .nav-1 .logo img {
   width: 30px;
 }
-.Navbar .nav-menu .logo .logo_name {
+.Navbar .nav-1 .logo .logo_name {
   margin-left: 5px;
+  font-size: 25px;
+  font-weight: bold;
 }
-.Navbar .nav-menu .create {
-  border: 2px solid #CAD3D7;
+.Navbar .nav-1 .create {
   padding: 0.3rem 0.7rem 0.3rem 0.7rem;
-  margin: 1rem 0rem 1.2rem 0rem;
-  border-radius: 1rem;
+  margin: 1rem 0rem 0rem 0.5rem;
+  border-radius: 3rem;
   cursor: pointer;
   color: #624761;
+  width: 60%;
+  box-shadow: 0 0 3px 0 rgba(107, 103, 103, 0.5);
 }
-.Navbar .nav-menu .create:hover {
+.Navbar .nav-1 .create:hover {
   background: #4682A9;
   color: white;
 }
-.Navbar .nav-menu .create span {
+.Navbar .nav-1 .create span {
   margin-right: 0.3rem;
+  font-size: 33px;
+  font-weight: bold;
+  color: #4492C6;
 }
-.Navbar .nav-menu .nav_item {
+.Navbar .nav-1 .create p {
+  font-size: 15px;
+}
+.Navbar .nav-1 .nav-menu {
+  margin-top: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #CAD3D7;
+  height: 45vh;
+  padding-bottom: 1rem;
+  overflow: auto;
+}
+.Navbar .nav-1 .nav-menu .link {
+  text-decoration: none;
+}
+.Navbar .nav-1 .nav-menu .nav_item {
   list-style-type: none;
   align-items: center;
-  margin-bottom: 0.2rem;
-  border-radius: 0.5rem;
-  width: 94%;
-  padding: 3px;
-  height: 43px;
-}
-.Navbar .nav-menu .nav_item p {
-  margin-top: 8px;
+  margin-bottom: 0.6rem;
   width: 100%;
-  color: #624761;
+  height: 40px;
+}
+.Navbar .nav-1 .nav-menu .nav_item p {
+  font-size: 15px;
+  margin-top: 9px;
+  font-weight: inherit;
+  width: 100%;
+  color: #666066;
   height: 100%;
 }
-.Navbar .nav-menu .nav_item span {
-  padding-top: 3px;
+.Navbar .nav-1 .nav-menu .nav_item span {
+  padding-top: 4px;
   padding-bottom: 3px;
-  padding-right: 3px;
-  padding-left: 10px;
-  color: #624761;
+  padding-right: 5px;
+  padding-left: 1.3rem;
+  color: #90698F;
   height: 100%;
   margin-top: 5px;
-  font-size: 21px;
+  font-size: 23px;
   margin-right: 0.7rem;
 }
-.Navbar .nav-menu .nav_item a {
+.Navbar .nav-1 .nav-menu .nav_item a {
   text-decoration: none;
-  color: #624761;
+  color: #90698F;
   height: 100%;
 }
-.Navbar .nav-menu .nav_item a.active_link {
+.Navbar .nav-1 .nav-menu .nav_item a.active_link {
   text-decoration: none;
   color: black;
-  background: #4682A9;
-  border-radius: 0.5rem;
+  background: #F4F7F9;
+  border-right: 2px solid black;
 }
-.Navbar .nav-menu .nav_item a.active_link span {
-  color: white;
+.Navbar .nav-1 .nav-menu .nav_item a.active_link span {
+  color: black;
 }
-.Navbar .nav-menu .nav_item a.active_link p {
-  color: white;
+.Navbar .nav-1 .nav-menu .nav_item a.active_link p {
+  color: black;
 }
-.Navbar .nav-menu .nav_item a.active_link a {
-  color: white;
+.Navbar .nav-1 .nav-menu .nav_item a.active_link a {
+  color: black;
 }
 .Navbar .item-other {
   width: 100%;

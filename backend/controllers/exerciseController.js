@@ -41,7 +41,7 @@ export const getAllExercise = async (req, res) => {
 export const getSingleExercise = async (req, res) => {
      const id = req.params.id
      try{
-          const exercise = await Exercise.findById(id).populate('Type')
+          const exercise = await Exercise.findById(id)
 
           res.status(200).json({
                success: true, 

@@ -1,0 +1,183 @@
+.SearchUser {
+  width: 100%;
+  font-size: 15px;
+  overflow: auto;
+}
+.SearchUser .information-user {
+  margin: 0rem 0rem 0.5rem 0.5rem;
+  padding: 1rem 0rem 0rem 2rem;
+  height: 90vh;
+  width: 98%;
+}
+.SearchUser .information-user .infor-user {
+  width: 100%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+  padding: 0.5rem;
+}
+.SearchUser .information-user .infor-user .infor {
+  margin: 0rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
+  width: 95%;
+}
+.SearchUser .information-user .infor-user .infor img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+.SearchUser .information-user .infor-user .infor .title-info {
+  margin-left: 2rem;
+}
+.SearchUser .information-user .infor-user .infor .title-info .authen {
+  margin-left: 0.5rem;
+  background: #4682A9;
+  color: white;
+  border-radius: 0.4rem;
+}
+.SearchUser .information-user .infor-user .infor .title-info .title-follow {
+  padding: 0.15rem;
+  margin-top: 0.2rem;
+  text-align: center;
+  background: #4682A9;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.SearchUser .information-user .infor-user .infor .title-info .setting-user {
+  padding: 0.2rem;
+  width: 120px;
+  border: 2px solid #CAD3D7;
+  margin-top: 0.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.SearchUser .information-user .infor-user .infor .title-info .setting-user span {
+  margin-left: 0.5rem;
+}
+.SearchUser .information-user .infor-user .infor .title-info .setting-user:hover {
+  border: 2px solid black;
+}
+.SearchUser .information-user .infor-user .nav-profile {
+  margin: 0.5rem;
+  color: #624761;
+  border-bottom: 2px solid #CAD3D7;
+}
+.SearchUser .information-user .infor-user .nav-profile p {
+  width: 130px;
+  padding: 5px;
+  cursor: pointer;
+}
+.SearchUser .information-user .infor-user .nav-profile p:hover {
+  color: black;
+  font-weight: bold;
+}
+.SearchUser .information-user .infor-user .nav-profile p span {
+  margin-right: 8px;
+  font-size: 17px;
+}
+.SearchUser .information-user .infor-user .plan-user {
+  margin: 0.8rem;
+}
+.SearchUser .information-user .infor-user .plan-user .plan-1 {
+  width: 210px;
+  border: 1px solid #CAD3D7;
+  border-radius: 10px;
+  padding: 7px;
+  margin-right: 1.2rem;
+}
+.SearchUser .information-user .infor-user .plan-user .plan-1 span {
+  cursor: pointer;
+}
+.SearchUser .information-user .infor-user .plan-user .plan-1 p {
+  margin: 2px;
+}
+.SearchUser .information-user .infor-user .plan-user .plan-1 .status-plan {
+  background: #4682A9;
+  border-radius: 5px;
+  color: white;
+  padding: 3px;
+  margin: 5px;
+  text-align: center;
+}
+.SearchUser .information-user .infor-user .food-user {
+  width: 100%;
+  flex-wrap: wrap;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final {
+  background: white;
+  padding: 0.8rem;
+  border: 1px solid #CAD3D7;
+  width: 210px;
+  height: 150px;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .infor-food img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 1px solid #CAD3D7;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .control-food {
+  padding: 5px;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .control-food .link {
+  width: 60%;
+  border: 1px solid #CAD3D7;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #624761;
+  border-radius: 0.5rem;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .control-food .link:hover {
+  color: white;
+  background: #4682A9;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .control-food p span {
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #624761;
+  border: 1px solid #CAD3D7;
+  cursor: pointer;
+}
+.SearchUser .information-user .infor-user .food-user .food-items-final .control-food p span:hover {
+  background: #4682A9;
+  color: white;
+}
+.SearchUser .information-user .history-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+}
+.SearchUser .information-user .like-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+}
+.SearchUser .information-user .save-user {
+  width: 80%;
+  background: white;
+  border-radius: 1rem;
+  overflow: auto;
+}/*# sourceMappingURL=searchUser.css.map */

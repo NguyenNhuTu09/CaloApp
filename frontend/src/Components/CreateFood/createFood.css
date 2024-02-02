@@ -1,100 +1,105 @@
-.CreateFood {
+.Createfood {
+  width: 100%;
+}
+.Createfood .body-create {
   border-radius: 1rem;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 13px;
   overflow: auto;
 }
-.CreateFood .info-food {
+.Createfood .body-create .form-control:focus {
+  outline: none;
+}
+.Createfood .body-create .info-food {
   width: 27%;
   margin-left: 2rem;
 }
-.CreateFood .info-food p {
+.Createfood .body-create .info-food p {
   margin-bottom: 0.1rem;
 }
-.CreateFood .info-food input {
+.Createfood .body-create .info-food input {
   margin-bottom: 0.5rem;
 }
-.CreateFood .info-food .back .link {
+.Createfood .body-create .info-food .back .link {
   cursor: pointer;
   text-decoration: none;
   color: black;
 }
-.CreateFood .info-food .back .link img {
+.Createfood .body-create .info-food .back .link img {
   margin-top: 2px;
   margin-right: 5px;
   width: 20px;
   height: 20px;
 }
-.CreateFood .info-food .image-food {
+.Createfood .body-create .info-food .image-food {
   width: 100%;
-  margin-top: 1.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
   align-items: center;
   margin-bottom: 1rem;
 }
-.CreateFood .info-food .image-food img {
+.Createfood .body-create .info-food .image-food img {
   width: 150px;
   height: 150px;
   border-radius: 100%;
 }
-.CreateFood .info-food .image-food .file {
+.Createfood .body-create .info-food .image-food .file {
   background: white;
   margin-top: 1rem;
   padding: 5px;
   border-radius: 0.5rem;
 }
-.CreateFood .info-food .text {
+.Createfood .body-create .info-food .text {
   margin-bottom: 0.5rem;
 }
-.CreateFood .info-food .ration {
+.Createfood .body-create .info-food .ration {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.CreateFood .description-food {
+.Createfood .body-create .description-food {
   margin-left: 2rem;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   width: 28%;
 }
-.CreateFood .description-food p {
+.Createfood .body-create .description-food p {
   margin-bottom: 0.5rem;
 }
-.CreateFood .description-food input {
+.Createfood .body-create .description-food input {
   margin-bottom: 0.5rem;
 }
-.CreateFood .description-food .description {
+.Createfood .body-create .description-food .description {
   width: 100%;
   height: 170px;
   margin-bottom: 0.5rem;
 }
-.CreateFood .perform {
+.Createfood .body-create .perform {
   margin-left: 1rem;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   width: 29%;
 }
-.CreateFood .perform p {
+.Createfood .body-create .perform p {
   margin-bottom: 0.5rem;
 }
-.CreateFood .perform input {
+.Createfood .body-create .perform input {
   margin-bottom: 0.5rem;
 }
-.CreateFood .perform .per .file {
+.Createfood .body-create .perform .per .file {
   background: white;
   padding: 5px;
   border-radius: 0.5rem;
   width: 73%;
 }
-.CreateFood .perform .per p {
+.Createfood .body-create .perform .per p {
   margin-top: 6px;
 }
-.CreateFood .perform .description {
+.Createfood .body-create .perform .description {
   height: 110px;
   margin-bottom: 5px;
 }
-.CreateFood .perform .button-create {
+.Createfood .body-create .perform .button-create {
   margin-top: 1rem;
 }
-.CreateFood .perform .button-create .btn {
+.Createfood .body-create .perform .button-create .btn {
   width: 30%;
 }/*# sourceMappingURL=createFood.css.map */

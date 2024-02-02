@@ -19,6 +19,7 @@ import Exercise from './Components/Exercise/Exercise'
 import CreatePlan from './Components/CreatePlan/CreatePlan'
 import CreatePlanTwo from './Components/CreatePlanTwo/CreatePlanTwo'
 import DetailExercise from './Components/DetailExercise/DetailExercise'
+import SearchUser from './Components/SearchUser/SearchUser'
 
 
 const App = () => {
@@ -52,6 +53,7 @@ const App = () => {
               <Route path='exercise' element={<Exercise/>}/>
               <Route path='menu/:id' element={<DetailFood/>}/>
               <Route path='exercise/:id' element={<DetailExercise/>}/>
+              <Route path='users/:id' element={<SearchUser/>}/>
 
               <Route path='detailplan/:id' element={<DetailPlan/>}/>
           </Route>

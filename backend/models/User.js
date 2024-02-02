@@ -42,10 +42,13 @@ const userSchema = new mongoose.Schema(
     },
     role:{
       type: String,
-      default: "User"
+      default: "User",
+      // required: true,
     }
   },
   { timestamps: true }
 );
+
+userSchema.index({ '$**': 'text' });
 
 export default mongoose.model("User", userSchema);

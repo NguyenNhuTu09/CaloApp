@@ -18,10 +18,24 @@ const foodSchema = new mongoose.Schema(
           preparationMethods:[{
                imageCook:{type: String},
                descCook:{type: String}
-          }]
+          }],
+          likes: [
+               {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'User',
+               },
+          ],
+          saves: [
+               {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'User',
+               },
+          ],
      },
      {timestamps: true}
 )
+
+foodSchema.index({ '$**': 'text' });
 
 export default mongoose.model('Food', foodSchema)
 

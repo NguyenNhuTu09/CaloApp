@@ -1,32 +1,158 @@
 .Menu{
      border-radius: 1rem;
-     // background: #495E57;
+     // background: #F4F8fA;
      width: 100%;
      // padding: 0.5rem;
      font-size: 14px;
      // border: 2px solid black;
      // border-left: 3px solid #CCD6D6;
-     overflow: auto;
+     padding-bottom: 2rem;
      .menu-list{
+          overflow: auto;
           // padding-left: 2.6rem;
-          border-top: 1px solid #CAD3D7;
-          padding-top: 1rem;
+          // border-top: 1px solid #CAD3D7;
+          // padding-top: 1rem;
+          margin-left: 1.5rem;
+          .title-menu{
+               margin-left: 1.5rem;
+               margin-top: 1rem;
+               .main-menu{
+                    font-size: 30px;
+                    font-weight: bold;
+               }
+               .new-menu{
+                    margin: 1rem 0.5rem 1.5rem 0.5rem;
+                    .new{
+                         border: 1px solid #CAD3D7;
+                         padding: 0.3rem;
+                         border-radius: 2rem;
+                         width: 100px;
+                         padding-left: 1rem;
+                    }
+               }
+          }
+          .nav-search-menu{
+               width: 97%;
+               margin-left: 1.5rem;
+               // padding: 0.5rem;
+               .title-2{
+                    margin: 0.8rem 0.3rem 0.5rem 0.3rem;
+                    font-weight: bold;
+               }
+               .title-1{
+                    margin-left: 0.3rem;
+                    font-weight: bold;
+                    margin-bottom: 0.3rem;
+               }
+               .object-select{
+                    margin-bottom: 0.5rem;
+                    p{
+                         margin: 0.2rem 1rem 0.2rem 0.2rem;
+                         padding: 0.3rem;
+                         border: 1px solid #CAD3D7;
+                         border-radius: 0.5rem;
+                         cursor: pointer;
+                         background: #FFFF;
+                    }
+               }
+               .search-food{
+                    height: 45px;
+                    .input-search{
+                         border: 1px solid #CAD3D7;
+                         border-radius: 0.5rem;
+                         height: 40px;
+                         width: 240px;
+                         .icons-search{
+                              cursor: pointer;
+                              padding: 0.3rem;
+                              color: #624761;
+                              border-radius: 0.5rem;
+                              &:hover{
+                                   color: white;
+                                   background: #4682A9;
+                              }
+                         }
+                         .name-search{
+                              border-radius: 0.5rem;
+                              border: none;
+                              padding: 0.3rem;
+                              &:focus{
+                                   outline: none;
+                              }
+                         }
+                    }
+               }
+               .search-other{
+                    width: 100%;
+                    flex-wrap: wrap;
+                    margin-bottom: 1rem;
+                    .search-filter{
+                         width: 13%;
+                         padding: 0.2rem;
+                         // margin-right: 2rem;
+                         .select-sequence{
+                              width: 80%;
+                         }
+                         .select-calo{
+                              width: 80%;
+                         }
+                         .select-country{
+                              width: 70%;
+                         }
+                         .select-final{
+                              width: 95%;
+                         }
+                         .select-items{
+                              padding: 0.3rem;
+                              border: none;
+                              border: 1px solid #CAD3D7;
+                              border-radius: 0.2rem;
+                              // width: 120px;
+                              &:focus{
+                                   // border: 1px solid #CAD3D7;
+                                   outline: none;
+                              }
+                         }
+                    }
+                    
+                    .title-search{
+                         padding: 0.4rem;
+                         border: none;
+                         background: #4682A9;
+                         color: white;
+                         border-radius: 0.3rem;
+                         margin-left: 1rem;
+                         height: 40px;
+                    }
+               }
+     
+     
+          }
+          .loading{
+               margin-top: 4rem;
+               img{
+                    width: 50px;
+                    margin-bottom: 1rem;
+               }
+               color: #624761;
+          }
           .foods-array{
                margin-left: 1rem;
                width: 97%;
                flex-wrap: wrap;
                .food-items-final{
                     background: #FFFF;
-                    padding: 0.8rem;
-                    width: 225px;
-                    height: 150px;
+                    
+                    width: 215px;
+                    height: 160px;
                     border-radius: 1rem;
                     // align-items: center;
-                    margin-right: 1rem;
+                    margin-right: 0.7rem;
                     margin-left: 1rem;
                     border: 1px solid #CAD3D7;
-                    margin-top: 1rem;
+                    margin-top: 1.2rem;
                     .infor-food{
+                         padding: 0.8rem;
                          p{
                               font-size: 14px;
                               margin-bottom: 3px;
@@ -43,33 +169,34 @@
                          img{
                               width: 80px;
                               border-radius: 100%;
-                              border: 1px solid #CAD3D7;
+                              // border: 1px solid #CAD3D7;
                          }
                     }
                     .control-food{
-                         padding: 5px;
+                         padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+                         border-top: 1px solid #CAD3D7;
+                         height: 55px;
                          .link{
                               width: 60%;
-                              border: 1px solid #CAD3D7;
-                              text-align: center;
+                              margin-left: 1rem;
+                              font-weight: bold;
                               cursor: pointer;
                               text-decoration: none;
-                              color: #624761;
+                              color: #4e424d;
                               border-radius: 0.5rem;
-                              &:hover{
-                                   // border: 1px solid black;
-                                   color: white;
-                                   background: #4682A9;
-                              }
+                              // &:hover{
+                              //      color: white;
+                              //      background: #4682A9;
+                              // }
                          }
                          p{
                               span{
-                                   padding: 2px;
-                                   border-radius: 5px;
-                                   font-size: 18px;
+                                   padding: 3px;
+                                   font-size: 22px;
                                    color: #624761;
-                                   border: 1px solid #CAD3D7;
                                    cursor: pointer;
+                                   border-radius: 0.5rem;
+                                   margin-left: 0.5rem;
                                    &:hover{
                                         background: #4682A9;
                                         color: white;
@@ -83,61 +210,7 @@
           
           
      }
-     .nav-search-menu{
-          width: 97%;
-          margin-left: 1.5rem;
-          padding: 0.5rem;
-          .input-search{
-               border: 1px solid #CAD3D7;
-               border-radius: 0.5rem;
-               width: 240px;
-               .icons-search{
-                    cursor: pointer;
-                    padding: 0.3rem;
-                    color: #624761;
-                    border-radius: 0.5rem;
-                    &:hover{
-                         color: white;
-                         background: #4682A9;
-                    }
-               }
-               .name-search{
-                    border-radius: 0.5rem;
-                    border: none;
-                    padding: 0.3rem;
-                    &:focus{
-                         outline: none;
-                    }
-               }
-          }
-          .search-other{
-               margin-top: 1rem;
-               .search{
-                    width: 200px;
-                    padding: 0.2rem;
-                    margin-right: 2rem;
-                    .select-items{
-                         padding: 0.3rem;
-                         border: none;
-                         border: 1px solid #CAD3D7;
-                         border-radius: 0.5rem;
-                         &:focus{
-                              // border: 1px solid #CAD3D7;
-                              outline: none;
-                         }
-                    }
-               }
-               .title-search{
-                    padding: 0.4rem;
-                    border: none;
-                    background: #4682A9;
-                    color: white;
-                    border-radius: 0.3rem;
-                    margin-left: 1rem;
-               }
-          }
-
-
-     }
+     
+     
      
 }

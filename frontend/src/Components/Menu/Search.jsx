@@ -26,6 +26,9 @@ const Search = ({ onSearch }) => {
           <input className='name-search' type='text' placeholder='Nhập tên món ăn, bài tập' ref={nameFoodRef}/>
           <p className='icons-search d-flex flex-row align-items-center' onClick={searchHandler}><span class="material-symbols-outlined">search</span></p>
         </FormGroup>
+
+        {/* <p className='title-search d-flex flex-row justify-content-between align-items-center'><span class="material-symbols-outlined">search</span>Tìm kiếm</p> */}
+
     </Form>
   );
 };

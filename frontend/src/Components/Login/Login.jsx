@@ -10,6 +10,7 @@ import ggImg from '../../assets/Google.png'
 import imageLg from '../../assets/LogoTHF.png'
 
 import background from '../../assets/background-login.jpg'
+import clipCr7 from '../../assets/ronaldo-2.mp4'
 
 
 import {BASE_URL} from '../Utils/config.js'
@@ -71,7 +72,16 @@ const Login = () => {
 
   
   return (
-    <div className='Login d-flex flex-row '>
+    <div className='Login d-flex flex-rows justify-content-between'>
+
+
+      <div className='image-login d-flex flex-column align-items-center'>
+          <video src={clipCr7} autoPlay muted loop className='video-back'></video>
+          {/* <p className='fs-1 fw-bold'>TITFitness</p> */}
+      </div>
+
+
+
       <div className='information d-flex flex-column'>
         <p className='title-login fs-2 fw-bold'>Đăng nhập</p>
         <p className='fs-6 fw-bold'>Bạn chưa có tài khoản, <Link className='link' to='/register'> Đăng ký</Link></p>
@@ -111,10 +121,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className='image-login d-flex flex-column align-items-center'>
-        <img src={imageLg}/>
-        <p className='fs-1 fw-bold'>TITFitness</p>
-      </div>
+      
     </div>
 
   )

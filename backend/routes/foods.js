@@ -28,6 +28,8 @@ router.get('/', getAllFood)
 // router.get('/search/getFeaturedFoods', getFeaturedFood)
 router.get('/search/getFoodCount', getFoodCount)
 
+
+
 // người không muốn đến đích, cho dù khởi đầu tốt đến đâu cũng đều trở nên vô nghĩa
 // 
 

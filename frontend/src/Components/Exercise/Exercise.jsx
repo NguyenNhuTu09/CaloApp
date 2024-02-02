@@ -2,8 +2,12 @@ import React, {useState, useEffect, useContext} from 'react'
 import './exercise.css'
 import {Link} from 'react-router-dom'
 import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
+// import Search from './Search.jsx'
 import addplan from '../../assets/addplan.png'
-import Search from '../Menu/Search.jsx'
+
+
+import {BsSearch} from 'react-icons/bs'
+import {IoIosArrowDown} from 'react-icons/io';
 
 
 import { AuthContext } from '../../Context/AuthContext'
@@ -13,15 +17,29 @@ import {BASE_URL} from '../Utils/config.js'
 
 const Exercise = () => {
   const {user, dispatch} = useContext(AuthContext)
-  const [Foods, setFoods] = useState([])
-
+  const [Exers, setExers] = useState([])
+  const [loading, setLoading] = useState([true])
+  console.log(user)
   const fetchData = async() => {
-    const response = await fetch(`${BASE_URL}/exercise/`)
-    const data = await response.json();
-    setFoods(data.data)
-    console.log(data.data)
-
-    // user.foods.pop()
+    try{
+      const response = await fetch(`${BASE_URL}/exercise/`)
+      const data = await response.json();
+      let k = []
+      for(let i = 0; i < data.data.length; i++){
+        const resUser = await fetch(`${BASE_URL}/users/${data.data[i].userID}`)
+        const dataUser = await resUser.json();
+        if(dataUser.data.role == "Admin"){
+          k.push(data.data[i])
+        }
+        // console.log(data.data[i].userID)
+       
+      }
+    setExers(k)
+    }catch(error){
+      console.error('Error fetching data:', error);
+    }finally {
+      setLoading(false);
+    }
   }
   useEffect(() => {
     fetchData();
@@ -29,26 +47,36 @@ const Exercise = () => {
 
 
 
-  console.log(Foods)
-
-  console.log(user)
-
+  console.log(Exers)
 
   return (
-    <div className='Menu d-flex flex-column '>
+    <div className='Exercise d-flex flex-column '>
       <NavbarTwo/>
         <div className='menu-list d-flex flex-column'>
-          
+          <div className='title-menu d-flex flex-column'>
+            <p className='main-menu'>Bài tập </p>
+            <div className='new-menu d-flex flex-rows'>
+              <p className='new d-flex flex-rows align-items-center'><span class="material-symbols-outlined">add</span>Tải lên</p>
+            </div>
+          </div>
           <div className='nav-search-menu d-flex flex-column'>
-            {/* <div className='input-search d-flex flex-row justify-content-between'>
-              <input className='name-search' type='text' placeholder='Nhập tên món ăn'/>
-              <p className='icons-search d-flex flex-row align-items-center'><span class="material-symbols-outlined">search</span></p>
-            </div> */}
-            <Search/>
+            {/* <Search/> */}
+            <p className="title-1 fs-6">Tìm kiếm lọc theo:</p>
             <div className='search-other d-flex flex-row'>
-              <div className='search d-flex flex-row align-items-center justify-content-between'>
-                <label className='title' for="01">Lượng Calo (dưới):</label>
-                <select className='select-items' id="01">
+              <div className='search-filter d-flex flex-row align-items-center justify-content-between'>
+                {/* <label className='title' for="00">Lượt yêu thích:</label> */}
+                <select className='select-items select-sequence' id="00">
+                  <option disabled selected value="">Lượt yêu thích</option>
+                  <option value="volvo">Cao đến thấp</option>
+                  <option value="saab">Thấp đến cao</option>
+                  
+                </select>
+              </div>
+
+              <div className='search-filter d-flex flex-row align-items-center justify-content-between'>
+                {/* <label className='title' for="01">Lượng Calo (dưới):</label> */}
+                <select className='select-items select-calo' id="01">
+                  <option disabled selected value="">Lượng Calo</option>
                   <option value="volvo">200</option>
                   <option value="saab">300</option>
                   <option value="opel">400</option>
@@ -56,48 +84,71 @@ const Exercise = () => {
                 </select>
               </div>
 
-              <div className='search d-flex flex-row align-items-center justify-content-between'>
-                <label className='title' for="02">Hỗ trợ:</label>
-                <select className='select-items' id="02">
-                  <option value="volvo">Cơ vai</option>
-                  <option value="saab">Cơ chân</option>
-                  <option value="opel">Cơ đùi</option>
-                  <option value="audi">Toàn thân</option>
-                  <option value="audi">Bắp chân</option>
+              <div className='search-filter d-flex flex-row align-items-center justify-content-between'>
+                {/* <label className='title' for="02">Quốc gia:</label> */}
+                <select className='select-items select-country' id="02">
+                  <option disabled selected value="">Loại bài tập</option>
+                  <option value="volvo">Việt Nam</option>
+                  <option value="saab">Trung Quốc</option>
+                  <option value="opel">Ý</option>
+                  <option value="audi">Mỹ</option>
+                  <option value="audi">Pháp</option>
                 </select>
               </div>
 
-              <div className='search d-flex flex-row align-items-center justify-content-between'>
-                <label className='title' for="03">Loại:</label>
-                <select className='select-items' id="03">
-                  <option value="volvo">Erobic</option>
-                  <option value="saab">Thể dục nhịp điệu</option>
-                  <option value="opel">Vận động mạnh</option>
-                  <option value="audi">Nhẹ nhàng</option>
-                </select>
-              </div>
-
-
-              <div className='search d-flex flex-row align-items-center justify-content-between'>
-                <label className='title' for="04">Đối tượng:</label>
-                <select className='select-items' id="04">
-                  <option value="volvo">Giảm cân</option>
-                  <option value="saab">Tăng cân</option>
-                  <option value="opel">Tập thể hình</option>
+              <div className='search-filter d-flex flex-row align-items-center justify-content-between'>
+                {/* <label className='title' for="03">Cung cấp:</label> */}
+                <select className='select-items select-nutrition' id="03">
+                  <option disabled selected value="">Khu vực cơ bắp</option>
+                  <option value="volvo">Omega-3</option>
+                  <option value="saab">Omega-6</option>
+                  <option value="opel">Chất xơ</option>
+                  <option value="audi">Chất đạm</option>
+                  <option value="audi">Protein</option>
                 </select>
               </div>
 
 
-              <p className='title-search d-flex flex-row justify-content-between align-items-center'><span class="material-symbols-outlined">search</span>Tìm kiếm</p>
+              <div className='search-filter d-flex flex-row align-items-center justify-content-between'>
+                <select className='select-items select-food' id="04">
+                  <option disabled selected value="">Thời gian</option>
+                  <option value="volvo">Đồ uống</option>
+                  <option value="opel">Thức ăn liền</option>
+                </select>
+              </div>
 
+              <div className='search-filter d-flex flex-row align-items-center justify-content-between'>
+                {/* <label className='title' for="05">Nguyên liệu chính:</label> */}
+                <select className='select-items select-final' id="05">
+                  <option disabled selected value="">Độ khó</option>
+                  <option value="volvo">Thịt bò</option>
+                  <option value="saab">Thịt gà</option>
+                  <option value="opel">Thịt lợn</option>
+                </select>
+              </div>
+
+              
+
+
+              
+            </div>
+            <p className='title-2'>Lựa chọn theo nhu cầu: </p>
+            <div className='object-select d-flex flex-row align-items-center'>
+              <p>Giảm cân</p>
+              <p>Tăng cân</p>
+              <p>Thể hình</p>
+              <p>Healthy</p>
             </div>
           </div>
+            {loading ? <div className='loading d-flex flex-column align-items-center'>
+                <img src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1706711758/03-05-45-320_512_ae3nkg.gif'/>
+                <p>Đang tải danh sách món ăn</p>
+            </div> : null}
           <div className='foods-array d-flex flex-row'>
-
             {
-              Foods.map(({_id, imageExer, typeExer, nameExer, calo}) => {
+              Exers.map(({_id, imageExer, typeExer, nameExer, calo}) => {
                 return(
-                  <div className='food-items-final d-flex flex-column' key={_id} >
+                  <div className='food-items-final d-flex flex-column justify-content-between' key={_id} >
                         <div className='infor-food d-flex flex-row justify-content-between'>
                             <div className='image-food'>
                                   <img src={imageExer}/>
@@ -112,15 +163,15 @@ const Exercise = () => {
                                   </div>
                             </div>
                         </div> 
-                        <div className='control-food d-flex flex-row justify-content-between'>
-                            <Link className='link' to={`/app/menu/${_id}`}>Chi tiết</Link>
+                        <div className='control-food d-flex flex-rows align-items-center'>
+                            <Link className='link d-flex flex-row align-items-center' to={`/app/exercise/${_id}`}>Chi tiết
+                              <span class="material-symbols-outlined">navigate_next</span>
+                            </Link>
                             <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>
                             <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
                         </div>
                   </div>
                 )
-
-                
               })
             }
             

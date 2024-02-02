@@ -1,183 +1,166 @@
 .DetailFood{
-     border-radius: 1rem;
+     // border-radius: 1rem;
      width: 100%;
-     padding: 1rem;
+     // margin: 1rem;
+     // padding: 1rem;
      font-size: 15px;
-     overflow: auto;
-     .image-review{
-          // margin-left: 2rem;
-          width: 32%;
-          // height: 100vh;
-          .back{
-               margin-left: 1.5rem;
-               // border: 2px solid black;
-               margin-top: 0.5rem;
-               margin-bottom: 1rem;
-               .link{
-                    padding: 5px;
-                    cursor: pointer;
-                    text-decoration: none;
-                    color: black;
-                    border-radius: 0.5rem;
-                    border: 1px solid #CAD3D7;
-                    &:hover{
-                         // color: #ffff;
-                    }
-                    img{
-                         margin-top: 2px;
-                         margin-right: 5px;
-                         width: 20px;
-                         height: 20px;
-                    }
-               }
-          }
-          .image-food{
-               margin-left: 4rem;
-               margin-top: 2rem;
-               align-items: center;
-               // border: 2px solid black;
-               width: 325px;
-               img{
-                    width: 320px;
-                    border-radius: 2rem;
-               }
-          }
-          .text{
-               margin-left: 1.5rem;
-               margin-bottom: 1rem;
-               margin-top: 3rem;
-               // border: 2px solid black;
-               width: 90%;
-               padding: 5px;
-               border: 1px solid #CAD3D7;
-               border-radius: 0.5rem;
-               p{
-                    margin-right: 1rem;
-               }
-          }
-          .support{
-               width: 90%;
-               margin-left: 1.5rem;
-               margin-top: 0.5rem;
-               p{
-                    border: 1px solid #CAD3D7;
-                    padding: 0.3rem;
-                    border-radius: 0.5rem;
-                    cursor: pointer;
-                    &:hover{
-                         background: #4682A9;
-                         color: white;
-                    }
-                    span{
-                         font-size: 20px;
-                         margin-right: 0.5rem;
-                    }
-               }
-          }
-          
-     }
-     .description{
+     
+     // background: #F4F5F9;
+     .title-back{
           // border: 2px solid black;
-          // padding-top: 1rem;
+          width: 100px;
+          padding: 0.2rem;
+          color: #656667;
+          margin-left: 3rem;
           margin-top: 1rem;
-          padding-top: 1rem;
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-          padding-bottom: 1.5rem;
-          width: 35%;
-          height: 90vh;
-          margin-left: 1.2rem;
-          border-radius: 1rem;
-          border: 1px solid #CAD3D7;
-          .nameFood{
-               margin-bottom: 1rem;
+          span{
+               margin-right: 0.5rem;
           }
-          .title{
-               margin-bottom: 0.5rem;
-               width: 100%;
-               // margin-top: 0.5rem;
-               .text{
-                    width: 50%;
-               }
-          }
-          .calo{
-               width: 100%;
-               padding: 1rem;
-               border-radius: 0.5rem;
-               background: #EDEFF3;
-               margin-top: 1rem;
-          }
-          .text-description{
-               // border: 2px solid black;
-               border-radius: 1rem;
-               // padding: 1rem;
-               margin-top: 2.5rem;
-               // background: #C1ECE4;
-               .note{
-                    height: 200px;
-                    padding: 0.5rem;
-                    background: #FFFF;
-                    color: black;
-                    margin-top: 0.5rem;
-                    border: none;
-                    font-size: 14px;
-               }
-          }
-          .actions{
-               margin-top: 1rem;
-               button{
-                    padding: 0.5rem;
-                    background: #4682A9;
-                    border-radius: 0.5rem;
-                    border: none;
-                    color: white;
-               }
+          &:hover{
+               color: black;
+               cursor: pointer;
           }
      }
-     .author{
-          width: 25%;
-          padding: 0.5rem;
-          margin: 1rem;
-          color: #624761;
-          border: 1px solid #CAD3D7;
-          border-radius: 1rem;
-          height: 200px;
-          .infor{
-               padding: 1rem;
-               img{
-                    width: 75px;
-                    height: 75px;
-                    margin-right: 1.5rem;
-                    border: 1px solid #CAD3D7;
-                    border-radius: 100%;
+     .body-detail{
+          margin: 0.5rem 2rem 2rem 4rem;
+          // border: 2px solid black;
+          overflow: auto;
+          .body-detail-food{
+               width: 900px;
+               .body-food{
+                    // border: 2px solid black;
+                    border: 100%;
+                    img{
+                         width: 350px;
+                         border-radius: 0.5rem;
+                    }
+                    .detail-food{
+                         margin-left: 4rem;
+                         width: 90%;
+                         // border: 2px solid black;
+                         background: white;
+                         border-radius: 0.5rem;
+                         padding: 1rem;
+                         .reviews{
+                              margin-bottom: 1rem;
+                              .name-food{
+                                   font-size: 27px;
+                                   font-weight: bold;
+                                   color: #333333;
+                              }
+                              .review-food{
+                                   p{
+                                        margin-right: 1rem;
+                                        // border: 2px solid black;
+                                   }
+                                   span{
+                                        cursor: pointer;
+                                        // border: 2px solid black;
+                                        font-size: 22px;
+                                        padding: 0.4rem;
+                                        margin-right: 0.3rem;
+                                        border-radius: 100%;
+                                        // background: #4682A9;
+                                        background: #D6E0E2;
+                                        // object-fit: cover;
+                                        &:hover{
+                                             background: #4682A9;
+                                             color: white;
+                                        }
+                                   }
+                              }
+                         }
+                         
+                         span{
+                              margin-left: 0.5rem;
+                         }
+                         .ration{
+                              background: #4682A9;
+                              border-radius: 0.5rem;
+                              width: 35%;
+                              color: white;
+                              padding: 0.7rem;
+                              margin-bottom: 1.5rem;
+                              .ration-calo, .total-calo{
+                                   font-size: 15px;
+                                   font-weight: bold;
+                              }
+                         }
+                         .main-food, .auxiliary-food, .additives, .support, .type{
+                              color: #333333;
+                              // width: 90%;
+                              margin-bottom: 0.5rem;
+                              font-weight: bold;
+                              span{
+                                   font-weight: normal;
+                              }
+                         }
+                    }
                }
-               .name-user{
-                    font-size: 17px;
-                    font-weight: bold;
-                    margin-bottom: 0.5rem;
-               }
-          }
-          .control-user{
-               margin-top: 1rem;
-               p{
-                    border: 1px solid #CAD3D7;
-                    width: 130px;
-                    padding: 0.3rem;
-                    border-radius: 0.5rem;
-                    margin-left: 1rem;
-                    margin-right: 1rem;
-                    cursor: pointer;
-                    &:hover{
+               .desc-food{
+                    margin-top: 3rem;
+                    .title-desc{
+                         margin-bottom: 0.5rem;
+                         font-size: 15px;
+                         font-weight: bold;
+                    }
+                    .note{
+                         height: 140px;
+                         background: white;
+                         font-size: 14px;
+                         border: none;
+                    }
+                    button{
+                         width: 200px;
+                         // margin: 0.3rem;
+                         padding: 0.3rem;
+                         margin: 1rem 0.5rem 0.5rem 0rem;
                          background: #4682A9;
+                         border: none;
                          color: white;
+                         font-weight: bold;
+                         border-radius: 0.5rem;
                     }
-                    span{
-                         margin-right: 0.5rem;
+               }
+               
+          }
+          .author-food{
+               width: 20%;
+               background: white;
+               height: 90%;
+               border-radius: 0.5rem;
+               padding: 1rem;
+               border: 1px solid #CAD3D7;
+               .infor-author{
+                    img{
+                         width: 70px;
+                         height: 70px;
+                         border-radius: 100%;
+                    }
+                    .name-author{
+                         margin-left: 1rem;
+                         .name{
+                              font-size: 16px;
+                              color: #333333;
+                              font-weight: bold;
+                         }
+                         .id{
+                              font-style:initial;
+                         }
+                         button{
+                              width: 80px;
+                              border: none;
+                              border-radius: 0.3rem;
+                              margin: 0.4rem 0.4rem 0.4rem 0rem;
+                              padding: 0.2rem;
+                              font-size: 15px;
+                         }
                     }
                }
           }
+
      }
-     .modal{
+     .modal-comment{
           .modal-dialog{
                .modal-content{
                     height: 600px;

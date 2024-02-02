@@ -80,3 +80,41 @@ export const getAllUser = async (req, res) => {
                message: 'not found'})
      } 
 }
+
+// getBySearchUser 
+export const getUserBySearch = async(req, res) => {
+     const userName = new RegExp(req.query.userName, 'i')
+     try {
+          const users = await User.find({userName})
+          res.status(200).json({
+               success: true, 
+               message: 'Successfully ',
+               data: users})
+     } catch (error) {
+          console.log(error)
+          res.status(404).json({
+               success: false, 
+               message: 'not found'})
+     }
+}
+
+
+export const batchRequest = async (req, res) => {
+     try {
+       const { userIDs } = req.query;
+   
+       // Lấy thông tin người dùng dựa trên userIDs
+       const userDataPromises = userIDs.map(async (userID) => {
+         const userRes = await fetch(`${BASE_URL}/users/${userID}`);
+         return userRes.json();
+       });
+   
+       const userDataArray = await Promise.all(userDataPromises);
+   
+       // Trả về thông tin người dùng
+       res.json({ data: userDataArray });
+     } catch (error) {
+       console.error('Error fetching user data:', error);
+       res.status(500).json({ error: 'Internal Server Error' });
+     }
+}

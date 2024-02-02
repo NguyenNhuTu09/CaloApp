@@ -1,125 +1,187 @@
-.Menu {
+.Exercise {
   border-radius: 1rem;
   width: 100%;
   font-size: 14px;
+  padding-bottom: 2rem;
+}
+.Exercise .menu-list {
   overflow: auto;
+  margin-left: 1.5rem;
 }
-.Menu .menu-list {
-  border-top: 1px solid #CAD3D7;
-  padding-top: 1rem;
-}
-.Menu .menu-list .foods-array {
-  margin-left: 1rem;
-  width: 97%;
-  flex-wrap: wrap;
-}
-.Menu .menu-list .foods-array .food-items-final {
-  background: white;
-  padding: 0.8rem;
-  width: 225px;
-  height: 150px;
-  border-radius: 1rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  border: 1px solid #CAD3D7;
+.Exercise .menu-list .title-menu {
+  margin-left: 1.5rem;
   margin-top: 1rem;
 }
-.Menu .menu-list .foods-array .food-items-final .infor-food p {
-  font-size: 14px;
-  margin-bottom: 3px;
-}
-.Menu .menu-list .foods-array .food-items-final .infor-food p span {
-  margin-right: 5px;
-  margin-left: 3px;
-  color: #624761;
-}
-.Menu .menu-list .foods-array .food-items-final .infor-food p .like {
+.Exercise .menu-list .title-menu .main-menu {
+  font-size: 30px;
   font-weight: bold;
-  font-size: 16px;
 }
-.Menu .menu-list .foods-array .food-items-final .infor-food img {
-  width: 80px;
-  border-radius: 100%;
+.Exercise .menu-list .title-menu .new-menu {
+  margin: 1rem 0.5rem 1.5rem 0.5rem;
+}
+.Exercise .menu-list .title-menu .new-menu .new {
   border: 1px solid #CAD3D7;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  width: 100px;
+  padding-left: 1rem;
 }
-.Menu .menu-list .foods-array .food-items-final .control-food {
-  padding: 5px;
-}
-.Menu .menu-list .foods-array .food-items-final .control-food .link {
-  width: 60%;
-  border: 1px solid #CAD3D7;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: #624761;
-  border-radius: 0.5rem;
-}
-.Menu .menu-list .foods-array .food-items-final .control-food .link:hover {
-  color: white;
-  background: #4682A9;
-}
-.Menu .menu-list .foods-array .food-items-final .control-food p span {
-  padding: 2px;
-  border-radius: 5px;
-  font-size: 18px;
-  color: #624761;
-  border: 1px solid #CAD3D7;
-  cursor: pointer;
-}
-.Menu .menu-list .foods-array .food-items-final .control-food p span:hover {
-  background: #4682A9;
-  color: white;
-}
-.Menu .nav-search-menu {
+.Exercise .menu-list .nav-search-menu {
   width: 97%;
   margin-left: 1.5rem;
-  padding: 0.5rem;
 }
-.Menu .nav-search-menu .input-search {
+.Exercise .menu-list .nav-search-menu .title-2 {
+  margin: 0.8rem 0.3rem 0.5rem 0.3rem;
+  font-weight: bold;
+}
+.Exercise .menu-list .nav-search-menu .title-1 {
+  margin-left: 0.3rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.Exercise .menu-list .nav-search-menu .object-select {
+  margin-bottom: 0.5rem;
+}
+.Exercise .menu-list .nav-search-menu .object-select p {
+  margin: 0.2rem 1rem 0.2rem 0.2rem;
+  padding: 0.3rem;
   border: 1px solid #CAD3D7;
   border-radius: 0.5rem;
+  cursor: pointer;
+  background: white;
+}
+.Exercise .menu-list .nav-search-menu .search-food {
+  height: 45px;
+}
+.Exercise .menu-list .nav-search-menu .search-food .input-search {
+  border: 1px solid #CAD3D7;
+  border-radius: 0.5rem;
+  height: 40px;
   width: 240px;
 }
-.Menu .nav-search-menu .input-search .icons-search {
+.Exercise .menu-list .nav-search-menu .search-food .input-search .icons-search {
   cursor: pointer;
   padding: 0.3rem;
   color: #624761;
   border-radius: 0.5rem;
 }
-.Menu .nav-search-menu .input-search .icons-search:hover {
+.Exercise .menu-list .nav-search-menu .search-food .input-search .icons-search:hover {
   color: white;
   background: #4682A9;
 }
-.Menu .nav-search-menu .input-search .name-search {
+.Exercise .menu-list .nav-search-menu .search-food .input-search .name-search {
   border-radius: 0.5rem;
   border: none;
   padding: 0.3rem;
 }
-.Menu .nav-search-menu .input-search .name-search:focus {
+.Exercise .menu-list .nav-search-menu .search-food .input-search .name-search:focus {
   outline: none;
 }
-.Menu .nav-search-menu .search-other {
-  margin-top: 1rem;
+.Exercise .menu-list .nav-search-menu .search-other {
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
-.Menu .nav-search-menu .search-other .search {
-  width: 200px;
+.Exercise .menu-list .nav-search-menu .search-other .search-filter {
+  width: 13%;
   padding: 0.2rem;
-  margin-right: 2rem;
 }
-.Menu .nav-search-menu .search-other .search .select-items {
+.Exercise .menu-list .nav-search-menu .search-other .search-filter .select-sequence {
+  width: 80%;
+}
+.Exercise .menu-list .nav-search-menu .search-other .search-filter .select-calo {
+  width: 80%;
+}
+.Exercise .menu-list .nav-search-menu .search-other .search-filter .select-country {
+  width: 70%;
+}
+.Exercise .menu-list .nav-search-menu .search-other .search-filter .select-final {
+  width: 95%;
+}
+.Exercise .menu-list .nav-search-menu .search-other .search-filter .select-items {
   padding: 0.3rem;
   border: none;
   border: 1px solid #CAD3D7;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
-.Menu .nav-search-menu .search-other .search .select-items:focus {
+.Exercise .menu-list .nav-search-menu .search-other .search-filter .select-items:focus {
   outline: none;
 }
-.Menu .nav-search-menu .search-other .title-search {
+.Exercise .menu-list .nav-search-menu .search-other .title-search {
   padding: 0.4rem;
   border: none;
   background: #4682A9;
   color: white;
   border-radius: 0.3rem;
   margin-left: 1rem;
+  height: 40px;
+}
+.Exercise .menu-list .loading {
+  margin-top: 4rem;
+  color: #624761;
+}
+.Exercise .menu-list .loading img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+.Exercise .menu-list .foods-array {
+  margin-left: 1rem;
+  width: 97%;
+  flex-wrap: wrap;
+}
+.Exercise .menu-list .foods-array .food-items-final {
+  background: white;
+  width: 250px;
+  height: 160px;
+  border-radius: 1rem;
+  margin-right: 0.7rem;
+  margin-left: 1rem;
+  border: 1px solid #CAD3D7;
+  margin-top: 1.2rem;
+}
+.Exercise .menu-list .foods-array .food-items-final .infor-food {
+  padding: 0.8rem;
+}
+.Exercise .menu-list .foods-array .food-items-final .infor-food p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.Exercise .menu-list .foods-array .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+  color: #624761;
+}
+.Exercise .menu-list .foods-array .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.Exercise .menu-list .foods-array .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+}
+.Exercise .menu-list .foods-array .food-items-final .control-food {
+  padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+  border-top: 1px solid #CAD3D7;
+  height: 55px;
+}
+.Exercise .menu-list .foods-array .food-items-final .control-food .link {
+  width: 60%;
+  margin-left: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #4e424d;
+  border-radius: 0.5rem;
+}
+.Exercise .menu-list .foods-array .food-items-final .control-food p span {
+  padding: 3px;
+  font-size: 22px;
+  color: #624761;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+}
+.Exercise .menu-list .foods-array .food-items-final .control-food p span:hover {
+  background: #4682A9;
+  color: white;
 }/*# sourceMappingURL=exercise.css.map */

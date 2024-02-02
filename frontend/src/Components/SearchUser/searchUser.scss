@@ -1,79 +1,19 @@
-.User{
-     border-radius: 1rem;
+.SearchUser{
+     // border-radius: 1rem;
      // background: #EDEAE7;
      width: 100%;
      // padding-top: 2rem;
      // padding-left: 3rem;
      font-size: 15px;
-     // overflow: auto;
-     background: #F4F5F9;
-     .ssss{
-
-          .search-user{
-               // height: 30px;
-               background: white;
-               padding: 0.2rem;
-               border-radius: 0.5rem;
-               margin-right: 3rem;
-               span{
-                    cursor: pointer;
-                    // padding-right: 0.5rem;
-                    padding: 0.2rem;
-                    &:hover{
-                         background: #4682A9;
-                         color: white;
-                         border-radius: 0.2rem;
-                    }
-               }
-               input{
-                    border: none;
-                    padding: 0.2rem;
-                    margin-right: 1rem;
-                    &:focus{
-                         outline: none;
-                    }
-               }
-          }
-     }
-     .title-setting{
-          padding: 0.5rem 0rem 0.5rem 0.5rem;
-          width: 150px;
-          margin: 0.5rem 0.5rem 0rem 1.5rem;
-          font-size: 20px;
-          font-weight: bold;
-          color: #624761;
-     }
+     overflow: auto;
+     // background: #F4F5F9;
      .information-user{
           margin: 0rem 0rem 0.5rem 0.5rem;
-          padding: 0rem 0rem 0.5rem 0.5rem;
+          padding: 1rem 0rem 0rem 2rem;
+          height: 90vh;
           width: 98%;
-          height: 82vh;
-          .nav-user{
-               padding: 0.5rem;
-               margin: 0.5rem 3rem 0.5rem 1.5rem;
-               background: #FFFF;
-               border-radius: 1rem; 
-               width: 180px;
-               height: 250px;
-               p{
-                    border: 2px solid #CAD3D7;
-                    padding: 0.5rem;
-                    margin: 0.5rem;
-                    cursor: pointer;
-                    color: #624761;
-                    border-radius: 0.5rem;
-                    background: #FFFF;
-                    span{
-                         margin-right: 10px;
-                    }
-                    &:hover{
-                         background: #4682A9;
-                         color: white;
-                    }
-               }
-          }
           .infor-user{
-               width: 80%;
+               width: 100%;
                background: #FFFF;
                border-radius: 1rem;
                overflow: auto;
@@ -95,7 +35,7 @@
                               margin-left: 0.5rem;
                               background: #4682A9;
                               color: white;
-                              border-radius: 100%;
+                              border-radius: 0.4rem;
                          }
                          .title-follow{
                               padding: 0.15rem;
@@ -177,7 +117,7 @@
                          background: #FFFF;
                          padding: 0.8rem;
                          border: 1px solid #CAD3D7;
-                         width: 215px;
+                         width: 210px;
                          height: 150px;
                          border-radius: 1rem;
                          // align-items: center;
@@ -187,7 +127,7 @@
                          margin-top: 0.5rem;
                          .infor-food{
                               p{
-                                   font-size: 13px;
+                                   font-size: 14px;
                                    margin-bottom: 3px;
                                    span{
                                         margin-right: 5px;
@@ -199,8 +139,8 @@
                                    }
                               }
                               img{
-                                   width: 75px;
-                                   height: 75px;
+                                   width: 80px;
+                                   height: 80px;
                                    border-radius: 100%;
                                    border: 1px solid #CAD3D7;
                               }
@@ -250,85 +190,13 @@
                background: #FFFF;
                border-radius: 1rem;
                overflow: auto;
-               padding: 1rem;
           }
 
           .like-user{
                width: 80%;
                background: #FFFF;
                border-radius: 1rem;
-               padding: 1.5rem;
                overflow: auto;
-               .food-like{
-                    flex-wrap: wrap;
-                    width: 100%;
-                    // height: 82vh;
-                    .food-items-final{
-                         background: #FFFF;
-                         width: 215px;
-                         height: 160px;
-                         border-radius: 1rem;
-                         // align-items: center;
-                         margin-right: 0.7rem;
-                         margin-left: 1rem;
-                         border: 1px solid #CAD3D7;
-                         margin-top: 1.2rem;
-                         .infor-food{
-                              padding: 0.8rem;
-                              p{
-                                   font-size: 13px;
-                                   margin-bottom: 3px;
-                                   span{
-                                        margin-right: 5px;
-                                        margin-left: 3px;
-                                        color: #624761;
-                                   }
-                                   .like{
-                                        font-weight: bold;
-                                        font-size: 16px;
-                                   }
-                              }
-                              img{
-                                   width: 80px;
-                                   border-radius: 100%;
-                                   // border: 1px solid #CAD3D7;
-                              }
-                         }
-                         .control-food{
-                              padding: 0.3rem 0.5rem 0.5rem 0.5rem;
-                              border-top: 1px solid #CAD3D7;
-                              height: 55px;
-                              .link{
-                                   width: 60%;
-                                   margin-left: 1rem;
-                                   font-weight: bold;
-                                   cursor: pointer;
-                                   text-decoration: none;
-                                   color: #4e424d;
-                                   border-radius: 0.5rem;
-                                   // &:hover{
-                                   //      color: white;
-                                   //      background: #4682A9;
-                                   // }
-                              }
-                              p{
-                                   span{
-                                        padding: 3px;
-                                        font-size: 22px;
-                                        color: #624761;
-                                        cursor: pointer;
-                                        border-radius: 0.5rem;
-                                        margin-left: 0.5rem;
-                                        &:hover{
-                                             background: #4682A9;
-                                             color: white;
-                                        }
-                                   }
-                              }
-                              
-                         }
-                    }
-               }
           }
 
           .save-user{

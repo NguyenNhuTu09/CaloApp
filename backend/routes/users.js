@@ -1,5 +1,5 @@
 import express from 'express'
-import { updateUser, deleteUser, getSingleUser, getAllUser } from '../controllers/userController.js'
+import { updateUser, deleteUser, getSingleUser, getAllUser, getUserBySearch, batchRequest } from '../controllers/userController.js'
 const router = express.Router()
 
 import { verifyAdmin, verifyUser } from '../utils/verifyToken.js'
@@ -16,5 +16,9 @@ router.get('/:id', getSingleUser)
 // get all user
 router.get('/', verifyAdmin, getAllUser)
 // router.get('/',  getAllUser)
+
+router.get('/search/getUserBySearch', getUserBySearch)
+
+router.get('/batch', batchRequest)
 
 export default router

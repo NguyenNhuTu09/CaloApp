@@ -9,6 +9,9 @@ const exerciseSchema = new mongoose.Schema(
           support: { type: String,required: true},
           ration:{ type: Number,required: true},
           calo:{ type: Number,required: true},
+          time: {type: Number, required: true},
+          difficulty: {type: String, required: true},
+          targerAudience: {type: String, required: true},
           descExer:{ type: String,required: true},
           processing:[{
                imageProcess:{type: String},
@@ -17,5 +20,6 @@ const exerciseSchema = new mongoose.Schema(
      },
      {timestamps: true}
 )
+exerciseSchema.index({ '$**': 'text' });
 
 export default mongoose.model('Exercise', exerciseSchema)

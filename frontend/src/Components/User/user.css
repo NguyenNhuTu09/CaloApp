@@ -2,7 +2,6 @@
   border-radius: 1rem;
   width: 100%;
   font-size: 15px;
-  overflow: auto;
   background: #F4F5F9;
 }
 .User .ssss .search-user {
@@ -13,6 +12,12 @@
 }
 .User .ssss .search-user span {
   cursor: pointer;
+  padding: 0.2rem;
+}
+.User .ssss .search-user span:hover {
+  background: #4682A9;
+  color: white;
+  border-radius: 0.2rem;
 }
 .User .ssss .search-user input {
   border: none;
@@ -31,17 +36,17 @@
   color: #624761;
 }
 .User .information-user {
-  margin: 0rem 0.5rem 0.5rem 0.5rem;
-  padding: 0rem 0.5rem 0.5rem 0.5rem;
-  height: 82vh;
+  margin: 0rem 0rem 0.5rem 0.5rem;
+  padding: 0rem 0rem 0.5rem 0.5rem;
   width: 98%;
+  height: 82vh;
 }
 .User .information-user .nav-user {
   padding: 0.5rem;
-  margin: 0.5rem 2rem 0.5rem 0.5rem;
+  margin: 0.5rem 3rem 0.5rem 1.5rem;
   background: white;
   border-radius: 1rem;
-  width: 200px;
+  width: 180px;
   height: 250px;
 }
 .User .information-user .nav-user p {
@@ -79,6 +84,22 @@
 }
 .User .information-user .infor-user .infor .title-info {
   margin-left: 2rem;
+}
+.User .information-user .infor-user .infor .title-info .authen {
+  margin-left: 0.5rem;
+  background: #4682A9;
+  color: white;
+  border-radius: 100%;
+}
+.User .information-user .infor-user .infor .title-info .title-follow {
+  padding: 0.15rem;
+  margin-top: 0.2rem;
+  text-align: center;
+  background: #4682A9;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 .User .information-user .infor-user .infor .title-info .setting-user {
   padding: 0.2rem;
@@ -144,7 +165,7 @@
   background: white;
   padding: 0.8rem;
   border: 1px solid #CAD3D7;
-  width: 210px;
+  width: 215px;
   height: 150px;
   border-radius: 1rem;
   margin-right: 1rem;
@@ -153,7 +174,7 @@
   margin-top: 0.5rem;
 }
 .User .information-user .infor-user .food-user .food-items-final .infor-food p {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 3px;
 }
 .User .information-user .infor-user .food-user .food-items-final .infor-food p span {
@@ -165,7 +186,8 @@
   font-size: 16px;
 }
 .User .information-user .infor-user .food-user .food-items-final .infor-food img {
-  width: 80px;
+  width: 75px;
+  height: 75px;
   border-radius: 100%;
   border: 1px solid #CAD3D7;
 }
@@ -202,12 +224,74 @@
   background: white;
   border-radius: 1rem;
   overflow: auto;
+  padding: 1rem;
 }
 .User .information-user .like-user {
   width: 80%;
   background: white;
   border-radius: 1rem;
+  padding: 1.5rem;
   overflow: auto;
+}
+.User .information-user .like-user .food-like {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.User .information-user .like-user .food-like .food-items-final {
+  background: white;
+  width: 215px;
+  height: 160px;
+  border-radius: 1rem;
+  margin-right: 0.7rem;
+  margin-left: 1rem;
+  border: 1px solid #CAD3D7;
+  margin-top: 1.2rem;
+}
+.User .information-user .like-user .food-like .food-items-final .infor-food {
+  padding: 0.8rem;
+}
+.User .information-user .like-user .food-like .food-items-final .infor-food p {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+.User .information-user .like-user .food-like .food-items-final .infor-food p span {
+  margin-right: 5px;
+  margin-left: 3px;
+  color: #624761;
+}
+.User .information-user .like-user .food-like .food-items-final .infor-food p .like {
+  font-weight: bold;
+  font-size: 16px;
+}
+.User .information-user .like-user .food-like .food-items-final .infor-food img {
+  width: 80px;
+  border-radius: 100%;
+}
+.User .information-user .like-user .food-like .food-items-final .control-food {
+  padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+  border-top: 1px solid #CAD3D7;
+  height: 55px;
+}
+.User .information-user .like-user .food-like .food-items-final .control-food .link {
+  width: 60%;
+  margin-left: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #4e424d;
+  border-radius: 0.5rem;
+}
+.User .information-user .like-user .food-like .food-items-final .control-food p span {
+  padding: 3px;
+  font-size: 22px;
+  color: #624761;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+}
+.User .information-user .like-user .food-like .food-items-final .control-food p span:hover {
+  background: #4682A9;
+  color: white;
 }
 .User .information-user .save-user {
   width: 80%;

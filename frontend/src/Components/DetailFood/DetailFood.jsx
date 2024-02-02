@@ -7,10 +7,13 @@ import { BASE_URL } from '../Utils/config.js'
 
 import userIcons from '../../assets/User.png'
 
+import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
 
   
 
 import arrowLeft from '../../assets/ArrowLeft.png'
+import { Nav } from 'reactstrap'
+import { AiFillSwitcher } from 'react-icons/ai'
 const DetailFood = () => {
 
   const navigate = useNavigate();
@@ -18,12 +21,15 @@ const DetailFood = () => {
   function handleClick() {
     navigate(-1);
   }
+  
 
   const {id} = useParams()
   const {user} = useContext(AuthContext)
 
+
   const [Food, setFood] = useState([])
 
+  
   const [nameFood, setNameFood] = useState('')
   const [type, setType] = useState('')
   const [imageFood, setImageFood] = useState('')
@@ -37,17 +43,28 @@ const DetailFood = () => {
   const [processing, setProcessing] = useState('')
   const [review, setReview] = useState('')
   const [country, setCountry] = useState('')
-  const [uuser, setUser] = useState([])
 
-  const [foodUser, setFoodUser] = useState([])
+  const [userInfor, setUserInfor] = useState([])
 
+  const [countLike, setCountLike] = useState(0)
+
+  const [userId, setUserId] = useState('') 
+
+  const [stateLike, setStateLike] = useState(Boolean)
+  const [listLike, setListLike] = useState([])
+  
 
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/${id}`)
     const data = await response.json()
     setFood(data.data)
+    const resUser = await fetch(`${BASE_URL}/users/${data.data.userID}`)
+    const dataUser = await resUser.json()
+    console.log(dataUser.data) 
+    setUserInfor(dataUser.data)
 
 
+    setListLike(data.data.likes)
     setNameFood(data.data.nameFood)
     setType(data.data.typeFood)
     setImageFood(data.data.imageFood)
@@ -56,124 +73,120 @@ const DetailFood = () => {
     setProcessing(data.data.cookingMethod)
     setCountry(data.data.country)
     setMainMaterial(data.data.mainMaterial)
-    // setUser(data.data.users[0].lastFirstName)
+    setAuxiMaterial(data.data.auxiliaryMaterials)
+    setAdditives(data.data.additives)
+    setRation(data.data.ration)
     setTotal(data.data.calo)
-    
-    // setFoodUser(data.data.users[0].foods)
 
+    setCountLike(data.data.likes.length)
+
+    for(let i = 0; i < listLike.length; i++){
+      if(listLike[i] == userId){
+        setStateLike(true)
+      }else{
+        setStateLike(false)
+      }
+    }
+    console.log(stateLike)
   }
 
+  
+
+  
+  
+
+  const handleLike = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}/post/like/${id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to like post');
+      }
+
+      const data = await response.json();
+      setCountLike(data.count);
+      console.log(data)
+    } catch (error) {
+      console.error('Error liking post:', error.message);
+    }
+  };
+
+  
+
+ 
   useEffect(() => {
     fetchData()
+    setUserId(user._id)
   }, [])
-  console.log(Food)
   
 
   
 
   return (
-    <div className='DetailFood d-flex flex-row justify-content-between'>
-    {/* ============= Image food + review food START =========== */}
-      <div className='image-review d-flex flex-column'>
-        <div className='back d-flex flex-row'>
-          <Link className='link d-flex flex-row' onClick={handleClick}>
-            <img src={arrowLeft}/>
-            <p className='fs-6 fw-bold'>Quay lại</p>
-          </Link>
-        </div>
-        <div className='image-food'>
-          <img src={imageFood}/>
-        </div>
-        <div className='text d-flex flex-row justify-content-start'>
-          <div className='d-flex flex-row'>
-            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span>129</p>
-            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">chat</span>12</p>
-            <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>98</p>
+    <div className='DetailFood d-flex flex-column'>
+    <NavbarTwo/>
+      <p className='title-back d-flex flex-row align-items-center' onClick={handleClick}><span class="material-symbols-outlined">arrow_back</span>Quay lại</p>
+      <div className='body-detail d-flex flex-row justify-content-between '>
+        <div className='body-detail-food d-flex flex-column'>
+          <div className='body-food d-flex flex-row'>
+            <img src={imageFood}/>
+            <div className='detail-food d-flex flex-column'>
+              <div className='reviews d-flex flex-row align-items-center justify-content-between'>
+                <p className='name-food'>{nameFood}</p>
+                <div className='review-food d-flex flex-rows align-items-center'>
+                  <p className='like d-flex flex-rows align-items-center'>
+                    <span class="material-symbols-outlined" onClick={handleLike}>favorite</span>
+                    {countLike}
+                  </p>
+                  <p className='comment d-flex flex-rows align-items-center'>
+                    <span class="material-symbols-outlined">chat_bubble</span>13
+                  </p>
+                  <p className='save d-flex flex-rows align-items-center'>
+                    <span class="material-symbols-outlined">bookmark</span>12
+                  </p>
+                </div>
+              </div>
+              <div className='ration d-flex flex-column'>
+                <p className='ration-calo d-flex flex-row justify-content-between'>Đơn vị:<span>{ration}</span></p>
+                <p className='total-calo d-flex flex-row justify-content-between'>Tổng calo:<span>{total}</span></p>
+              </div>
+              <p className='main-food'>Nguyên liệu chính: <span>{mainMaterial}</span></p>
+              <p className='auxiliary-food'>Nguyên liệu phụ: <span>{auxiMaretial}</span></p>
+              <p className='additives'>Phụ gia: <span>{additives}</span></p>
+              <p className='support'>Hỗ trợ: <span>{support}</span></p>
+              <p className='type'>Loại thực phẩm: <span>{type}</span></p>
+              
+            </div>
+          </div>
+
+          <div className='desc-food d-flex flex-column'>
+            <p className='title-desc'>Mô tả chi tiết:</p>
+            <textarea class="form-control note" aria-label="With textarea" disabled
+            value={description}></textarea>
+            <button>Cách thực hiện</button>
           </div>
         </div>
-
-        <div className='support d-flex flex-row justify-content-between'>
-          <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span>Yêu thích</p>
-          <p className='d-flex flex-row align-items-center' data-bs-toggle="modal" data-bs-target="#chat"><span class="material-symbols-outlined">chat</span>Đánh giá</p>
-          <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span>Lưu</p>
-
+        <div className='author-food d-flex flex-column'>
+          <div className='infor-author d-flex flex-row align-items-center'>
+            <img src={userInfor.avatar}/>
+            <div className='name-author d-flex flex-column'>
+              <p className='name'>{userInfor.lastFirstName}</p>
+              <p className='id'>{userInfor.userName}</p>
+              <button>Theo dõi</button>
+            </div>
+          </div>
         </div>
+      </div>
         
 
-      </div>
-    {/* ============= Image food + review food END =========== */}
 
-
-
-
-
-
-
-
-    {/* ============= Description food START =========== */}
-      <div className='description d-flex flex-column justify-content-between'>
-        <p className='nameFood fs-4 fw-bold'>{nameFood}</p>
-        <div className='title d-flex flex-row'>
-          <p className='text'>Quốc gia: </p>
-          <span className=' fw-bold'>
-            {country}
-          </span>
-        </div>
-        <div className='title d-flex flex-row'>
-          <p className='text'>Nguyên liệu chính: </p>
-          <span className=' fw-bold'>
-            {mainMaterial}
-          </span>
-        </div>
-        <div className='title d-flex flex-row'>
-          <p className='text'>Chế biến: </p>
-          <span className=' fw-bold'>
-            {processing}
-          </span>
-        </div>
-
-        <div className='calo d-flex flex-row'>
-          <div className='calo-text d-flex flex-column'>
-            <p className='fs-5 fw-bold'>Tổng Calo: <span> {total}</span></p>
-            <p className='fw-normal'>Đơn vị: <span> {ration} / 100g</span></p>
-          </div>
-          <div className='calo-number'>
-
-          </div>
-        </div>
-
-        <div className='text-description'>
-          <p className='fs-6 fw-bold'>Mô tả: </p>
-          {/* <p>{description}</p> */}
-          <textarea class="form-control note" aria-label="With textarea" disabled
-          value={description}></textarea>
-
-          {/* <textarea class="form-control" id="textAreaExample" rows="6">{description}</textarea> */}
-        </div>
-
-        <div className='actions d-flex flex-row justify-content-end'>
-          <button>Cách thực hiện</button>
-        </div>
-      </div>
-      {/* ============= Description food END =========== */}
-
-      <div className='author d-flex flex-column'>  
-        <div className='infor d-flex flex-row align-items-center'>
-          <img src={user.avatar}/>
-          <div className='infor-author d-flex flex-column'>
-              <p className='name-user'>{user.lastFirstName}</p>
-              <p className='id-user'>{user.userName}</p>
-          </div>
-        </div>
-
-        <div className='control-user d-flex flex-row justify-content-between'>
-          <p className='follow d-flex flex-row align-items-center'><span class="material-symbols-outlined">notification_add</span>Theo dõi</p>
-          <p className='detail-user d-flex flex-row align-items-center'><span class="material-symbols-outlined">account_circle</span>Hồ sơ</p>
-        </div>
-      </div>
-
-
-      <div class="modal fade"  id="chat" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade modal-comment"  id="comment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                <div class="modal-dialog modal-lg">
                     <div class="modal-content d-flex justify-content-between">
                           <div className='nav-chat d-flex flex-row justify-content-between'>
