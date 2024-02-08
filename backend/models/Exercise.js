@@ -16,7 +16,19 @@ const exerciseSchema = new mongoose.Schema(
           processing:[{
                imageProcess:{type: String},
                descProcess:{type: String}
-          }]
+          }],
+          likes: [
+               {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'User',
+               },
+          ],
+          saves: [
+               {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'User',
+               },
+          ],
      },
      {timestamps: true}
 )

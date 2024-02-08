@@ -140,6 +140,8 @@ const DayFood = ({id, dayName, note, dateDayPlan}) => {
             // }
             // console.log(foodPlan)
 
+            //
+
             setDiv([...div, newDiv]);
             setSelectedFoods([])
       };
@@ -179,7 +181,7 @@ const DayFood = ({id, dayName, note, dateDayPlan}) => {
             </div>
 
                   {div.map((div, index) => ( // một vòng lặp div
-                        <div className='' key={index}>
+                        <div className='border border-dark' key={index}>
                               <div className='test d-flex flex-row justify-content-between'>
                                     <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">restaurant_menu</span>Bữa ăn thứ {index + 1}</p>
                                     <p className='select-menu d-flex flex-row align-items-center' data-bs-toggle="modal" data-bs-target="#exampleModal"

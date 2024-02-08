@@ -82,14 +82,16 @@ const Navbar = () => {
           </div>
           
         </div>
-        <div className='nav-menu d-flex flex-column align-items-center'>
 
-
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <Link className='link'><a class="dropdown-item" href="#">Kế hoạch</a></Link>
             <Link className='link' to={`user/${user._id}/createfood`}><a class="dropdown-item" href="#">Món ăn</a></Link>
             <Link className='link' to={`user/${user._id}/createExer`}><a class="dropdown-item" href="#">Bài tập</a></Link>
           </ul>
+        <div className='nav-menu d-flex flex-column align-items-center'>
+
+
+          
           
           {
             nav_link1.map((item, index) => (

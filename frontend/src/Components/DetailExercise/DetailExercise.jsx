@@ -36,6 +36,9 @@ const DetailExercise = () => {
   const [calo, setCalo]  = useState()
   const [description, setDescription] = useState('')
 
+  const [userId, setUserId] = useState('')
+  const [countLike, setCountLike] = useState(0)
+
   const [time, setTime] = useState(0)
   const [difficulty, setDifficulty] = useState('')
   const [targerAudience, setTargetAudience] = useState('')
@@ -66,17 +69,44 @@ const DetailExercise = () => {
     setTime(data.data.time)
     setDifficulty(data.data.difficulty)
     setTargetAudience(data.data.targerAudience)
+
+    setCountLike(data.data.likes.length)
+    
     
     // setFoodUser(data.data.users[0].foods)
 
   }
 
+  const handleLike = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}/post/likeExer/${id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to like post');
+      }
+
+      const data = await response.json();
+      setCountLike(data.count);
+      console.log(data)
+    } catch (error) {
+      console.error('Error liking post:', error.message);
+    }
+  };
+
+
   
 
   useEffect(() => {
     fetchData()
+    setUserId(user._id)
   }, [])
-  console.log(Exercise)
+  // console.log(Exercise)
   
 
   
@@ -93,7 +123,10 @@ const DetailExercise = () => {
               <div className='reviews d-flex flex-row align-items-center justify-content-between'>
                 <p className='name-food'>{nameExer}</p>
                 <div className='review-food d-flex flex-rows align-items-center'>
-                  <p className='like d-flex flex-rows align-items-center'><span class="material-symbols-outlined">favorite</span>120</p>
+                  <p className='like d-flex flex-rows align-items-center'>
+                    <span class="material-symbols-outlined" onClick={handleLike}>favorite</span>
+                    {countLike}
+                  </p>
                   <p className='comment d-flex flex-rows align-items-center'><span class="material-symbols-outlined">chat_bubble</span>13</p>
                   <p className='save d-flex flex-rows align-items-center'><span class="material-symbols-outlined">bookmark</span>12</p>
                 </div>

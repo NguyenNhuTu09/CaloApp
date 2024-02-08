@@ -6,6 +6,9 @@
 .Navbar .nav-1 {
   width: 100%;
 }
+.Navbar .nav-1 .link {
+  text-decoration: none;
+}
 .Navbar .nav-1 .logo {
   margin-top: 0.8rem;
   width: 100%;
@@ -49,9 +52,6 @@
   height: 45vh;
   padding-bottom: 1rem;
   overflow: auto;
-}
-.Navbar .nav-1 .nav-menu .link {
-  text-decoration: none;
 }
 .Navbar .nav-1 .nav-menu .nav_item {
   list-style-type: none;

@@ -6,6 +6,9 @@
      
      .nav-1{
           width: 100%;
+          .link{
+               text-decoration: none;
+          }
           .logo{
                
                margin-top: 0.8rem;
@@ -47,6 +50,7 @@
                p{
                     font-size: 15px;
                }
+               
           }
           .nav-menu{
                margin-top: 1rem;
@@ -56,9 +60,6 @@
                height: 45vh;
                padding-bottom: 1rem;
                overflow: auto;
-               .link{
-                    text-decoration: none;
-               }
                
                
                .nav_item{

@@ -136,6 +136,18 @@
 .User .information-user .infor-user .plan-user {
   margin: 0.8rem;
 }
+.User .information-user .infor-user .plan-user .loading {
+  color: #232525;
+  width: 100%;
+  margin-top: 5rem;
+}
+.User .information-user .infor-user .plan-user .loading span {
+  font-size: 60px;
+}
+.User .information-user .infor-user .plan-user .loading p {
+  margin-top: 1rem;
+  font-size: 17px;
+}
 .User .information-user .infor-user .plan-user .plan-1 {
   width: 210px;
   border: 1px solid #CAD3D7;
@@ -160,6 +172,18 @@
 .User .information-user .infor-user .food-user {
   width: 100%;
   flex-wrap: wrap;
+}
+.User .information-user .infor-user .food-user .loading {
+  color: #232525;
+  width: 100%;
+  margin-top: 5rem;
+}
+.User .information-user .infor-user .food-user .loading span {
+  font-size: 60px;
+}
+.User .information-user .infor-user .food-user .loading p {
+  margin-top: 1rem;
+  font-size: 17px;
 }
 .User .information-user .infor-user .food-user .food-items-final {
   background: white;
