@@ -155,10 +155,27 @@ const DayFood = ({id, dayName, note, dateDayPlan}) => {
       function openModalFood(){
             fetchData();
       }
+
+      const handleNewAddFood = async() => {
+            setFoodPlan({
+                  dayPlanID: id,
+                  foods: testOne,
+                  totalCalo: calo,
+                  nameDayFood: `Bữa ăn thứ ${div.length + 1}`,
+                  dayFoodState: 'none'
+            })
+            try {
+                  const response = await axios.post(`${BASE_URL}/dayfood/`,foodPlan);
+                  console.log(response.data);
+            } catch (error) {
+                  console.error('Error:', error);
+            }
+            console.log(foodPlan)
+      }
       return (
       <div className='day-food'>
             <div className='nav-control d-flex flex-row justify-content-between'>
-            <div className='nav-1 d-flex flex-column'>
+                  <div className='nav-1 d-flex flex-column'>
                         <p className='title-dayPlan'>{dayName}</p>
                         <div className='control d-flex flex-row justify-content-between'>
                               <div className='infor-day d-flex flex-row align-items-center'>
@@ -171,33 +188,34 @@ const DayFood = ({id, dayName, note, dateDayPlan}) => {
                         </div>
 
                   <div className='infor-dayPlan'>
-                  {/* thong tin co ban */}
+                  {/* Chap nhan buong bo di, Tu a, moi chuyen da ket thuc roi.. Bay gio chi con lai mot minh may ma thoi */}
                   </div>
             </div>
 
-            <div className='note'>
-                  <textarea class="form-control note-plan" aria-label="With textarea" placeholder='Ghi chú'></textarea>
-            </div>
+                  <div className='note'>
+                        <textarea class="form-control note-plan" aria-label="With textarea" placeholder='Ghi chú'></textarea>
+                  </div>
             </div>
 
-                  {div.map((div, index) => ( // một vòng lặp div
-                        <div className='border border-dark' key={index}>
-                              <div className='test d-flex flex-row justify-content-between'>
-                                    <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">restaurant_menu</span>Bữa ăn thứ {index + 1}</p>
-                                    <p className='select-menu d-flex flex-row align-items-center' data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    onClick={openModalFood}
-                                    ><span class="material-symbols-outlined">fact_check</span>Chọn thực đơn</p>
-                                    <p className='d-flex flex-row align-items-center delete' onClick={() => handleDeleteDiv(index)}><span class="material-symbols-outlined">delete</span>Xóa</p>
-                              </div>
-                              
-                              {div}
+            {div.map((div, index) => ( // một vòng lặp div
+                  <div className='' key={index}>
+                        <div className='test d-flex flex-row justify-content-between'>
+                              <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">restaurant_menu</span>Bữa ăn thứ {index + 1}</p>
+                              <p className='select-menu d-flex flex-row align-items-center' data-bs-toggle="modal" data-bs-target="#exampleModal"
+                              onClick={openModalFood}
+                              ><span class="material-symbols-outlined">fact_check</span>Chọn thực đơn</p>
+                              <p className='d-flex flex-row align-items-center delete' onClick={() => handleDeleteDiv(index)}><span class="material-symbols-outlined">delete</span>Xóa</p>
                         </div>
-                  ))}
-                  <div className='add-food-day d-flex flex-column align-items-center'>
-                        <button className='add d-flex flex-row align-items-center justify-content-between'
-                        onClick={handleAddDayFood}
-                        ><span class="material-symbols-outlined">add</span>Thêm bữa ăn</button>
+                        
+                        {div}
                   </div>
+            ))}
+
+            <div className='add-food-day d-flex flex-column align-items-center'>
+                  <button className='add d-flex flex-row align-items-center justify-content-between'
+                  onClick={handleAddDayFood}
+                  ><span class="material-symbols-outlined">add</span>Thêm bữa ăn</button>
+            </div>
 
             {/*============== MENU FOOD EXERCISE MODAL ============ */}
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
