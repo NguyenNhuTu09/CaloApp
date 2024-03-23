@@ -49,6 +49,22 @@ public class Food {
               this.imageCook = imageCook;
               this.descCook = descCook;
           }
+
+          public String getImageCook() {
+               return imageCook;
+          }
+
+          public void setImageCook(String imageCook) {
+               this.imageCook = imageCook;
+          }
+
+          public String getDescCook() {
+               return descCook;
+          }
+
+          public void setDescCook(String descCook) {
+               this.descCook = descCook;
+          }
      }
 
      public Food(){

@@ -45,30 +45,53 @@ const Login = () => {
     dispatch({type: 'LOGIN_START'})
 
     try{
-      const res = await fetch(`${BASE_URL}/auth/login`, {
+      const res = await fetch(`${BASE_URL}/users/auth/login`, {
         method: 'post',
         headers: {
-          'content-type':'application/json'
+          'content-type':'application/json',
+          'Access-Control-Allow-Origin':`${BASE_URL}`
         }, 
         credentials: 'include',
         body: JSON.stringify(credentials)
       })
 
       const result = await res.json()
+     
       if(!res.ok){
-        alert(result.message)
+        alert(result.status)
         navigate('/')
-      } else if(res.ok){
-        console.log(result.data)
-        dispatch({type: 'LOGIN_SUCCESS', payload: result.data})
-        navigate('/app/home')
-      }
-        
+      } else if(res.ok){ 
+        localStorage.setItem('token', result.token)
 
+        fetchData()
+
+      }
     }catch(error){
       dispatch({type: 'LOGIN_FAILURE', payload: error.message})
     }
   }
+
+  const fetchData = async () => {
+    try {
+        const token = localStorage.getItem('token');
+
+        const res = await fetch(`${BASE_URL}/users/byToken/${token}`, {
+          method: 'get',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+        dispatch({ type: 'LOGIN_SUCCESS', payload: data }); 
+        navigate('/app/home')
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        dispatch({ type: 'LOGIN_FAILURE', payload: error.message }); 
+    }
+}
 
   
   return (
@@ -127,3 +150,6 @@ const Login = () => {
   )
 }
 export default Login
+
+
+

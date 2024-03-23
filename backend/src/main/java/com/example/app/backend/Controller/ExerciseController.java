@@ -3,6 +3,7 @@ package com.example.app.backend.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.app.backend.Service.ExerciseService;
-import com.example.app.backend.Models.Exercise;
+import com.example.app.backend.Common.ApiResponse;
 import com.example.app.backend.DTO.exercise.ExerciseDTO;
 import com.example.app.backend.DTO.response.ExerResponse;
 import com.example.app.backend.DTO.response.ExersResponse;
@@ -22,16 +23,14 @@ import java.util.List;
 @RequestMapping("/exercise")
 public class ExerciseController {
      
+     @Autowired
      private ExerciseService exerciseService;
-     private ExersResponse exersResponse;
-     private ExerResponse exerResponse;
 
      @Autowired
-     public ExerciseController(ExerciseService thExerciseService, ExersResponse thExersResponse, ExerResponse thExerResponse){
-          exerciseService = thExerciseService;
-          exersResponse = thExersResponse;
-          exerResponse = thExerResponse;
-     }
+     private ExersResponse exersResponse;
+
+     @Autowired
+     private ExerResponse exerResponse;
 
      @GetMapping("/")
      public ResponseEntity<ExersResponse> getAllExercise(){
@@ -41,11 +40,8 @@ public class ExerciseController {
           }else{
                exersResponse.setSuccess(true);
           }
-          Integer i = 0;
-          for(ExerciseDTO exerciseDTO: body){
-               i++;
-          }
-          exersResponse.setCount(i);
+          int sizeExerData = body.size();
+          exersResponse.setCount(sizeExerData);
           exersResponse.setMessage("Danh sách bài tập");
           exersResponse.setData(body);
 
@@ -54,7 +50,6 @@ public class ExerciseController {
 
      @GetMapping("/{exerciseId}")
      public ResponseEntity<ExerResponse> getSingleExercise(@PathVariable("exerciseId") String exerciseId){
-          // exerciseService.getSingleExer(exerciseId);
           exerResponse.setSuccess(true);
           exerResponse.setMessage("Sucessfully");
           exerResponse.setData(exerciseService.getSingleExer(exerciseId));
@@ -64,8 +59,13 @@ public class ExerciseController {
 
      @PostMapping("/")
      public ResponseEntity<ExerResponse> addExercise(@RequestBody ExerciseDTO exerciseDTO){
-          // exerciseService.addExer(exerciseDTO);
           return new ResponseEntity<ExerResponse>(new ExerResponse(true, "Tạo bài tập thành công", exerciseService.addExer(exerciseDTO)), HttpStatus.CREATED);
+     }
+
+     @DeleteMapping("/{exerciseId}")
+     public ResponseEntity<ApiResponse> deleteExercise(@PathVariable("exerciseId") String exerciseId){
+          exerciseService.deleteExer(exerciseId);
+          return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Xóa bài tập thành công"), HttpStatus.OK);
      }
 
 

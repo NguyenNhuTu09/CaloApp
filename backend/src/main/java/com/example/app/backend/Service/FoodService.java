@@ -2,7 +2,7 @@ package com.example.app.backend.Service;
 
 import com.example.app.backend.Models.Food;
 import com.example.app.backend.Repository.FoodRepository;
-import com.example.app.backend.exceptions.FoodNotExistException;
+import com.example.app.backend.exceptions.DataNotExistException;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,12 +54,31 @@ public class FoodService {
           return foods;
      }
 
-     public Food getSingleFood(String theId) throws FoodNotExistException{
+     public Food getSingleFood(String theId) throws DataNotExistException{
+          Food optionalFood = foodRepository.findFoodById(theId);
+          if(optionalFood == null){
+               throw new DataNotExistException("Món ăn không tồn tại");
+          }
+          return optionalFood;
+     }
+
+     public void deleteFoodById(String theId) throws DataNotExistException{
           Optional<Food> optionalFood = foodRepository.findById(theId);
           if(!optionalFood.isPresent()){
-               throw new FoodNotExistException("Món ăn không tồn tại");
+               throw new DataNotExistException("Món ăn không tồn tại");
           }
-          return optionalFood.get();
+          foodRepository.deleteById(theId);
      }
+
+     // public LikeFoodResponse likeFood(String theId, String userId) throws DataNotExistException{
+     //      Optional<Food> optionalFood = foodRepository.findById(theId);
+     //      if(!optionalFood.isPresent()){
+     //           throw new DataNotExistException("Món ăn không tồn tại");
+     //      }
+     //      System.out.println(optionalFood.get().getLikes());
+     //      return new LikeFoodResponse(optionalFood.get().getLikes().size(), optionalFood.get().getLikes());
+     // }
+
+     
 
 } 

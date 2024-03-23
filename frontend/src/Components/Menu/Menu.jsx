@@ -24,17 +24,17 @@ const Menu = () => {
     try{
       const response = await fetch(`${BASE_URL}/foods/`)
       const data = await response.json();
+      console.log(data)
       let k = []
       for(let i = 0; i < data.data.length; i++){
-        const resUser = await fetch(`${BASE_URL}/users/${data.data[i].userID}`)
+        const resUser = await fetch(`${BASE_URL}/users/byId/${data.data[i].userID}`)
         const dataUser = await resUser.json();
-        if(dataUser.data.role == "Admin"){
+        console.log(dataUser)
+        if(dataUser.role == "Admin"){
           k.push(data.data[i])
         }
-        // console.log(data.data[i].userID)
-       
       }
-    setFoods(k)
+      setFoods(k)
     }catch(error){
       console.error('Error fetching data:', error);
     }finally {
@@ -50,7 +50,7 @@ const Menu = () => {
 
 
 
-  console.log(Foods)
+  console.log(Foods)  
 
   return (
     <div className='Menu d-flex flex-column '>
@@ -149,9 +149,9 @@ const Menu = () => {
             </div> : null}
           <div className='foods-array d-flex flex-row'>
             {
-              Foods.map(({_id, imageFood, typeFood, nameFood, calo}) => {
+              Foods.map(({id, imageFood, typeFood, nameFood, calo}) => {
                 return(
-                  <div className='food-items-final d-flex flex-column justify-content-between' key={_id} >
+                  <div className='food-items-final d-flex flex-column justify-content-between' key={id} >
                         <div className='infor-food d-flex flex-row justify-content-between'>
                             <div className='image-food'>
                                   <img src={imageFood}/>
@@ -167,7 +167,7 @@ const Menu = () => {
                             </div>
                         </div> 
                         <div className='control-food d-flex flex-rows align-items-center'>
-                            <Link className='link d-flex flex-row align-items-center' to={`/app/menu/${_id}`}>Chi tiết
+                            <Link className='link d-flex flex-row align-items-center' to={`/app/menu/${id}`}>Chi tiết
                               <span class="material-symbols-outlined">navigate_next</span>
                             </Link>
                             <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>

@@ -1,12 +1,12 @@
 package com.example.app.backend.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.app.backend.Repository.ExerciseRepository;
-
-
+import com.example.app.backend.exceptions.DataNotExistException;
 import com.example.app.backend.Models.Exercise;
 import java.util.Optional;
 import java.util.List;
@@ -54,9 +54,19 @@ public class ExerciseService {
           return exercise;
      }
 
-     public Exercise getSingleExer(String theId){
+     public Exercise getSingleExer(String theId) throws DataAccessException{
           Optional<Exercise> optionalExercise = exerciseRepository.findById(theId);
-
+          if(!optionalExercise.isPresent()){
+               throw new DataNotExistException("Bài tập không tồn tại");
+          }
           return optionalExercise.get();
+     }
+
+     public void deleteExer(String theId) throws DataAccessException{
+          Optional<Exercise> optionalExercise = exerciseRepository.findById(theId);
+          if(!optionalExercise.isPresent()){
+               throw new DataNotExistException("Bài tập không tồn tại");
+          }
+          exerciseRepository.deleteById(theId);
      }
 }

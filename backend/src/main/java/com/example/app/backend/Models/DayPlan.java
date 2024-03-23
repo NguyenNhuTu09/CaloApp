@@ -27,7 +27,7 @@ public class DayPlan {
      }
 
      public DayPlan(){
-
+          
      }
      
      public String getId() {

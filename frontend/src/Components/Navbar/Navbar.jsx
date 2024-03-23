@@ -112,7 +112,7 @@ const Navbar = () => {
           {/* <hr/> */}
           <li className='nav_item'>
             <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} 
-                to={`/app/user/${user._id}`}><span class="material-symbols-outlined">account_circle
+                to={`/app/user/${user.id}`}><span class="material-symbols-outlined">account_circle
                 </span><p>Hồ sơ</p></NavLink>
           </li>
           <li className='nav_item'>

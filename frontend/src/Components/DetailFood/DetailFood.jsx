@@ -57,11 +57,12 @@ const DetailFood = () => {
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/${id}`)
     const data = await response.json()
+    // console.log(data.data)
     setFood(data.data)
-    const resUser = await fetch(`${BASE_URL}/users/${data.data.userID}`)
+    const resUser = await fetch(`${BASE_URL}/users/byId/${data.data.userID}`)
     const dataUser = await resUser.json()
-    console.log(dataUser.data) 
-    setUserInfor(dataUser.data)
+    console.log(dataUser) 
+    setUserInfor(dataUser)
 
 
     setListLike(data.data.likes)
@@ -90,14 +91,9 @@ const DetailFood = () => {
     console.log(stateLike)
   }
 
-  
-
-  
-  
-
   const handleLike = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/post/like/${id}`, {
+      const response = await fetch(`${BASE_URL}/foods/post/like/${id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

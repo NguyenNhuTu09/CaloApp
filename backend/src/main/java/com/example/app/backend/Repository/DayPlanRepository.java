@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface DayPlanRepository extends MongoRepository<DayPlan, String> {
+
      List<DayPlan> findAll();
 
 }

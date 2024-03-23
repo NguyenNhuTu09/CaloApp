@@ -9,6 +9,7 @@ import com.example.app.backend.Repository.UserRepository;
 import com.example.app.backend.Utils.Helper;
 import com.example.app.backend.exceptions.AuthenticationFailException;
 import com.example.app.backend.exceptions.CustomException;
+
 import com.example.app.backend.Config.MessageStrings;
 import com.example.app.backend.DTO.ResponseDto;
 import com.example.app.backend.DTO.user.SignInDto;
@@ -96,6 +97,8 @@ public class UserService {
                throw new CustomException("Token not present");
           }
 
+          // System.out.println(user);
+
           return new SignInResponseDto("Success", token.getToken());
      }
 
@@ -119,12 +122,6 @@ public class UserService {
                e.printStackTrace();
                logger.error("hashing password failed", e.getMessage());
           }
-
-          // Năm 2014, một tập thể Argentina đã cố gắng hết sức mình, Messi cũng vậy, điều duy nhất họ thiếu là may mắn ở trận Chung Kết
-          // Năm 2018, một tập thể rời rạc, không đoàn kết, không xác định rõ mục tiêu, 1 mình Messi không thể làm gì được
-          // Năm 2022, một tập thể hoàn thiện những khuyết điểm của 2 lần World Cup 2014 và 2018.... và 
-          // ...... lịch sử..........
-
 
           User user = new User(userCreatedDto.getLastFirstName(), 
                               userCreatedDto.getEmail(), 
@@ -154,6 +151,15 @@ public class UserService {
                return true;
           }
           return false;
+     }
+
+     public User getSingleUser(String theId) throws CustomException{
+          User user = userRepository.findUserById(theId);
+          System.out.println(user);
+          if(!Helper.notNull(user)){ 
+               throw new AuthenticationFailException("User is not present");
+          }
+          return user;
      }
 
 

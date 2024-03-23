@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.example.app.backend.Repository.PlanRepository;
+import com.example.app.backend.exceptions.DataNotExistException;
 import com.example.app.backend.Repository.DayPlanRepository;
 
 import com.example.app.backend.Models.Plan;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.app.backend.Models.DayPlan;
 
@@ -34,7 +35,6 @@ public class PlanService {
           plan.setPlanState("Dang xu ly");
           planRepository.save(plan);
           Plan savedPlan = planRepository.save(plan);
-          // System.out.println(savedPlan.getId());
 
           DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
           LocalDate dateStart = LocalDate.parse(savedPlan.getDayStart(), formatter);
@@ -52,8 +52,24 @@ public class PlanService {
                dayPlanRepository.save(dayPlan);
                stt++;
           }
-
           return plan;
+     }
+
+     public void deletePlan(String planId) throws DataNotExistException{
+          Optional<Plan> planSearch = planRepository.findById(planId);
+          if(!planSearch.isPresent()){
+               throw new DataNotExistException("Kế hoạch không tồn tại");
+          }
+          
+          List<DayPlan> listDayPlan = dayPlanRepository.findAll();
+
+          for(DayPlan dayPlan: listDayPlan){
+               if(planSearch.get().getId().toString().equals(dayPlan.getPlanID())){
+                    dayPlanRepository.delete(dayPlan);
+               }
+          }
+          planRepository.deleteById(planId);
+
      }
 
 }

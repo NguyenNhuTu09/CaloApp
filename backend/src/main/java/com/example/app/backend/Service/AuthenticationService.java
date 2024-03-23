@@ -1,6 +1,5 @@
 package com.example.app.backend.Service;
 
-import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

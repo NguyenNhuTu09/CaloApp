@@ -30,9 +30,9 @@ const User = () => {
 
   const[userId, setUserId] = useState('')
   const checkAuthen = async() => {
-    const resUser = await fetch(`${BASE_URL}/users/${user._id}`)
+    const resUser = await fetch(`${BASE_URL}/users/byId/${user.id}`)
     const dataUser = await resUser.json();
-    if(dataUser.data.role == "Admin"){
+    if(dataUser.role == "Admin"){
       setAuthen(true)
     }else{
       setAuthen(false)
@@ -42,20 +42,19 @@ const User = () => {
   const fetchData = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json();
-
     let k = []
     for(let i = 0; i < data.data.length; i++){
-      if(data.data[i].userID == user._id){
+      if(data.data[i].userID == user.id){
         k.push(data.data[i])
       }
     }
     setFoods(k)
 
-    const resPlan = await fetch(`${BASE_URL}/plan/`)
+    const resPlan = await fetch(`${BASE_URL}/plans/`)
     const dataPlan = await resPlan.json()
     let p = []
     for(let i = 0; i < dataPlan.data.length; i++){
-      if(dataPlan.data[i].userId == user._id){
+      if(dataPlan.data[i].userID == user.id){
         p.push(dataPlan.data[i])
       }
     }
@@ -98,10 +97,11 @@ const User = () => {
   const fetchLink = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
     const data = await response.json();
+    console.log(data)
     let k = []
     for(let i = 0; i < data.data.length; i++){
       for(let j = 0; j < data.data[i].likes.length; j++){
-        if(user._id == data.data[i].likes[j]){
+        if(user.id === data.data[i].likes[j].userId){
           k.push(data.data[i])
         }
       }
@@ -109,12 +109,12 @@ const User = () => {
     setFoodsLike(k)
     console.log(foodsLike)
 
-    const resExer = await fetch(`${BASE_URL}/exercise`)
+    const resExer = await fetch(`${BASE_URL}/exercise/`)
     const dataExer = await resExer.json();
     let m = []
     for(let i = 0; i < dataExer.data.length; i++){
       for(let j = 0; j < dataExer.data[i].likes.length; j++){
-        if(user._id == dataExer.data[i].likes[j]){
+        if(user.id == dataExer.data[i].likes[j]){
           m.push(dataExer.data[i])
         }
       }

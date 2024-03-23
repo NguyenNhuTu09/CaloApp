@@ -16,5 +16,6 @@ public interface FoodRepository extends MongoRepository<Food, String> {
 
      Food save(Food food);
 
-     Optional<Food> findById(String theId);
+     Food findFoodById(String id);
+
 }

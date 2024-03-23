@@ -104,6 +104,22 @@ public class Exercise {
                this.descProcess = descProcess;
           }
 
+          public String getImageProcess() {
+               return imageProcess;
+          }
+
+          public void setImageProcess(String imageProcess) {
+               this.imageProcess = imageProcess;
+          }
+
+          public String getDescProcess() {
+               return descProcess;
+          }
+
+          public void setDescProcess(String descProcess) {
+               this.descProcess = descProcess;
+          }
+
           // Getters and setters
      }
 
