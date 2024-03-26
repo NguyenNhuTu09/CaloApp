@@ -26,7 +26,4 @@ public class FileUploadService implements CloudinaryImageImpl {
                throw new RuntimeException("Tải ảnh lên Cloudinary thất bại");
           }
      }
-     // ngay cả khi bạn nỗ lực nhất, sẽ vẫn luôn có những người nỗ lực hơn cả thế, sự nỗ lực không bao giờ là đủ là nhiều
-     // thế nên, đừng bao giờ ngừng cố gắng trong bất cứ chuyện gì
-     // tôi không nói bạn nỗ lực rồi sẽ thành công, nhưng muốnt thành công, bạn buộc phải nỗ lực 
 }

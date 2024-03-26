@@ -72,4 +72,15 @@ public class PlanService {
 
      }
 
+     public Plan getSinglePlan(String planId) throws DataNotExistException{
+          Plan planSearch = planRepository.findPlanById(planId);
+          if(planSearch == null){
+               throw new DataNotExistException("Kế hoạch không tồn tại");
+          }
+
+          return planSearch;
+          
+     }
+
+
 }

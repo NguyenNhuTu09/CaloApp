@@ -70,6 +70,7 @@ public class Food {
      public Food(){
           this.likes = new ArrayList<>();
           this.saves = new ArrayList<>();
+          
           this.createdAt = new Date();
           this.updatedAt = new Date();
      }
@@ -101,7 +102,7 @@ public class Food {
      public Food(String id, String userID, String nameFood, String typeFood, String imageFood, String support,
                 int ration, int calo, String mainMaterial, String auxiliaryMaterials, String additives,
                 String cookingMethod, String descFood, String country, List<PreparationMethod> preparationMethods,
-                List<String> likes, List<String> saves, Date createdAt, Date updatedAt) {
+                Date createdAt, Date updatedAt) {
           this.id = id;
           this.userID = userID;
           this.nameFood = nameFood;
@@ -116,6 +117,8 @@ public class Food {
           this.cookingMethod = cookingMethod;
           this.descFood = descFood;
           this.country = country;
+          // this.likes = likes;
+          // this.saves = saves;
      }
 
     // Getters and setters

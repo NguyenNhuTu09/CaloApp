@@ -12,5 +12,7 @@ public interface PlanRepository extends MongoRepository<Plan, String> {
      List<Plan> findAll();
 
      Plan findByUserId(String userId);
+     
+     Plan findPlanById(String planId);
 
 }

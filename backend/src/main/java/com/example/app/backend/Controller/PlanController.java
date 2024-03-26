@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 
 import com.example.app.backend.Models.Plan;
 
+
 @RestController
 @RequestMapping("/plans")
 public class PlanController {
@@ -41,5 +42,11 @@ public class PlanController {
           planService.deletePlan(planId);
           return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Xóa kế hoạch thành công"), HttpStatus.OK);
      }
+
+     @GetMapping("/{planId}")
+     public ResponseEntity<PlanResponse> getSinglePlan(@PathVariable("planId") String planId) {
+         return new ResponseEntity<PlanResponse>(new PlanResponse(true, "Successfully", planService.getSinglePlan(planId)), HttpStatus.OK);
+     }
+     
 
 }

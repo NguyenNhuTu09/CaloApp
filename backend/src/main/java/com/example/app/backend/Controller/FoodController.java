@@ -55,7 +55,6 @@ public class FoodController {
 
           return new ResponseEntity<FoodsResponse>(foodsResponse, HttpStatus.OK);
      }
-
      @GetMapping("/{foodId}")
      public ResponseEntity<FoodResponse> getSingleFood(@PathVariable("foodId") String foodId){
           return new ResponseEntity<FoodResponse>(new FoodResponse(true, "Successfully", foodService.getSingleFood(foodId)), HttpStatus.OK);
@@ -71,6 +70,7 @@ public class FoodController {
           foodService.deleteFoodById(foodId);
           return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Xóa món ăn thành công"), HttpStatus.OK);
      }
+
 
      @PostMapping("/post/like/{foodId}")
      public ResponseEntity<LikeFoodResponse> postLikeFood(@PathVariable("foodId") String foodId, @RequestBody String userId) throws DataNotExistException{
@@ -88,8 +88,11 @@ public class FoodController {
           foodRepository.save(optionalFood);
 
           System.out.println(newLikes);
+          for(String data: optionalFood.getLikes()){
+               System.out.println(data);
+          }
 
           return new ResponseEntity<LikeFoodResponse>(new LikeFoodResponse(optionalFood.getLikes().size(), optionalFood.getLikes()), HttpStatus.OK);
-     
+          
      }
 }

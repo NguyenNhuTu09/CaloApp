@@ -59,7 +59,7 @@ public class FoodDTO {
      }
      public FoodDTO(@Nonnull String userID, @Nonnull String nameFood, @Nonnull String typeFood, @Nonnull String support, @Nonnull Integer ration, @Nonnull Integer calo,
      @Nonnull String imageFood, @Nonnull String mainMaterial, @Nonnull String auxiliaryMaterials, @Nonnull String additives, @Nonnull String cookingMethod,
-     @Nonnull String descFood, @Nonnull String country, @Nonnull List<String> likes, @Nonnull List<String> saves, Date createdAt, Date updatedAt) { 
+     @Nonnull String descFood, @Nonnull String country, Date createdAt, Date updatedAt) { 
           this.userID = userID;
           this.nameFood = nameFood;
           this.typeFood = typeFood;
@@ -73,6 +73,8 @@ public class FoodDTO {
           this.cookingMethod = cookingMethod;
           this.descFood = descFood;
           this.country = country;
+          // this.likes = likes;
+          // this.saves = saves;
      }
 
      // public static class PreparationMethod {

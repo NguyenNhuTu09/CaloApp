@@ -1,11 +1,12 @@
 package com.example.app.backend.DTO.response;
 import java.util.List;
+import java.util.ArrayList;
 
 public class LikeFoodResponse {
-     private Integer count;
+     private int count;
      private List<String> likes;
      public LikeFoodResponse(){
-          
+          this.likes = new ArrayList<>();
      }
      public LikeFoodResponse(Integer count, List<String> likes) {
           this.count = count;
