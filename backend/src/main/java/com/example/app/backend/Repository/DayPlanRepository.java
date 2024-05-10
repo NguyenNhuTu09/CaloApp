@@ -11,4 +11,6 @@ public interface DayPlanRepository extends MongoRepository<DayPlan, String> {
 
      List<DayPlan> findAll();
 
+     DayPlan findDayPlanById(String theId);
+
 }

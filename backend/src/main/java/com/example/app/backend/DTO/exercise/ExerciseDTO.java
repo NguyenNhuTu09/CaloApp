@@ -225,4 +225,6 @@ public class ExerciseDTO {
           this.processing = processing;
      }
 
+     // Món ăn mà con thích nhất là gì
+
 }

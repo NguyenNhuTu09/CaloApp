@@ -22,7 +22,7 @@ public class FileController {
      @PostMapping("/image")
      public ResponseEntity<Map<String, Object>> uploadImage (@RequestParam("image") MultipartFile file){
           Map<String, Object> data = this.fileUploadService.upload(file);
-          System.out.println(data);
+          System.out.println((String) data.get("url"));
           return new ResponseEntity<>(data, HttpStatus.OK);
      }
 

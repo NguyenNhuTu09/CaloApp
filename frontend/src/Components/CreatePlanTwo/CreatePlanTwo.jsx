@@ -23,11 +23,11 @@ const CreatePlanTwo = () => {
 
      const handlePlan = async() => {
           let k = []
-          const resDayPlan = await fetch(`${BASE_URL}/dayPlan`)
+          const resDayPlan = await fetch(`${BASE_URL}/dayplans/`)
           const dataDayPlan = await resDayPlan.json()
-          for(let i = 0; i < dataDayPlan.data.length; i++){
-               if(dataDayPlan.data[i].planID === id){
-                    k.push(dataDayPlan.data[i])
+          for(let i = 0; i < dataDayPlan.listDayPlan.length; i++){
+               if(dataDayPlan.listDayPlan[i].planID == id){
+                    k.push(dataDayPlan.listDayPlan[i])
                } 
           }
           setDayPlanUser(k)
@@ -47,9 +47,10 @@ const CreatePlanTwo = () => {
 
      const handleDayPlan = async(e, dateDayPlan) => { 
           setTestElement(e)
-          const response = await fetch(`${BASE_URL}/dayplan/${e}`)
+          const response = await fetch(`${BASE_URL}/dayplans/${e}`)
           const data = await response.json()
           setDayPlans(data.data)
+          console.log(dayPlans)
           setDateDayPlan(dateDayPlan)
      }
           
@@ -70,7 +71,7 @@ const CreatePlanTwo = () => {
                                    <p className='back d-flex flex-row align-items-center'><span class="material-symbols-outlined">arrow_back_ios</span></p>
                                    <div className='day-plan d-flex flex-row align-items-center'>
                                         {
-                                             dayPlanUser.map(({_id, dayName, createdAt}, index) => {
+                                             dayPlanUser.map(({id, dayName, createdAt}, index) => {
                                                   const daysToAdd = index; 
                                                   const oldDate = new Date(createdAt);
                                                   const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); 
@@ -79,8 +80,8 @@ const CreatePlanTwo = () => {
                                                   const year = newDate.getFullYear();
                                                   const formattedDate = `${year}/${month}/${day}`;
                                                   return(
-                                                       <div className='day-items d-flex flex-column text-center justify-content-between' key={_id}
-                                                       onClick={() => handleDayPlan(_id, formattedDate)}>
+                                                       <div className='day-items d-flex flex-column text-center justify-content-between' key={id}
+                                                       onClick={() => handleDayPlan(id, formattedDate)}>
                                                             <p className='day-name'>{dayName}</p>
                                                             <p className='date'>{formattedDate}</p>
                                                        </div>

@@ -43,7 +43,7 @@ public class PlanService {
           for(LocalDate date = dateStart; !date.isAfter(dateEnd); date = date.plusDays(1)){
                DayPlan dayPlan = new DayPlan(
                     savedPlan.getId(),
-                    "Ngày thứ" + stt,
+                    "Ngày thứ " + stt,
                     "",
                     0,
                     0,
@@ -81,6 +81,5 @@ public class PlanService {
           return planSearch;
           
      }
-
 
 }

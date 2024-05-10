@@ -70,15 +70,4 @@ public class FoodService {
           foodRepository.deleteById(theId);
      }
 
-     // public LikeFoodResponse likeFood(String theId, String userId) throws DataNotExistException{
-     //      Optional<Food> optionalFood = foodRepository.findById(theId);
-     //      if(!optionalFood.isPresent()){
-     //           throw new DataNotExistException("Món ăn không tồn tại");
-     //      }
-     //      System.out.println(optionalFood.get().getLikes());
-     //      return new LikeFoodResponse(optionalFood.get().getLikes().size(), optionalFood.get().getLikes());
-     // }
-
-     
-
 } 

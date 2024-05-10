@@ -3,6 +3,8 @@ package com.example.app.backend.Models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 
 @Document(collection = "dayplans")
 public class DayPlan {
@@ -16,6 +18,25 @@ public class DayPlan {
      private Integer caloIn;
      private Integer caloOut;
      private String dayPlanState;
+     private Date createdAt;
+     public Date getCreatedAt() {
+          return createdAt;
+     }
+     public void setCreatedAt(Date createdAt) {
+          this.createdAt = createdAt;
+     }
+
+     private Date updatedAt;
+     public Date getUpdatedAt() {
+          return updatedAt;
+     }
+     public void setUpdatedAt(Date updatedAt) {
+          this.updatedAt = updatedAt;
+     }
+     public DayPlan(){
+          this.createdAt = new Date();
+          this.updatedAt = new Date();
+     }
      public DayPlan(String planID, String dayName, String note, Integer caloIn, Integer caloOut,
                String dayPlanState) {
           this.planID = planID;
@@ -26,9 +47,6 @@ public class DayPlan {
           this.dayPlanState = dayPlanState;
      }
 
-     public DayPlan(){
-          
-     }
      
      public String getId() {
           return id;
@@ -72,10 +90,12 @@ public class DayPlan {
      public void setDayPlanState(String dayPlanState) {
           this.dayPlanState = dayPlanState;
      }
-
      @Override
      public String toString() {
           return "DayPlan [id=" + id + ", planID=" + planID + ", dayName=" + dayName + ", note=" + note + ", caloIn="
-                    + caloIn + ", caloOut=" + caloOut + ", dayPlanState=" + dayPlanState + "]";
+                    + caloIn + ", caloOut=" + caloOut + ", dayPlanState=" + dayPlanState + ", createdAt=" + createdAt
+                    + ", updatedAt=" + updatedAt + "]";
      }
+
+    
 }

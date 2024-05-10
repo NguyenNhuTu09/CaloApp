@@ -101,7 +101,7 @@ const User = () => {
     let k = []
     for(let i = 0; i < data.data.length; i++){
       for(let j = 0; j < data.data[i].likes.length; j++){
-        if(user.id === data.data[i].likes[j].userId){
+        if(user.id == data.data[i].likes[j]){
           k.push(data.data[i])
         }
       }
@@ -122,8 +122,6 @@ const User = () => {
 
     setExersLike(m)
     console.log(exersLike)
-
-    
   }
 
   const handleDeleteLikeFood = async(id) => {

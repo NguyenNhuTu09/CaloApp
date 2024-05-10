@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.app.backend.Service.ExerciseService;
-import com.example.app.backend.Common.ApiResponse;
 import com.example.app.backend.DTO.exercise.ExerciseDTO;
-import com.example.app.backend.DTO.response.ExerResponse;
-import com.example.app.backend.DTO.response.ExersResponse;
-import java.util.List;
+import com.example.app.backend.DTO.response.DataResponse;
 
 
 @RestController
@@ -26,46 +23,32 @@ public class ExerciseController {
      @Autowired
      private ExerciseService exerciseService;
 
-     @Autowired
-     private ExersResponse exersResponse;
-
-     @Autowired
-     private ExerResponse exerResponse;
-
      @GetMapping("/")
-     public ResponseEntity<ExersResponse> getAllExercise(){
-          List<ExerciseDTO> body = exerciseService.listExercises();
-          if(body != null){
-               exersResponse.setSuccess(true);
-          }else{
-               exersResponse.setSuccess(true);
-          }
-          int sizeExerData = body.size();
-          exersResponse.setCount(sizeExerData);
-          exersResponse.setMessage("Danh sách bài tập");
-          exersResponse.setData(body);
-
-          return new ResponseEntity<ExersResponse>(exersResponse, HttpStatus.OK);
+     public ResponseEntity<DataResponse> getAllExercise(){
+          return new ResponseEntity<DataResponse>(new DataResponse("Danh sách bài tập", 
+                                                                 exerciseService.listExercises().size(), 
+                                                                 exerciseService.listExercises()), HttpStatus.OK);
      }
 
      @GetMapping("/{exerciseId}")
-     public ResponseEntity<ExerResponse> getSingleExercise(@PathVariable("exerciseId") String exerciseId){
-          exerResponse.setSuccess(true);
-          exerResponse.setMessage("Sucessfully");
-          exerResponse.setData(exerciseService.getSingleExer(exerciseId));
-          return new ResponseEntity<ExerResponse>(exerResponse, HttpStatus.OK);
+     public ResponseEntity<DataResponse> getSingleExercise(@PathVariable("exerciseId") String exerciseId){
+          return new ResponseEntity<DataResponse>(new DataResponse("Successfully", 
+                                                                 exerciseService.getSingleExer(exerciseId)), 
+                                                                 HttpStatus.OK);
      }
 
 
      @PostMapping("/")
-     public ResponseEntity<ExerResponse> addExercise(@RequestBody ExerciseDTO exerciseDTO){
-          return new ResponseEntity<ExerResponse>(new ExerResponse(true, "Tạo bài tập thành công", exerciseService.addExer(exerciseDTO)), HttpStatus.CREATED);
+     public ResponseEntity<DataResponse> addExercise(@RequestBody ExerciseDTO exerciseDTO){
+          return new ResponseEntity<DataResponse>(new DataResponse("Tạo bài tập thành công", 
+                                                                 exerciseService.addExer(exerciseDTO)), HttpStatus.CREATED);
      }
 
      @DeleteMapping("/{exerciseId}")
-     public ResponseEntity<ApiResponse> deleteExercise(@PathVariable("exerciseId") String exerciseId){
+     public ResponseEntity<DataResponse> deleteExercise(@PathVariable("exerciseId") String exerciseId){
           exerciseService.deleteExer(exerciseId);
-          return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Xóa bài tập thành công"), HttpStatus.OK);
+          return new ResponseEntity<DataResponse>(new DataResponse(true, 
+                                                                 "Xóa bài tập thành công"), HttpStatus.OK);
      }
 
 

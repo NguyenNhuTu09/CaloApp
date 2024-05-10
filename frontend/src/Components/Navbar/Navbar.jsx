@@ -12,26 +12,17 @@ import { AuthContext } from '../../Context/AuthContext';
 const nav_link1 = [
   {
     path: '/app/home',
-    // icon: <img src={ichome}/>,
-    icon: <span class="material-symbols-outlined">
-    grid_view
-    </span>,
+    icon: <span class="material-symbols-outlined">grid_view</span>,
     text: <a>Trang chủ</a>
   },
   {
     path: '/app/menu',
-    // icon: <img src={menu2}/>,
-    icon: <span class="material-symbols-outlined">
-    lunch_dining
-    </span>,
+    icon: <span class="material-symbols-outlined">lunch_dining</span>,
     text: <a>Thực đơn</a>
   },
   {
     path: '/app/exercise',
-    // icon: <img src={Tapluyen}/>,
-    icon:<span class="material-symbols-outlined">
-    exercise
-    </span>,
+    icon:<span class="material-symbols-outlined">exercise</span>,
     text: <a>Bài tập</a>
   },
 ]
@@ -39,25 +30,10 @@ const nav_link1 = [
 const nav_link2 = [
   {
     path: '/app/discover',
-    // icon: <img src={Muctieu}/>,
-    icon: <span class="material-symbols-outlined">
-    insert_chart
-    </span>,
+    icon: <span class="material-symbols-outlined">insert_chart</span>,
     text: <a>Theo dõi</a>
   },
 ]
-
-const nav_link3 = [
-  {
-    path: '/app/discover',
-    // icon: <img src={Muctieu}/>,
-    icon: <span class="material-symbols-outlined">
-    monitoring
-    </span>,
-    text: <a>Theo dõi</a>
-  },
-]
-
 
 const Navbar = () => {
 
@@ -67,11 +43,11 @@ const Navbar = () => {
     <>
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
      <div className='nav-1 d-flex flex-column'>
-
+ 
         <div className='logo d-flex flex-column align-items-center'>
           <div className='d-flex flex-rows align-items-center'>
             <img className='' src={logo}/>
-            <p className='logo_name'>TITFitness</p>
+            <p className='logo_name'>TITFitness</p> 
           </div>
         </div>
         <div className='create d-flex flex-column' id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

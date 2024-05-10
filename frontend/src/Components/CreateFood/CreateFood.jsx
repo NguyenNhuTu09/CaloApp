@@ -79,8 +79,8 @@ const CreateFood = () => {
                     dispatch({ 
                          type: 'CREATE_FOOD_SUCCESS',
                          payload: {
-                           user: result.user, // Cập nhật thông tin người dùng với món ăn mới
-                           food: result.data._id, // Thêm món ăn mới vào mảng foods của người dùng
+                           user: result.user, 
+                           food: result.data._id, 
                          },
                        });
                     navigate(`/app/user/${user._id}`)
@@ -93,7 +93,6 @@ const CreateFood = () => {
      useEffect(() => {
 
      }, [selectedFile])
-     // console.log(user)
      return (
           <div className='Createfood d-flex flex-column'>
                <NavbarTwo/>

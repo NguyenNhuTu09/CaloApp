@@ -61,7 +61,7 @@ const DetailFood = () => {
     setFood(data.data)
     const resUser = await fetch(`${BASE_URL}/users/byId/${data.data.userID}`)
     const dataUser = await resUser.json()
-    console.log(dataUser) 
+    // console.log(dataUser) 
     setUserInfor(dataUser)
 
 
@@ -80,6 +80,7 @@ const DetailFood = () => {
     setTotal(data.data.calo)
 
     setCountLike(data.data.likes.length)
+    
 
     for(let i = 0; i < listLike.length; i++){
       if(listLike[i] == userId){
@@ -88,17 +89,17 @@ const DetailFood = () => {
         setStateLike(false)
       }
     }
-    console.log(stateLike)
   }
 
   const handleLike = async () => {
     try {
+      const payload = {userId: user.id}
       const response = await fetch(`${BASE_URL}/foods/post/like/${id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userId }),
+        body: JSON.stringify(payload), 
       });
 
       if (!response.ok) {
@@ -107,7 +108,7 @@ const DetailFood = () => {
 
       const data = await response.json();
       setCountLike(data.count);
-      console.log(data)
+      // console.log(data)
     } catch (error) {
       console.error('Error liking post:', error.message);
     }
@@ -117,8 +118,8 @@ const DetailFood = () => {
 
  
   useEffect(() => {
+    // setUserId(user._id)
     fetchData()
-    setUserId(user._id)
   }, [])
   
 

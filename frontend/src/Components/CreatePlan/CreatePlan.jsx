@@ -25,7 +25,7 @@ const CreatePlan = () => {
   const handleSubmit = async(e) => {
     e.preventDefault()
     try{
-         const res = await fetch(`${BASE_URL}/plan/user/${user._id}`, {
+         const res = await fetch(`${BASE_URL}/plans/`, {
               method: 'post',
               headers: {
                    'content-type':'application/json',
@@ -42,15 +42,14 @@ const CreatePlan = () => {
                 type: 'CREATE_PLAN_SUCCESS',
                 payload: {
                   user: result.user, 
-                  plan: result.data._id, 
+                  plan: result.data.id, 
                 },
               });
               $('#staticBackdrop').modal('hide'); 
-              navigate(`/app/user/plan/create/${result.data._id}`)  
+              navigate(`/app/user/plan/create/${result.data.id}`)  
 
               // fetchCreatePlan(result.data._id)
 
-              
           }
           
     }catch(error){
@@ -59,19 +58,15 @@ const CreatePlan = () => {
 }
 
   const [credentials, setCredentials] = useState({
+      userId: user.id,
       planName: undefined,
       dayStart: undefined,
       dayEnd: undefined,
-      userId: user._id,
-      descPlan: undefined
+      descPlan: undefined,
+      planState: true
   })
 
   const handleChange = (e) => {
-    //  if(e.target.id == "startPlan"){
-    //    setStartDayPlan(new Date(e.target.value))
-    //  } else if(e.target.id == 'endPlan'){
-    //    setEndDayPlan(new Date(e.target.value))
-    //  }
     setCredentials(prev=>({...prev, [e.target.id]:e.target.value }))
 }
 
