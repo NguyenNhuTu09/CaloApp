@@ -72,7 +72,7 @@ The backend will be running on:
 
 2. Start the React application:
     ```bash
-    npm start
+    npm run dev
     ```
 
 3. Open your web browser and go to:
