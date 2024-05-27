@@ -1,10 +1,11 @@
 package com.example.app.backend.Models;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import com.example.app.backend.enums.Role;
 
-import java.util.Date;
+import com.example.app.backend.enums.Role;
 
 
 @Document(collection = "users")
@@ -144,7 +145,5 @@ public class User {
                     + ", updatedAt=" + updatedAt + "]";
      }
 
-
-     
      
 }

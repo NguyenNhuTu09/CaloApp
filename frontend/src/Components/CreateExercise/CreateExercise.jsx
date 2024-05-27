@@ -73,8 +73,8 @@ const CreateExercise = () => {
                     dispatch({ 
                          type: 'CREATE_FOOD_SUCCESS',
                          payload: {
-                           user: result.user, // Cập nhật thông tin người dùng với món ăn mới
-                           food: result.data._id, // Thêm món ăn mới vào mảng foods của người dùng
+                           user: result.user, 
+                           food: result.data._id, 
                          },
                        });
                     navigate(`/app/user/${user._id}`)
@@ -159,17 +159,6 @@ const CreateExercise = () => {
                />
           </div>
           <div className='description-food'>
-               {/* <p className='fw-bold'>Mô tả và cách thực hiện:</p>
-               <p>Nguyên liệu chính: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'mainMaterial'/>
-               <p>Nguyên liệu phụ: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'auxiliaryMaterials'/>
-               <p>Phụ gia: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'additives'/>
-               <p>Phương thức chế biến: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'cookingMethod'/>
-               <p>Quốc gia: </p>
-               <input type="text" className="form-control" onChange={handleChange} required id = 'country'/> */}
                <p>Mô tả: </p>
                <textarea className="description form-control" aria-label="With textarea" onChange={handleChange} required id = 'descExer'/>
           </div>

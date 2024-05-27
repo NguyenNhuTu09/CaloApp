@@ -1,5 +1,7 @@
 package com.example.app.backend.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,14 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.app.backend.Service.FoodService;
-import com.example.app.backend.exceptions.DataNotExistException;
+
 import com.example.app.backend.DTO.food.FoodDTO;
-import com.example.app.backend.Repository.FoodRepository;
-import java.util.List;
+import com.example.app.backend.DTO.response.DataResponse;
 import com.example.app.backend.DTO.user.UserIdDto;
 import com.example.app.backend.Models.Food;
-import com.example.app.backend.DTO.response.DataResponse;
+import com.example.app.backend.Repository.FoodRepository;
+import com.example.app.backend.Service.FoodService;
+import com.example.app.backend.exceptions.DataNotExistException;
 
 
 @RestController
@@ -32,27 +34,27 @@ public class FoodController {
 
      @GetMapping("/")
      public ResponseEntity<DataResponse> getFoods(){
-          return new ResponseEntity<DataResponse>(new DataResponse("Danh sách món ăn", 
+          return new ResponseEntity<>(new DataResponse("Danh sách món ăn", 
                                                                  foodService.listFoods().size(), 
                                                                  foodService.listFoods()), HttpStatus.OK);
      }
 
      @GetMapping("/{foodId}")
      public ResponseEntity<DataResponse> getSingleFood(@PathVariable("foodId") String foodId){
-          return new ResponseEntity<DataResponse>(new DataResponse("Thông tin món ăn", 
+          return new ResponseEntity<>(new DataResponse("Thông tin món ăn", 
                                                                  foodService.getSingleFood(foodId)), HttpStatus.OK);
      }
  
      @PostMapping("/")
      public ResponseEntity<DataResponse> addFoods(@RequestBody FoodDTO foodDTO){
-          return new ResponseEntity<DataResponse>(new DataResponse("Tạo món ăn thành công", 
+          return new ResponseEntity<>(new DataResponse("Tạo món ăn thành công", 
                                                                  foodService.addFood(foodDTO)), HttpStatus.CREATED);
      }
 
      @DeleteMapping("/{foodId}")
      public ResponseEntity<DataResponse> deleteFood(@PathVariable("foodId") String foodId){
           foodService.deleteFoodById(foodId);
-          return new ResponseEntity<DataResponse>(new DataResponse(true, 
+          return new ResponseEntity<>(new DataResponse(true, 
                                                                  "Xóa món ăn thành công"), HttpStatus.OK);
      }
 
@@ -70,6 +72,6 @@ public class FoodController {
           optionalFood.setLikes(newLikes);
           foodRepository.save(optionalFood);
  
-          return new ResponseEntity<DataResponse>(new DataResponse(optionalFood.getLikes().size(), optionalFood.getLikes()), HttpStatus.OK);
+          return new ResponseEntity<>(new DataResponse(optionalFood.getLikes().size(), optionalFood.getLikes()), HttpStatus.OK);
      }
 }

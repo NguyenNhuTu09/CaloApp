@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.app.backend.Service.ExerciseService;
 import com.example.app.backend.DTO.exercise.ExerciseDTO;
 import com.example.app.backend.DTO.response.DataResponse;
+import com.example.app.backend.Service.ExerciseService;
 
 
 @RestController
@@ -25,31 +25,33 @@ public class ExerciseController {
 
      @GetMapping("/")
      public ResponseEntity<DataResponse> getAllExercise(){
-          return new ResponseEntity<DataResponse>(new DataResponse("Danh sách bài tập", 
+          return new ResponseEntity<>(new DataResponse("Danh sách bài tập", 
                                                                  exerciseService.listExercises().size(), 
                                                                  exerciseService.listExercises()), HttpStatus.OK);
      }
-
      @GetMapping("/{exerciseId}")
      public ResponseEntity<DataResponse> getSingleExercise(@PathVariable("exerciseId") String exerciseId){
-          return new ResponseEntity<DataResponse>(new DataResponse("Successfully", 
+          return new ResponseEntity<>(new DataResponse("Successfully", 
                                                                  exerciseService.getSingleExer(exerciseId)), 
-                                                                 HttpStatus.OK);
-     }
+                                                                      HttpStatus.OK);
+          }
 
 
      @PostMapping("/")
      public ResponseEntity<DataResponse> addExercise(@RequestBody ExerciseDTO exerciseDTO){
-          return new ResponseEntity<DataResponse>(new DataResponse("Tạo bài tập thành công", 
+          return new ResponseEntity<>(new DataResponse("Tạo bài tập thành công", 
                                                                  exerciseService.addExer(exerciseDTO)), HttpStatus.CREATED);
      }
 
      @DeleteMapping("/{exerciseId}")
      public ResponseEntity<DataResponse> deleteExercise(@PathVariable("exerciseId") String exerciseId){
           exerciseService.deleteExer(exerciseId);
-          return new ResponseEntity<DataResponse>(new DataResponse(true, 
+          return new ResponseEntity<>(new DataResponse(true, 
                                                                  "Xóa bài tập thành công"), HttpStatus.OK);
      }
+     
+
+     
 
 
 }
