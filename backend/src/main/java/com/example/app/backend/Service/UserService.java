@@ -1,32 +1,30 @@
 package com.example.app.backend.Service;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+import javax.xml.bind.DatatypeConverter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.app.backend.Repository.UserRepository;
-import com.example.app.backend.Utils.Helper;
-import com.example.app.backend.exceptions.AuthenticationFailException;
-import com.example.app.backend.exceptions.CustomException;
-
 import com.example.app.backend.Config.MessageStrings;
+import static com.example.app.backend.Config.MessageStrings.USER_CREATED;
 import com.example.app.backend.DTO.ResponseDto;
 import com.example.app.backend.DTO.user.SignInDto;
 import com.example.app.backend.DTO.user.SignInResponseDto;
 import com.example.app.backend.DTO.user.SignUpDto;
 import com.example.app.backend.DTO.user.UserCreatedDto;
-
-import static com.example.app.backend.Config.MessageStrings.USER_CREATED;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import javax.xml.bind.DatatypeConverter;
-
-import com.example.app.backend.enums.ResponseStatus;
-import com.example.app.backend.enums.Role;
 import com.example.app.backend.Models.AuthenticationToken;
 import com.example.app.backend.Models.User;
+import com.example.app.backend.Repository.UserRepository;
+import com.example.app.backend.Utils.Helper;
+import com.example.app.backend.enums.ResponseStatus;
+import com.example.app.backend.enums.Role;
+import com.example.app.backend.exceptions.AuthenticationFailException;
+import com.example.app.backend.exceptions.CustomException;
 
 @Service
 public class UserService {
@@ -48,7 +46,6 @@ public class UserService {
           try { 
                encryptedPassword = hashPassword(signUpDto.getPassword()); 
           }catch(NoSuchAlgorithmException e){     
-               e.printStackTrace();
                logger.error("hashing password failed {}", e.getMessage());
           }
 
@@ -86,7 +83,6 @@ public class UserService {
                     throw new AuthenticationFailException(MessageStrings.WRONG_PASSWORD);
                }
           }catch(NoSuchAlgorithmException e){
-               e.printStackTrace();
                logger.error("hashing password failed {}", e);
                throw new CustomException(e.getMessage());
           }
@@ -119,7 +115,6 @@ public class UserService {
           try{
                encryptedPassword = hashPassword(userCreatedDto.getPassword());
           }catch(NoSuchAlgorithmException e){
-               e.printStackTrace();
                logger.error("hashing password failed", e.getMessage());
           }
 
