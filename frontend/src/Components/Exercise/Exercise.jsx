@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
 import './exercise.css'
 import {Link} from 'react-router-dom'
-import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo.jsx'
 // import Search from './Search.jsx'
 import addplan from '../../assets/addplan.png'
 
@@ -12,7 +12,7 @@ import {IoIosArrowDown} from 'react-icons/io';
 
 import { AuthContext } from '../../Context/AuthContext'
 
-import {BASE_URL} from '../Utils/config.js'
+import { BASE_URL } from '../Utils/config.js'
 
 
 const Exercise = () => {

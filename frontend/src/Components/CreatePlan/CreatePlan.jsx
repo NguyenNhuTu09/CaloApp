@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './createPlan.css'
-import NavbarTwo from '../NavbarTwo/NavbarTwo'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo'
 import { AuthContext } from '../../Context/AuthContext'
 import { useContext } from 'react'
 import { Form } from 'reactstrap'

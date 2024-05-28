@@ -2,12 +2,11 @@ import React, {useState, useEffect, useContext} from 'react'
 import './user.css'
 import { Link, useAsyncError} from 'react-router-dom'
 
-import { BASE_URL } from '../Utils/config.js'
+import { BASE_URL } from '../../Components/Utils/config'
 import { AuthContext } from '../../Context/AuthContext'
 
 import axios from 'axios'
-
-import NavbarTwo from '../NavbarTwo/NavbarTwo'
+import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo'
 
 
 const User = () => {

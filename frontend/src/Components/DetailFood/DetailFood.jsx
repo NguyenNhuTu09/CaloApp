@@ -7,7 +7,7 @@ import { BASE_URL } from '../Utils/config.js'
 
 import userIcons from '../../assets/User.png'
 
-import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo.jsx'
 
   
 

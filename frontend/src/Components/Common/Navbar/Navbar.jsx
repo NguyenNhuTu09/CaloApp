@@ -4,10 +4,9 @@ import {NavLink, Link, useNavigate, Outlet, useParams} from 'react-router-dom';
 import {Form, FormGroup} from 'reactstrap'
 import './navbar.css'
 
-import logo from '../../assets/LogoTHF.png'
-
-import { BASE_URL } from '../Utils/config.js';
-import { AuthContext } from '../../Context/AuthContext';
+import logo from '../../../assets/LogoTHF.png';
+import { BASE_URL } from '../../Utils/config.js';
+import { AuthContext } from '../../../Context/AuthContext.jsx';
 
 const nav_link1 = [
   {

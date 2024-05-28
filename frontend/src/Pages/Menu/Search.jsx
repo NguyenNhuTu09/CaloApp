@@ -3,7 +3,7 @@ import React, { useRef, useState} from 'react';
 import { useNavigate } from 'react-router';
 import {Col, Form, FormGroup} from 'reactstrap'
 import { useLocation } from 'react-router';
-import { BASE_URL } from '../Utils/config';
+import { BASE_URL } from '../../Components/Utils/config';
 const Search = ({ onSearch }) => {
   const location = useLocation()
   const [data] = useState(location.state)

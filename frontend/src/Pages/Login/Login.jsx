@@ -13,8 +13,8 @@ import background from '../../assets/background-login.jpg'
 import clipCr7 from '../../assets/ronaldo-2.mp4'
 
 
-import {BASE_URL} from '../Utils/config.js'
-import { AuthContext } from '../../Context/AuthContext';
+import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo';
+import { AuthContext } from '../../Context/AuthContext.jsx';
 
 const Login = () => {
 
@@ -28,15 +28,6 @@ const Login = () => {
 
   const handleChange = (e) => {
     setCredentials(prev => ({...prev, [e.target.id]:e.target.value}))
-  }
-
-  const handleLogin = async(e) => {
-    dispatch({type: 'LOGIN_START'})
-    try{
-
-    }catch{
-      
-    }
   }
 
 
@@ -92,7 +83,6 @@ const Login = () => {
         dispatch({ type: 'LOGIN_FAILURE', payload: error.message }); 
     }
 
-    // đã bao giờ bạn đi đến cuối con đường chưa
 }
 
   

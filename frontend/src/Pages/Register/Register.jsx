@@ -7,7 +7,7 @@ import imgUser from '../../assets/Create.png'
 
 // import { AuthContext } from '../../context/AuthContext'
 import { AuthContext } from '../../Context/AuthContext'
-import { BASE_URL } from '../Utils/config.js'
+import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo'
 import axios from 'axios'
 import {Form} from 'reactstrap'
 
