@@ -15,6 +15,7 @@ import clipCr7 from '../../assets/ronaldo-2.mp4'
 
 import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo';
 import { AuthContext } from '../../Context/AuthContext.jsx';
+import { BASE_URL } from '../../Components/Utils/config.js';
 
 const Login = () => {
 

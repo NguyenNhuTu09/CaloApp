@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Navbar from './Components/Common/Navbar/Navbar';
-import Login from './Pages/Login/Login.jsx';
+import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import CreateExercise from './Components/CreateExercise/CreateExercise';
 import CreateFood from './Components/CreateFood/CreateFood';
