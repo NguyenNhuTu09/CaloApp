@@ -1,21 +1,15 @@
 import React, {useReducer, useState, useContext, useEffect} from 'react'
-import axios from 'axios'
 import './login.css';
 import {Link, useNavigate} from 'react-router-dom'
 import {Form, FormGroup} from 'reactstrap'
-import arrow from '../../assets/Arrow.png'
-
-import faceImg from '../../assets/Facebook.png'
-import ggImg from '../../assets/Google.png'
-import imageLg from '../../assets/LogoTHF.png'
-
-import background from '../../assets/background-login.jpg'
 import clipCr7 from '../../assets/ronaldo-2.mp4'
 
 
-import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo';
 import { AuthContext } from '../../Context/AuthContext.jsx';
 import { BASE_URL } from '../../Components/Utils/config.js';
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import { TextField } from '@mui/material';
 
 const Login = () => {
 
@@ -89,54 +83,33 @@ const Login = () => {
   
   return (
     <div className='Login d-flex flex-rows justify-content-between'>
-
-
       <div className='image-login d-flex flex-column align-items-center'>
-          <video src={clipCr7} autoPlay muted loop className='video-back'></video>
-          {/* <p className='fs-1 fw-bold'>TITFitness</p> */}
+        <img src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1716914866/home-fixma_x03waz.jpg'/>
       </div>
-
-
-
       <div className='information d-flex flex-column'>
-        <p className='title-login fs-2 fw-bold'>Đăng nhập</p>
-        <p className='fs-6 fw-bold'>Bạn chưa có tài khoản, <Link className='link' to='/register'> Đăng ký</Link></p>
 
-        {/* {error && <div className="error">{error}</div>} */}
+        <img src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1702894592/LogoTHF_wldie6.png'/>
+        <p className='title-login fw-bold'>TIT Fitness</p>
+        
+        <Form className='form-sub d-flex flex-column' onSubmit={handleClick}>
+          <TextField fullWidth margin='normal' size='small' label="Email" variant="outlined" required id = "email" onChange={handleChange} />
+          <TextField fullWidth margin='normal' size='small' type='password' label="Password" variant="outlined" required id = "password" onChange={handleChange} />
 
-
-        <Form className='form-sub d-flex flex-column w-100' onSubmit={handleClick}>
-          <input type="email" className="form-control email" placeholder="Email" required id = 'email'
-            onChange={handleChange}
-          />
-          <input type="password" className="form-control pass" placeholder="Mật khẩu" required id = 'password'
-            onChange={handleChange}
-          />
-          <div className='checkpass-login d-flex flex-row justify-content-between'>
-            <div className='checkpass d-flex flex-row'>
-              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+          <div className='checkpass-login d-flex flex-row justify-content-between align-items-center'>
+            <div className='checkpass d-flex flex-row align-items-center'>
+              <Checkbox defaultChecked />
               <p>Nhớ mật khẩu</p>
             </div>
-            <div className='btn-login'>
-              {/* <button type="submit" className="btn btn-primary"><Link to='/app/home'>Đăng nhập<img src={arrow}/></Link></button> */}
-              <button type="submit" className="btn btn-primary">Đăng nhập</button>
-            </div>
+            <p className='fw-bold'><Link className='link'> Quên mật khẩu</Link></p>
           </div>
+          
+          <Button variant='contained' type='submit'>Đăng nhập</Button>
         </Form>
 
-
-        <p className='fs-6 fw-bold'>Đăng nhập bằng:</p>
-        <div className='face-gg d-flex flex-row justify-content-between'>
-          <div className='facebook d-flex flex-row'>
-            <img src={faceImg}/>
-            <p>Facebook</p>
-          </div>
-          <div className='google d-flex flex-row'>
-            <img src={ggImg}/>
-            <p>Google</p>
-          </div>
-        </div>
+        <p className='title-register fs-6 fw-bold'>Bạn chưa có tài khoản, <Link className='link' to='/register'> Đăng ký</Link></p>
       </div>
+
+      
       
     </div>
 
