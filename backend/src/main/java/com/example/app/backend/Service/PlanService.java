@@ -1,20 +1,19 @@
 package com.example.app.backend.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import com.example.app.backend.Repository.PlanRepository;
-import com.example.app.backend.exceptions.DataNotExistException;
-import com.example.app.backend.Repository.DayPlanRepository;
-
-import com.example.app.backend.Models.Plan;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.example.app.backend.Models.DayPlan;
+import com.example.app.backend.Models.Plan;
+import com.example.app.backend.Repository.DayPlanRepository;
+import com.example.app.backend.Repository.PlanRepository;
+import com.example.app.backend.exceptions.DataNotExistException;
 
 @Service
 @Transactional
@@ -35,7 +34,6 @@ public class PlanService {
           plan.setPlanState("Dang xu ly");
           planRepository.save(plan);
           Plan savedPlan = planRepository.save(plan);
-
           DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
           LocalDate dateStart = LocalDate.parse(savedPlan.getDayStart(), formatter);
           LocalDate dateEnd = LocalDate.parse(savedPlan.getDayEnd(), formatter);
@@ -60,16 +58,13 @@ public class PlanService {
           if(!planSearch.isPresent()){
                throw new DataNotExistException("Kế hoạch không tồn tại");
           }
-          
           List<DayPlan> listDayPlan = dayPlanRepository.findAll();
-
           for(DayPlan dayPlan: listDayPlan){
                if(planSearch.get().getId().toString().equals(dayPlan.getPlanID())){
                     dayPlanRepository.delete(dayPlan);
                }
           }
           planRepository.deleteById(planId);
-
      }
 
      public Plan getSinglePlan(String planId) throws DataNotExistException{
@@ -77,7 +72,6 @@ public class PlanService {
           if(planSearch == null){
                throw new DataNotExistException("Kế hoạch không tồn tại");
           }
-
           return planSearch;
           
      }

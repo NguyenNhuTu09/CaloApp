@@ -1,18 +1,17 @@
 package com.example.app.backend.Service;
 
-import com.example.app.backend.Models.Food;
-import com.example.app.backend.Repository.FoodRepository;
-import com.example.app.backend.exceptions.DataNotExistException;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.app.backend.DTO.food.FoodDTO;
+import com.example.app.backend.Models.Food;
+import com.example.app.backend.Repository.FoodRepository;
+import com.example.app.backend.exceptions.DataNotExistException;
 
 
 @Service
@@ -70,4 +69,4 @@ public class FoodService {
           foodRepository.deleteById(theId);
      }
 
-} 
+}

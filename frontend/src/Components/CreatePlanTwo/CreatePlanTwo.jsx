@@ -1,5 +1,5 @@
 import React, { useTransition } from 'react'
-import NavbarTwo from '../NavbarTwo/NavbarTwo'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo.jsx';
 import { useState, useEffect , useContext} from 'react';
 import './createPlanTwo.css'
 

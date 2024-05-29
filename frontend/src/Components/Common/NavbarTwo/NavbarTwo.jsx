@@ -4,10 +4,10 @@ import { useContext , useState} from 'react'
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom'
 import {Col, Form, FormGroup} from 'reactstrap'
-import userIcons from '../../assets/User.png'
+import userIcons from '../../../assets/User.png'
 import { useLocation } from 'react-router-dom'
-import { BASE_URL } from '../Utils/config'
-import { AuthContext } from '../../Context/AuthContext'
+import { BASE_URL } from '../../Utils/config'
+import { AuthContext } from '../../../Context/AuthContext'
 const NavbarTwo = () => {
      const location = useLocation()
      const [data] = useState(location.state)

@@ -10,7 +10,7 @@ import { AuthContext } from '../../Context/AuthContext'
 
 import { Form, Nav } from 'reactstrap'
 import useFetch from '../Hooks/useFetch'
-import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo.jsx'
 import axios from 'axios'
 
 const CreateFood = () => {

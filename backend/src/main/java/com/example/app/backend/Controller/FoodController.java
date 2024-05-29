@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.example.app.backend.DTO.food.FoodDTO;
 import com.example.app.backend.DTO.response.DataResponse;
@@ -32,33 +33,49 @@ public class FoodController {
      @Autowired
      private FoodRepository foodRepository;
 
+     // GET all Food
      @GetMapping("/")
      public ResponseEntity<DataResponse> getFoods(){
           return new ResponseEntity<>(new DataResponse("Danh sách món ăn", 
                                                                  foodService.listFoods().size(), 
-                                                                 foodService.listFoods()), HttpStatus.OK);
+                                                                 foodService.listFoods()), 
+                                                                 HttpStatus.OK);
      }
 
+     // GET single Food
      @GetMapping("/{foodId}")
      public ResponseEntity<DataResponse> getSingleFood(@PathVariable("foodId") String foodId){
-          return new ResponseEntity<>(new DataResponse("Thông tin món ăn", 
-                                                                 foodService.getSingleFood(foodId)), HttpStatus.OK);
+          try{
+               return new ResponseEntity<>(new DataResponse("Thông tin món ăn", 
+                                                                 foodService.getSingleFood(foodId)), 
+                                                                 HttpStatus.OK);
+          }catch(DataNotExistException e){
+               throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Exercise not found", e);
+          }
+          
      }
  
+     // POST created new Food
      @PostMapping("/")
      public ResponseEntity<DataResponse> addFoods(@RequestBody FoodDTO foodDTO){
           return new ResponseEntity<>(new DataResponse("Tạo món ăn thành công", 
                                                                  foodService.addFood(foodDTO)), HttpStatus.CREATED);
      }
 
+     // Delete Food by Id
      @DeleteMapping("/{foodId}")
      public ResponseEntity<DataResponse> deleteFood(@PathVariable("foodId") String foodId){
-          foodService.deleteFoodById(foodId);
-          return new ResponseEntity<>(new DataResponse(true, 
-                                                                 "Xóa món ăn thành công"), HttpStatus.OK);
+          try{
+               foodService.deleteFoodById(foodId);
+               return new ResponseEntity<>(new DataResponse(true, 
+                                                                      "Xóa món ăn thành công"), HttpStatus.OK);
+          }catch(DataNotExistException e){
+               throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Exercise not found", e);
+          }
      }
 
 
+     // POST like, save Food
      @PostMapping("/post/like/{foodId}")
      public ResponseEntity<DataResponse> postLikeFood(@PathVariable("foodId") String foodId, @RequestBody UserIdDto userIdDto) throws DataNotExistException{
           Food optionalFood = foodRepository.findFoodById(foodId);

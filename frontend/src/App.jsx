@@ -2,25 +2,22 @@ import React from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Navbar from '../src/Components/Navbar/Navbar'
-import Home from './Components/Home/Home'
-import Login from './Components/Login/Login'
-import Register from './Components/Register/Register'
-import Menu from './Components/Menu/Menu'
-import Plan from './Components/Plan/Plan'
-import DetailFood from './Components/DetailFood/DetailFood'
-import DetailPlan from './Components/DetailPlan/DetailPlan'
-import CreateExercise from './Components/CreateExercise/CreateExercise'
-import CreateFood from './Components/CreateFood/CreateFood'
-import Discover from './Components/Discover/Discover'
-import User from './Components/User/User'
+import Navbar from './Components/Common/Navbar/Navbar';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import CreateExercise from './Components/CreateExercise/CreateExercise';
+import CreateFood from './Components/CreateFood/CreateFood';
+import Home from './Pages/Home/Home';
+import User from './Pages/User/User';
+import Discover from './Components/Discover/Discover';
+import DetailPlan from './Components/DetailPlan/DetailPlan';
+import DetailFood from './Components/DetailFood/DetailFood';
+import DetailExercise from './Components/DetailExercise/DetailExercise';
+import Menu from './Pages/Menu/Menu';
+import SearchUser from './Components/SearchUser/SearchUser';
+import CreatePlan from './Components/CreatePlan/CreatePlan';
+import CreatePlanTwo from './Components/CreatePlanTwo/CreatePlanTwo';
 import Exercise from './Components/Exercise/Exercise'
-
-import CreatePlan from './Components/CreatePlan/CreatePlan'
-import CreatePlanTwo from './Components/CreatePlanTwo/CreatePlanTwo'
-import DetailExercise from './Components/DetailExercise/DetailExercise'
-import SearchUser from './Components/SearchUser/SearchUser'
-
 
 const App = () => {
   return(

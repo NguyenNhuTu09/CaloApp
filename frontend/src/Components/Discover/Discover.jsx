@@ -23,7 +23,7 @@ import arrow from '../../assets/Arrow.png'
 import Complete from '../../assets/Complete.png'
 import Repair from '../../assets/Repair.png'
 
-import NavbarTwo from '../NavbarTwo/NavbarTwo.jsx'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo.jsx'
 
 const Discover = () => {
 

@@ -1,0 +1,44 @@
+.Login {
+  margin: 3.5rem;
+  width: 100%;
+}
+.Login .information {
+  width: 32%;
+  padding: 2rem;
+  align-items: center;
+  background-color: #EAEDED;
+}
+.Login .information .form-sub {
+  align-items: center;
+  width: 85%;
+  margin-top: 0.5rem;
+}
+.Login .information .title-register {
+  margin-top: 1rem;
+}
+.Login .information img {
+  width: 27%;
+  margin-bottom: 0.5rem;
+}
+.Login .information .title-login {
+  font-size: 30px;
+  color: #4492C6;
+  margin-bottom: 1rem;
+}
+.Login .information .checkpass-login {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.Login .information .link {
+  text-decoration: none;
+}
+.Login .image-login {
+  height: auto;
+  width: 68%;
+  text-align: center;
+  background-size: cover;
+}
+.Login .image-login img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=login.css.map */

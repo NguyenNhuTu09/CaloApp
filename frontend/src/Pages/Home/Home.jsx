@@ -2,12 +2,6 @@ import React, { useState } from 'react'
 import './home.css'
 
 import { NavLink, Link } from 'react-router-dom'
-
-import { Container, Col, Row } from 'reactstrap'
-
-import Chicken2 from '../../assets/Food/Chicken2.jpg'
-import Ham from '../../assets/Food/Ham.jpg'
-// import Suachua from '../../assets/Food/Sua chua.jpg'
 import {AiFillStar} from 'react-icons/ai'
 
 

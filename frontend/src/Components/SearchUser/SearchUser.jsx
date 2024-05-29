@@ -4,7 +4,7 @@ import { useParams, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../Context/AuthContext'
 import { Link} from 'react-router-dom'
 import { BASE_URL } from '../Utils/config'
-import NavbarTwo from '../NavbarTwo/NavbarTwo'
+import NavbarTwo from '../Common/NavbarTwo/NavbarTwo'
 const SearchUser = () => {
   const navigate = useNavigate();
 
