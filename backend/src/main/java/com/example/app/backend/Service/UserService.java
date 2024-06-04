@@ -24,7 +24,7 @@ import com.example.app.backend.Utils.Helper;
 import com.example.app.backend.enums.ResponseStatus;
 import com.example.app.backend.enums.Role;
 import com.example.app.backend.exceptions.AuthenticationFailException;
-import com.example.app.backend.exceptions.CustomException;
+import com.example.app.backend.exceptions.DataNotExistException;
 
 @Service
 public class UserService {
@@ -37,9 +37,9 @@ public class UserService {
 
      Logger logger = LoggerFactory.getLogger(UserService.class);
 
-     public ResponseDto signUp(SignUpDto signUpDto) throws CustomException{
+     public ResponseDto signUp(SignUpDto signUpDto) throws DataNotExistException{
           if(Helper.notNull(userRepository.findByEmail(signUpDto.getEmail()))){ 
-               throw new CustomException("User already exists");
+               throw new DataNotExistException("User already exists");
           }
           String encryptedPassword = signUpDto.getPassword(); 
 
@@ -68,12 +68,12 @@ public class UserService {
                authenticationService.saveConfirmationToken(authenticationToken);
                return new ResponseDto(ResponseStatus.success.toString(), USER_CREATED);
           }catch(Exception e){
-               throw new CustomException(e.getMessage());
+               throw new DataNotExistException(e.getMessage());
           }
 
      }
 
-     public SignInResponseDto signIn(SignInDto signInDto) throws CustomException{
+     public SignInResponseDto signIn(SignInDto signInDto) throws DataNotExistException{
           User user = userRepository.findByEmail(signInDto.getEmail());
           if(!Helper.notNull(user)){ 
                throw new AuthenticationFailException("User is not present");
@@ -84,13 +84,13 @@ public class UserService {
                }
           }catch(NoSuchAlgorithmException e){
                logger.error("hashing password failed {}", e);
-               throw new CustomException(e.getMessage());
+               throw new DataNotExistException(e.getMessage());
           }
 
           AuthenticationToken token = authenticationService.getToken(user);
 
           if(!Helper.notNull(token)){
-               throw new CustomException("Token not present");
+               throw new DataNotExistException("Token not present");
           }
 
           // System.out.println(user);
@@ -106,7 +106,7 @@ public class UserService {
           return myHash;
      }
 
-     public ResponseDto createUser(String token, UserCreatedDto userCreatedDto) throws CustomException, AuthenticationFailException{
+     public ResponseDto createUser(String token, UserCreatedDto userCreatedDto) throws DataNotExistException, AuthenticationFailException{
           User creatingUser = authenticationService.getUser(token);
           if(!canCrudUser(creatingUser.getRole())){
                throw new AuthenticationFailException(MessageStrings.USER_NOT_PERMITTED);
@@ -136,7 +136,7 @@ public class UserService {
                authenticationService.saveConfirmationToken(authenticationToken);
                return new ResponseDto(ResponseStatus.success.toString(), USER_CREATED);
           }catch(Exception e){
-               throw new CustomException(e.getMessage());
+               throw new DataNotExistException(e.getMessage());
           }
 
      }
@@ -148,7 +148,7 @@ public class UserService {
           return false;
      }
 
-     public User getSingleUser(String theId) throws CustomException{
+     public User getSingleUser(String theId) throws DataNotExistException{
           User user = userRepository.findUserById(theId);
           System.out.println(user);
           if(!Helper.notNull(user)){ 

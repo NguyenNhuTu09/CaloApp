@@ -2,6 +2,7 @@
   background: white;
   width: 100%;
   font-size: 15px;
+  overflow: auto;
 }
 .create-plan .body-create-plan {
   padding: 1.3rem;

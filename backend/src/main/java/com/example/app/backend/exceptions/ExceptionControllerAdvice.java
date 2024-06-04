@@ -18,8 +18,8 @@ public class ExceptionControllerAdvice {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(value = CustomException.class)
-    public final ResponseEntity<String> handleUpdateFailException(CustomException exception){
+    @ExceptionHandler(value = DataNotExistException.class)
+    public final ResponseEntity<String> handleUpdateFailException(DataNotExistException exception){
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.BAD_REQUEST);
     }
 

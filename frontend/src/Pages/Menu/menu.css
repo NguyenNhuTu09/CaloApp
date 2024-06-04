@@ -126,15 +126,15 @@
 }
 .Menu .menu-list .foods-array {
   margin-left: 1rem;
-  width: 97%;
+  width: 96%;
   flex-wrap: wrap;
 }
 .Menu .menu-list .foods-array .food-items-final {
   background: white;
-  width: 215px;
+  width: 240px;
   height: 160px;
   border-radius: 1rem;
-  margin-right: 0.7rem;
+  margin-right: 1rem;
   margin-left: 1rem;
   border: 1px solid #CAD3D7;
   margin-top: 1.2rem;

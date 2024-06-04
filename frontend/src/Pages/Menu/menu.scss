@@ -1,17 +1,10 @@
 .Menu{
      border-radius: 1rem;
-     // background: #F4F8fA;
      width: 100%;
-     // padding: 0.5rem;
      font-size: 14px;
-     // border: 2px solid black;
-     // border-left: 3px solid #CCD6D6;
      padding-bottom: 2rem;
      .menu-list{
           overflow: auto;
-          // padding-left: 2.6rem;
-          // border-top: 1px solid #CAD3D7;
-          // padding-top: 1rem;
           margin-left: 1.5rem;
           .title-menu{
                margin-left: 1.5rem;
@@ -138,16 +131,15 @@
           }
           .foods-array{
                margin-left: 1rem;
-               width: 97%;
+               width: 96%;
                flex-wrap: wrap;
                .food-items-final{
                     background: #FFFF;
-                    
-                    width: 215px;
+                    width: 240px;
                     height: 160px;
                     border-radius: 1rem;
                     // align-items: center;
-                    margin-right: 0.7rem;
+                    margin-right: 1rem;
                     margin-left: 1rem;
                     border: 1px solid #CAD3D7;
                     margin-top: 1.2rem;

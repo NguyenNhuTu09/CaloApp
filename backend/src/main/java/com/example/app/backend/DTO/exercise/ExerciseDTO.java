@@ -1,8 +1,9 @@
 package com.example.app.backend.DTO.exercise;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.ArrayList;
+
 import com.example.app.backend.Models.Exercise;
 import com.example.app.backend.Models.Exercise.Processing;
 
@@ -10,7 +11,7 @@ import jakarta.annotation.Nonnull;
 
 
 
-public class ExerciseDTO {
+public final class ExerciseDTO {
      private String id;
 
      private @Nonnull String userID;
@@ -75,8 +76,6 @@ public class ExerciseDTO {
           this.processing = processing;
      }
 
-     // Getters and setters
-
      public String getId() {
           return id;
      }
@@ -84,21 +83,6 @@ public class ExerciseDTO {
      public void setId(String id) {
           this.id = id;
      }
-
-     // Inner class for processing
-     // public static class Processing {
-     //      private String imageProcess;
-     //      private String descProcess;
-
-     //      public Processing() {
-     //      }
-
-     //      public Processing(String imageProcess, String descProcess) {
-     //           this.imageProcess = imageProcess;
-     //           this.descProcess = descProcess;
-     //      }
-
-     // }
 
      public String getUserID() {
           return userID;

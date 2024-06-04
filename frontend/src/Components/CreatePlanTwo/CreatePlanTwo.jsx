@@ -25,9 +25,9 @@ const CreatePlanTwo = () => {
           let k = []
           const resDayPlan = await fetch(`${BASE_URL}/dayplans/`)
           const dataDayPlan = await resDayPlan.json()
-          for(let i = 0; i < dataDayPlan.listDayPlan.length; i++){
-               if(dataDayPlan.listDayPlan[i].planID == id){
-                    k.push(dataDayPlan.listDayPlan[i])
+          for(let i = 0; i < dataDayPlan.data.length; i++){
+               if(dataDayPlan.data[i].planID == id){
+                    k.push(dataDayPlan.data[i])
                } 
           }
           setDayPlanUser(k)
@@ -75,7 +75,7 @@ const CreatePlanTwo = () => {
                                                   const daysToAdd = index; 
                                                   const oldDate = new Date(createdAt);
                                                   const newDate = new Date(oldDate.getTime() + (daysToAdd * 24 * 60 * 60 * 1000)); 
-                                                  const day = newDate.getDate();
+                                                  const day = newDate.getDate();6
                                                   const month = newDate.getMonth() + 1;
                                                   const year = newDate.getFullYear();
                                                   const formattedDate = `${year}/${month}/${day}`;

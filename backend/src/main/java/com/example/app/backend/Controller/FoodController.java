@@ -35,13 +35,12 @@ public class FoodController {
 
      // GET all Food
      @GetMapping("/")
-     public ResponseEntity<DataResponse> getFoods(){
+     public ResponseEntity<DataResponse> getFoods(){ 
           return new ResponseEntity<>(new DataResponse("Danh sách món ăn", 
                                                                  foodService.listFoods().size(), 
                                                                  foodService.listFoods()), 
                                                                  HttpStatus.OK);
      }
-
      // GET single Food
      @GetMapping("/{foodId}")
      public ResponseEntity<DataResponse> getSingleFood(@PathVariable("foodId") String foodId){

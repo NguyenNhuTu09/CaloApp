@@ -211,11 +211,6 @@ const Plan = () => {
             <img src={add} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
           </div>
         </div>
-
-        {/* <div className='div-dl d-flex flex-row' onClick={() => handleDeleteDiv(index)}>
-            <img className='img-dl' src={delete1} />
-            <p>Xóa bữa ăn</p>
-          </div> */}
       </div>
     );
     setDiv([...div, newDiv]);

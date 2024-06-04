@@ -21,8 +21,6 @@ const User = () => {
   const [foodsLike, setFoodsLike] = useState([])
   const [exersLike, setExersLike] = useState([])
 
-  // const [fsLike, setFoodsLike] = useState([])
-
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [loadingFood, setLoadingFood] = useState(false)
   const [loadingExer, setLoadingExer] = useState(false)
@@ -239,10 +237,6 @@ const User = () => {
       <NavbarTwo/>
       <div className='ssss d-flex flex-row justify-content-start align-items-center'>
         <p className='title-setting'>Tài khoản</p>
-        {/* <div className='search-user d-flex flex-row align-items-center'>
-          <input type='text' placeholder='Tìm người dùng'/>
-          <span class="material-symbols-outlined">search</span>
-        </div> */}
       </div>
       <div className='information-user d-flex flex-row'>
         <div className='nav-user d-flex flex-column'>

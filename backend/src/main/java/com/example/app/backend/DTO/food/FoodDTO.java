@@ -1,13 +1,14 @@
 package com.example.app.backend.DTO.food;
 
-import jakarta.annotation.Nonnull;
-import com.example.app.backend.Models.Food;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class FoodDTO {
+import com.example.app.backend.Models.Food;
+
+import jakarta.annotation.Nonnull;
+
+public final class FoodDTO {
 
      private String id;
      private @Nonnull String userID;
@@ -73,22 +74,8 @@ public class FoodDTO {
           this.cookingMethod = cookingMethod;
           this.descFood = descFood;
           this.country = country;
-          // this.likes = likes;
-          // this.saves = saves;
      }
 
-     // public static class PreparationMethod {
-     //      private String imageCook;
-     //      private String descCook;
-
-     //      public PreparationMethod() {
-     //      }
-  
-     //      public PreparationMethod(String imageCook, String descCook) {
-     //          this.imageCook = imageCook;
-     //          this.descCook = descCook;
-     //      }
-     // }
 
      public String getId() {
           return id;
