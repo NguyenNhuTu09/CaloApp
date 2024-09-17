@@ -46,7 +46,6 @@ public class ExerciseController {
                                                                  exerciseService.addExer(exerciseDTO)), HttpStatus.CREATED);
      }
 
-
      // Delete Exercise by Id
      @DeleteMapping("/{exerciseId}")
      public ResponseEntity<DataResponse> deleteExercise(@PathVariable("exerciseId") String exerciseId){
@@ -54,9 +53,4 @@ public class ExerciseController {
           return new ResponseEntity<>(new DataResponse(true, 
                                                                  "Xóa bài tập thành công"), HttpStatus.OK);
      }
-     
-
-     
-
-
 }

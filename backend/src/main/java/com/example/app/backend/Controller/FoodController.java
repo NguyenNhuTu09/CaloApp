@@ -41,6 +41,7 @@ public class FoodController {
                                                                  foodService.listFoods()), 
                                                                  HttpStatus.OK);
      }
+     
      // GET single Food
      @GetMapping("/{foodId}")
      public ResponseEntity<DataResponse> getSingleFood(@PathVariable("foodId") String foodId){

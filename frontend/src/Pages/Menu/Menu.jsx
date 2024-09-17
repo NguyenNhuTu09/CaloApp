@@ -53,7 +53,7 @@ const Menu = () => {
   console.log(Foods)  
 
   return (
-    <div className='Menu d-flex flex-column '>
+    <div className='Menu d-flex flex-column'>
       <NavbarTwo/>
         <div className='menu-list d-flex flex-column'>
           <div className='title-menu d-flex flex-column'>

@@ -150,7 +150,7 @@ public class UserService {
 
      public User getSingleUser(String theId) throws DataNotExistException{
           User user = userRepository.findUserById(theId);
-          System.out.println(user);
+          // System.out.println(user); 
           if(!Helper.notNull(user)){ 
                throw new AuthenticationFailException("User is not present");
           }

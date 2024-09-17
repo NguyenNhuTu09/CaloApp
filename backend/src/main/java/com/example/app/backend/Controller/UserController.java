@@ -60,6 +60,4 @@ public class UserController {
      public User getSingleUserById(@PathVariable("userId") String userId){
           return userService.getSingleUser(userId);
      }
-
-
 }

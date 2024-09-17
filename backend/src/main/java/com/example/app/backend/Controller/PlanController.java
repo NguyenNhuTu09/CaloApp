@@ -42,6 +42,5 @@ public class PlanController {
      public ResponseEntity<DataResponse> getSinglePlan(@PathVariable("planId") String planId) {
          return new ResponseEntity<>(new DataResponse("Successfully", planService.getSinglePlan(planId)), HttpStatus.OK);
      }
-     
 
 }
