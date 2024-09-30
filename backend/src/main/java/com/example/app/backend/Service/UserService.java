@@ -157,5 +157,9 @@ public class UserService {
           return user;
      }
 
+     // public User deleteSingleUser(String theId) throws DataNotExistException{
+
+     // }
+
 
 }

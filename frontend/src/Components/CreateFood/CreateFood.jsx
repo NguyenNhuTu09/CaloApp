@@ -17,7 +17,7 @@ const CreateFood = () => {
      const {user, dispatch} = useContext(AuthContext)
      const [selectedFile, setSelectedFile] = useState(null);
      const [credentials, setCredentials] = useState({
-          userID: user._id,
+          userID: user.id,
           nameFood: undefined,
           typeFood: undefined,
           imageFood: selectedFile,
@@ -46,7 +46,7 @@ const CreateFood = () => {
                const file = e.target.files[0];
                const formData = new FormData();
                formData.append('file', file);
-               const response = await axios.post(`${BASE_URL}/file/upload-image`, formData);
+               const response = await axios.post(`${BASE_URL}/upload/image`, formData);
                const imageUrl = response.data.url;
                console.log(imageUrl)
                setSelectedFile(imageUrl);
@@ -80,10 +80,10 @@ const CreateFood = () => {
                          type: 'CREATE_FOOD_SUCCESS',
                          payload: {
                            user: result.user, 
-                           food: result.data._id, 
+                           food: result.data.id, 
                          },
                        });
-                    navigate(`/app/user/${user._id}`)
+                    navigate(`/app/user/${user.id}`)
                }
           }catch(error){
                alert(error.message)
@@ -91,7 +91,7 @@ const CreateFood = () => {
      }
 
      useEffect(() => {
-
+          console.log(typeof(user.id))
      }, [selectedFile])
      return (
           <div className='Createfood d-flex flex-column'>

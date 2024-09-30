@@ -50,7 +50,8 @@ const CreatePlanTwo = () => {
           const response = await fetch(`${BASE_URL}/dayplans/${e}`)
           const data = await response.json()
           setDayPlans(data.data)
-          console.log(dayPlans)
+          // console.log(dayPlans)
+          console.log(e)
           setDateDayPlan(dateDayPlan)
      }
           

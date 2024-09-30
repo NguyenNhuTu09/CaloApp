@@ -8,6 +8,12 @@ const initial_state = {
 }
 
 export const AuthContext = createContext(initial_state)
+// tạo một AuthContext chứa dữ liệu mà bạn muốn chia sẻ
+// phương thức createContext trả về 2 đối tượng là Provider và Consumer
+
+// Context:là một cơ chế cho phép bạn chia sẻ dữ liệu giữa các component mà không cần truyền props qua nhiều cấp độ
+// useContext: là một hook giúp bạn sử dụng giá trị từ một context bất kỳ component con nào mà không cần truyền props qua nhiều cấp độ
+
 
 const AuthReducer = (state, action) => {
      switch(action.type){
@@ -77,7 +83,7 @@ export const AuthContextProvider = ({children}) => {
           localStorage.setItem('user', JSON.stringify(state.user))
      }, [state.user])
 
-     return <AuthContext.Provider value={{
+     return <AuthContext.Provider value={{ // value này là giá trị mà bạn muốn chia sẻ 
           user: state.user,
           loading: state.loading,
           error: state.error,

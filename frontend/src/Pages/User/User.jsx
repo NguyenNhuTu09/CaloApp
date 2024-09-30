@@ -327,9 +327,9 @@ const User = () => {
                       <p>Món ăn của bạn sẽ xuất hiện tại đây</p>
                   </div> : null} */}
                   {
-                    Foods.map(({_id, imageFood, typeFood, nameFood, calo}) => {
+                    Foods.map(({id, imageFood, typeFood, nameFood, calo}) => {
                       return(
-                        <div className='food-items-final d-flex flex-column' key={_id} >
+                        <div className='food-items-final d-flex flex-column' key={id} >
                               <div className='infor-food d-flex flex-row justify-content-between'>
                                   <div className='image-food'>
                                         <img src={imageFood}/>
@@ -345,7 +345,7 @@ const User = () => {
                                   </div>
                               </div> 
                               <div className='control-food d-flex flex-row justify-content-between'>
-                                  <Link className='link' to={`/app/menu/${_id}`}>Chi tiết</Link>
+                                  <Link className='link' to={`/app/menu/${id}`}>Chi tiết</Link>
                                   <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>
                                   <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
                               </div>

@@ -8,6 +8,6 @@ import com.example.app.backend.Models.User;
 
 @Repository
 public interface TokenRepository extends MongoRepository<AuthenticationToken, String> {
-     AuthenticationToken findTokenByUser(User user);
+     AuthenticationToken findTokenByUser(User user); 
      AuthenticationToken findTokenByToken(String token);
 }

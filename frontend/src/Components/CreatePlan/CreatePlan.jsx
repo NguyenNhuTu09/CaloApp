@@ -26,7 +26,7 @@ const CreatePlan = () => {
               headers: {
                    'content-type':'application/json',
               },
-              body: JSON.stringify(credentials)
+              body: JSON.stringify(credentials) // chuyển đổi đối tượng "credential thành chuỗi JSON"
          })
          const result = await res.json()
 

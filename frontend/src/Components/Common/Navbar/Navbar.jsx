@@ -19,11 +19,11 @@ const nav_link1 = [
     icon: <span class="material-symbols-outlined">lunch_dining</span>,
     text: <a>Thực đơn</a>
   },
-  {
-    path: '/app/exercise',
-    icon:<span class="material-symbols-outlined">exercise</span>,
-    text: <a>Bài tập</a>
-  },
+  // {
+  //   path: '/app/exercise',
+  //   icon:<span class="material-symbols-outlined">exercise</span>,
+  //   text: <a>Bài tập</a>
+  // },
 ]
 
 const nav_link2 = [
@@ -60,8 +60,8 @@ const Navbar = () => {
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <Link className='link'><a class="dropdown-item" href="#">Kế hoạch</a></Link>
-            <Link className='link' to={`user/${user._id}/createfood`}><a class="dropdown-item" href="#">Món ăn</a></Link>
-            <Link className='link' to={`user/${user._id}/createExer`}><a class="dropdown-item" href="#">Bài tập</a></Link>
+            <Link className='link' to={`user/createfood`}><a class="dropdown-item" href="#">Món ăn</a></Link>
+            <Link className='link' to={`user/createExer`}><a class="dropdown-item" href="#">Bài tập</a></Link>
           </ul>
         <div className='nav-menu d-flex flex-column align-items-center'>
 
@@ -90,11 +90,11 @@ const Navbar = () => {
                 to={`/app/user/${user.id}`}><span class="material-symbols-outlined">account_circle
                 </span><p>Hồ sơ</p></NavLink>
           </li>
-          <li className='nav_item'>
+          {/* <li className='nav_item'>
             <NavLink className={navClass => navClass.isActive ? 'active_link d-flex flex-row' : 'd-flex flex-row'} 
                 to={`/app/user/plan`}><span class="material-symbols-outlined">new_window
                 </span><p>Kế hoạch</p></NavLink>
-          </li>
+          </li> */}
 
           
 

@@ -118,30 +118,6 @@ const DayFood = ({id, dayName, note, dateDayPlan}) => {
                         </div>
                   </div>
             );
-            // let testOne = []
-            // let calo = 0;
-            // for(let i = 0; i < testSelectMenu.length; i++){
-            //       testOne.push(testSelectMenu[i]._id)
-            //       calo = testSelectMenu[i].calo + calo
-            // }
-            
-            // setFoodPlan({
-            //       dayPlanID: id,
-            //       foods: testOne,
-            //       totalCalo: calo,
-            //       nameDayFood: `Bữa ăn thứ ${div.length + 1}`,
-            //       dayFoodState: 'none'
-            // })
-            // try {
-            //       const response = await axios.post(`${BASE_URL}/dayfood/`,foodPlan);
-            //       console.log(response.data);
-            // } catch (error) {
-            //       console.error('Error:', error);
-            // }
-            // console.log(foodPlan)
-
-            //
-
             setDiv([...div, newDiv]);
             setSelectedFoods([])
       };
@@ -188,7 +164,6 @@ const DayFood = ({id, dayName, note, dateDayPlan}) => {
                         </div>
 
                   <div className='infor-dayPlan'>
-                  {/* Chap nhan buong bo di, Tu a, moi chuyen da ket thuc roi.. Bay gio chi con lai mot minh may ma thoi */}
                   </div>
             </div>
 

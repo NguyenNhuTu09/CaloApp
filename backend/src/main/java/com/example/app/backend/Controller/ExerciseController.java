@@ -23,7 +23,6 @@ public class ExerciseController {
      @Autowired
      private ExerciseService exerciseService;
 
-     // Get all Exercise
      @GetMapping("/")
      public ResponseEntity<DataResponse> getAllExercise(){
           return new ResponseEntity<>(new DataResponse("Danh sách bài tập", 

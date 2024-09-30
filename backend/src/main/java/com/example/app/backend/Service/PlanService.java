@@ -60,7 +60,8 @@ public class PlanService {
           }
           List<DayPlan> listDayPlan = dayPlanRepository.findAll();
           for(DayPlan dayPlan: listDayPlan){
-               if(planSearch.get().getId().toString().equals(dayPlan.getPlanID())){
+               if(planSearch.get().getId().equals(dayPlan.getPlanID())){
+                    // remove .toString()
                     dayPlanRepository.delete(dayPlan);
                }
           }
