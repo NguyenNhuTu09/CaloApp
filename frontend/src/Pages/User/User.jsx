@@ -57,16 +57,6 @@ const User = () => {
     }
     setPlanUser(p)
 
-    const resExer = await fetch(`${BASE_URL}/exercise/`)
-    const dataExer = await resExer.json()
-    let e = []
-    for(let i = 0; i < dataExer.data.length; i++){
-      if(dataExer.data[i].userID == user._id){
-        e.push(dataExer.data[i])
-      }
-    }
-    setExerUser(e)
-
     // checkLoading()
   }
   

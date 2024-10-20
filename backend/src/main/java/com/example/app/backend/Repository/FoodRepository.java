@@ -6,14 +6,14 @@ import org.springframework.stereotype.Repository;
 import com.example.app.backend.DTO.food.FoodDTO;
 import com.example.app.backend.Models.Food;
 
+
 @Repository
 public interface FoodRepository extends MongoRepository<Food, String> {
 
      void save(FoodDTO foodDTO);
 
-     Food save(Food food);
-
      Food findFoodById(String id);
+
 
 }
 

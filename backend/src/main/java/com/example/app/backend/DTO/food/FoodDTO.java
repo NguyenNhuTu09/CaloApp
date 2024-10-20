@@ -24,21 +24,20 @@ public final class FoodDTO {
      private @Nonnull String cookingMethod;
      private @Nonnull String descFood;
      private @Nonnull String country;
-     // private @Nonnull List<PreparationMethod> preparationMethods;
      private @Nonnull List<String> likes;
      private @Nonnull List<String> saves;
 
      private @Nonnull Date createdAt;
      private @Nonnull Date updatedAt;
 
-     public FoodDTO(){
+     public FoodDTO() {
           this.likes = new ArrayList<>();
           this.saves = new ArrayList<>();
           this.createdAt = new Date();
           this.updatedAt = new Date();
      }
 
-     public FoodDTO(Food food){
+     public FoodDTO(Food food) {
           this.setId(food.getId());
           this.setUserID(food.getUserID());
           this.setNameFood(food.getNameFood());
@@ -58,9 +57,12 @@ public final class FoodDTO {
           this.setCreatedAt(food.getCreatedAt());
           this.setUpdatedAt(food.getUpdatedAt());
      }
-     public FoodDTO(@Nonnull String userID, @Nonnull String nameFood, @Nonnull String typeFood, @Nonnull String support, @Nonnull Integer ration, @Nonnull Integer calo,
-     @Nonnull String imageFood, @Nonnull String mainMaterial, @Nonnull String auxiliaryMaterials, @Nonnull String additives, @Nonnull String cookingMethod,
-     @Nonnull String descFood, @Nonnull String country, Date createdAt, Date updatedAt) { 
+
+     public FoodDTO(@Nonnull String userID, @Nonnull String nameFood, @Nonnull String typeFood, @Nonnull String support,
+               @Nonnull Integer ration, @Nonnull Integer calo,
+               @Nonnull String imageFood, @Nonnull String mainMaterial, @Nonnull String auxiliaryMaterials,
+               @Nonnull String additives, @Nonnull String cookingMethod,
+               @Nonnull String descFood, @Nonnull String country, Date createdAt, Date updatedAt) {
           this.userID = userID;
           this.nameFood = nameFood;
           this.typeFood = typeFood;
@@ -76,88 +78,114 @@ public final class FoodDTO {
           this.country = country;
      }
 
-
      public String getId() {
           return id;
      }
+
      public void setId(String id) {
           this.id = id;
      }
+
      public String getUserID() {
-          return userID; 
+          return userID;
      }
+
      public void setUserID(String userID) {
           this.userID = userID;
      }
+
      public String getNameFood() {
           return nameFood;
      }
+
      public void setNameFood(String nameFood) {
           this.nameFood = nameFood;
      }
+
      public String getTypeFood() {
           return typeFood;
      }
+
      public void setTypeFood(String typeFood) {
           this.typeFood = typeFood;
      }
+
      public String getSupport() {
           return support;
      }
+
      public void setSupport(String support) {
           this.support = support;
      }
+
      public Integer getRation() {
           return ration;
      }
+
      public void setRation(Integer ration) {
           this.ration = ration;
      }
+
      public Integer getCalo() {
           return calo;
      }
+
      public void setCalo(Integer calo) {
           this.calo = calo;
      }
+
      public String getImageFood() {
           return imageFood;
      }
+
      public void setImageFood(String imageFood) {
           this.imageFood = imageFood;
      }
+
      public String getMainMaterial() {
           return mainMaterial;
      }
+
      public void setMainMaterial(String mainMaterial) {
           this.mainMaterial = mainMaterial;
      }
+
      public String getAuxiliaryMaterials() {
           return auxiliaryMaterials;
      }
+
      public void setAuxiliaryMaterials(String auxiliaryMaterials) {
           this.auxiliaryMaterials = auxiliaryMaterials;
      }
+
      public String getAdditives() {
           return additives;
      }
+
      public void setAdditives(String additives) {
           this.additives = additives;
      }
+
      public String getCookingMethod() {
           return cookingMethod;
      }
+
      public void setCookingMethod(String cookingMethod) {
           this.cookingMethod = cookingMethod;
      }
+
      public String getDescFood() {
           return descFood;
      }
+
      public void setDescFood(String descFood) {
           this.descFood = descFood;
      }
+
      public String getCountry() {
           return country;
      }
+
      public void setCountry(String country) {
           this.country = country;
      }
@@ -181,19 +209,17 @@ public final class FoodDTO {
      public Date getCreatedAt() {
           return createdAt;
      }
+
      public void setCreatedAt(Date createdAt) {
           this.createdAt = createdAt;
      }
 
-
-
-
      public Date getUpdatedAt() {
           return updatedAt;
      }
+
      public void setUpdatedAt(Date updatedAt) {
           this.updatedAt = updatedAt;
      }
 
-     
 }

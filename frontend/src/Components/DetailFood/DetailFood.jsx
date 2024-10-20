@@ -61,7 +61,7 @@ const DetailFood = () => {
     setFood(data.data)
     const resUser = await fetch(`${BASE_URL}/users/byId/${data.data.userID}`)
     const dataUser = await resUser.json()
-    // console.log(dataUser) 
+    console.log(dataUser) 
     setUserInfor(dataUser)
 
 

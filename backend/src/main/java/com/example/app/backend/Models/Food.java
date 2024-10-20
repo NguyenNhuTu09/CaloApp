@@ -1,8 +1,8 @@
 package com.example.app.backend.Models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.ArrayList;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,7 +16,6 @@ public class Food {
      private String id;
 
      @Field("userID")
-     
      private String userID;
      private String nameFood;
      private String typeFood;

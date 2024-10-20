@@ -69,10 +69,15 @@ public class FoodService {
           foodRepository.deleteById(theId);
      }
 
-     // public Food updatedFood(String theId) throws UpdateFailException{
-          
-
+     // public void listFoodByRole(Role role){
+     //      List<Food> foods = foodRepository.findAll();
+     //      List<FoodDTO> foodSearch = new ArrayList<>(); 
+     //      for(Food food: foods){
+     //           FoodDTO foodDTO = getDTOfromFood(food);
+     //           foodDTOs.add(foodDTO);
+     //      }
      // }
+     
 
 
 }

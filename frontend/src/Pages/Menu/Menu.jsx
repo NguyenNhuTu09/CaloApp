@@ -24,13 +24,13 @@ const Menu = () => {
     try{
       const response = await fetch(`${BASE_URL}/foods/`)
       const data = await response.json();
-      console.log(data)
+      console.log(data) // đã lấy được food từ database
       let k = []
       for(let i = 0; i < data.data.length; i++){
         const resUser = await fetch(`${BASE_URL}/users/byId/${data.data[i].userID}`)
         const dataUser = await resUser.json();
         console.log(dataUser)
-        if(dataUser.role == "Admin"){
+        if(dataUser.role === "Admin"){
           k.push(data.data[i])
         }
       }
@@ -47,10 +47,10 @@ const Menu = () => {
   useEffect(() => {
     fetchData();
   }, [])
-
-
-
   console.log(Foods)  
+
+
+
 
   return (
     <div className='Menu d-flex flex-column'>

@@ -10,6 +10,7 @@ import { AuthContext } from '../../Context/AuthContext'
 import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo'
 import axios from 'axios'
 import {Form} from 'reactstrap'
+import { BASE_URL } from '../../Components/Utils/config'
 
 const Register = () => {
 
@@ -35,26 +36,32 @@ const Register = () => {
 
   const handleFileChange = async(e) => {
     try{
-         const file = e.target.files[0];
-         const formData = new FormData();
-         formData.append('file', file);
-         const response = await axios.post(`${BASE_URL}/upload/image`, formData);
-         const imageUrl = response.data.url;
-         console.log(imageUrl)
-         setSelectedFile(imageUrl);
-         setCredentials(prevCredentials => ({
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append('image', file);
+        const response = await axios.post(`${BASE_URL}/upload/image`, formData);
+        const imageUrl = response.data.url;
+        console.log(imageUrl)
+        setSelectedFile(imageUrl);
+        setCredentials(prevCredentials => ({
               ...prevCredentials,
               avatar: imageUrl,
             }));
+        setIsImageUploaded(true);
+        console.log(credentials.avatar);
     }catch(err){
          console.error('Error uploading image:', err.message);
     }
-};
-
+  };
+  const [isImageUploaded, setIsImageUploaded] = useState(false);
   const handleSubmit = async(e) => {
     e.preventDefault()
+    if (!isImageUploaded) {
+      alert('Please upload the image first.');
+      return;
+    }
     try{
-      const res = await fetch(`${BASE_URL}/auth/register`, {
+      const res = await fetch(`${BASE_URL}/users/auth/register`, {
         method: 'post',
         headers: {
           'content-type':'application/json'

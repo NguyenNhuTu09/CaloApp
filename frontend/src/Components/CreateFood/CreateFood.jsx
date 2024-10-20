@@ -45,7 +45,7 @@ const CreateFood = () => {
           try{
                const file = e.target.files[0];
                const formData = new FormData();
-               formData.append('file', file);
+               formData.append('image', file);
                const response = await axios.post(`${BASE_URL}/upload/image`, formData);
                const imageUrl = response.data.url;
                console.log(imageUrl)
