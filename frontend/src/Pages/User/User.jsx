@@ -10,22 +10,12 @@ import NavbarTwo from '../../Components/Common/NavbarTwo/NavbarTwo'
 
 
 const User = () => {
-
-  
   const {user, dispatch} = useContext(AuthContext)
-  const [planUser, setPlanUser] = useState([])
   const [authen, setAuthen] = useState(true)
   const [Foods, setFoods] = useState([])
-  const [exerUser, setExerUser] = useState([])
-
   const [foodsLike, setFoodsLike] = useState([])
-  const [exersLike, setExersLike] = useState([])
-
-  const [loadingPlan, setLoadingPlan] = useState(false)
-  const [loadingFood, setLoadingFood] = useState(false)
-  const [loadingExer, setLoadingExer] = useState(false)
-
   const[userId, setUserId] = useState('')
+  const [loading, setLoading] = useState([true])
   const checkAuthen = async() => {
     const resUser = await fetch(`${BASE_URL}/users/byId/${user.id}`)
     const dataUser = await resUser.json();
@@ -37,49 +27,26 @@ const User = () => {
   }
 
   const fetchData = async() => {
-    const response = await fetch(`${BASE_URL}/foods/`)
-    const data = await response.json();
-    let k = []
-    for(let i = 0; i < data.data.length; i++){
-      if(data.data[i].userID == user.id){
-        k.push(data.data[i])
+    try{
+      const response = await fetch(`${BASE_URL}/foods/`)
+      const data = await response.json();
+      let k = []
+      for(let i = 0; i < data.data.length; i++){
+        if(data.data[i].userID == user.id){
+          k.push(data.data[i])
+        }
       }
+      setFoods(k)
+    } catch(error){
+      console.error('Error fetching data:', error);
+    }finally {
+      setLoading(false);
     }
-    setFoods(k)
-
-    const resPlan = await fetch(`${BASE_URL}/plans/`)
-    const dataPlan = await resPlan.json()
-    let p = []
-    for(let i = 0; i < dataPlan.data.length; i++){
-      if(dataPlan.data[i].userID == user.id){
-        p.push(dataPlan.data[i])
-      }
-    }
-    setPlanUser(p)
-
-    // checkLoading()
+  
   }
   
 
-  const checkLoading = async() => {
-    if(Foods == null){
-      setLoadingFood(false)
-    } else if(Foods != null ){
-      setLoadingFood(true)
-    }
-
-    if(exerUser === null){
-      setLoadingExer(false)
-    }else if(exerUser != null ){
-      setLoadingExer(true)
-    }
-
-    if(loadingPlan ==  null){
-      setLoadingPlan(false)
-    }else if(loadingPlan != null){
-      setLoadingPlan(true)
-    }
-  }
+  
 
   const fetchLink = async() => {
     const response = await fetch(`${BASE_URL}/foods/`)
@@ -96,19 +63,6 @@ const User = () => {
     setFoodsLike(k)
     console.log(foodsLike)
 
-    const resExer = await fetch(`${BASE_URL}/exercise/`)
-    const dataExer = await resExer.json();
-    let m = []
-    for(let i = 0; i < dataExer.data.length; i++){
-      for(let j = 0; j < dataExer.data[i].likes.length; j++){
-        if(user.id == dataExer.data[i].likes[j]){
-          m.push(dataExer.data[i])
-        }
-      }
-    }
-
-    setExersLike(m)
-    console.log(exersLike)
   }
 
   const handleDeleteLikeFood = async(id) => {
@@ -135,32 +89,6 @@ const User = () => {
       console.error('Error liking post:', error.message);
     }
   };
-
-  const handleDeleteLikeExercise = async(id) => {
-    try {
-      const response = await fetch(`${BASE_URL}/post/dlikeExer/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userId }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to like post');
-      }
-
-      const data = await response.json();
-      let test = exersLike
-      const newExerLike = test.filter(_id => _id.toString() !== id)
-      setExersLike(newExerLike)
-
-      // console.log(data)
-    } catch (error) {
-      console.error('Error liking post:', error.message);
-    }
-  };
-
 
   useEffect(() => {
     fetchData()
@@ -283,43 +211,20 @@ const User = () => {
               {
                 clickPlanUser ? (
                   <div className='plan-user d-flex flex-row'>
-                  {/* {loadingPlan ? <div className='loading d-flex flex-column align-items-center'>
-                      <span class="material-symbols-outlined">checklist</span>
-                      <p>Kế hoạch của bạn sẽ xuất hiện tại đây</p>
-                  </div> : null} */}
-                  {
-                    planUser.map(({_id, planName, dayStart, dayEnd, planState}) => {
-                      return(
-                        
-                      <div className='plan-1' key={_id}>
-                        <p className='d-flex flex-row justify-content-between align-items-center fw-bold'>{planName} 
-                          <span data-bs-toggle="dropdown" aria-expanded="false" class="material-symbols-outlined">more_vert</span>
-                          <ul class="dropdown-menu">
-                            <Link class="dropdown-item">Chi tiết</Link>
-                            <Link class="dropdown-item">Quá trình thực hiện</Link>
-                          </ul>
-                        </p>
-                        <p className='d-flex flex-row justify-content-between align-items-center'>Bắt đầu <span>{dayStart}</span></p>
-                        <p className='d-flex flex-row justify-content-between align-items-center'>Kết thúc<span>{dayEnd}</span></p>
-                        <div className='status-plan'>
-                          <p className='title-status'>{planState}</p>
-                        </div>
-                      </div>
-                      )
-                    })
-                  }
+                  <p>Chưa có kế hoạch nào được tạo</p>
+                  
 
                   </div>
                 ) : clickFoodUser ? (
                   <div className='food-user d-flex flex-row'>
-                    {/* {loadingFood ? <div className='loading d-flex flex-column align-items-center'>
-                      <span class="material-symbols-outlined">lunch_dining</span>
-                      <p>Món ăn của bạn sẽ xuất hiện tại đây</p>
-                  </div> : null} */}
+                   {loading ? <div className='loading d-flex flex-column align-items-center'>
+                      <img src='https://res.cloudinary.com/dozs7ggs4/image/upload/v1706711758/03-05-45-320_512_ae3nkg.gif'/>
+                      <p>Đang tải</p>
+                  </div> : null}
                   {
                     Foods.map(({id, imageFood, typeFood, nameFood, calo}) => {
                       return(
-                        <div className='food-items-final d-flex flex-column' key={id} >
+                        <div className='food-items-final d-flex flex-column ' key={id} >
                               <div className='infor-food d-flex flex-row justify-content-between'>
                                   <div className='image-food'>
                                         <img src={imageFood}/>
@@ -346,37 +251,8 @@ const User = () => {
                   </div>
                 ) : (
                   <div className='food-user d-flex flex-row'>
-                  {/* {loadingExer ? <div className='loading d-flex flex-column align-items-center'>
-                  <span class="material-symbols-outlined">fitness_center</span>
-                      <p>Bài tập của bạn sẽ xuất hiện tại đây</p>
-                  </div> : null} */}
-                  {
-                    exerUser.map(({_id, imageExer, typeExer, nameExer, calo}) => {
-                      return(
-                        <div className='food-items-final d-flex flex-column' key={_id} >
-                              <div className='infor-food d-flex flex-row justify-content-between'>
-                                  <div className='image-food'>
-                                        <img src={imageExer}/>
-                                  </div>
-
-                                  <div className='infor-desc d-flex flex-column'>
-                                        <div className='d-flex flex-row justify-content-end'><p className='name-food fw-bold'>{nameExer}</p></div>
-                                        <div className='d-flex flex-row justify-content-end'><p className='calo-food'><span>{calo}</span>Calo</p></div>
-                                        <div className='d-flex flex-row justify-content-end'><p className='type-food'>{typeExer}</p></div>
-                                        <div className='d-flex flex-row justify-content-end'>
-                                          <p className='like-food d-flex flex-row align-items-center'>98<span class="material-symbols-outlined like">favorite</span></p>
-                                        </div>
-                                  </div>
-                              </div> 
-                              <div className='control-food d-flex flex-row justify-content-between'>
-                                  <Link className='link' to={`/app/exercise/${_id}`}>Chi tiết</Link>
-                                  <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">favorite</span></p>
-                                  <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
-                              </div>
-                        </div>
-                      )
-                    })
-                  }
+                  
+                  <p>Chưa có bài tập nào được tạo</p>
                   </div>
                 )
               }
@@ -390,9 +266,9 @@ const User = () => {
               <div className='food-like d-flex flex-row'>
               
                 {
-                  foodsLike.map(({_id, imageFood, typeFood, nameFood, calo}) => {
+                  foodsLike.map(({id, imageFood, typeFood, nameFood, calo}) => {
                     return(
-                      <div className='food-items-final d-flex flex-column' key={_id} >
+                      <div className='food-items-final d-flex flex-column' key={id} >
                             <div className='infor-food d-flex flex-row justify-content-between'>
                                 <div className='image-food'>
                                       <img src={imageFood}/>
@@ -408,11 +284,11 @@ const User = () => {
                                 </div>
                             </div> 
                             <div className='control-food d-flex flex-row align-items-center justify-content-between'>
-                              <Link className='link d-flex flex-row align-items-center' to={`/app/menu/${_id}`}>Chi tiết
+                              <Link className='link d-flex flex-row align-items-center' to={`/app/menu/${id}`}>Chi tiết
                                 <span class="material-symbols-outlined">navigate_next</span>
                               </Link>
                                 <p className='d-flex flex-row align-items-center'>
-                                  <span class="material-symbols-outlined" onClick={() => handleDeleteLikeFood(_id.toString())}>favorite</span>
+                                  <span class="material-symbols-outlined" onClick={() => handleDeleteLikeFood(id.toString())}>favorite</span>
                                 </p>
                                 <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
                             </div>
@@ -421,37 +297,7 @@ const User = () => {
                   })
                 }
 
-                {
-                    exersLike.map(({_id, imageExer, typeExer, nameExer, calo}) => {
-                      return(
-                        <div className='food-items-final d-flex flex-column' key={_id} >
-                              <div className='infor-food d-flex flex-row justify-content-between'>
-                                  <div className='image-food'>
-                                        <img src={imageExer}/>
-                                  </div>
-
-                                  <div className='infor-desc d-flex flex-column'>
-                                        <div className='d-flex flex-row justify-content-end'><p className='name-food fw-bold'>{nameExer}</p></div>
-                                        <div className='d-flex flex-row justify-content-end'><p className='calo-food'><span>{calo}</span>Calo</p></div>
-                                        <div className='d-flex flex-row justify-content-end'><p className='type-food'>{typeExer}</p></div>
-                                        <div className='d-flex flex-row justify-content-end'>
-                                          <p className='like-food d-flex flex-row align-items-center'>98<span class="material-symbols-outlined like">favorite</span></p>
-                                        </div>
-                                  </div>
-                              </div> 
-                              <div className='control-food d-flex flex-row justify-content-between align-items-center'>
-                                  <Link className='link d-flex flex-row align-items-center' to={`/app/exercise/${_id}`}> Chi tiết
-                                  <span class="material-symbols-outlined">navigate_next</span>
-                                  </Link>
-                                  <p className='d-flex flex-row align-items-center'>
-                                    <span class="material-symbols-outlined" onClick={() => handleDeleteLikeExercise(_id.toString())}>favorite</span>
-                                  </p>
-                                  <p className='d-flex flex-row align-items-center'><span class="material-symbols-outlined">bookmark</span></p>
-                              </div>
-                        </div>
-                      )
-                    })
-                  }
+               
               
               </div>
 

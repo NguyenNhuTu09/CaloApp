@@ -5,19 +5,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Common/Navbar/Navbar';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import CreateExercise from './Components/CreateExercise/CreateExercise';
 import CreateFood from './Components/CreateFood/CreateFood';
 import Home from './Pages/Home/Home';
 import User from './Pages/User/User';
 import Discover from './Components/Discover/Discover';
-import DetailPlan from './Components/DetailPlan/DetailPlan';
 import DetailFood from './Components/DetailFood/DetailFood';
-import DetailExercise from './Components/DetailExercise/DetailExercise';
 import Menu from './Pages/Menu/Menu';
 import SearchUser from './Components/SearchUser/SearchUser';
 import CreatePlan from './Components/CreatePlan/CreatePlan';
 import CreatePlanTwo from './Components/CreatePlanTwo/CreatePlanTwo';
-import Exercise from './Components/Exercise/Exercise'
 
 const App = () => {
   return(
@@ -35,8 +31,6 @@ const App = () => {
               <Route path="user/:id" element={<User/>}/>
               <Route path='createfood' element={<CreateFood/>}/>
               <Route path='user/createfood' element={<CreateFood/>}/>
-              <Route path='user/createExer' element={<CreateExercise/>}/>
-              <Route path='detailplan' element={<DetailPlan/>}/>
               <Route path='detailplan/detailfood' element={<DetailFood/>}/>
 
               {/* <Route path='user/:id/plan' element={<Plan/>}/> */}
@@ -47,12 +41,9 @@ const App = () => {
 
 
               <Route path='menu' element={<Menu/>}/>
-              <Route path='exercise' element={<Exercise/>}/>
               <Route path='menu/:id' element={<DetailFood/>}/>
-              <Route path='exercise/:id' element={<DetailExercise/>}/>
               <Route path='users/:id' element={<SearchUser/>}/>
 
-              <Route path='detailplan/:id' element={<DetailPlan/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

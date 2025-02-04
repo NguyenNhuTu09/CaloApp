@@ -33,7 +33,6 @@ public class FoodController {
      @Autowired
      private FoodRepository foodRepository;
 
-     // GET all Food
      @GetMapping("/")
      public ResponseEntity<DataResponse> getFoods(){ 
           return new ResponseEntity<>(new DataResponse("Danh sách món ăn", 
@@ -42,7 +41,6 @@ public class FoodController {
                                                                  HttpStatus.OK);
      }
      
-     // GET single Food
      @GetMapping("/{foodId}")
      public ResponseEntity<DataResponse> getSingleFood(@PathVariable("foodId") String foodId){
           try{
@@ -55,14 +53,12 @@ public class FoodController {
           
      }
  
-     // POST created new Food
      @PostMapping("/")
      public ResponseEntity<DataResponse> addFoods(@RequestBody FoodDTO foodDTO){
           return new ResponseEntity<>(new DataResponse("Tạo món ăn thành công", 
                                                                  foodService.addFood(foodDTO)), HttpStatus.CREATED);
      }
 
-     // Delete Food by Id
      @DeleteMapping("/{foodId}")
      public ResponseEntity<DataResponse> deleteFood(@PathVariable("foodId") String foodId){
           try{
@@ -75,7 +71,6 @@ public class FoodController {
      }
 
 
-     // POST like, save Food
      @PostMapping("/post/like/{foodId}")
      public ResponseEntity<DataResponse> postLikeFood(@PathVariable("foodId") String foodId, @RequestBody UserIdDto userIdDto) throws DataNotExistException{
           Food optionalFood = foodRepository.findFoodById(foodId);

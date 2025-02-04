@@ -160,9 +160,8 @@
   margin-right: 1rem;
 }
 .DetailFood .modal-comment .modal-dialog .modal-content .body .body-1 {
-  padding: 0.3rem;
-  border-bottom: 1px solid #CAD3D7;
-  margin-bottom: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 .DetailFood .modal-comment .modal-dialog .modal-content .body .body-1 .user .name-user {
   font-size: 16px;

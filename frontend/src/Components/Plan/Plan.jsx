@@ -86,8 +86,6 @@ const Plan = () => {
               navigate(`/app/user/${user._id}/plan/${result.data._id}`)  
 
               fetchCreatePlan(result.data._id)
-
-              
           }
           
     }catch(error){

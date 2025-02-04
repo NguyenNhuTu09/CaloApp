@@ -3,14 +3,12 @@ import './detailFood.css'
 import { Link } from 'react-router-dom'
 import { useParams, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../Context/AuthContext'
+import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
 import { BASE_URL } from '../Utils/config.js'
 
 import userIcons from '../../assets/User.png'
 
 import NavbarTwo from '../Common/NavbarTwo/NavbarTwo.jsx'
-
-  
-
 import arrowLeft from '../../assets/ArrowLeft.png'
 import { Nav } from 'reactstrap'
 import { AiFillSwitcher } from 'react-icons/ai'
@@ -41,15 +39,10 @@ const DetailFood = () => {
   const [additives, setAdditives] = useState('')
   const [description, setDescription] = useState('')
   const [processing, setProcessing] = useState('')
-  const [review, setReview] = useState('')
   const [country, setCountry] = useState('')
-
   const [userInfor, setUserInfor] = useState([])
-
   const [countLike, setCountLike] = useState(0)
-
   const [userId, setUserId] = useState('') 
-
   const [stateLike, setStateLike] = useState(Boolean)
   const [listLike, setListLike] = useState([])
   
@@ -142,7 +135,7 @@ const DetailFood = () => {
                     {countLike}
                   </p>
                   <p className='comment d-flex flex-rows align-items-center'>
-                    <span class="material-symbols-outlined">chat_bubble</span>13
+                    <span class="material-symbols-outlined" data-bs-toggle="modal" data-bs-target="#comment">chat_bubble</span>13
                   </p>
                   <p className='save d-flex flex-rows align-items-center'>
                     <span class="material-symbols-outlined">bookmark</span>12
@@ -184,35 +177,35 @@ const DetailFood = () => {
 
 
       <div class="modal fade modal-comment"  id="comment" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-               <div class="modal-dialog modal-lg">
-                    <div class="modal-content d-flex justify-content-between">
-                          <div className='nav-chat d-flex flex-row justify-content-between'>
-                            <p>Bình luận</p>
-                            <span class="material-symbols-outlined" data-bs-dismiss="modal">close</span>
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content d-flex justify-content-between">
+                      <div className='nav-chat d-flex flex-row justify-content-between'>
+                        <p>Bình luận</p>
+                        <span class="material-symbols-outlined" data-bs-dismiss="modal">close</span>
+                      </div>
+                      <div className='body d-flex flex-column'>
+                        <div className='body-1 d-flex flex-row'>
+                          <img src={userIcons}/>
+                          <div className='user d-flex flex-column'>
+                            <p className='name-user'>Nguyễn Như Từ</p>
+                            <p className='desc'>Món ăn ngon, bổ dưỡng, dễ chế biến</p>
                           </div>
-                          <div className='body d-flex flex-column'>
-                            <div className='body-1 d-flex flex-row'>
-                              <img src={userIcons}/>
-                              <div className='user d-flex flex-column'>
-                                <p className='name-user'>Nguyễn Như Từ</p>
-                                <p className='desc'>Món ăn ngon, bổ dưỡng, dễ chế biến</p>
-                              </div>
-                            </div>
-                            <div className='body-1 d-flex flex-row'>
-                              <img src={userIcons}/>
-                              <div className='user d-flex flex-column'>
-                                <p className='name-user'>Trùng Dương</p>
-                                <p className='desc'>Đánh giá món ăn cao</p>
-                              </div>
-                            </div>
+                        </div>
+                        <div className='body-1 d-flex flex-row'>
+                          <img src={userIcons}/>
+                          <div className='user d-flex flex-column'>
+                            <p className='name-user'>Trùng Dương</p>
+                            <p className='desc'>Đánh giá món ăn cao</p>
                           </div>
-                         <div className='user-comment d-flex flex-row align-items-center'>
-                            <input className='comment' placeholder='Nhập đánh giá của bạn' type='text'/>
-                            <p className='d-flex flex-row justify-content-between'><span class="material-symbols-outlined">send</span>Gửi</p>
-                         </div>
-                    </div>
-               </div>
-          </div>
+                        </div>
+                      </div>
+                      <div className='user-comment d-flex flex-row align-items-center'>
+                        <input className='comment' placeholder='Nhập đánh giá của bạn' type='text'/>
+                        <p className='d-flex flex-row justify-content-between'><span class="material-symbols-outlined">send</span>Gửi</p>
+                      </div>
+                </div>
+            </div>
+      </div>
 
 
       

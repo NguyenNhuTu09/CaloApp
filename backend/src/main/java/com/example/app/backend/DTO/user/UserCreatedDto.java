@@ -1,5 +1,7 @@
 package com.example.app.backend.DTO.user;
 
+import java.util.Date;
+
 import com.example.app.backend.enums.Role;
 
 public class UserCreatedDto {
@@ -13,10 +15,14 @@ public class UserCreatedDto {
      private String address;
      private String avatar;
      private Role role;
+
+     private Date createdAt;
+     private Date updatedAt;
     
      
      public UserCreatedDto(){
-
+          this.createdAt = new Date();
+          this.updatedAt = new Date();
      }
      public UserCreatedDto(String lastFirstName, String email, String password, String userName, String date, String phone, String gender,
                String address, String avatar, Role role) {
@@ -93,4 +99,20 @@ public class UserCreatedDto {
      public void setRole(Role role) {
           this.role = role;
      }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

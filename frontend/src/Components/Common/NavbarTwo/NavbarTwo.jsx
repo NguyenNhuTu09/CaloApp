@@ -12,17 +12,15 @@ const NavbarTwo = () => {
      const location = useLocation()
      const [data] = useState(location.state)
      const navigate = useNavigate()
-     const resultRef = useRef('')
+     const resultRef = useRef("")
      const {user, dispatch} = useContext(AuthContext) 
      const [loading, setLoading] = useState([true])
 
      const [userResult, setUserResult] = useState([])
      const [foodResult, setFoodResult] = useState([])
-     const [exerResult, setExerResult] = useState([])
 
      const [foodCount, setFoodCount] = useState(0)
      const [userCount, setUserCount] = useState(0)
-     const [exerCount, setExerCount] = useState(0)
 
      const [searchState, setSearchState] = useState(false)
 
@@ -32,23 +30,19 @@ const NavbarTwo = () => {
 
                const results = resultRef.current.value
            
-               const res = await fetch(`${BASE_URL}/search/searchInfor?query=${results}`)
+               const res = await fetch(`${BASE_URL}/search/foods?nameFood=${results}`)
            
                if(!res.ok) alert('Something went wrong ')
                const result = await res.json()
-               console.log(result.data)
+               console.log(result)
                // navigate(`/foods/search/getFoodBySearch?nameFood=${nameFood}`, {state: result.data})
      
-               setUserResult(result.data.users.data)
-               setFoodResult(result.data.foods.data)
-               setExerResult(result.data.exercises.data)
+               setUserResult(result)
+               setFoodResult(result)
      
-               setUserCount(result.data.users.count)
-               setFoodCount(result.data.foods.count)
-               setExerCount(result.data.exercises.count)
                setSearchState(true)
      
-               console.log(foodResult)
+               // console.log(foodResult)
           }catch(error){
                console.log("Có bug rồi:" + error)
           }finally{
@@ -148,7 +142,7 @@ const NavbarTwo = () => {
                                         {
                                              searchState ? (
                                                   <div className='index-result d-flex flex-row justify-content-between align-items-center'>
-                                                       <p className='title-search'>{foodCount + exerCount + userCount}<span> Kết quả</span></p>
+                                                       <p className='title-search'><span> Kết quả</span></p>
                                                        <select className='select-items' id="01">
                                                             <option disabled selected value="">Sắp xếp theo</option>
                                                             <option value="volvo">Việt Nam</option>
@@ -186,46 +180,7 @@ const NavbarTwo = () => {
                                                   )
                                              })
                                         }
-                                        {
-                                             exerResult.map(({_id, imageExer, typeExer, nameExer, calo, time, targerAudience, difficulty}) => {
-                                                  return(
-                                                       <div className='items d-flex flex-rows align-items-center' key={_id} >
-                                                            <img src={imageExer}/>
-                                                            <div className='infor d-flex flex-column'>
-                                                                 <p className='name'>{nameExer}</p>
-                                                                 <p className='calo'>{calo} Calo<span>- {time}</span>m</p>
-                                                                 <p className='main'>{typeExer}<span>- {targerAudience}</span></p>
-                                                            </div>
-
-                                                            <div className='d-flex flex-row justify-content-end'>
-                                                                 <Link className='link' to={`/app/exercise/${_id}`} onClick={detailFood}>
-                                                                      <span class="material-symbols-outlined">arrow_forward_ios</span>
-                                                                 </Link>
-                                                            </div>
-                                                       </div>
-                                                  )
-                                             })
-                                        }
-                                        {
-                                             userResult.map(({_id, avatar, userName, lastFirstName}) => {
-                                                  return(
-                                                       <div className='items d-flex flex-rows align-items-center' key={_id} >
-                                                            <img src={avatar}/>
-                                                            <div className='infor d-flex flex-column'>
-                                                                 <p className='name'>{userName}</p>
-                                                                 <p className='calo'>{lastFirstName}</p>
-                                                                 {/* <p className='main'>{typeExer}<span>- {targerAudience}</span></p> */}
-                                                            </div>
-
-                                                            <div className='d-flex flex-row justify-content-end'>
-                                                                 <Link className='link' to={`/app/users/${_id}`} onClick={detailFood}>
-                                                                      <span class="material-symbols-outlined">arrow_forward_ios</span>
-                                                                 </Link>
-                                                            </div>
-                                                       </div>
-                                                  )
-                                             })
-                                        }
+                                        
                                         
                                         </div>
                                    </div>

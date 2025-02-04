@@ -35,9 +35,7 @@ const nav_link2 = [
 ]
 
 const Navbar = () => {
-
   const {user, dispatch} = useContext(AuthContext)
-
   return (
     <>
     <div className='Navbar d-flex flex-column align-items-center justify-content-between'>
@@ -51,11 +49,9 @@ const Navbar = () => {
         </div>
         <div className='create d-flex flex-column' id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           <div className='d-flex flex-rows align-items-center'>
-
             <span class="material-symbols-outlined">add</span>
             <p>Tải lên</p>
           </div>
-          
         </div>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -64,10 +60,6 @@ const Navbar = () => {
             <Link className='link' to={`user/createExer`}><a class="dropdown-item" href="#">Bài tập</a></Link>
           </ul>
         <div className='nav-menu d-flex flex-column align-items-center'>
-
-
-          
-          
           {
             nav_link1.map((item, index) => (
               <li className='nav_item' key={index}>
@@ -75,7 +67,6 @@ const Navbar = () => {
               </li>
             ))
           }
-          
           {
             nav_link2.map((item, index) => (
               <li className='nav_item' key={index}>
@@ -95,12 +86,8 @@ const Navbar = () => {
                 to={`/app/user/plan`}><span class="material-symbols-outlined">new_window
                 </span><p>Kế hoạch</p></NavLink>
           </li> */}
-
-          
-
         </div>
      </div>
-
         <div className='item-other d-flex flex-column align-items-center'>
           <p className='help d-flex flex-row align-items-center'><span class="material-symbols-outlined">help</span>Trợ giúp</p>
         </div>

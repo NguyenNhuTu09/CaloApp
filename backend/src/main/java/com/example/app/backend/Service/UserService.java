@@ -2,6 +2,7 @@ package com.example.app.backend.Service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -58,7 +59,9 @@ public class UserService {
                               signUpDto.getGender(),
                               signUpDto.getAddress(),
                               signUpDto.getAvatar(),
-                              Role.User
+                              Role.User,
+                              new Date(),
+                              new Date()
                          ); 
           User createdUser;
           try{
@@ -127,7 +130,9 @@ public class UserService {
                               userCreatedDto.getGender(),
                               userCreatedDto.getAddress(),
                               userCreatedDto.getAvatar(),
-                              userCreatedDto.getRole()
+                              userCreatedDto.getRole(),
+                              userCreatedDto.getCreatedAt(),
+                              userCreatedDto.getUpdatedAt()
                          );
           User createdUser;
           try{

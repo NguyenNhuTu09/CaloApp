@@ -30,12 +30,13 @@ public class User {
 
 
      public User(){
-          
+          this.createdAt = new Date();
+          this.updatedAt = new Date();
      }
 
 
      public User(String lastFirstName, String email, String password, String userName, String date,
-               String phone, String gender, String address, String avatar, Role role) {
+               String phone, String gender, String address, String avatar, Role role, Date createdAt, Date updatedAt) {
           this.lastFirstName = lastFirstName;
           this.email = email;
           this.password = password;
@@ -46,6 +47,8 @@ public class User {
           this.address = address;
           this.avatar = avatar;
           this.role = role;
+          this.createdAt = createdAt;
+          this.updatedAt = updatedAt;
      }
 
      

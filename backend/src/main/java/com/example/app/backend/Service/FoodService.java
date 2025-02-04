@@ -17,6 +17,7 @@ import com.example.app.backend.exceptions.DataNotExistException;
 @Service
 @Transactional
 public class FoodService {
+     
      @Autowired
      private FoodRepository foodRepository;
 

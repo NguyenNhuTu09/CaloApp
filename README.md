@@ -1,12 +1,12 @@
 # TITFitness 
 
-TIT Fitness is an application that helps users lose weight using the system's meals, exercises, or the user's own creation.
+TIT Fitness is an application that helps users share and learn how to create healthy dishes
 
 # Technology
-- Frontend: Reactjs 
+- Frontend: Reactjs  
 - Backend: Spring Boot 
 - Database: MongoDB
-- Other: Figma, Cloudinary
+- Other: Cloudinary
 
 ### Prerequisites
 
